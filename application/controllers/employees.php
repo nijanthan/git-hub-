@@ -222,7 +222,9 @@ function do_upload($id)
 
         }
         function edit_employee_permission($id){
-            
+             $this->load->model('employeesmodel');
+             $data['irow']=  $this->employeesmodel->edit_employee(1); 
+             $this->load->view('edit_employee_permission',$data);
         }
        
 

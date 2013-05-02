@@ -133,3 +133,7 @@ ERROR - 2013-05-02 08:32:25 --> Severity: Notice  --> Undefined offset: 1 C:\wam
 ERROR - 2013-05-02 08:32:36 --> Severity: Notice  --> Undefined index: result C:\wamp\www\POS\application\controllers\employees.php 29
 ERROR - 2013-05-02 08:32:37 --> Severity: Notice  --> Undefined index: result C:\wamp\www\POS\application\controllers\employees.php 29
 ERROR - 2013-05-02 08:32:49 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\POS\application\controllers\employees.php 29
+ERROR - 2013-05-02 13:01:21 --> 404 Page Not Found --> mployee_permissions
+ERROR - 2013-05-02 13:18:48 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\models\employee_permission.php 10
+ERROR - 2013-05-02 13:18:48 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_permission.php 2
+ERROR - 2013-05-02 13:59:33 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_permission.php 2
