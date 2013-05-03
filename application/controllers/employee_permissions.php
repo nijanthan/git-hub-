@@ -11,10 +11,14 @@ class Employee_permissions extends CI_Controller{
     function index(){
         
     }
-    function item_permission($id){
-        
+    function edit_employee_permission($id){
         $this->load->model('employeepermission');
+        $data['edrow']=  $this->employeepermission->edit_employee($id); 
+        
+       
         $data['irow']=  $this->employeepermission->item_permission_employee($id);
+        $data['erow']=  $this->employeepermission->emp_permission_employee($id);
+        
         $this->load->view('edit_employee_permission',$data);
     }
 }
