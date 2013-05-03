@@ -32,7 +32,10 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Email')?></td><td><?php echo form_input('email',set_value('email'), 'id="email" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Phone')?></td><td><?php echo form_input('phone',set_value('phone'), 'id="phone" autofocus')?></td></tr>
     <tr><td><?php echo form_label('Date OF birth')?></td><td><?php echo form_input('dob',set_value('dob'), 'id="dob" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Department')?></td><td><?php echo form_input('branch',set_value('branch'), 'id="branch" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label('Department')?></td><td><select name="branch" > <?php foreach ($depa as $dep) {?>
+           
+           <option> <?php echo $dep->dep_name ?></option>
+        <?php  }?></select> </td></tr>
     <tr><td><?php echo form_label('Employee Id')?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Password')?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td><?php echo form_submit('Save','Save') ?></td> 
@@ -48,7 +51,8 @@ $( "#datepicker" ).datepicker();
 
     
 </table>
-   
+    <?php form_close() ?>
+    <?php echo validation_errors(); ?>
    
                 <script type="text/javascript" >
 	$(function(){
@@ -82,7 +86,83 @@ $( "#datepicker" ).datepicker();
                 <div id="upload" ><span>Upload Photo<span></div><span id="status" ></span>
 		
 		<ul id="files" ></ul>
- <?php form_close() ?>
-    <?php echo validation_errors(); ?>
+
+ 
+                
+ 
+<script language="javascript"> 
+function move(tbFrom, tbTo) 
+{
+ var arrFrom = new Array(); var arrTo = new Array(); 
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ }
+ var fLength = 0;
+ var tLength = arrTo.length;
+ for(i = 0; i < tbFrom.options.length; i++) 
+ {
+  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
+  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
+  {
+   arrTo[tLength] = tbFrom.options[i].text;
+   tLength++;
+  }
+  else 
+  {
+   arrFrom[fLength] = tbFrom.options[i].text;
+   fLength++;
+  }
+}
+
+tbFrom.length = 0;
+tbTo.length = 0;
+var ii;
+
+for(ii = 0; ii < arrFrom.length; ii++) 
+{
+  var no = new Option();
+  no.value = arrLU[arrFrom[ii]];
+  no.text = arrFrom[ii];
+  tbFrom[ii] = no;
+}
+
+for(ii = 0; ii < arrTo.length; ii++) 
+{
+ var no = new Option();
+ no.value = arrLU[arrTo[ii]];
+ no.text = arrTo[ii];
+ tbTo[ii] = no;
+}
+}
+</script>
+
+ 
+                <?php echo form_open('employees/getoptionvalue')?>
+<table><tr><td>
+<select multiple size="10" name="FromLB" style="width:150">
+<?php foreach ($depa as $dep) {?>
+           
+           <option> <?php echo $dep->dep_name ?></option>
+        <?php  }?>
+</select>
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="move(this.form.FromLB,this.form.ToLB)" 
+value="->"><br />
+<input type="button" onClick="move(this.form.ToLB,this.form.FromLB)" 
+value="<-">
+</td>
+<td>
+<select multiple size="10" name="ToLB" style="width:550">
+</select>
+</td></tr></table>
+                    <input type="submit" value="DOWN" name="downi">
+</form>
 
 </body>
+</html> 
+ 

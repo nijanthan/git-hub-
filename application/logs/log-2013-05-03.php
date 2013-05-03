@@ -409,3 +409,21 @@ ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: file_n
 ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: error C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 60
 ERROR - 2013-05-03 14:00:51 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
  C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-05-03 14:55:12 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 14:55:12 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 15:32:55 --> Severity: Warning  --> mysql_fetch_row() expects parameter 1 to be resource, boolean given C:\wamp\www\PointOfSale\application\views\add_new_employee.php 98
+ERROR - 2013-05-03 16:03:59 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:04:00 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:04:27 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:04:27 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:05:50 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:05:50 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:05:50 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\add_new_employee.php 147
+ERROR - 2013-05-03 16:05:50 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 147
+ERROR - 2013-05-03 16:06:09 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:06:09 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 35
+ERROR - 2013-05-03 16:06:09 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\add_new_employee.php 147
+ERROR - 2013-05-03 16:06:09 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_employee.php 147
+ERROR - 2013-05-03 16:06:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\add_new_employee.php 149
+ERROR - 2013-05-03 16:06:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\add_new_employee.php 149
+ERROR - 2013-05-03 16:06:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\add_new_employee.php 149

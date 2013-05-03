@@ -156,8 +156,9 @@ function do_upload($id)
             $this->get_employee_details();
               }
             if($this->input->post('Add_employee')){
-               
-            $this->load->view('add_new_employee');
+                    $this->load->model('department');
+                    $data['depa']=  $this->department->get_department();
+                    $this->load->view('add_new_employee',$data);
              }
         }
         function add_employee_details(){
@@ -215,6 +216,10 @@ function do_upload($id)
               }
     
              }
+             if($this->input->post('downi')){
+                 echo $this->input->post('ToLB');
+             }
+                     
         }
         
         function add_employee_image(){
@@ -233,6 +238,10 @@ function do_upload($id)
              $this->load->model('employeesmodel');
              $data['irow']=  $this->employeesmodel->edit_employee(1); 
              $this->load->view('edit_employee_permission',$data);
+        }
+        function getoptionvalue(){
+            echo "haii";
+            
         }
        
 
