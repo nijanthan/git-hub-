@@ -38,19 +38,19 @@ foreach ($edrow as $drow){
 
 ?>
             
-<tr><td><label>READ</label> </td>
+<tr><td><label>READ ITEM</label> </td>
     <td><input type="radio" name="read" value="0001" <?php if($read==1){ ?>checked<?php }?> > ON</td>
     <td><input type="radio" name="read" value="0000" <?php if($read==0) { ?>checked<?php }?> > OFF</td>
 </tr>
-<tr><td><label>ADD</label> </td>
+<tr><td><label>ADD ITEM</label> </td>
     <td><input type="radio" name="add" value="0010" <?php if($add==1){ ?>checked<?php }?> > ON</td>
     <td><input type="radio" name="add" value="0000" <?php if($add==0){ ?>checked<?php }?>> OFF</td>
 </tr>
-<tr><td><label>EDIT</label> </td>
+<tr><td><label>EDIT ITEM</label> </td>
     <td><input type="radio" name="edit" value="0100"<?php if($edit==1){ ?>checked<?php }?>> ON</td>
     <td><input type="radio" name="edit" value="0000" <?php if($edit==0){ ?>checked<?php }?>> OFF</td>
 </tr>
-<tr><td><label>DELETE</label> </td>
+<tr><td><label>DELETE ITEM</label> </td>
     <td><input type="radio" name="delete" value="1000" <?php if($delete==1 ){ ?>checked<?php }?>> ON</td>
     <td><input type="radio" name="delete" value="0000" <?php if($delete==0){ ?>checked<?php }?>> OFF</td>
 </tr>
@@ -75,19 +75,19 @@ foreach ($edrow as $drow){
 
 ?>
             
-<tr><td><label>READ</label> </td>
+<tr><td><label>READ EMPLOYEE </label> </td>
     <td><input type="radio" name="eread" value="0001" <?php if($eread==1){ ?>checked<?php }?> > ON</td>
     <td><input type="radio" name="eread" value="0000" <?php if($eread==0) { ?>checked<?php }?> > OFF</td>
 </tr>
-<tr><td><label>ADD</label> </td>
+<tr><td><label>ADD NEW EMPLOYEE</label> </td>
     <td><input type="radio" name="eadd" value="0010" <?php if($eadd==1){ ?>checked<?php }?> > ON</td>
     <td><input type="radio" name="eadd" value="0000" <?php if($eadd==0){ ?>checked<?php }?>> OFF</td>
 </tr>
-<tr><td><label>EDIT</label> </td>
+<tr><td><label>EDIT EMPLOYEE</label> </td>
     <td><input type="radio" name="eedit" value="0100"<?php if($eedit==1){ ?>checked<?php }?>> ON</td>
     <td><input type="radio" name="eedit" value="0000" <?php if($eedit==0){ ?>checked<?php }?>> OFF</td>
 </tr>
-<tr><td><label>DELETE</label> </td>
+<tr><td><label>DELETE EMPLOYEE</label> </td>
     <td><input type="radio" name="edelete" value="1000" <?php if($edelete==1 ){ ?>checked<?php }?>> ON</td>
     <td><input type="radio" name="edelete" value="0000" <?php if($edelete==0){ ?>checked<?php }?>> OFF</td>
 </tr>
