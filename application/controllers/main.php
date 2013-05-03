@@ -4,43 +4,40 @@ class Main extends CI_Controller
 {
     function __construct() {
         parent::__construct();
-         $this->load->helper('url'); 
-         $this->load->helper('form');
-         $this->load->helper(array('form', 'url'));
+
+        $this->load->helper('url');
+        $this->load->library('unit_test');
+        $this->load->helper(array('form', 'url'));
+        $this->load->helper('form');
+        $this->load->library('form_validation');
     }
     function index(){
         
-       $this->employee();
-      // $this->load->view('upload_form', array('error' => ' ' ));
-      // $this->do_upload();
-       
-        
+       //$this->employee();
+       $this->load->view('login');
+     
         } 
 function employee()
 {
     redirect('/employees');
 }
-function do_upload()
-	{
-		$config['upload_path'] = './employees/';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '100';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
-
-		$this->load->library('upload', $config);
-
-		if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-
-			$this->load->view('edit_employee_details', $error);
-		}
-		else
-		{
-			
-		}
-	}
+function login(){
+    $this->load->library('form_validation');
+    if($this->input->post('login')){
+        $this->form_validation->set_rules('username','Username', 'required');
+        $this->form_validation->set_rules('password','Password','required');
+        if($this->form_validation->run()!=FALSE){
+            $username=  $this->input->post('username');
+            $password=$this->input->post('password');
+            $this->load->model('logindetails');
+            $this->logindetails->login($username,$password);
+            
+            
+        }  else {
+             $this->load->view('login');
+        }
+    }
+}
 
 }
 ?>

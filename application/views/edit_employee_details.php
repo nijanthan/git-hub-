@@ -1,4 +1,4 @@
-<?php 
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 foreach ($row as $erow){
    
   
@@ -42,7 +42,7 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Department')?></td><td><input type="text" name="branch" value="<?php echo $erow->group ?>"> </td></tr>
     <tr><td><?php echo form_label('Employee Id')?></td><td><input type="text" name="employee_id" value="<?php echo $erow->emp_id ?>"> </td></tr>
     <tr><td><?php echo form_label('Password')?></td><td><input type="text" name="password" value="<?php echo $erow->password ?>"> </td></tr>
-    <tr><td><?php echo form_label('Photo')?></td><td><img src="<?php echo base_url();?>employees/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
+    <tr><td><?php echo form_label('Photo')?></td><td><img src="<?php echo base_url();?>uploads/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
     <tr><td><?php echo form_submit('UPDATE','update') ?></td> 
         <?php echo form_close(); 
     echo form_open('employees/cancel')?>
