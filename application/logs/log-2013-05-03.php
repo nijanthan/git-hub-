@@ -379,3 +379,14 @@ ERROR - 2013-05-03 10:15:36 --> Query error: Unknown column 'empl_id' in 'where 
 ERROR - 2013-05-03 10:16:18 --> Query error: Unknown column 'passwword' in 'where clause'
 ERROR - 2013-05-03 10:35:27 --> 404 Page Not Found --> main
 ERROR - 2013-05-03 10:35:54 --> 404 Page Not Found --> main
+ERROR - 2013-05-03 10:50:57 --> Severity: Notice  --> Undefined variable: _SESSION C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 10:51:40 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 10:51:51 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 10:52:15 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\controllers\home.php 16
+ERROR - 2013-05-03 10:52:15 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 10:52:54 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\controllers\home.php 16
+ERROR - 2013-05-03 10:52:54 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\controllers\home.php 16
+ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\controllers\home.php 16
+ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5

@@ -10,6 +10,7 @@ class Userlogin extends CI_Controller
         $this->load->helper(array('form', 'url'));
         $this->load->helper('form');
         $this->load->library('form_validation');
+        session_start();
     }
     function index(){
         
@@ -38,7 +39,7 @@ function login(){
             if($this->logindetails->login($username,$password)){
                
                 $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
-                $this->load->view('home');
+                redirect('home/pos_home');
             }else{
                 echo "Invalid Username and password";
                 $this->load->view('login');
