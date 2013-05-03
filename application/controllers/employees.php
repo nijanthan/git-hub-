@@ -139,6 +139,9 @@ function do_upload($id)
        
         
         function delete_selected_employees(){
+            if($this->input->post('BacktoHome')){
+                redirect('posmain');
+            }
            if($this->input->post('delete_all')){
               $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){
@@ -155,6 +158,7 @@ function do_upload($id)
              }
         }
         function add_employee_details(){
+            
             
            if ($this->input->post('Cancel')) {
              $this->get_employee_details();
