@@ -13,5 +13,13 @@ class Logindetails extends CI_Model{
         }
         
     }
+    function loginid($username,$password){ 
+        $this->db->select()->from('employeedetails')->where('emp_id',$username)->where('password',$password);
+        $sql=$this->db->get();
+        foreach ($sql->result() as $row){
+           return $row->id;
+        }
+        
+    }
 }
 ?>

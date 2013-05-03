@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-echo form_open('main/login');?>
+echo form_open('userlogin/login');?>
 <table><tr><td>
 <?php echo form_label('USER ID');?></td><td>
 <?php echo form_input('username',set_value('username'), 'id="username" autofocus')?></td></tr><tr><td>

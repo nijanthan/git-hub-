@@ -1,6 +1,6 @@
 <?php
 
-class Main extends CI_Controller
+class Userlogin extends CI_Controller
 {
     function __construct() {
         parent::__construct();
@@ -14,7 +14,12 @@ class Main extends CI_Controller
     function index(){
         
        //$this->employee();
-       $this->load->view('login');
+        if(!isset($_SESSION['Uid'])){
+            $this->load->view('login');
+        }else{
+            $this->load->view('home');
+        }
+       
      
         } 
 function employee()
@@ -31,10 +36,12 @@ function login(){
             $password=$this->input->post('password');
             $this->load->model('logindetails');
             if($this->logindetails->login($username,$password)){
-                echo "login suceess";
-                
+               
+                $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
+                $this->load->view('home');
             }else{
-                echo "login fails";
+                echo "Invalid Username and password";
+                $this->load->view('login');
             }
             
             
