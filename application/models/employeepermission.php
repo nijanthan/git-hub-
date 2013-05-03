@@ -23,6 +23,14 @@ class Employeepermission extends CI_Model{
        
         return $sql->result();
    }
+   function update_permission($item,$emp,$id){
+       $item_per=array('permission'=>$item);
+        $emp_per=array('permission'=>$emp);
+        $this->db->where('emp_id',$id);
+        $this->db->update('itempermission',$item_per);
+        $this->db->where('emp_id',$id);
+        $this->db->update('employeepermission',$emp_per);
+   }
     
     
 }

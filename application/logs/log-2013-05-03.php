@@ -92,3 +92,7 @@ ERROR - 2013-05-03 05:29:40 --> Severity: Notice  --> Undefined variable: second
 ERROR - 2013-05-03 05:29:40 --> Severity: Notice  --> Undefined variable: last C:\wamp\www\newpos\application\views\edit_employee_permission.php 60
 ERROR - 2013-05-03 05:29:44 --> Severity: Notice  --> Undefined variable: second C:\wamp\www\newpos\application\views\edit_employee_permission.php 60
 ERROR - 2013-05-03 05:29:45 --> Severity: Notice  --> Undefined variable: last C:\wamp\www\newpos\application\views\edit_employee_permission.php 60
+ERROR - 2013-05-03 08:03:21 --> Severity: Notice  --> Undefined variable: iadd C:\wamp\www\PointOfSale\application\controllers\employee_permissions.php 29
+ERROR - 2013-05-03 08:03:21 --> Severity: Notice  --> Undefined variable: iread C:\wamp\www\PointOfSale\application\controllers\employee_permissions.php 29
+ERROR - 2013-05-03 08:03:21 --> Severity: Notice  --> Undefined variable: iedit C:\wamp\www\PointOfSale\application\controllers\employee_permissions.php 29
+ERROR - 2013-05-03 08:03:21 --> Severity: Notice  --> Undefined variable: idelete C:\wamp\www\PointOfSale\application\controllers\employee_permissions.php 29

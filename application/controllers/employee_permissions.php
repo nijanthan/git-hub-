@@ -21,5 +21,28 @@ class Employee_permissions extends CI_Controller{
         
         $this->load->view('edit_employee_permission',$data);
     }
+    function upadate_employee_permission(){
+        $id= $this->input->post('emp_id');
+       
+       
+        
+        
+        $iread= $this->input->post('read');
+        $iadd=  $this->input->post('add');
+        $iedit=$this->input->post('edit');
+        $idelete=  $this->input->post('delete');
+        $item_permission= $iread+$iadd+$iedit+$idelete; 
+        $eread= $this->input->post('eread');
+        $eadd=  $this->input->post('eadd');
+        $eedit=$this->input->post('eedit');
+        $edelete=  $this->input->post('edelete');
+        
+         $emp_permission= $eread+$eadd+$eedit+$edelete;
+         $this->load->model('employeepermission');
+         $this->employeepermission->update_permission($item_permission,$emp_permission,$id);
+         $this->edit_employee_permission($id);
+        
+        
+    }
 }
 ?>

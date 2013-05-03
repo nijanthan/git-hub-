@@ -1,8 +1,17 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-foreach ($edrow as $drow){
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
+
+
+
+<body>
+    <br><br>
+     <?php echo form_open('employee_permissions/upadate_employee_permission');
+     foreach ($edrow as $drow){
+         
     echo $drow->first_name."<br>";
-     $drow->image;
+    
     ?>
+    <input type="hidden" name="emp_id" value="<?php echo $drow->id ?>">
+           
 <img src="<?php echo base_url()?>uploads/<?php echo $drow->image ?>">
 <?php
     
@@ -15,11 +24,6 @@ foreach ($edrow as $drow){
 
 ?>
 
-
-
-<body>
-    <br><br>
-    <form>
         <table>
             <tr><td><label>ITEM PERMISSION</label> </br></br></td></tr>
            
@@ -93,6 +97,8 @@ foreach ($edrow as $drow){
 </tr>
 
         </table>
+        <input  type="submit" value="SAVE" name="update">
+                
     </form>
 </body>
 </html>
