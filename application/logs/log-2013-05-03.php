@@ -390,3 +390,13 @@ ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wa
 ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
 ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\controllers\home.php 16
 ERROR - 2013-05-03 10:52:55 --> Severity: Notice  --> Undefined index: Uid C:\wamp\www\PointOfSale\application\views\home.php 5
+ERROR - 2013-05-03 11:29:17 --> Severity: Notice  --> Undefined variable: CI C:\wamp\www\PointOfSale\application\libraries\Acluser.php 8
+ERROR - 2013-05-03 11:29:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 8
+ERROR - 2013-05-03 11:38:51 --> Severity: Notice  --> Undefined property: Acluser::$session C:\wamp\www\PointOfSale\application\libraries\Acluser.php 24
+ERROR - 2013-05-03 11:39:55 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\libraries\Acluser.php 24
+ERROR - 2013-05-03 11:40:22 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\libraries\Acluser.php 25
+ERROR - 2013-05-03 11:42:56 --> Severity: Notice  --> Undefined index: Item_per[1] C:\wamp\www\PointOfSale\application\libraries\Acluser.php 25
+ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27
+ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27
+ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27
+ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27

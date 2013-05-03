@@ -8,9 +8,8 @@ class Employees extends CI_Controller{
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->library('unit_test');
-        session_start();
-        
-         $this->load->helper(array('form', 'url'));
+        session_start();        
+        $this->load->helper(array('form', 'url'));
     }
     function index(){
         $this->get_employee_details();
