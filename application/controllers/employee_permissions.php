@@ -42,7 +42,10 @@ class Employee_permissions extends CI_Controller{
          $this->employeepermission->update_permission($item_permission,$emp_permission,$id);
          $this->edit_employee_permission($id);
         
-        
+        if($this->input->post('cancel')){
+            
+             redirect('employees/get_employee_details');
+        }
     }
 }
 ?>

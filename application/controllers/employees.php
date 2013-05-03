@@ -200,7 +200,9 @@ function do_upload($id)
                           $dob= strtotime($yourdatetime);
                           
                           $this->load->model('employeesmodel');
-                          $this->employeesmodel->adda_new_employee($first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                          $id= $this->employeesmodel->adda_new_employee($first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                          $this->load->model('employeepermission');
+                          $this->employeepermission->adda_default_permission($id);
                           $this->get_employee_details();
             }else{
                $this->load->view('add_new_employee');

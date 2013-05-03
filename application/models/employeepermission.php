@@ -31,7 +31,14 @@ class Employeepermission extends CI_Model{
         $this->db->where('emp_id',$id);
         $this->db->update('employeepermission',$emp_per);
    }
-    
+    function adda_default_permission($id){
+          $item_per=array('permission'=>'0000','emp_id'=>$id);
+          $emp_per=array('permission'=>'0000','emp_id'=>$id);
+          $this->db->insert('itempermission',$item_per);
+        
+          $this->db->insert('employeepermission',$emp_per);
+        
+    }
     
 }
 ?>

@@ -65,6 +65,7 @@ class Employeesmodel extends CI_Model{
        
        $this->db->where('id',$id);
        $this->db->delete('employeedetails');
+       
    }
    function adda_new_employee($first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
        $data=array(
@@ -87,6 +88,9 @@ class Employeesmodel extends CI_Model{
            
        );
        $this->db->insert('employeedetails',$data);
+       $id=$this->db->insert_id();
+       return $id;
+       
        
        }
        function get(){

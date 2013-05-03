@@ -32,6 +32,7 @@
     
 }
 
+
  $read= $num%10;
 
  $add= $num/10%10;
@@ -98,6 +99,7 @@
 
         </table>
         <input  type="submit" value="SAVE" name="update">
+        <input  type="submit" value="CANCEL" name="cancel">
                 
     </form>
 </body>
