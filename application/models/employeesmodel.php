@@ -6,11 +6,11 @@ class Employeesmodel extends CI_Model{
     }
     
     function employeecount(){
-        return $this->db->count_all("employeedetails");
+        return $this->db->count_all("users");
     }
      public function get_employees_details($limit, $start) {
         $this->db->limit($limit, $start);
-        $query = $this->db->get("employeedetails");
+        $query = $this->db->get("users");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -20,7 +20,7 @@ class Employeesmodel extends CI_Model{
           return false;
    }
    function edit_employee($id){
-       $this->db->select()->from('employeedetails')->where('id',$id);
+       $this->db->select()->from('users')->where('id',$id);
         $sql=$this->db->get();
        
         return $sql->result();
@@ -40,7 +40,7 @@ class Employeesmodel extends CI_Model{
    function update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
        $data=array(
            	
-           'emp_id' =>$emp_id,	
+           'user_id' =>$emp_id,	
            'password' =>$password,	
            'first_name' =>$first_name,           
            'last_name '	=>$last_name,
@@ -59,18 +59,18 @@ class Employeesmodel extends CI_Model{
        );
 
        $this->db->where('id',$id);
-       $this->db->update('employeedetails',$data);
+       $this->db->update('users',$data);
    }
    function delete_employee($id){
        
        $this->db->where('id',$id);
-       $this->db->delete('employeedetails');
+       $this->db->delete('users');
        
    }
    function adda_new_employee($first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
        $data=array(
            	
-           'emp_id' =>$emp_id,	
+           'user_id' =>$emp_id,	
            'password' =>$password,	
            'first_name' =>$first_name,           
            'last_name '	=>$last_name,
@@ -87,7 +87,7 @@ class Employeesmodel extends CI_Model{
            
            
        );
-       $this->db->insert('employeedetails',$data);
+       $this->db->insert('users',$data);
        $id=$this->db->insert_id();
        return $id;
        

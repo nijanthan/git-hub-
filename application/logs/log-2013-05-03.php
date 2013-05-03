@@ -400,3 +400,12 @@ ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of 
 ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27
 ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27
 ERROR - 2013-05-03 11:43:47 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\libraries\Acluser.php 27
+ERROR - 2013-05-03 12:54:31 --> Severity: Notice  --> Undefined property: stdClass::$emp_id C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-03 13:59:40 --> Severity: Notice  --> Undefined variable: sl C:\wamp\www\PointOfSale\application\models\department.php 10
+ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: file_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 45
+ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: file_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 45
+ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: file_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 45
+ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: file_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 45
+ERROR - 2013-05-03 13:59:58 --> Severity: Notice  --> Undefined variable: error C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 60
+ERROR - 2013-05-03 14:00:51 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 91

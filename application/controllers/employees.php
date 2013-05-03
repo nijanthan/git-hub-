@@ -34,6 +34,7 @@ class Employees extends CI_Controller{
         
                 $this->load->helper("url");
                 $this->load->model('employeesmodel');
+                
                 $this->load->library("pagination"); 
 	        $config["base_url"] = base_url()."index.php/employees/get_employee_details";
 	        $config["total_rows"] = $this->employeesmodel->employeecount();
@@ -51,6 +52,8 @@ class Employees extends CI_Controller{
                 $data['row']=  $this->employeesmodel->edit_employee($id); 
                 $data['error']="";
                 $data['file_name']="null";
+                $this->load->model('department');
+                $data['depa']=  $this->department->get_department();
                 $this->load->view('edit_employee_details',$data);
         
     }
