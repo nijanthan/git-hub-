@@ -84,3 +84,11 @@ ERROR - 2013-05-03 04:02:28 --> Severity: Warning  --> Invalid argument supplied
 ERROR - 2013-05-03 04:02:28 --> Severity: Notice  --> Undefined variable: num C:\wamp\www\PointOfSale\application\views\edit_employee_permission.php 33
 ERROR - 2013-05-03 04:03:27 --> Severity: Notice  --> Undefined variable: num C:\wamp\www\PointOfSale\application\views\edit_employee_permission.php 33
 ERROR - 2013-05-03 04:57:03 --> Severity: Warning  --> Division by zero C:\wamp\www\newpos\application\views\edit_employee_permission.php 20
+ERROR - 2013-05-03 05:16:27 --> Severity: Notice  --> Undefined variable: nu C:\wamp\www\newpos\application\views\edit_employee_permission.php 52
+ERROR - 2013-05-03 05:16:53 --> Severity: Notice  --> Undefined variable: nu C:\wamp\www\newpos\application\views\edit_employee_permission.php 52
+ERROR - 2013-05-03 05:16:54 --> Severity: Notice  --> Undefined variable: nu C:\wamp\www\newpos\application\views\edit_employee_permission.php 52
+ERROR - 2013-05-03 05:16:54 --> Severity: Notice  --> Undefined variable: nu C:\wamp\www\newpos\application\views\edit_employee_permission.php 52
+ERROR - 2013-05-03 05:29:40 --> Severity: Notice  --> Undefined variable: second C:\wamp\www\newpos\application\views\edit_employee_permission.php 60
+ERROR - 2013-05-03 05:29:40 --> Severity: Notice  --> Undefined variable: last C:\wamp\www\newpos\application\views\edit_employee_permission.php 60
+ERROR - 2013-05-03 05:29:44 --> Severity: Notice  --> Undefined variable: second C:\wamp\www\newpos\application\views\edit_employee_permission.php 60
+ERROR - 2013-05-03 05:29:45 --> Severity: Notice  --> Undefined variable: last C:\wamp\www\newpos\application\views\edit_employee_permission.php 60

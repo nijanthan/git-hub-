@@ -28,33 +28,35 @@ foreach ($erow as $eprow){
         <table>
             <tr><td><label>ITEM PERMISSION</label> </br></br></td></tr>
            
-            <?php foreach ($irow as $iprow){
+ <?php foreach ($irow as $iprow){
      $num= $iprow->permission;
     
 }
-$last= $num%10;
 
-$second= $num/10%10;
+ $read= $num%10;
 
-$first= $num/100%100;
+ $add= $num/10%10;
 
+ $edit= $num/100%10;
+
+ $delete= $num/1000%10;
 
 ?>
 <tr><td><label>READ</label> </td>
-    <td><input type="radio" name="read" value="001" <?php if($num!=000){ ?>checked<?php }?> > ON</td>
-    <td><input type="radio" name="read" value="000" <?php if($num==000) { ?>checked<?php }?> > OFF</td>
+    <td><input type="radio" name="read" value="001" <?php if($read==1){ ?>checked<?php }?> > ON</td>
+    <td><input type="radio" name="read" value="000" <?php if($read==0) { ?>checked<?php }?> > OFF</td>
 </tr>
 <tr><td><label>ADD</label> </td>
-    <td><input type="radio" name="add" value="on" <?php if($second==1){ ?>checked<?php }?> > ON</td>
-    <td><input type="radio" name="add" value="off" <?php if($second==0){ ?>checked<?php }?>> OFF</td>
+    <td><input type="radio" name="add" value="on" <?php if($add==1){ ?>checked<?php }?> > ON</td>
+    <td><input type="radio" name="add" value="off" <?php if($add==0){ ?>checked<?php }?>> OFF</td>
 </tr>
 <tr><td><label>EDIT</label> </td>
-    <td><input type="radio" name="edit" value="on"> ON</td>
-    <td><input type="radio" name="edit" value="off" checked> OFF</td>
+    <td><input type="radio" name="edit" value="on"<?php if($edit==1){ ?>checked<?php }?>> ON</td>
+    <td><input type="radio" name="edit" value="off" <?php if($edit==0){ ?>checked<?php }?>> OFF</td>
 </tr>
 <tr><td><label>DELETE</label> </td>
-    <td><input type="radio" name="delete" value="on"> ON</td>
-    <td><input type="radio" name="delete" value="off" checked> OFF</td>
+    <td><input type="radio" name="delete" value="on" <?php if($delete==1 ){ ?>checked<?php }?>> ON</td>
+    <td><input type="radio" name="delete" value="off" <?php if($delete==0){ ?>checked<?php }?>> OFF</td>
 </tr>
 
         </table>
