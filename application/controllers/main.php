@@ -30,7 +30,12 @@ function login(){
             $username=  $this->input->post('username');
             $password=$this->input->post('password');
             $this->load->model('logindetails');
-            $this->logindetails->login($username,$password);
+            if($this->logindetails->login($username,$password)){
+                echo "login suceess";
+                
+            }else{
+                echo "login fails";
+            }
             
             
         }  else {

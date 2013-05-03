@@ -375,3 +375,5 @@ ERROR - 2013-05-03 09:08:31 --> Severity: Notice  --> Undefined variable: per C:
 ERROR - 2013-05-03 09:09:29 --> Severity: Warning  --> strtotime() expects parameter 2 to be long, string given C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 41
 ERROR - 2013-05-03 09:18:44 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 3
 ERROR - 2013-05-03 09:38:08 --> 404 Page Not Found --> main/login
+ERROR - 2013-05-03 10:15:36 --> Query error: Unknown column 'empl_id' in 'where clause'
+ERROR - 2013-05-03 10:16:18 --> Query error: Unknown column 'passwword' in 'where clause'
