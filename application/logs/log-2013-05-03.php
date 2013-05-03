@@ -427,3 +427,6 @@ ERROR - 2013-05-03 16:06:09 --> Severity: Warning  --> Invalid argument supplied
 ERROR - 2013-05-03 16:06:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\add_new_employee.php 149
 ERROR - 2013-05-03 16:06:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\add_new_employee.php 149
 ERROR - 2013-05-03 16:06:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\add_new_employee.php 149
+ERROR - 2013-05-03 17:54:31 --> 404 Page Not Found --> employees/getuser.php
+ERROR - 2013-05-03 17:58:06 --> 404 Page Not Found --> employees/getuser.php
+ERROR - 2013-05-03 17:58:08 --> 404 Page Not Found --> employees/getuser.php
