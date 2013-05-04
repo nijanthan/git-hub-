@@ -32,10 +32,17 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Email')?></td><td><?php echo form_input('email',set_value('email'), 'id="email" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Phone')?></td><td><?php echo form_input('phone',set_value('phone'), 'id="phone" autofocus')?></td></tr>
     <tr><td><?php echo form_label('Date OF birth')?></td><td><?php echo form_input('dob',set_value('dob'), 'id="dob" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Department')?></td><td><select name="branch" > <?php foreach ($depa as $dep) {?>
+    <tr><td><?php echo form_label('Department')?></td><td><form id="form1" runat="server">
+        <div>
+           <select ID="DropDownList1" multiple runat="server" height="200" onchange="display();">
+            <?php foreach ($depa as $dep) {?>
            
            <option> <?php echo $dep->dep_name ?></option>
-        <?php  }?></select> </td></tr>
+        <?php  }?>
+            </select>
+           <textarea id="TextBox1" runat="server"></textarea>
+        </div>
+    </form> </td></tr>
     <tr><td><?php echo form_label('Employee Id')?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Password')?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td><?php echo form_submit('Save','Save') ?></td> 
@@ -87,4 +94,14 @@ $( "#datepicker" ).datepicker();
 		
 		<ul id="files" ></ul>
 
- 
+    <script>
+   function display()
+   {
+    var dpt=document.getElementById("DropDownList1");
+     alert(dpt.options[dpt.selectedIndex].value);
+	 document.getElementById("TextBox1").value=document.getElementById("TextBox1").value+"";
+        document.getElementById("TextBox1").value =document.getElementById("TextBox1").value+dpt.options[dpt.selectedIndex].value;
+		document.getElementById("TextBox1").value=document.getElementById("TextBox1").value+",";
+      }
+    </script>
+
