@@ -1,7 +1,103 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<html>    
+<head>
+<script language="javascript"> 
+function move(tbFrom, tbTo) 
+{
+ var arrFrom = new Array(); var arrTo = new Array(); 
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ }
+ var fLength = 0;
+ var tLength = arrTo.length;
+ for(i = 0; i < tbFrom.options.length; i++) 
+ {
+  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
+  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
+  {
+   arrTo[tLength] = tbFrom.options[i].text;
+   tLength++;
+  }
+  else 
+  {
+   arrFrom[fLength] = tbFrom.options[i].text;
+   fLength++;
+  }
+}
 
+tbFrom.length = 0;
+tbTo.length = 0;
+var ii;
+
+for(ii = 0; ii < arrFrom.length; ii++) 
+{
+  var no = new Option();
+  no.value = arrLU[arrFrom[ii]];
+  no.text = arrFrom[ii];
+  tbFrom[ii] = no;
+}
+
+for(ii = 0; ii < arrTo.length; ii++) 
+{
+ var no = new Option();
+ no.value = arrLU[arrTo[ii]];
+ no.text = arrTo[ii];
+ tbTo[ii] = no;
+}
+}
+
+
+function move(tbFrom, tbTo) 
+{
+ var arrFrom = new Array(); var arrTo = new Array(); 
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ }
+ var fLength = 0;
+ var tLength = arrTo.length;
+ for(i = 0; i < tbFrom.options.length; i++) 
+ {
+  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
+  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
+  {
+   arrTo[tLength] = tbFrom.options[i].text;
+   tLength++;
+  }
+  else 
+  {
+   arrFrom[fLength] = tbFrom.options[i].text;
+   fLength++;
+  }
+}
+
+tbFrom.length = 0;
+tbTo.length = 0;
+var ii;
+
+for(ii = 0; ii < arrFrom.length; ii++) 
+{
+  var no = new Option();
+  no.value = arrLU[arrFrom[ii]];
+  no.text = arrFrom[ii];
+  tbFrom[ii] = no;
+}
+
+for(ii = 0; ii < arrTo.length; ii++) 
+{
+ var no = new Option();
+ no.value = arrLU[arrTo[ii]];
+ no.text = arrTo[ii];
+ tbTo[ii] = no;
+}
+}
+</script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.3.2.js" ></script>
 <script type="text/javascript" src="<?php echo base_url();?>js/ajaxupload.3.5.js" ></script>
 
@@ -19,10 +115,13 @@ $( "#datepicker" ).datepicker();
 <body>
 
 		
-                <table>
-    <?php echo form_open_multipart('employees/add_employee_details/');?>
-   
-    <tr><td><?php echo form_label('First Name')?> </td><td><?php echo form_input('first_name',set_value('first_name'), 'id="first_name" autofocus')?> </td></tr>
+                <table><?php
+                    $form =array('id'=>'form1',
+                        'runat'=>'server',
+                        'name'=>'combo_box');
+     echo form_open_multipart('employees/add_employee_details/',$form);?>
+
+<tr><td><?php echo form_label('First Name')?> </td><td><?php echo form_input('first_name',set_value('first_name'), 'id="first_name" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Last Name')?></td><td><?php echo form_input('last_name',set_value('last_name'), 'id="llast_name" autofocus')?></td></tr>
      <tr><td><?php echo form_label('Address')?></td><td><?php echo form_input('address',set_value('address'), 'id="address" autofocus')?></td></tr>
     <tr><td><?php echo form_label('City')?></td><td><?php echo form_input('city',set_value('city'), 'id="city" autofocus')?> </td></tr>
@@ -32,17 +131,47 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Email')?></td><td><?php echo form_input('email',set_value('email'), 'id="email" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Phone')?></td><td><?php echo form_input('phone',set_value('phone'), 'id="phone" autofocus')?></td></tr>
     <tr><td><?php echo form_label('Date OF birth')?></td><td><?php echo form_input('dob',set_value('dob'), 'id="dob" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Department')?></td><td><form id="form1" runat="server">
-        <div>
-           <select ID="DropDownList1" multiple runat="server" height="200" onchange="display();">
+    <tr><td><?php echo form_label('Department')?></td><td>
+        <table><tr><td>
+<select multiple size="7" name="FromLB" style="width:150">
+
             <?php foreach ($depa as $dep) {?>
            
-           <option> <?php echo $dep->dep_name ?></option>
+           <option name="<?php echo $dep->dep_name ?>"> <?php echo $dep->dep_name ?></option>
         <?php  }?>
-            </select>
-           <textarea id="TextBox1" runat="server"></textarea>
-        </div>
-    </form> </td></tr>
+           
+</select>
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="move(this.form.FromLB,this.form.ToLB)" 
+value="->"><br />
+<input type="button" onClick="move(this.form.ToLB,this.form.FromLB)" 
+value="<-">
+</td>
+<td>
+<select multiple size="7" name="ToLB" style="width:150">
+</select>
+</td></tr></table>
+        </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
+    <table><tr><td>
+<select multiple size="7" name="FromLJ" style="width:150">
+    <?php foreach ($branch as $brow) {
+          
+           ?>   <option name="<?php echo $brow->store_name  ?>" > <?php echo $brow->store_name  ?></option> 
+        <?php  }?>
+
+</select>
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="move(this.form.FromLJ,this.form.ToLJ)" 
+value="->"><br />
+<input type="button" onClick="move(this.form.ToLJ,this.form.FromLJ)" 
+value="<-">
+</td>
+<td>
+<select multiple size="7" name="ToLJ" style="width:150">
+</select>
+</td></tr></table></td></tr>
     <tr><td><?php echo form_label('Employee Id')?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Password')?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td><?php echo form_submit('Save','Save') ?></td> 
@@ -94,14 +223,11 @@ $( "#datepicker" ).datepicker();
 		
 		<ul id="files" ></ul>
 
-    <script>
-   function display()
-   {
-    var dpt=document.getElementById("DropDownList1");
-     alert(dpt.options[dpt.selectedIndex].value);
-	 document.getElementById("TextBox1").value=document.getElementById("TextBox1").value+"";
-        document.getElementById("TextBox1").value =document.getElementById("TextBox1").value+dpt.options[dpt.selectedIndex].value;
-		document.getElementById("TextBox1").value=document.getElementById("TextBox1").value+",";
-      }
-    </script>
+   
 
+
+
+</form>
+
+</body>
+</html> 

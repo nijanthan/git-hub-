@@ -27,7 +27,9 @@ $( "#datepicker" ).datepicker();
 
 
 <table>
-    <?php echo form_open('employees/upadate_employee_details')?>
+    <?php $form =array('id'=>'form1',
+                        'runat'=>'server');
+    echo form_open('employees/upadate_employee_details',$form)?>
     <input type="hidden" name="id" value="<?php echo $erow->id?>">
     <tr><td><?php echo form_label('First Name')?> </td><td><input type="text" name="first_name" value="<?php echo $erow->first_name ?>"> </td></tr>
     <tr><td><?php echo form_label('Last Name')?></td><td><input type="text" name="last_name" value="<?php echo $erow->last_name ?>"> </td></tr>
@@ -39,11 +41,29 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Email')?></td><td><input type="text" name="email" value="<?php echo $erow->email ?>"> </td></tr>
     <tr><td><?php echo form_label('Phone')?></td><td><input type="text" name="phone" value="<?php echo $erow->phone ?>" maxlength="13"> </td></tr>
     <tr><td><?php echo form_label('Date OF birth')?></td><td><input type="text" id="datepicker" name="dob" value="<?php echo date('n/j/Y', strtotime('+0 year, +0 days',$erow->dob));   ?>"> </td></tr>
-    <tr><td><?php echo form_label('Department')?></td><td><select name="branch" > <?php foreach ($depa as $dep) {
-           if($erow->group==$dep->dep_name){
-           ?>   <option selected> <?php echo $dep->dep_name ?></option> <?php }else{ ?>
-           <option> <?php echo $dep->dep_name ?></option>
-        <?php } }?></select> </td></tr>
+   
+    <tr><td><?php echo form_label('Department')?></td>
+           <?php foreach ($depa as $dep) {?>
+           
+               
+            <td><input type="radio" name="department" value="<?php echo $dep->dep_name?>" <?php if($erow->group==$dep->dep_name){ ?>checked<?php }?> > <?php echo $dep->dep_name?></td>
+    
+        <?php  }?> </tr>
+    <tr><td><?php echo form_label('Branch')?></td><td>
+        <div>
+           <select  multiple>
+           <?php foreach ($branch as $brow) {
+           if($erow->branch==$brow->id){
+           ?>   <option selected> <?php echo $brow->store_name  ?></option> <?php }else{ ?>
+           <option> <?php echo $brow->store_name  ?></option>
+        <?php } }?>
+            </select>
+           
+        </div>
+     </td></tr>
+    
+    
+   
     <tr><td><?php echo form_label('Employee Id')?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>
     <tr><td><?php echo form_label('Password')?></td><td><input type="text" name="password" value="<?php echo $erow->password ?>"> </td></tr>
     <tr><td><?php echo form_label('Photo')?></td><td><img src="<?php echo base_url();?>uploads/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
@@ -68,3 +88,4 @@ $id= $erow->id?>
     <?php echo validation_errors(); ?>
 </body>
 </html>
+ 

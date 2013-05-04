@@ -54,6 +54,8 @@ class Employees extends CI_Controller{
                 $data['file_name']="null";
                 $this->load->model('department');
                 $data['depa']=  $this->department->get_department();
+                $this->load->model('branch');
+                $data['branch']=  $this->branch->get_branch();
                 $this->load->view('edit_employee_details',$data);
         
     }
@@ -72,7 +74,7 @@ class Employees extends CI_Controller{
       $this->form_validation->set_rules('state','State',"required");
       $this->form_validation->set_rules('zip','Zip',"required");
       $this->form_validation->set_rules('dob','Dob',"required");
-      $this->form_validation->set_rules('branch','Branch',"required");
+      //$this->form_validation->set_rules('branch','Branch',"required");
       $this->form_validation->set_rules('employee_id','Employee_id',"required");
       $this->form_validation->set_rules('country','Country',"required");
        $id=  $this->input->post('id');
@@ -103,7 +105,9 @@ class Employees extends CI_Controller{
                           
                           
     }else{
-    $this->edit_employee_details($id);}
+        $this->load->model('branch');
+        $data['branch']=  $this->branch->get_branch();
+        $this->edit_employee_details($id);}
 }
 function do_upload($id)
 	{
@@ -137,6 +141,10 @@ function do_upload($id)
                 $data['row']=  $this->employeesmodel->edit_employee($id); 
                 $data['error']=$error;
                 $data['file_name']=$file_name;
+                $this->load->model('department');
+                $data['depa']=  $this->department->get_department();
+                $this->load->model('branch');
+                $data['branch']=  $this->branch->get_branch();
                 $this->load->view('edit_employee_details',$data);
         }
        
@@ -157,6 +165,8 @@ function do_upload($id)
               }
             if($this->input->post('Add_employee')){
                     $this->load->model('department');
+                    $this->load->model('branch');
+                    $data['branch']=  $this->branch->get_branch();
                     $data['depa']=  $this->department->get_department();
                     $this->load->view('add_new_employee',$data);
              }
@@ -182,7 +192,7 @@ function do_upload($id)
                 $this->form_validation->set_rules('state','State',"required");
                 $this->form_validation->set_rules('zip','Zip',"required");
                 $this->form_validation->set_rules('dob','Dob',"required");
-                $this->form_validation->set_rules('branch','Branch',"required");
+               // $this->form_validation->set_rules('branch','Branch',"required");
                 $this->form_validation->set_rules('employee_id','Employee_id',"required");
                 $this->form_validation->set_rules('country','Country',"required");
                 $id=  $this->input->post('id');
@@ -212,14 +222,13 @@ function do_upload($id)
                           $this->employeepermission->adda_default_permission($id);
                           $this->get_employee_details();
             }else{
-               $this->load->view('add_new_employee');
+                    $this->load->model('department');
+                    $data['depa']=  $this->department->get_department();
+                    $this->load->view('add_new_employee',$data);
               }
     
              }
-             if($this->input->post('downi')){
-                 echo $this->input->post('ToLB');
-             }
-                     
+                  
         }
         
         function add_employee_image(){
