@@ -174,13 +174,29 @@ $( "#datepicker" ).datepicker();
    
     <tr><td><?php echo form_label('Department')?></td><td>
 <table><tr><td>
+           <?php foreach ($selected_depart as $s_dep) {
+           echo $s_dep->depart_name 	."<br>";
+           if($s_dep->depart_id==2){
+               echo "working";
+           }
+           }?>
 <select multiple size="7" name="FromLB" style="width:150">
-
-            <?php foreach ($depa as $dep) {?>
+ <?php foreach ($depa as $all_depa) {?>
+            <?php foreach ($selected_depart as $s_dep) {
+                
+                if($s_dep->depart_name!=$all_depa->dep_name){
+                   ?><option name="<?php echo $all_depa->id ?>" value="<?php echo $all_depa->id ?>"> <?php echo $all_depa->id; ?></option>
+                       <?php             break;                     
+                }else{
+            
+                ?>
+    
            
-           <option name="<?php echo $dep->id ?>" value="<?php echo $dep->id ?>"> <?php echo $dep->dep_name ?></option>
-        <?php  }?>
            
+        <?php  } 
+        
+        } ?>
+   <?php  }?>
 </select>
 </td>
 <td align="center" valign="middle">

@@ -289,3 +289,177 @@ ERROR - 2013-05-06 10:55:02 --> Query error: Unknown column 'group' in 'field li
 ERROR - 2013-05-06 10:55:10 --> Query error: Unknown column 'group' in 'field list'
 ERROR - 2013-05-06 10:55:31 --> Severity: 4096  --> Object of class stdClass could not be converted to string C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 552
 ERROR - 2013-05-06 10:55:31 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' '1')' at line 1
+ERROR - 2013-05-06 11:13:02 --> Query error: Unknown column 'dep_name' in 'field list'
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:20 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:28:21 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 186
+ERROR - 2013-05-06 11:41:09 --> Severity: Warning  --> Missing argument 1 for Employees::add_jibi() C:\wamp\www\PointOfSale\application\controllers\employees.php 335
+ERROR - 2013-05-06 11:41:09 --> Severity: Notice  --> Undefined variable: ud C:\wamp\www\PointOfSale\application\controllers\employees.php 336
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:09 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:47:45 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 184
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:32 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:33 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:34 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:48:47 --> Severity: Notice  --> Undefined variable: depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-06 11:51:10 --> Severity: Warning  --> Missing argument 1 for Employees::add_jibi() C:\wamp\www\PointOfSale\application\controllers\employees.php 335
+ERROR - 2013-05-06 11:51:10 --> Severity: Notice  --> Undefined variable: ud C:\wamp\www\PointOfSale\application\controllers\employees.php 336
+ERROR - 2013-05-06 11:53:28 --> Severity: Notice  --> Undefined property: stdClass::$dep_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 178
+ERROR - 2013-05-06 11:53:28 --> Severity: Notice  --> Undefined property: stdClass::$dep_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 178
+ERROR - 2013-05-06 11:53:28 --> Severity: Notice  --> Undefined property: stdClass::$dep_name C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 178
