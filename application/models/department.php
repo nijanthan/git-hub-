@@ -11,7 +11,7 @@ class Department extends CI_Model{
     }
     function set_department($id,$branch_id){
         $data=array('emp_id'=>$id,
-                    'branch_id'=>$branch_id);
+                    'depart_id'=>$branch_id);
                 $this->db->insert('userdepart',$data);
     }
 }

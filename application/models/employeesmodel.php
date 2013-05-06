@@ -67,8 +67,9 @@ class Employeesmodel extends CI_Model{
        $this->db->delete('users');
        
    }
-   function adda_new_employee($sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
+   function adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
        $data=array(
+           'created_by'=>$created_by,
            'sex' =>$sex,
            'age'=>$age,
            'user_id' =>$emp_id,	

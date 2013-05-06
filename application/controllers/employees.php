@@ -218,9 +218,9 @@ function do_upload($id)
                           $age=  $this->input->post('age');
                           $sex= $this->input->post('sex');
                           $dob= strtotime($yourdatetime);
-                          
+                          $created_by=$_SESSION['Uid'];
                           $this->load->model('employeesmodel');
-                          $id= $this->employeesmodel->adda_new_employee($sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                          $id= $this->employeesmodel->adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
                           $this->add_user_branchs($id);
                           $this->add_user_department($id);
                           $this->load->model('employeepermission');
@@ -260,8 +260,8 @@ function do_upload($id)
                         $i++;  
                 }
             }  
-            for($ii=1; $ii<count($branch_id); $ii++){
-               $this->department->set_department($id,$branch_id[$ii]);
+            for($ii=1; $ii<count($depart_id); $ii++){
+               $this->department->set_department($id,$depart_id[$ii]);
             }
 
         }

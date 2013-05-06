@@ -27,3 +27,8 @@ ERROR - 2013-05-06 09:04:30 --> Severity: Notice  --> Undefined variable: str C:
 ERROR - 2013-05-06 09:04:30 --> Severity: Warning  --> Creating default object from empty value C:\wamp\www\PointOfSale\application\controllers\employees.php 250
 ERROR - 2013-05-06 09:04:40 --> Severity: Notice  --> Undefined variable: str C:\wamp\www\PointOfSale\application\controllers\employees.php 250
 ERROR - 2013-05-06 09:04:40 --> Severity: Warning  --> Creating default object from empty value C:\wamp\www\PointOfSale\application\controllers\employees.php 250
+ERROR - 2013-05-06 09:29:03 --> Severity: Notice  --> Undefined variable: branch_id C:\wamp\www\PointOfSale\application\controllers\employees.php 263
+ERROR - 2013-05-06 09:29:36 --> Severity: Notice  --> Undefined variable: branch_id C:\wamp\www\PointOfSale\application\controllers\employees.php 264
+ERROR - 2013-05-06 09:29:36 --> Query error: Unknown column 'branch_id' in 'field list'
+ERROR - 2013-05-06 09:29:56 --> Query error: Unknown column 'branch_id' in 'field list'
+ERROR - 2013-05-06 09:30:26 --> Query error: Table 'pos.depart_id' doesn't exist
