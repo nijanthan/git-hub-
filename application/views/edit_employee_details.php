@@ -1,3 +1,133 @@
+<html>    
+<head>
+<script language="javascript"> 
+function move(tbFrom, tbTo) 
+{
+    
+ var arrFrom = new Array(); var arrTo = new Array(); 
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ }
+ var fLength = 0;
+ var tLength = arrTo.length;
+ for(i = 0; i < tbFrom.options.length; i++) 
+ {
+  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
+  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
+  {
+   arrTo[tLength] = tbFrom.options[i].text;
+   tLength++;
+  }
+  else 
+  {
+   arrFrom[fLength] = tbFrom.options[i].text;
+   fLength++;
+  }
+}
+
+tbFrom.length = 0;
+tbTo.length = 0;
+var ii;
+
+for(ii = 0; ii < arrFrom.length; ii++) 
+{
+  var no = new Option();
+  no.value = arrLU[arrFrom[ii]];
+  no.text = arrFrom[ii];
+  tbFrom[ii] = no;
+  
+}
+
+for(ii = 0; ii < arrTo.length; ii++) 
+{
+ var no = new Option();
+ no.value = arrLU[arrTo[ii]];
+ 
+ no.text = arrTo[ii];
+
+ tbTo[ii] = no;
+ 
+ 
+ 
+ 
+}
+}
+
+function makeAjaxCall(value){
+    var jibi=value;
+	$.ajax({
+            
+		type: "post",
+		url: "http://localhost/PointOfSale/index.php/employees/add_jibi/"+jibi,
+		cache: false,				
+		data: $('combo_box').serialize(),
+		success: function(json){						
+                }
+ });
+}
+function branchAjaxCall(value){
+    var jibi=value;
+	$.ajax({
+            
+		type: "post",
+		url: "http://localhost/PointOfSale/index.php/employees/add_branch/"+jibi,
+		cache: false,				
+		data: $('combo_box').serialize(),
+		success: function(json){						
+                }
+ });
+}
+function ajaxsave(tbTo){
+var arrjibi="" ; var arrTo = new Array(); 
+var monish=".";
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ arrjibi=arrjibi+monish+tbTo.options[i].value;
+ }
+  makeAjaxCall(arrjibi);
+}
+function ajaxbranch(tbTo){
+var arrjibi="" ; var arrTo = new Array(); 
+var monish=".";
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ arrjibi=arrjibi+monish+tbTo.options[i].value;
+ }
+  branchAjaxCall(arrjibi);
+}
+</script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.3.2.js" ></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/ajaxupload.3.5.js" ></script>
+
+<link rel="stylesheet" href="<?php echo base_url();?>css/jquery-ui.css" />
+<script src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
+<script src="<?php echo base_url();?>js/jquery-ui.js"></script>
+
+<script>
+$(function() {
+$( "#datepicker" ).datepicker();
+});
+</script>
+
+</head>
+<body>
+
+	
+
+
+
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 foreach ($row as $erow){
    
@@ -42,26 +172,54 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Phone')?></td><td><input type="text" name="phone" value="<?php echo $erow->phone ?>" maxlength="13"> </td></tr>
     <tr><td><?php echo form_label('Date OF birth')?></td><td><input type="text" id="datepicker" name="dob" value="<?php echo date('n/j/Y', strtotime('+0 year, +0 days',$erow->dob));   ?>"> </td></tr>
    
-    <tr><td><?php echo form_label('Department')?></td>
-           <?php foreach ($depa as $dep) {?>
+    <tr><td><?php echo form_label('Department')?></td><td>
+<table><tr><td>
+<select multiple size="7" name="FromLB" style="width:150">
+
+            <?php foreach ($depa as $dep) {?>
            
-               
-            <td><input type="radio" name="department" value="<?php echo $dep->dep_name?>" <?php if($erow->group==$dep->dep_name){ ?>checked<?php }?> > <?php echo $dep->dep_name?></td>
-    
-        <?php  }?> </tr>
-    <tr><td><?php echo form_label('Branch')?></td><td>
-        <div>
-           <select  multiple>
-           <?php foreach ($branch as $brow) {
-           if($erow->branch==$brow->id){
-           ?>   <option selected> <?php echo $brow->store_name  ?></option> <?php }else{ ?>
-           <option> <?php echo $brow->store_name  ?></option>
-        <?php } }?>
-            </select>
+           <option name="<?php echo $dep->id ?>" value="<?php echo $dep->id ?>"> <?php echo $dep->dep_name ?></option>
+        <?php  }?>
            
-        </div>
-     </td></tr>
+</select>
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="move(this.form.FromLB,this.form.ToLB),ajaxsave(this.form.ToLB)" 
+value="->"><br />
+<input type="button" onClick="move(this.form.ToLB,this.form.FromLB),ajaxsave(this.form.ToLB)" 
+value="<-">
+</td>
+
+
+<td>
+<select multiple size="7" name="ToLB" style="width:150">
     
+    
+</select>
+    
+    <label name="ToLB"></label>
+</td></tr></table>
+        </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
+    <table><tr><td>
+<select multiple size="7" name="FromLJ" style="width:150">
+    <?php foreach ($branch as $brow) {
+          
+           ?>   <option name="<?php echo $brow->id  ?>" value="<?php echo $brow->id  ?>" > <?php echo $brow->store_name  ?></option> 
+          
+        <?php  }?>
+
+</select>
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="move(this.form.FromLJ,this.form.ToLJ),ajaxbranch(this.form.ToLJ)" 
+value="->"><br />
+<input type="button" onClick="move(this.form.ToLJ,this.form.FromLJ),ajaxbranch(this.form.ToLJ)"
+value="<-">
+</td>
+<td>
+<select multiple size="7" name="ToLJ" style="width:150">
+</select>
+</td></tr></table></td></tr>
     
    
     <tr><td><?php echo form_label('Employee Id')?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>

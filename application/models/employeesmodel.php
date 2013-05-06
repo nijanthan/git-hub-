@@ -10,6 +10,7 @@ class Employeesmodel extends CI_Model{
     }
      public function get_employees_details($limit, $start) {
         $this->db->limit($limit, $start);
+        $this->db->where('deleted',0);
         $query = $this->db->get("users");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -61,13 +62,18 @@ class Employeesmodel extends CI_Model{
        $this->db->where('id',$id);
        $this->db->update('users',$data);
    }
-   function delete_employee($id){
-       
+   function delete_employee($id,$deleted_by){       
+       $data=array(           	
+           'deleted_by'=>$deleted_by,
+           'deleted'=>1    
+       );
        $this->db->where('id',$id);
-       $this->db->delete('users');
+       $this->db->update('users',$data);
        
    }
-   function adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
+   function adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob, $image_name){
+            
+       
        $data=array(
            'created_by'=>$created_by,
            'sex' =>$sex,
@@ -85,7 +91,7 @@ class Employeesmodel extends CI_Model{
            'phone'=>$phone, 	
            'image'=>$image_name,	
            'dob'=>$dob,          	
-           'group'=>$branch 	
+           	
            
            
        );
@@ -94,9 +100,20 @@ class Employeesmodel extends CI_Model{
        return $id;
        
        
+       
+       
        }
        function get(){
          return TRUE;
+       }
+       function user_checking($email,$emp_id,$dob){
+           $this->db->select()->from('users')->where('email',$email)->where('user_id',$emp_id)->where('dob',$dob);
+       $sql=$this->db->get();
+           if($sql->num_rows()>0){
+               return TRUE;
+       }else{
+           return FALSE;
+       }
        }
 }
 ?>

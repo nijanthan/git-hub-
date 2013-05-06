@@ -34,6 +34,8 @@ class Employees extends CI_Controller{
         
                 $this->load->helper("url");
                 $this->load->model('employeesmodel');
+                $this->load->model('branch');
+                
                 
                 $this->load->library("pagination"); 
 	        $config["base_url"] = base_url()."index.php/employees/get_employee_details";
@@ -42,6 +44,7 @@ class Employees extends CI_Controller{
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+                $data['branch']=$this->branch->get_user_branch();
                 $data['count']=$this->employeesmodel->employeecount();             
 	        $data["row"] = $this->employeesmodel->get_employees_details($config["per_page"], $page);
 	        $data["links"] = $this->pagination->create_links();  
@@ -49,9 +52,13 @@ class Employees extends CI_Controller{
     }
     function edit_employee_details($id){
                 $this->load->model('employeesmodel');
+                $this->load->model('branch');
+                $this->load->model('department');
                 $data['row']=  $this->employeesmodel->edit_employee($id); 
                 $data['error']="";
                 $data['file_name']="null";
+                $data['selected_branch']=$this->branch->get_user_branch();
+                $data['selected_depart']=$this->department->get_user_depart();
                 $this->load->model('department');
                 $data['depa']=  $this->department->get_department();
                 $this->load->model('branch');
@@ -156,9 +163,10 @@ function do_upload($id)
            if($this->input->post('delete_all')){
               $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){
+              $deleted_by=$_SESSION['Uid'];
               $this->load->model('employeesmodel');
               foreach( $data1 as $key => $value){           
-             $this->employeesmodel->delete_employee($value); 
+             $this->employeesmodel->delete_employee($value,$deleted_by); 
             
               }}
             $this->get_employee_details();
@@ -200,6 +208,7 @@ function do_upload($id)
                 $id=  $this->input->post('id');
 	  
 	    if ( $this->form_validation->run() !== false ) {
+               
 			  $this->load->model('employeesmodel');
                           $first_name=$this->input->post('first_name');
                           $last_name=  $this->input->post('last_name');
@@ -220,12 +229,22 @@ function do_upload($id)
                           $dob= strtotime($yourdatetime);
                           $created_by=$_SESSION['Uid'];
                           $this->load->model('employeesmodel');
+                          if($this->employeesmodel->user_checking($email,$emp_id,$dob)==FALSE){
                           $id= $this->employeesmodel->adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
                           $this->add_user_branchs($id);
                           $this->add_user_department($id);
                           $this->load->model('employeepermission');
                           $this->employeepermission->adda_default_permission($id);
                           $this->get_employee_details();
+                          }
+                          else{
+                   echo 'this user is alreay added';
+                   $this->load->model('department');
+                   $data['depa']=  $this->department->get_department();
+                   $this->load->model('branch');
+                   $data['branch']=  $this->branch->get_branch();
+                   $this->load->view('add_new_employee',$data);
+                          }
             }else{
                    //echo  ."<br>";
                    //echo $_SESSION['branch'];

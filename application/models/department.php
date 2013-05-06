@@ -14,5 +14,10 @@ class Department extends CI_Model{
                     'depart_id'=>$branch_id);
                 $this->db->insert('userdepart',$data);
     }
+    function get_user_depart(){
+        $this->db->select()->from('userdepart');
+        $sql=  $this->db->get();
+        return $sql->result();
+    }
 }
 ?>
