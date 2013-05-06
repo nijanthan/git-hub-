@@ -217,35 +217,55 @@ function do_upload($id)
                           $image_name=$_SESSION['image_name'];
                           $age=  $this->input->post('age');
                           $sex= $this->input->post('sex');
-                          
-                                  
-                          
                           $dob= strtotime($yourdatetime);
                           
                           $this->load->model('employeesmodel');
                           $id= $this->employeesmodel->adda_new_employee($sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
                           $this->add_user_branchs($id);
+                          $this->add_user_department($id);
                           $this->load->model('employeepermission');
                           $this->employeepermission->adda_default_permission($id);
                           $this->get_employee_details();
             }else{
-                   //echo  $_SESSION['jibi']."<br>";
+                   //echo  ."<br>";
                    //echo $_SESSION['branch'];
-                   $this->add_user_branchs(4);
-                  
-                    
-                  
-                   // $this->load->model('department');
-                  //  $data['depa']=  $this->department->get_department();
-                  //  $this->load->model('branch');
-                  //  $data['branch']=  $this->branch->get_branch();
-                  //  $this->load->view('add_new_employee',$data);
+                   $this->load->model('department');
+                   $data['depa']=  $this->department->get_department();
+                   $this->load->model('branch');
+                   $data['branch']=  $this->branch->get_branch();
+                   $this->load->view('add_new_employee',$data);
               }
     
              }
                   
         }
-        function add_user_branchs($id){
+        function add_user_department($id){
+            
+            $str=$_SESSION['depart'];
+            $depart = preg_split('/[\,\.\ ]/', $str);
+            $this->load->model('department');
+            $depart_id=array();
+            $i=0;
+            foreach ($depart as $bra){
+
+                $temp_depart =  preg_split("/,/", $bra);
+                if($temp_depart){
+                    foreach ($temp_depart as $temp){
+                      
+                        $depart_id[$i]=$temp;
+                        $i++;
+                    } 
+                } else {
+                    $depart_id[$i]=$temp;
+                        $i++;  
+                }
+            }  
+            for($ii=1; $ii<count($branch_id); $ii++){
+               $this->department->set_department($id,$branch_id[$ii]);
+            }
+
+        }
+         function add_user_branchs($id){
             
             $str=$_SESSION['branch'];
             $branch = preg_split('/[\,\.\ ]/', $str);
@@ -294,7 +314,7 @@ function do_upload($id)
             
         }
         function add_jibi($ud){
-           $_SESSION['jibi']=$ud;
+           $_SESSION['depart']=$ud;
         }
         function add_branch($branch){
              $_SESSION['branch']=$branch;
