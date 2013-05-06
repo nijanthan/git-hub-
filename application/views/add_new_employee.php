@@ -3,6 +3,7 @@
 <script language="javascript"> 
 function move(tbFrom, tbTo) 
 {
+    
  var arrFrom = new Array(); var arrTo = new Array(); 
  var arrLU = new Array();
  var i;
@@ -38,64 +39,73 @@ for(ii = 0; ii < arrFrom.length; ii++)
   no.value = arrLU[arrFrom[ii]];
   no.text = arrFrom[ii];
   tbFrom[ii] = no;
+  
 }
 
 for(ii = 0; ii < arrTo.length; ii++) 
 {
  var no = new Option();
  no.value = arrLU[arrTo[ii]];
+ 
  no.text = arrTo[ii];
+
  tbTo[ii] = no;
+ 
+ 
+ 
+ 
 }
 }
 
-
-function move(tbFrom, tbTo) 
-{
- var arrFrom = new Array(); var arrTo = new Array(); 
+function makeAjaxCall(value){
+    var jibi=value;
+	$.ajax({
+            
+		type: "post",
+		url: "http://localhost/PointOfSale/index.php/employees/add_jibi/"+jibi,
+		cache: false,				
+		data: $('combo_box').serialize(),
+		success: function(json){						
+                }
+ });
+}
+function branchAjaxCall(value){
+    var jibi=value;
+	$.ajax({
+            
+		type: "post",
+		url: "http://localhost/PointOfSale/index.php/employees/add_branch/"+jibi,
+		cache: false,				
+		data: $('combo_box').serialize(),
+		success: function(json){						
+                }
+ });
+}
+function ajaxsave(tbTo){
+var arrjibi="" ; var arrTo = new Array(); 
+var monish=".";
  var arrLU = new Array();
  var i;
  for (i = 0; i < tbTo.options.length; i++) 
  {
   arrLU[tbTo.options[i].text] = tbTo.options[i].value;
   arrTo[i] = tbTo.options[i].text;
+ arrjibi=arrjibi+monish+tbTo.options[i].value;
  }
- var fLength = 0;
- var tLength = arrTo.length;
- for(i = 0; i < tbFrom.options.length; i++) 
+  makeAjaxCall(arrjibi);
+}
+function ajaxbranch(tbTo){
+var arrjibi="" ; var arrTo = new Array(); 
+var monish=".";
+ var arrLU = new Array();
+ var i;
+ for (i = 0; i < tbTo.options.length; i++) 
  {
-  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
-  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
-  {
-   arrTo[tLength] = tbFrom.options[i].text;
-   tLength++;
-  }
-  else 
-  {
-   arrFrom[fLength] = tbFrom.options[i].text;
-   fLength++;
-  }
-}
-
-tbFrom.length = 0;
-tbTo.length = 0;
-var ii;
-
-for(ii = 0; ii < arrFrom.length; ii++) 
-{
-  var no = new Option();
-  no.value = arrLU[arrFrom[ii]];
-  no.text = arrFrom[ii];
-  tbFrom[ii] = no;
-}
-
-for(ii = 0; ii < arrTo.length; ii++) 
-{
- var no = new Option();
- no.value = arrLU[arrTo[ii]];
- no.text = arrTo[ii];
- tbTo[ii] = no;
-}
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ arrjibi=arrjibi+monish+tbTo.options[i].value;
+ }
+  branchAjaxCall(arrjibi);
 }
 </script>
 <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.3.2.js" ></script>
@@ -123,6 +133,8 @@ $( "#datepicker" ).datepicker();
 
 <tr><td><?php echo form_label('First Name')?> </td><td><?php echo form_input('first_name',set_value('first_name'), 'id="first_name" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Last Name')?></td><td><?php echo form_input('last_name',set_value('last_name'), 'id="llast_name" autofocus')?></td></tr>
+    <tr><td><?php echo form_label('Sex')?></td><td><select name="sex"><option name="male" value="Male">Male</option><option name="Female" value="FeMale">Female</option></select></td></tr>
+     <tr><td><?php echo form_label('Age')?></td><td><?php  echo form_input('age',set_value('age'), 'id="age" autofocus')?></td></tr>
      <tr><td><?php echo form_label('Address')?></td><td><?php echo form_input('address',set_value('address'), 'id="address" autofocus')?></td></tr>
     <tr><td><?php echo form_label('City')?></td><td><?php echo form_input('city',set_value('city'), 'id="city" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('State')?></td><td><?php echo form_input('state',set_value('state'), 'id="state" autofocus')?> </td></tr>
@@ -132,40 +144,47 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label('Phone')?></td><td><?php echo form_input('phone',set_value('phone'), 'id="phone" autofocus')?></td></tr>
     <tr><td><?php echo form_label('Date OF birth')?></td><td><?php echo form_input('dob',set_value('dob'), 'id="dob" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Department')?></td><td>
-        <table><tr><td>
+<table><tr><td>
 <select multiple size="7" name="FromLB" style="width:150">
 
             <?php foreach ($depa as $dep) {?>
            
-           <option name="<?php echo $dep->dep_name ?>"> <?php echo $dep->dep_name ?></option>
+           <option name="<?php echo $dep->id ?>" value="<?php echo $dep->id ?>"> <?php echo $dep->dep_name ?></option>
         <?php  }?>
            
 </select>
 </td>
 <td align="center" valign="middle">
-<input type="button" onClick="move(this.form.FromLB,this.form.ToLB)" 
+<input type="button" onClick="move(this.form.FromLB,this.form.ToLB),ajaxsave(this.form.ToLB)" 
 value="->"><br />
-<input type="button" onClick="move(this.form.ToLB,this.form.FromLB)" 
+<input type="button" onClick="move(this.form.ToLB,this.form.FromLB),ajaxsave(this.form.ToLB)" 
 value="<-">
 </td>
+
+
 <td>
 <select multiple size="7" name="ToLB" style="width:150">
+    
+    
 </select>
+    
+    <label name="ToLB"></label>
 </td></tr></table>
         </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
     <table><tr><td>
 <select multiple size="7" name="FromLJ" style="width:150">
     <?php foreach ($branch as $brow) {
           
-           ?>   <option name="<?php echo $brow->store_name  ?>" > <?php echo $brow->store_name  ?></option> 
+           ?>   <option name="<?php echo $brow->id  ?>" value="<?php echo $brow->id  ?>" > <?php echo $brow->store_name  ?></option> 
+          
         <?php  }?>
 
 </select>
 </td>
 <td align="center" valign="middle">
-<input type="button" onClick="move(this.form.FromLJ,this.form.ToLJ)" 
+<input type="button" onClick="move(this.form.FromLJ,this.form.ToLJ),ajaxbranch(this.form.ToLJ)" 
 value="->"><br />
-<input type="button" onClick="move(this.form.ToLJ,this.form.FromLJ)" 
+<input type="button" onClick="move(this.form.ToLJ,this.form.FromLJ),ajaxbranch(this.form.ToLJ)"
 value="<-">
 </td>
 <td>
@@ -174,10 +193,11 @@ value="<-">
 </td></tr></table></td></tr>
     <tr><td><?php echo form_label('Employee Id')?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label('Password')?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
-   <tr><td><?php echo form_submit('Save','Save') ?></td> 
+   <tr><td></td> 
        
-   
-        <td><?php echo form_submit('Cancel','Cancel') ?></td>
+   <td><input type="submit" name="Save" value="Save" >
+          
+        <?php echo form_submit('Cancel','Cancel') ?></td>
     </tr> 
         
         
@@ -188,7 +208,7 @@ value="<-">
     
 </table>
     <?php form_close() ?>
-    <?php echo validation_errors(); ?>
+    <?php //echo validation_errors(); ?>
    
                 <script type="text/javascript" >
 	$(function(){
@@ -228,6 +248,6 @@ value="<-">
 
 
 </form>
-
+<?php echo validation_errors(); ?>
 </body>
 </html> 

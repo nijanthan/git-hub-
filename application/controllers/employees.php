@@ -183,7 +183,8 @@ function do_upload($id)
                 
                  $this->load->library('form_validation');
                 $this->form_validation->set_rules("first_name","First_name","required"); 
-                $this->form_validation->set_rules('phone', 'Phone', 'required|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules('age', 'Age', 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
                 $this->form_validation->set_rules("last_name","Last_name","required"); 
                 $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
                 $this->form_validation->set_rules('password','Password',"required");
@@ -192,6 +193,7 @@ function do_upload($id)
                 $this->form_validation->set_rules('state','State',"required");
                 $this->form_validation->set_rules('zip','Zip',"required");
                 $this->form_validation->set_rules('dob','Dob',"required");
+                //$this->form_validation->set_rules('age','Age',"required");
                // $this->form_validation->set_rules('branch','Branch',"required");
                 $this->form_validation->set_rules('employee_id','Employee_id',"required");
                 $this->form_validation->set_rules('country','Country',"required");
@@ -213,22 +215,61 @@ function do_upload($id)
                           $branch=$this->input->post('branch');
                           $yourdatetime =$this->input->post('dob');
                           $image_name=$_SESSION['image_name'];
+                          $age=  $this->input->post('age');
+                          $sex= $this->input->post('sex');
+                          
+                                  
                           
                           $dob= strtotime($yourdatetime);
                           
                           $this->load->model('employeesmodel');
-                          $id= $this->employeesmodel->adda_new_employee($first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                          $id= $this->employeesmodel->adda_new_employee($sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                          $this->add_user_branchs($id);
                           $this->load->model('employeepermission');
                           $this->employeepermission->adda_default_permission($id);
                           $this->get_employee_details();
             }else{
-                    $this->load->model('department');
-                    $data['depa']=  $this->department->get_department();
-                    $this->load->view('add_new_employee',$data);
+                   //echo  $_SESSION['jibi']."<br>";
+                   //echo $_SESSION['branch'];
+                   $this->add_user_branchs(4);
+                  
+                    
+                  
+                   // $this->load->model('department');
+                  //  $data['depa']=  $this->department->get_department();
+                  //  $this->load->model('branch');
+                  //  $data['branch']=  $this->branch->get_branch();
+                  //  $this->load->view('add_new_employee',$data);
               }
     
              }
                   
+        }
+        function add_user_branchs($id){
+            
+            $str=$_SESSION['branch'];
+            $branch = preg_split('/[\,\.\ ]/', $str);
+            $this->load->model('branch');
+            $branch_id=array();
+            $i=0;
+            foreach ($branch as $bra){
+
+                $temp_branch =  preg_split("/,/", $bra);
+                if($temp_branch){
+                    foreach ($temp_branch as $temp){
+                      
+                        $branch_id[$i]=$temp;
+                        $i++;
+                    } 
+                } else {
+                    $branch_id[$i]=$temp;
+                        $i++;  
+                }
+            }  
+            for($ii=1; $ii<count($branch_id); $ii++){
+               $this->branch->set_branch($id,$branch_id[$ii]);
+            }
+
         }
         
         function add_employee_image(){
@@ -252,7 +293,12 @@ function do_upload($id)
             echo "haii";
             
         }
-       
+        function add_jibi($ud){
+           $_SESSION['jibi']=$ud;
+        }
+        function add_branch($branch){
+             $_SESSION['branch']=$branch;
+        }
 
 
 }
