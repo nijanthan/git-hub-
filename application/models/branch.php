@@ -26,7 +26,24 @@ class Branch extends CI_Model{
     function get_user_branch(){
          $this->db->select()->from('userbranchs');
         $sql=  $this->db->get();
-        return $sql->result();
+         $j=0;
+        foreach ($sql->result() as $row) {
+                
+             $data[$j] = $row->branch_name ;
+             $j++;
+            }
+            return $data;
+    }
+    function get_all_branch(){
+        $this->db->select()->from('branch');
+        $sql=  $this->db->get();
+        $j=0;
+        foreach ($sql->result() as $row) {
+                
+             $data[$j] = $row->store_name ;
+             $j++;
+            }
+            return $data;
     }
 }
 ?>

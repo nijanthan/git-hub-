@@ -174,29 +174,22 @@ $( "#datepicker" ).datepicker();
    
     <tr><td><?php echo form_label('Department')?></td><td>
 <table><tr><td>
-           <?php foreach ($selected_depart as $s_dep) {
-           echo $s_dep->depart_name 	."<br>";
-           if($s_dep->depart_id==2){
-               echo "working";
-           }
-           }?>
+          
+          
 <select multiple size="7" name="FromLB" style="width:150">
- <?php foreach ($depa as $all_depa) {?>
-            <?php foreach ($selected_depart as $s_dep) {
+  <?php $j=0;
+  while($j<count($depa)) {
                 
-                if($s_dep->depart_name!=$all_depa->dep_name){
-                   ?><option name="<?php echo $all_depa->id ?>" value="<?php echo $all_depa->id ?>"> <?php echo $all_depa->id; ?></option>
-                       <?php             break;                     
-                }else{
-            
-                ?>
-    
+               
+                   ?><option name="<?php echo $depa[$j] ?>" value="<?php echo $depa[$j] ?>"> <?php echo $depa[$j] ?></option>
+                      
            
            
-        <?php  } 
-        
-        } ?>
-   <?php  }?>
+        <?php  
+        $j++;
+        } 
+        ?>
+  
 </select>
 </td>
 <td align="center" valign="middle">
@@ -218,11 +211,11 @@ value="<-">
         </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
     <table><tr><td>
 <select multiple size="7" name="FromLJ" style="width:150">
-    <?php foreach ($branch as $brow) {
+    <?php $h=0;
+          while($h<  count($branch)){
+           ?>   <option name="<?php echo $branch[$h]  ?>" value="<?php echo $branch[$h]  ?>" > <?php echo $branch[$h]  ?></option> 
           
-           ?>   <option name="<?php echo $brow->id  ?>" value="<?php echo $brow->id  ?>" > <?php echo $brow->store_name  ?></option> 
-          
-        <?php  }?>
+        <?php $h++; }?>
 
 </select>
 </td>

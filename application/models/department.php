@@ -23,7 +23,29 @@ class Department extends CI_Model{
     function get_user_depart(){
         $this->db->select()->from('userdepart');
         $sql=  $this->db->get();
-        return $sql->result();
+        $j=0;
+        foreach ($sql->result() as $row)
+            {
+                
+             $data[$j] = $row->depart_name;
+             $j++;
+            }
+            return $data;
     }
+    function get_all_departmentg(){
+        $this->db->select()->from('department');
+        $sql=  $this->db->get();
+        $j=0;
+        foreach ($sql->result() as $row)
+            {
+                
+             $data[$j] = $row->dep_name;
+             $j++;
+            }
+            return $data;
+    
+}
+
+    
 }
 ?>

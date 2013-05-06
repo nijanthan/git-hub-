@@ -60,12 +60,47 @@ class Employees extends CI_Controller{
                 $data['selected_branch']=$this->branch->get_user_branch();
                 $data['selected_depart']=$this->department->get_user_depart();
                 $this->load->model('department');
-                $data['depa']=  $this->department->get_department();
+                $depa=$this->department->get_all_departmentg();
                 $this->load->model('branch');
-                $data['branch']=  $this->branch->get_branch();
-                $this->load->view('edit_employee_details',$data);
+                $branch=  $this->branch->get_all_branch();
+                $this->get_selected_departments($depa);
+                //$this->load->view('edit_employee_details',$data);
         
     }
+    function get_selected_departments($depa){
+        $this->load->model('department');
+        $new_depa=array();
+        $o=0;
+        
+         $depart=$this->department->get_user_depart();
+        
+             $j=0;
+        
+           while ($j < count($depart)){
+                $i=0;
+                $temp=$depart[$j];
+               while($i<count($depa)){ 
+                   
+                 if($depa[$i]!=$temp){
+                     echo "jibi";
+                             echo $depa[$i]."<br>";
+                             
+                     
+                 }else{
+                      echo $depa[$i]."<br>";
+                      
+                      
+                 
+                 }
+                 $i++;
+                 
+                
+             }echo "<br><br>";
+             $j++;
+         }
+       
+    }
+    
     function cancel(){
         $this->get_employee_details();
     }
