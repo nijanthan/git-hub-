@@ -339,3 +339,78 @@ ERROR - 2013-05-07 12:28:15 --> Severity: Notice  --> Undefined index: edit_depa
 ERROR - 2013-05-07 12:28:56 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
 ERROR - 2013-05-07 12:28:59 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
 ERROR - 2013-05-07 12:28:59 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 187
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 188
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_depa C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 189
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: selected_depart C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 214
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 214
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: all_branch C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 226
+ERROR - 2013-05-07 12:54:21 --> Severity: Notice  --> Undefined variable: selected_branch C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 251
+ERROR - 2013-05-07 12:54:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\edit_employee_details.php 251
+ERROR - 2013-05-07 12:59:39 --> Severity: Warning  --> Missing argument 1 for Employees::edit_department() C:\wamp\www\PointOfSale\application\controllers\employees.php 510
+ERROR - 2013-05-07 12:59:39 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\controllers\employees.php 511
+ERROR - 2013-05-07 12:59:41 --> Severity: Warning  --> Missing argument 1 for Employees::edit_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 513
+ERROR - 2013-05-07 12:59:41 --> Severity: Notice  --> Undefined variable: dep C:\wamp\www\PointOfSale\application\controllers\employees.php 514
+ERROR - 2013-05-07 13:20:43 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:20:43 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:21:28 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:21:28 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:22:36 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:22:36 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:23:05 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:23:05 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:29:43 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:29:43 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:41:59 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:41:59 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:42:00 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 15
+ERROR - 2013-05-07 13:42:00 --> Severity: Notice  --> Undefined variable: value C:\wamp\www\PointOfSale\application\models\aclpermissionmodel.php 26
+ERROR - 2013-05-07 13:45:41 --> Severity: Notice  --> Undefined variable: password C:\wamp\www\PointOfSale\application\models\employeesmodel.php 46
+ERROR - 2013-05-07 13:46:02 --> Severity: Notice  --> Undefined variable: password C:\wamp\www\PointOfSale\application\models\employeesmodel.php 46
+ERROR - 2013-05-07 13:46:50 --> Severity: Notice  --> Undefined variable: password C:\wamp\www\PointOfSale\application\models\employeesmodel.php 46
+ERROR - 2013-05-07 13:46:54 --> Severity: Notice  --> Undefined variable: password C:\wamp\www\PointOfSale\application\models\employeesmodel.php 46

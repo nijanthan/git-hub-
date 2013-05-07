@@ -156,7 +156,7 @@ $r=0;
                 $this->form_validation->set_rules('age', 'Age', 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
                 $this->form_validation->set_rules("last_name","Last_name","required"); 
                 $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
-                $this->form_validation->set_rules('password','Password',"required");
+                
                 $this->form_validation->set_rules('address','Address',"required");
                 $this->form_validation->set_rules('city','City',"required");
                 $this->form_validation->set_rules('state','State',"required");
@@ -187,23 +187,31 @@ $r=0;
                           $age=  $this->input->post('age');
                           $sex= $this->input->post('sex');
                           
-                          $dob= strtotime($yourdatetime);
+                          $dob= strtotime($yourdatetime); 
                          
                          $this->load->model('employeesmodel');
-                         $this->employeesmodel->update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
+                         if($_SESSION['edit_depa']!="" and $_SESSION['edit_bran']!=""){
+                         $this->employeesmodel->update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
                          if($_SESSION['edit_depa']!="nul"){
                          $this->update_user_department($id);}
                          if($_SESSION['edit_bran']!="nul"){
                          $this->update_user_branch($id);
                          }
                          $this->get_employee_details();
-                          
+                         }else{
+                             echo "Select the Branchs and department for the user";
+                              $this->load->model('branch');
+        $data['branch']=  $this->branch->get_branch();
+        $this->edit_employee_details($id);
+                         }
                           
                           
     }else{
         $this->load->model('branch');
         $data['branch']=  $this->branch->get_branch();
-        $this->edit_employee_details($id);}
+        $this->edit_employee_details($id);
+        
+        }
 }
 function update_user_branch($id){
     $str=$_SESSION['edit_bran'];

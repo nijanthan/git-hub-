@@ -4,7 +4,8 @@ class Logindetails extends CI_Model{
         parent::__construct();
     }
     function login($username,$password){ 
-        $this->db->select()->from('users')->where('user_id',$username)->where('password',$password);
+        $pass=  md5($password);
+        $this->db->select()->from('users')->where('user_id',$username)->where('password',$pass);
         $sql=$this->db->get();
         if($sql->num_rows()>0){
             return TRUE;
@@ -14,7 +15,8 @@ class Logindetails extends CI_Model{
         
     }
     function loginid($username,$password){ 
-        $this->db->select()->from('users')->where('user_id',$username)->where('password',$password);
+        $pass=  md5($password);
+        $this->db->select()->from('users')->where('user_id',$username)->where('password',$pass);
         $sql=$this->db->get();
         foreach ($sql->result() as $row){
            return $row->id;

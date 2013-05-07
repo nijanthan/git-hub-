@@ -38,11 +38,12 @@ class Employeesmodel extends CI_Model{
     
     }
    }
-   function update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob, $image_name){
+   function update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name){
        $data=array(
-           	
+           'age'=>$age,
+           'sex'=>$sex,
            'user_id' =>$emp_id,	
-           'password' =>$password,	
+          	
            'first_name' =>$first_name,           
            'last_name '	=>$last_name,
            'address '=>$address,	
@@ -73,13 +74,13 @@ class Employeesmodel extends CI_Model{
    }
    function adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob, $image_name){
             
-       
+       $pass=md5($password);
        $data=array(
            'created_by'=>$created_by,
            'sex' =>$sex,
            'age'=>$age,
            'user_id' =>$emp_id,	
-           'password' =>$password,	
+           'password' =>$pass, 
            'first_name' =>$first_name,           
            'last_name '	=>$last_name,
            'address '=>$address,	

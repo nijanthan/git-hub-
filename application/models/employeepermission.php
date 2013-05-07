@@ -18,7 +18,7 @@ class Employeepermission extends CI_Model{
         return $sql->result();
      }
       function edit_employee($id){
-       $this->db->select()->from('employeedetails')->where('id',$id);
+       $this->db->select()->from('users')->where('id',$id);
         $sql=$this->db->get();
        
         return $sql->result();
