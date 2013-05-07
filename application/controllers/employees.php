@@ -69,6 +69,8 @@ class Employees extends CI_Controller{
                 $data['all_depa']=  $this->department->get_department();
                 $data['depa']=$this->get_selected_departments($depa,$id);
                 $this->load->view('edit_employee_details',$data);
+                 $_SESSION['edit_bran']="nul";
+                 $_SESSION['edit_depa']="nul";
         
     }
      function get_selected_branchs($depart,$id){
@@ -146,6 +148,8 @@ $r=0;
         $this->get_employee_details();
     }
     function upadate_employee_details(){
+       
+        
        $this->load->library('form_validation');
                 $this->form_validation->set_rules("first_name","First_name","required"); 
                 $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
@@ -187,8 +191,11 @@ $r=0;
                          
                          $this->load->model('employeesmodel');
                          $this->employeesmodel->update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
-                         $this->update_user_department($id);
+                         if($_SESSION['edit_depa']!="nul"){
+                         $this->update_user_department($id);}
+                         if($_SESSION['edit_bran']!="nul"){
                          $this->update_user_branch($id);
+                         }
                          $this->get_employee_details();
                           
                           

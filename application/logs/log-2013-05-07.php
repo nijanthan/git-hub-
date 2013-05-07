@@ -318,3 +318,24 @@ ERROR - 2013-05-07 10:40:46 --> Severity: Notice  --> Undefined variable: data C
 ERROR - 2013-05-07 10:40:46 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
 ERROR - 2013-05-07 10:49:44 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
 ERROR - 2013-05-07 10:49:44 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
+ERROR - 2013-05-07 12:20:25 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:20:25 --> Severity: Notice  --> Undefined index: edit_bran C:\wamp\www\PointOfSale\application\controllers\employees.php 202
+ERROR - 2013-05-07 12:20:25 --> Query error: Table 'pos.structureuserbranchs' doesn't exist
+ERROR - 2013-05-07 12:20:49 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
+ERROR - 2013-05-07 12:20:49 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
+ERROR - 2013-05-07 12:23:19 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
+ERROR - 2013-05-07 12:23:19 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
+ERROR - 2013-05-07 12:23:56 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
+ERROR - 2013-05-07 12:23:56 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
+ERROR - 2013-05-07 12:26:07 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:26:07 --> Query error: Table 'pos.structureuserbranchs' doesn't exist
+ERROR - 2013-05-07 12:26:56 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:26:56 --> Query error: Table 'pos.branchs' doesn't exist
+ERROR - 2013-05-07 12:27:22 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:27:22 --> Query error: Table 'pos.branchs' doesn't exist
+ERROR - 2013-05-07 12:27:46 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:27:46 --> Query error: Unknown column 'emp_id' in 'where clause'
+ERROR - 2013-05-07 12:28:15 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:28:56 --> Severity: Notice  --> Undefined index: edit_depa C:\wamp\www\PointOfSale\application\controllers\employees.php 228
+ERROR - 2013-05-07 12:28:59 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
+ERROR - 2013-05-07 12:28:59 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115

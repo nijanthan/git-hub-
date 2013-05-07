@@ -62,7 +62,7 @@ class Branch extends CI_Model{
     }
     function delete_user_branchs($id){
         $this->db->where('emp_id',$id);
-        $this->db->delete('Structureuserbranchs');
+        $this->db->delete('userbranchs');
     }
 }
 ?>
