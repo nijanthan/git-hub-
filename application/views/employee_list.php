@@ -33,5 +33,5 @@ foreach ($row as $erow){
 
 
 ?>  
-<tb><input type="submit" name="delete_all" value="Delete Selected Message"></td><tb><input type="submit" name="Add_employee" value="Add New Employee"></td><tb><input type="submit" name="edit_all" value="Send Email"></td><td><?php echo form_submit('BacktoHome','Back To Home') ?></td>
+<tb><input type="submit" name="delete_all" value="Delete Selected User"></td><tb><input type="submit" name="Add_employee" value="Add New Employee"></td><tb><input type="submit" name="edit_all" value="Send Email"></td><td><?php echo form_submit('BacktoHome','Back To Home') ?></td>
      <?php echo form_close() ?> 
