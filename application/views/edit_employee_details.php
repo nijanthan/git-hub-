@@ -62,7 +62,7 @@ function makeAjaxCall(value){
 	$.ajax({
             
 		type: "post",
-		url: "http://localhost/PointOfSale/index.php/employees/add_jibi/"+jibi,
+		url: "http://localhost/PointOfSale/index.php/employees/edit_department/"+jibi,
 		cache: false,				
 		data: $('combo_box').serialize(),
 		success: function(json){						
@@ -74,7 +74,7 @@ function branchAjaxCall(value){
 	$.ajax({
             
 		type: "post",
-		url: "http://localhost/PointOfSale/index.php/employees/add_branch/"+jibi,
+		url: "http://localhost/PointOfSale/index.php/employees/edit_branch/"+jibi,
 		cache: false,				
 		data: $('combo_box').serialize(),
 		success: function(json){						
@@ -163,6 +163,9 @@ $( "#datepicker" ).datepicker();
     <input type="hidden" name="id" value="<?php echo $erow->id?>">
     <tr><td><?php echo form_label('First Name')?> </td><td><input type="text" name="first_name" value="<?php echo $erow->first_name ?>"> </td></tr>
     <tr><td><?php echo form_label('Last Name')?></td><td><input type="text" name="last_name" value="<?php echo $erow->last_name ?>"> </td></tr>
+    <tr><td><?php echo form_label('Sex')?></td><td><select name="sex"><option name="male" value="Male" <?php if($erow->sex=='Male') {?> selected <?php }?>>Male</option><option name="Female" value="FeMale"<?php if($erow->sex=='FeMale'){ ?>selected<?php }?>>Female</option></select></td></tr>
+    <tr><td><?php echo form_label('Age')?></td><td><input type="text" name="age" value="<?php echo $erow->age ?>"></td></tr>
+     
      <tr><td><?php echo form_label('Address')?></td><td><input type="text" name="address" value="<?php echo $erow->address ?>"> </td></tr>
     <tr><td><?php echo form_label('City')?></td><td><input type="text" name="city" value="<?php echo $erow->city ?>"> </td></tr>
     <tr><td><?php echo form_label('State')?></td><td><input type="text" name="state" value="<?php echo $erow->state ?>"> </td></tr>
@@ -245,6 +248,10 @@ value="<-">
 </td>
 <td>
 <select multiple size="7" name="ToLJ" style="width:150">
+    <?php foreach ($selected_branch as $se_branch) {?>
+    
+     <option name="<?php echo $se_branch->branch_id   ?>" value="<?php echo$se_branch->branch_id  ?>"> <?php echo $se_branch->branch_name   ?></option>
+    <?php }?>
 </select>
 </td></tr></table></td></tr>
     

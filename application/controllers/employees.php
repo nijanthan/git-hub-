@@ -35,7 +35,8 @@ class Employees extends CI_Controller{
                 $this->load->helper("url");
                 $this->load->model('employeesmodel');
                 $this->load->model('branch');
-                
+                $_SESSION['depart']="null";
+                $_SESSION['branch']="null";
                 
                 $this->load->library("pagination"); 
 	        $config["base_url"] = base_url()."index.php/employees/get_employee_details";
@@ -44,7 +45,7 @@ class Employees extends CI_Controller{
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-                $data['branch']=$this->branch->get_selected_branch();
+                $data['branch']=$this->branch->get_selected_branch_for_view();
                 $data['count']=$this->employeesmodel->employeecount();             
 	        $data["row"] = $this->employeesmodel->get_employees_details($config["per_page"], $page);
 	        $data["links"] = $this->pagination->create_links();  
@@ -57,25 +58,25 @@ class Employees extends CI_Controller{
                 $data['row']=  $this->employeesmodel->edit_employee($id); 
                 $data['error']="";
                 $data['file_name']="null";
-                $data['selected_branch']=$this->branch->get_user_branch();
-                $data['selected_depart']=$this->department->get_user_depart();
+                $data['selected_branch']=$this->branch->get_selected_branch($id);
+                $data['selected_depart']=$this->department->get_user_depart($id);
                 $this->load->model('department');
                 $depa=$this->department->get_all_departmentg();
                 $this->load->model('branch');
                 $branch=$this->branch->get_all_branch();
-                $data['all_branch']=$this->get_selected_branchs($branch);
+                $data['all_branch']=$this->get_selected_branchs($branch,$id);
                 $data['branch']=$this->branch->get_branch();
                 $data['all_depa']=  $this->department->get_department();
-                $data['depa']=$this->get_selected_departments($depa);
+                $data['depa']=$this->get_selected_departments($depa,$id);
                 $this->load->view('edit_employee_details',$data);
         
     }
-     function get_selected_branchs($depart){
+     function get_selected_branchs($depart,$id){
         $this->load->model('branch');
         $new_depa=array();
         $o=0;
         $w = 0;
-        $departed=$this->branch->get_user_branch();
+        $departed=$this->branch->get_user_branch($id);
         $arr=array_merge($depart,$departed);
 
                 $len = count($arr);
@@ -105,12 +106,12 @@ $r=0;
         return $new_depa;
            
     }
-    function get_selected_departments($depart){
+    function get_selected_departments($depart,$id){
         $this->load->model('department');
         $new_depa=array();
         $o=0;
         $w = 0;
-        $departed=$this->department->get_all_user_depart();
+        $departed=$this->department->get_all_user_depart($id);
         $arr=array_merge($depart,$departed);
 
                 $len = count($arr);
@@ -145,21 +146,23 @@ $r=0;
         $this->get_employee_details();
     }
     function upadate_employee_details(){
-      $this->load->library('form_validation');
-      $this->form_validation->set_rules("first_name","First_name","required"); 
-      $this->form_validation->set_rules('phone', 'Phone', 'required|regex_match[/^[0-9]+$/]|xss_clean');
-      $this->form_validation->set_rules("last_name","Last_name","required"); 
-      $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
-      $this->form_validation->set_rules('password','Password',"required");
-      $this->form_validation->set_rules('address','Address',"required");
-      $this->form_validation->set_rules('city','City',"required");
-      $this->form_validation->set_rules('state','State',"required");
-      $this->form_validation->set_rules('zip','Zip',"required");
-      $this->form_validation->set_rules('dob','Dob',"required");
-      //$this->form_validation->set_rules('branch','Branch',"required");
-      $this->form_validation->set_rules('employee_id','Employee_id',"required");
-      $this->form_validation->set_rules('country','Country',"required");
-       $id=  $this->input->post('id');
+       $this->load->library('form_validation');
+                $this->form_validation->set_rules("first_name","First_name","required"); 
+                $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules('age', 'Age', 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules("last_name","Last_name","required"); 
+                $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
+                $this->form_validation->set_rules('password','Password',"required");
+                $this->form_validation->set_rules('address','Address',"required");
+                $this->form_validation->set_rules('city','City',"required");
+                $this->form_validation->set_rules('state','State',"required");
+                $this->form_validation->set_rules('zip','Zip',"required");
+                $this->form_validation->set_rules('dob','Dob',"required");                
+                $this->form_validation->set_rules('age','Age',"required");
+               // $this->form_validation->set_rules('branch','Branch',"required");
+                $this->form_validation->set_rules('employee_id','Employee_id',"required");
+                $this->form_validation->set_rules('country','Country',"required");
+                 $id=  $this->input->post('id');
 	  
 	    if ( $this->form_validation->run() !== false ) {
 			  $this->load->model('employeesmodel');
@@ -177,11 +180,15 @@ $r=0;
                           $branch=$this->input->post('branch');
                           $yourdatetime =$this->input->post('dob');
                           $image_name=$this->input->post('image_name');
+                          $age=  $this->input->post('age');
+                          $sex= $this->input->post('sex');
                           
                           $dob= strtotime($yourdatetime);
                          
                          $this->load->model('employeesmodel');
-                         $this->employeesmodel->update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                         $this->employeesmodel->update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
+                         $this->update_user_department($id);
+                         $this->update_user_branch($id);
                          $this->get_employee_details();
                           
                           
@@ -191,6 +198,62 @@ $r=0;
         $data['branch']=  $this->branch->get_branch();
         $this->edit_employee_details($id);}
 }
+function update_user_branch($id){
+    $str=$_SESSION['edit_bran'];
+     $this->load->model('branch');
+      $this->branch->delete_user_branchs($id);
+            $branch = preg_split('/[\,\.\ ]/', $str);
+           
+            $branch_id=array();
+            $i=0;
+            foreach ($branch as $bra){
+
+                $temp_branch =  preg_split("/,/", $bra);
+                if($temp_branch){
+                    foreach ($temp_branch as $temp){
+                      
+                        $branch_id[$i]=$temp;
+                        $i++;
+                    } 
+                } else {
+                    $branch_id[$i]=$temp;
+                        $i++;  
+                }
+            }  
+            for($ii=1; $ii<count($branch_id); $ii++){
+               $this->branch->set_branch($id,$branch_id[$ii]);
+            }
+}
+function update_user_department($id){
+     $str= $_SESSION['edit_depa'];
+     $this->load->model('department');
+     $this->department->delete_user_depart($id);
+     
+            $depart = preg_split('/[\,\.\ ]/', $str);
+            
+            $depart_id=array();
+            $i=0;
+            foreach ($depart as $bra){
+
+                $temp_depart =  preg_split("/,/", $bra);
+                if($temp_depart){
+                    foreach ($temp_depart as $temp){
+                      
+                        $depart_id[$i]=$temp;
+                        $i++;
+                    } 
+                } else {
+                    $depart_id[$i]=$temp;
+                        $i++;  
+                }
+            }  
+            for($ii=1; $ii<count($depart_id); $ii++){
+               $this->department->set_department($id,$depart_id[$ii]);
+            }
+
+    
+}
+
 function do_upload($id)
 	{
 		$config['upload_path'] = './uploads/';
@@ -276,7 +339,8 @@ function do_upload($id)
                 $this->form_validation->set_rules('state','State',"required");
                 $this->form_validation->set_rules('zip','Zip',"required");
                 $this->form_validation->set_rules('dob','Dob',"required");
-                //$this->form_validation->set_rules('age','Age',"required");
+                
+                $this->form_validation->set_rules('age','Age',"required");
                // $this->form_validation->set_rules('branch','Branch',"required");
                 $this->form_validation->set_rules('employee_id','Employee_id',"required");
                 $this->form_validation->set_rules('country','Country',"required");
@@ -305,29 +369,44 @@ function do_upload($id)
                           $created_by=$_SESSION['Uid'];
                           $this->load->model('employeesmodel');
                           if($this->employeesmodel->user_checking($email,$emp_id,$dob)==FALSE){
+                               if($_SESSION['branch']!="" and $_SESSION['branch']!="null" and $_SESSION['depart']!="" and $_SESSION['depart']!="null"){
                           $id= $this->employeesmodel->adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
                           $this->add_user_branchs($id);
                           $this->add_user_department($id);
                           $this->load->model('employeepermission');
                           $this->employeepermission->adda_default_permission($id);
                           $this->get_employee_details();
+                            }                                                    
+                          else{
+                              echo "Set the branch and department of the user";
+                  $this->load->model('department');
+                  $data['depa']=  $this->department->get_department();
+                  $this->load->model('branch');
+                  $data['branch']=  $this->branch->get_branch();
+                  $this->load->view('add_new_employee',$data);
+                              
+                          }
                           }
                           else{
                    echo 'this user is alreay added';
+                   
                    $this->load->model('department');
                    $data['depa']=  $this->department->get_department();
                    $this->load->model('branch');
                    $data['branch']=  $this->branch->get_branch();
                    $this->load->view('add_new_employee',$data);
+                        
                           }
             }else{
                    //echo  ."<br>";
-                   //echo $_SESSION['branch'];
-                   $this->load->model('department');
-                   $data['depa']=  $this->department->get_department();
-                   $this->load->model('branch');
-                   $data['branch']=  $this->branch->get_branch();
-                   $this->load->view('add_new_employee',$data);
+                  
+                      
+                   
+                  $this->load->model('department');
+                  $data['depa']=  $this->department->get_department();
+                  $this->load->model('branch');
+                  $data['branch']=  $this->branch->get_branch();
+                  $this->load->view('add_new_employee',$data);
               }
     
              }
@@ -412,6 +491,12 @@ function do_upload($id)
         }
         function add_branch($branch){
              $_SESSION['branch']=$branch;
+        }
+        function edit_department($dep){
+            $_SESSION['edit_depa']=$dep;
+        }
+        function edit_branch($dep){
+            $_SESSION['edit_bran']=$dep;
         }
 
 

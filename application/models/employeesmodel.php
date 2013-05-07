@@ -38,7 +38,7 @@ class Employeesmodel extends CI_Model{
     
     }
    }
-   function update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name){
+   function update_employee($id,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob, $image_name){
        $data=array(
            	
            'user_id' =>$emp_id,	
@@ -54,7 +54,7 @@ class Employeesmodel extends CI_Model{
            'phone'=>$phone, 	
            'image'=>$image_name,	
            'dob'=>$dob,          	
-           'group'=>$branch 	
+           	
            
            
        );

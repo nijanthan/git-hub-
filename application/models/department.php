@@ -20,14 +20,14 @@ class Department extends CI_Model{
                     'depart_id'=>$branch_id);
                 $this->db->insert('userdepart',$data);
     }
-    function get_user_depart(){
-        $this->db->select()->from('userdepart');
+    function get_user_depart($id){
+        $this->db->select()->from('userdepart')->where('emp_id',$id);
         $sql=  $this->db->get();
        
             return $sql->result();
     }
-    function get_all_user_depart(){
-        $this->db->select()->from('userdepart');
+    function get_all_user_depart($id){
+        $this->db->select()->from('userdepart')->where('emp_id',$id);
         $sql=  $this->db->get();
         $j=0;
         foreach ($sql->result() as $row)
@@ -50,6 +50,10 @@ class Department extends CI_Model{
             }
             return $data;
     
+}
+function delete_user_depart($id){
+    $this->db->where('emp_id',$id);
+    $this->db->delete('userdepart');
 }
 
     

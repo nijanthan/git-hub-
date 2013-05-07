@@ -23,8 +23,8 @@ class Branch extends CI_Model{
                        
                 $this->db->insert('userbranchs',$data);
     }
-    function get_user_branch(){
-         $this->db->select()->from('userbranchs');
+    function get_user_branch($id){
+         $this->db->select()->from('userbranchs')->where('emp_id',$id);
         $sql=  $this->db->get();
         $j=0;
        foreach ($sql->result() as $row) {
@@ -35,7 +35,14 @@ class Branch extends CI_Model{
             return $data;
             
     }
-    function get_selected_branch(){
+    function get_selected_branch($id){
+         $this->db->select()->from('userbranchs')->where('emp_id',$id);
+        $sql=  $this->db->get();
+        return $sql->result();
+       
+            
+    }
+    function get_selected_branch_for_view(){
          $this->db->select()->from('userbranchs');
         $sql=  $this->db->get();
         return $sql->result();
@@ -52,6 +59,10 @@ class Branch extends CI_Model{
              $j++;
             }
             return $data;
+    }
+    function delete_user_branchs($id){
+        $this->db->where('emp_id',$id);
+        $this->db->delete('Structureuserbranchs');
     }
 }
 ?>

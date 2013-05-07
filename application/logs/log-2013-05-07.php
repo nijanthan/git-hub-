@@ -283,3 +283,38 @@ ERROR - 2013-05-07 08:03:31 --> Severity: Notice  --> Undefined property: stdCla
 ERROR - 2013-05-07 08:03:31 --> Severity: Notice  --> Undefined property: stdClass::$emp_id C:\wamp\www\PointOfSale\application\views\employee_list.php 20
 ERROR - 2013-05-07 08:49:56 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 413
 ERROR - 2013-05-07 08:49:56 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 414
+ERROR - 2013-05-07 09:15:43 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 416
+ERROR - 2013-05-07 09:15:43 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 417
+ERROR - 2013-05-07 09:15:46 --> Severity: Warning  --> Missing argument 1 for Employees::add_jibi() C:\wamp\www\PointOfSale\application\controllers\employees.php 413
+ERROR - 2013-05-07 09:15:46 --> Severity: Notice  --> Undefined variable: ud C:\wamp\www\PointOfSale\application\controllers\employees.php 414
+ERROR - 2013-05-07 09:15:58 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 416
+ERROR - 2013-05-07 09:15:58 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 417
+ERROR - 2013-05-07 09:19:01 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 417
+ERROR - 2013-05-07 09:19:02 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 418
+ERROR - 2013-05-07 09:54:26 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 418
+ERROR - 2013-05-07 09:54:26 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 419
+ERROR - 2013-05-07 09:54:30 --> Severity: Warning  --> Missing argument 1 for Employees::add_jibi() C:\wamp\www\PointOfSale\application\controllers\employees.php 415
+ERROR - 2013-05-07 09:54:30 --> Severity: Notice  --> Undefined variable: ud C:\wamp\www\PointOfSale\application\controllers\employees.php 416
+ERROR - 2013-05-07 09:55:14 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 418
+ERROR - 2013-05-07 09:55:14 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 419
+ERROR - 2013-05-07 10:01:36 --> Severity: Warning  --> Missing argument 1 for Employees::add_branch() C:\wamp\www\PointOfSale\application\controllers\employees.php 420
+ERROR - 2013-05-07 10:01:36 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\employees.php 421
+ERROR - 2013-05-07 10:25:47 --> Severity: Warning  --> Missing argument 1 for Branch::get_selected_branch(), called in C:\wamp\www\PointOfSale\application\controllers\employees.php on line 48 and defined C:\wamp\www\PointOfSale\application\models\branch.php 38
+ERROR - 2013-05-07 10:25:47 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 39
+ERROR - 2013-05-07 10:26:05 --> Severity: Warning  --> Missing argument 1 for Branch::get_selected_branch(), called in C:\wamp\www\PointOfSale\application\controllers\employees.php on line 48 and defined C:\wamp\www\PointOfSale\application\models\branch.php 38
+ERROR - 2013-05-07 10:26:05 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 39
+ERROR - 2013-05-07 10:26:32 --> Severity: Warning  --> Missing argument 1 for Branch::get_selected_branch(), called in C:\wamp\www\PointOfSale\application\controllers\employees.php on line 48 and defined C:\wamp\www\PointOfSale\application\models\branch.php 38
+ERROR - 2013-05-07 10:26:32 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 39
+ERROR - 2013-05-07 10:26:39 --> Severity: Warning  --> Missing argument 1 for Branch::get_selected_branch(), called in C:\wamp\www\PointOfSale\application\controllers\employees.php on line 48 and defined C:\wamp\www\PointOfSale\application\models\branch.php 38
+ERROR - 2013-05-07 10:26:39 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 39
+ERROR - 2013-05-07 10:27:27 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\employees.php 48
+ERROR - 2013-05-07 10:30:34 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 46
+ERROR - 2013-05-07 10:32:04 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 46
+ERROR - 2013-05-07 10:32:14 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 46
+ERROR - 2013-05-07 10:32:30 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 46
+ERROR - 2013-05-07 10:32:34 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\branch.php 46
+ERROR - 2013-05-07 10:40:46 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\department.php 30
+ERROR - 2013-05-07 10:40:46 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
+ERROR - 2013-05-07 10:40:46 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
+ERROR - 2013-05-07 10:49:44 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\models\department.php 39
+ERROR - 2013-05-07 10:49:44 --> Severity: Warning  --> array_merge(): Argument #2 is not an array C:\wamp\www\PointOfSale\application\controllers\employees.php 115
