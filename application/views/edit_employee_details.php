@@ -174,14 +174,19 @@ $( "#datepicker" ).datepicker();
    
     <tr><td><?php echo form_label('Department')?></td><td>
 <table><tr><td>
-          
+        <?php foreach ($depa as $my_depa) ?>  
           
 <select multiple size="7" name="FromLB" style="width:150">
   <?php $j=0;
   while($j<count($depa)) {
                 
                
-                   ?><option name="<?php echo $depa[$j] ?>" value="<?php echo $depa[$j] ?>"> <?php echo $depa[$j] ?></option>
+                   ?><option name="<?php foreach ($all_depa as $all_d){ if($depa[$j]==$all_d->dep_name) echo $all_d->id; }?>" 
+                           value="<?php foreach ($all_depa as $all_d){ if($depa[$j]==$all_d->dep_name) echo $all_d->id;} ?>"> 
+                       <?php    foreach ($all_depa as $all_d){ if($depa[$j]==$all_d->dep_name) echo $all_d->dep_name;}?></option>                
+                           
+                         
+                   
                       
            
            
@@ -201,8 +206,11 @@ value="<-">
 
 
 <td>
+   
 <select multiple size="7" name="ToLB" style="width:150">
-    
+     <?php foreach ($selected_depart as $serow){ ?>
+    <option name="<?php echo $serow->depart_id  ?>" value="<?php echo $serow->depart_id  ?>"> <?php echo $serow->depart_name   ?></option>
+    <?php }?>
     
 </select>
     
@@ -211,11 +219,21 @@ value="<-">
         </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
     <table><tr><td>
 <select multiple size="7" name="FromLJ" style="width:150">
-    <?php $h=0;
-          while($h<  count($branch)){
-           ?>   <option name="<?php echo $branch[$h]  ?>" value="<?php echo $branch[$h]  ?>" > <?php echo $branch[$h]  ?></option> 
-          
-        <?php $h++; }?>
+    <?php $j=0;
+  while($j<count($all_branch)) {
+                
+                ?><option name="<?php foreach ($branch as $all_d){ if($all_branch[$j]==$all_d->store_name) echo $all_d->id; }?>" 
+                           value="<?php foreach ($branch as $all_d){ if($all_branch[$j]==$all_d->store_name) echo $all_d->id;} ?>"> 
+                       <?php    foreach ($branch as $all_d){ if($all_branch[$j]==$all_d->store_name) echo $all_d->store_name;}?></option>                
+              
+                   
+                      
+           
+           
+        <?php  
+        $j++;
+        } 
+        ?>
 
 </select>
 </td>

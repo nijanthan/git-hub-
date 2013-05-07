@@ -44,7 +44,7 @@ class Employees extends CI_Controller{
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-                $data['branch']=$this->branch->get_user_branch();
+                $data['branch']=$this->branch->get_selected_branch();
                 $data['count']=$this->employeesmodel->employeecount();             
 	        $data["row"] = $this->employeesmodel->get_employees_details($config["per_page"], $page);
 	        $data["links"] = $this->pagination->create_links();  
@@ -62,43 +62,83 @@ class Employees extends CI_Controller{
                 $this->load->model('department');
                 $depa=$this->department->get_all_departmentg();
                 $this->load->model('branch');
-                $branch=  $this->branch->get_all_branch();
-                $this->get_selected_departments($depa);
-                //$this->load->view('edit_employee_details',$data);
+                $branch=$this->branch->get_all_branch();
+                $data['all_branch']=$this->get_selected_branchs($branch);
+                $data['branch']=$this->branch->get_branch();
+                $data['all_depa']=  $this->department->get_department();
+                $data['depa']=$this->get_selected_departments($depa);
+                $this->load->view('edit_employee_details',$data);
         
     }
-    function get_selected_departments($depa){
+     function get_selected_branchs($depart){
+        $this->load->model('branch');
+        $new_depa=array();
+        $o=0;
+        $w = 0;
+        $departed=$this->branch->get_user_branch();
+        $arr=array_merge($depart,$departed);
+
+                $len = count($arr);
+        for ($i = 0; $i < $len; $i++) {
+        $temp = $arr[$i];
+        $j = $i;
+        for ($k = 0; $k < $len; $k++) {
+            if ($k != $j) {
+            if ($temp == $arr[$k]) {
+               
+                $arr[$k]=" ";
+                $arr[$i]=" ";
+            }
+            }
+        }
+        }
+$r=0;
+        for ($i = 0; $i < $len; $i++) {
+       if($arr[$i]==" "){
+           
+       }
+       else{
+           $new_depa[$r]=$arr[$i];
+           $r++;
+       }
+        }
+        return $new_depa;
+           
+    }
+    function get_selected_departments($depart){
         $this->load->model('department');
         $new_depa=array();
         $o=0;
-        
-         $depart=$this->department->get_user_depart();
-        
-             $j=0;
-        
-           while ($j < count($depart)){
-                $i=0;
-                $temp=$depart[$j];
-               while($i<count($depa)){ 
-                   
-                 if($depa[$i]!=$temp){
-                     echo "jibi";
-                             echo $depa[$i]."<br>";
-                             
-                     
-                 }else{
-                      echo $depa[$i]."<br>";
-                      
-                      
-                 
-                 }
-                 $i++;
-                 
-                
-             }echo "<br><br>";
-             $j++;
-         }
-       
+        $w = 0;
+        $departed=$this->department->get_all_user_depart();
+        $arr=array_merge($depart,$departed);
+
+                $len = count($arr);
+        for ($i = 0; $i < $len; $i++) {
+        $temp = $arr[$i];
+        $j = $i;
+        for ($k = 0; $k < $len; $k++) {
+            if ($k != $j) {
+            if ($temp == $arr[$k]) {
+               
+                $arr[$k]=" ";
+                $arr[$i]=" ";
+            }
+            }
+        }
+        }
+$r=0;
+        for ($i = 0; $i < $len; $i++) {
+       if($arr[$i]==" "){
+           
+       }
+       else{
+           $new_depa[$r]=$arr[$i];
+           $r++;
+       }
+        }
+        return $new_depa;
+           
     }
     
     function cancel(){
