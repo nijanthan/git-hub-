@@ -63,10 +63,8 @@ function makeAjaxCall(value){
             
 		type: "post",
 		url: "http://localhost/PointOfSale/index.php/employees/edit_department/"+jibi,
-		cache: false,				
-		data: $('combo_box').serialize(),
-		success: function(json){						
-                }
+		cache: false			
+		
  });
 }
 function branchAjaxCall(value){
@@ -75,10 +73,8 @@ function branchAjaxCall(value){
             
 		type: "post",
 		url: "http://localhost/PointOfSale/index.php/employees/edit_branch/"+jibi,
-		cache: false,				
-		data: $('combo_box').serialize(),
-		success: function(json){						
-                }
+		cache: false			
+		
  });
 }
 function ajaxsave(tbTo){
