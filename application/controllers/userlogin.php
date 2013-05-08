@@ -9,8 +9,9 @@ class Userlogin extends CI_Controller
         $this->load->library('unit_test');
         $this->load->helper(array('form', 'url'));
         $this->load->helper('form');
-        $this->load->library('form_validation');
+        
         session_start();
+        $this->lang->load('malayalam');
     }
     function index(){
         
