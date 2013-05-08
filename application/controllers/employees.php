@@ -10,9 +10,11 @@ class Employees extends CI_Controller{
         $this->load->library('unit_test');
         session_start();        
         $this->load->helper(array('form', 'url'));
+        $this->changelanguage();
     }
     function index(){
         $this->get_employee_details();
+        $this->changelanguage();
        // $this->employee_testing();
     } 
     function employee_testing(){
@@ -48,7 +50,8 @@ class Employees extends CI_Controller{
                 $data['branch']=$this->branch->get_selected_branch_for_view();
                 $data['count']=$this->employeesmodel->employeecount();             
 	        $data["row"] = $this->employeesmodel->get_employees_details($config["per_page"], $page);
-	        $data["links"] = $this->pagination->create_links();  
+	        $data["links"] = $this->pagination->create_links(); 
+                $this->changelanguage();
                 $this->load->view('employee_list',$data);
     }
     function edit_employee_details($id){
@@ -513,6 +516,16 @@ function do_upload($id)
         function edit_branch($dep){
             $_SESSION['edit_bran']=$dep;
         }
+         function changelanguage(){
+        if(!isset($_SESSION['lang'])){
+        $this->config->set_item('language','english'); 
+        $this->lang->load('english');
+        }else{            
+        $lang= $_SESSION['lang'];
+        $this->config->set_item('language',"$lang"); 
+        $this->lang->load("$lang");
+        }
+    }
 
 
 }
