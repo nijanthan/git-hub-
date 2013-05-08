@@ -8,14 +8,12 @@ class Userlogin extends CI_Controller
         $this->load->helper('url');
         $this->load->library('unit_test');
         $this->load->helper(array('form', 'url'));
-        $this->load->helper('form');
-        
+        $this->load->helper('form');        
         session_start();
         $this->lang->load('malayalam');
     }
     function index(){
         
-       //$this->employee();
         if(!isset($_SESSION['Uid'])){
             $this->load->view('login');
         }else{
