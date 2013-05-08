@@ -1,4 +1,4 @@
-<?php
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Language extends CI_Controller{
     function __construct() {
@@ -10,6 +10,7 @@ class Language extends CI_Controller{
     {
         
     }
+   
     
 }
 ?>
