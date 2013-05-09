@@ -9,7 +9,7 @@ class Posmain extends CI_Controller{
         session_start();        
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
-        $this->changelanguage();
+        
     }
     function index()
     {
@@ -32,16 +32,7 @@ class Posmain extends CI_Controller{
        }
        
     }
-    function changelanguage(){
-        if(!isset($_SESSION['lang'])){
-        $this->config->set_item('language','english'); 
-        $this->lang->load('english');
-        }else{            
-        $lang= $_SESSION['lang'];
-        $this->config->set_item('language',"$lang"); 
-        $this->lang->load("$lang");
-        }
-    }
+    
     
     
 }

@@ -11,17 +11,17 @@ class Userlogin extends CI_Controller
         $this->load->helper('form');
         $this->load->library('form_validation');
         session_start();
-        
-        
+        $this->load->library('poslanguage');                 
+        $this->poslanguage->set_language();
+         
       
     }
     function index(){
-        $this->changelanguage();
-       //$this->employee();
+       
         if(!isset($_SESSION['Uid'])){
             $this->load->view('template/header');
-            //$this->load->view('login');
-           // $this->load->view('template/footer');
+            $this->load->view('login');
+            $this->load->view('template/footer');
         }else{
             $this->load->view('template/header');
             $this->load->view('home');
@@ -35,8 +35,9 @@ function employee()
     redirect('/employees');
 }
 function login(){
+    
     $this->load->library('form_validation');
-    $this->changelanguage();
+   
     if($this->input->post('login')){
         $this->form_validation->set_rules('username',$this->lang->line('user_name'), 'required');
         $this->form_validation->set_rules('password',$this->lang->line('password'),'required');
@@ -47,51 +48,35 @@ function login(){
             if($this->logindetails->login($username,$password)){
                
                 $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
+               
                 $this->load->view('template/header');
                 redirect('home/pos_home');
                 $this->load->view('template/footer');
             }else{
                 echo "Invalid Username and password";
+                
                 $this->load->view('template/header');
                 $this->load->view('login');
                 $this->load->view('template/footer');
+                 
             }
             
             
         }  else {
+           
+              
              $this->load->view('template/header');
              $this->load->view('login');
              $this->load->view('template/footer');
         }
     }
-     
+   
 }
  
-     function chnage_language(){      
-        $lang= $this->input->post('language');
-        $this->config->set_item('language',"$lang"); 
-        $this->lang->load("$lang");
-        $_SESSION['lang']=$lang;
-        
-        $this->index();
-        
+    function setlanguage($lang){
+       $_SESSION['lang']=$lang;
     }
-    function changelanguage(){
-        if(!isset($_SESSION['lang'])){
-        $this->config->set_item('language','english'); 
-        $this->lang->load('english');
-        }else{            
-        $lang= $_SESSION['lang'];
-        $this->config->set_item('language',"$lang"); 
-        $this->lang->load("$lang");
-        }
-    }
-    function setlanguage($id){
-        $_SESSION['lan']=$id;
-    }
-    function jibi(){
-        echo $_SESSION['lan'];
-    }
+    
 
 }
 ?>

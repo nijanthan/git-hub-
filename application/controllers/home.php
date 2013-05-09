@@ -27,6 +27,7 @@ class Home extends CI_Controller
     function pos_home(){
         
         $this->acl_session_for_user();
+        $this->load->view('template/header');
         $this->load->view('home');       
                 
     }
