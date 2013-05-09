@@ -76,6 +76,7 @@ function branchAjaxCall(value){
 		cache: false			
 		
  });
+ 
 }
 function ajaxsave(tbTo){
 var arrjibi="" ; var arrTo = new Array(); 
@@ -104,12 +105,7 @@ var monish=".";
   branchAjaxCall(arrjibi);
 }
 </script>
-<script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.3.2.js" ></script>
-<script type="text/javascript" src="<?php echo base_url();?>js/ajaxupload.3.5.js" ></script>
 
-<link rel="stylesheet" href="<?php echo base_url();?>css/jquery-ui.css" />
-<script src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
-<script src="<?php echo base_url();?>js/jquery-ui.js"></script>
 
 <script>
 $(function() {

@@ -1,21 +1,81 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-?>
-<html lang="en">
+<html>    
 <head>
-  <meta charset="utf-8">
-  <title>Point Of Sales</title>
-  
-        
-</head>
+<script language="javascript"> 
+
+function ajaxsave(tbTo){ 
+var arrjibi="" ; var arrTo = new Array(); 
+
+ var Students;
+
+            var x = document.getElementById("ToLB");
+            for (var i = 0; i < x.options.length; i++) {
+                if (x.options[i].selected == true) {
+                    Students=x.options[i].value;
+                }
+            }
+            alert(Students);
+ alert(arrjibi);
+ 
+ //makeAjaxCall(arrjibi);
+
+ 
+}
+function makeAjaxCall(value){
+    var jibi=value;
+	$.ajax({
+            
+		type: "post",
+		url: "http://localhost/PointOfSale/index.php/employees/edit_department/"+jibi,
+		cache: false			
+		
+ });
+}
+
+</script>
+
+
+
 <body>
-    <?php 
-    echo form_open('userlogin/chnage_language');?>
-    <select name="language" id="ListBox">
-        <option name="malayalam" value="malayalam">Malayalam</option>
-        <option name="english" value="english">English</option>
-    </select>           
+
+
+
+
+    <form>
+
+
+          
+
+</td>
+<td align="center" valign="middle">
+<input type="button" onClick="ajaxsave(this.form.ToLB)" 
+value="->"><br />
+<input type="button" onClick="ajaxsave(this.form.ToLB)" 
+value="<-">
+</td>
+
+
+<td>
+   
+<select multiple size="7" name="ToLB" style="width:150">
+    
   
-    <input type="submit" name="change" value="Chnage" >
-      <?php echo form_close();
-    ?>
+    <option name="english" value="english">English</option>
+      <option name="malayalam" value="malayalam">Malayalam</option>
+</select>
+    
+ 
+    
+</form>
+        
+    </tr> 
+        
+     
+ 
+  
+
+    
+</table>
+   
+</body>
+</html>
+ 

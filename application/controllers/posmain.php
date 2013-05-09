@@ -30,6 +30,7 @@ class Posmain extends CI_Controller{
            session_destroy();
            redirect('userlogin');
        }
+       
     }
     function changelanguage(){
         if(!isset($_SESSION['lang'])){

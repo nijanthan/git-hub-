@@ -20,8 +20,8 @@ class Userlogin extends CI_Controller
        //$this->employee();
         if(!isset($_SESSION['Uid'])){
             $this->load->view('template/header');
-            $this->load->view('login');
-            $this->load->view('template/footer');
+            //$this->load->view('login');
+           // $this->load->view('template/footer');
         }else{
             $this->load->view('template/header');
             $this->load->view('home');
@@ -87,7 +87,10 @@ function login(){
         }
     }
     function setlanguage($id){
-        $_SESSION['jibi']=$id;
+        $_SESSION['lan']=$id;
+    }
+    function jibi(){
+        echo $_SESSION['lan'];
     }
 
 }

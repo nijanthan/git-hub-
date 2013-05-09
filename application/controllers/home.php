@@ -7,14 +7,14 @@ class Home extends CI_Controller
         $this->load->helper('form');
         session_start();
         $this->load->library('session');
-        $this->changelanguage();
+        
        
     }
     function index(){
         if(!isset($_SESSION['Uid'])){
             redirect('userlogin');
             
-        }$this->changelanguage();
+        }
         
     }
     function acl_session_for_user(){
@@ -25,7 +25,7 @@ class Home extends CI_Controller
         //echo $_SESSION['Emp_per']['emp'];
     }
     function pos_home(){
-        $this->changelanguage();
+        
         $this->acl_session_for_user();
         $this->load->view('home');       
                 
