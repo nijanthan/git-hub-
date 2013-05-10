@@ -72,8 +72,8 @@ class Employeesmodel extends CI_Model{
        $this->db->update('users',$data);
        
    }
-   function adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$dob, $image_name){
-            
+   function adda_new_employee($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$image_name){
+            echo $image_name;
        $pass=md5($password);
        $data=array(
            'created_by'=>$created_by,

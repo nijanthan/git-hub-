@@ -46,7 +46,7 @@ class Employees extends CI_Controller{
                 $this->load->library("pagination"); 
 	        $config["base_url"] = base_url()."index.php/employees/get_employee_details";
 	        $config["total_rows"] = $this->employeesmodel->employeecount();
-	        $config["per_page"] = 10;
+	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
@@ -297,7 +297,7 @@ function do_upload($id)
 		{
                    
                       $upload_data = $this->upload->data();
-                      $file_name =$upload_data['file_name'];
+                       $file_name =$upload_data['file_name'];
                       $error="";
                       $this->after_uploading($id, $error,$file_name);
 			
@@ -305,15 +305,26 @@ function do_upload($id)
                 
 	}
         function after_uploading($id,$error,$file_name){
-             $this->load->model('employeesmodel');
-                $data['row']=  $this->employeesmodel->edit_employee($id); 
+            
                 $data['error']=$error;
                 $data['file_name']=$file_name;
-                $this->load->model('department');
-                $data['depa']=  $this->department->get_department();
+                $this->load->model('employeesmodel');
                 $this->load->model('branch');
-                $data['branch']=  $this->branch->get_branch();
+                $this->load->model('department');
+                $data['row']=  $this->employeesmodel->edit_employee($id); 
+               
+                $data['selected_branch']=$this->branch->get_selected_branch($id);
+                $data['selected_depart']=$this->department->get_user_depart($id);
+                $this->load->model('department');
+                $depa=$this->department->get_all_departmentg();
+                $this->load->model('branch');
+                $branch=$this->branch->get_all_branch();
+                $data['all_branch']=$this->get_selected_branchs($branch,$id);
+                $data['branch']=$this->branch->get_branch();
+                $data['all_depa']=  $this->department->get_department();
+                $data['depa']=$this->get_selected_departments($depa,$id);
                 $this->load->view('edit_employee_details',$data);
+                
         }
        
         
@@ -395,7 +406,7 @@ function do_upload($id)
                           $this->load->model('employeesmodel');
                           if($this->employeesmodel->user_checking($email,$emp_id,$dob)==FALSE){
                                if($_SESSION['branch']!="" and $_SESSION['branch']!="null" and $_SESSION['depart']!="" and $_SESSION['depart']!="null"){
-                          $id= $this->employeesmodel->adda_new_employee($created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$branch,$dob, $image_name);
+                          $id= $this->employeesmodel->adda_new_employee($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$_SESSION['image_name']);
                           $this->add_user_branchs($id);
                           $this->add_user_department($id);
                           $this->load->model('employeepermission');

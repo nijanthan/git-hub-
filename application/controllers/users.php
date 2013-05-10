@@ -22,7 +22,7 @@ class Users extends CI_Controller
             for ($i = 0; $i < $count; $i++) {
                 if ($uploads['error'][$i] == 0) {
                     move_uploaded_file($uploads['tmp_name'][$i], 'storage/' . $uploads['name'][$i]);
-                    echo $uploads['name'][$i] . "\n";
+                   $_SESSION['image_name']=$uploads['name'][$i] . "\n";
                 }
             }
         }

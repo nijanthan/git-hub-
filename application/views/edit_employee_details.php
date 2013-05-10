@@ -258,7 +258,9 @@ value="<-">
         <td><?php echo form_submit('Cancel',$this->lang->line('cancel')) ?></td>
     </tr> 
         
-        <?php echo form_close();
+        <?php 
+        
+        echo form_close();
     
     
 }?>
