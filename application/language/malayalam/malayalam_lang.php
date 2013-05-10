@@ -31,5 +31,6 @@ $lang['photo']='ഫോട്ടോ';
 $lang['save']='സേവ്';
 $lang['cancel']='ഉപേക്ഷിക്കുക';
 $lang['update']='പുതുക്കുക';
+$lang['add']='ആഡ് ';
 
 ?>﻿

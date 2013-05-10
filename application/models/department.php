@@ -55,6 +55,20 @@ function delete_user_depart($id){
     $this->db->where('emp_id',$id);
     $this->db->delete('userdepart');
 }
+function get_department_count(){
+     return $this->db->count_all("department");
+}
+ public function get_department_details($limit, $start) {
+      
+        $query = $this->db->get("department");
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+           }
+          return false;
+   }
 
     
 }

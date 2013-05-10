@@ -71,3 +71,73 @@ ERROR - 2013-05-10 10:28:26 --> 404 Page Not Found --> department
 ERROR - 2013-05-10 10:30:10 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 28
 ERROR - 2013-05-10 10:30:10 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\department.php 3
 ERROR - 2013-05-10 10:30:10 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 13:32:31 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 28
+ERROR - 2013-05-10 13:32:31 --> Severity: Notice  --> Undefined variable: links C:\wamp\www\PointOfSale\application\views\department.php 1
+ERROR - 2013-05-10 13:32:31 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 13:32:31 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 13:32:31 --> Severity: Notice  --> Undefined property: DepartmentCI::$branch C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 38
+ERROR - 2013-05-10 13:33:50 --> Severity: Notice  --> Undefined property: DepartmentCI::$branch C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 36
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:08 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:08 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:08 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:08 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\employee_list.php 16
+ERROR - 2013-05-10 13:34:09 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:10 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\employee_list.php 17
+ERROR - 2013-05-10 13:34:10 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\employee_list.php 18
+ERROR - 2013-05-10 13:34:10 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:10 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 20
+ERROR - 2013-05-10 13:34:38 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 13:34:38 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 13:39:43 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 13:39:43 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 14:37:18 --> 404 Page Not Found --> departmentCI/get_departmrnt
+ERROR - 2013-05-10 14:37:22 --> 404 Page Not Found --> departmentCI/get_departmrnt
+ERROR - 2013-05-10 14:37:55 --> 404 Page Not Found --> departmentCI/get_departmrnt
+ERROR - 2013-05-10 14:38:12 --> 404 Page Not Found --> departmentCI/get_departmrnt
+ERROR - 2013-05-10 14:38:18 --> 404 Page Not Found --> departmentCI/5
+ERROR - 2013-05-10 14:38:23 --> 404 Page Not Found --> departmentCI/5
+ERROR - 2013-05-10 14:38:35 --> 404 Page Not Found --> departmentCI/5
+ERROR - 2013-05-10 15:05:36 --> Could not find the language line "add"
+ERROR - 2013-05-10 15:10:22 --> Could not find the language line "add"
+ERROR - 2013-05-10 15:10:24 --> Could not find the language line "add"
+ERROR - 2013-05-10 15:10:25 --> Could not find the language line "add"
+ERROR - 2013-05-10 15:10:43 --> Could not find the language line "add"
