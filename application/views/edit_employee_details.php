@@ -153,21 +153,21 @@ $( "#datepicker" ).datepicker();
                         'runat'=>'server');
     echo form_open('employees/upadate_employee_details',$form)?>
     <input type="hidden" name="id" value="<?php echo $erow->id?>">
-    <tr><td><?php echo form_label('First Name')?> </td><td><input type="text" name="first_name" value="<?php echo $erow->first_name ?>"> </td></tr>
-    <tr><td><?php echo form_label('Last Name')?></td><td><input type="text" name="last_name" value="<?php echo $erow->last_name ?>"> </td></tr>
-    <tr><td><?php echo form_label('Sex')?></td><td><select name="sex"><option name="male" value="Male" <?php if($erow->sex=='Male') {?> selected <?php }?>>Male</option><option name="Female" value="FeMale"<?php if($erow->sex=='FeMale'){ ?>selected<?php }?>>Female</option></select></td></tr>
-    <tr><td><?php echo form_label('Age')?></td><td><input type="text" name="age" value="<?php echo $erow->age ?>"></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('first_name'))?> </td><td><input type="text" name="first_name" value="<?php echo $erow->first_name ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('last_name'))?></td><td><input type="text" name="last_name" value="<?php echo $erow->last_name ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('sex'))?></td><td><select name="sex"><option name="male" value="Male" <?php if($erow->sex=='Male') {?> selected <?php }?>>Male</option><option name="Female" value="FeMale"<?php if($erow->sex=='FeMale'){ ?>selected<?php }?>>Female</option></select></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('age'))?></td><td><input type="text" name="age" value="<?php echo $erow->age ?>"></td></tr>
      
-     <tr><td><?php echo form_label('Address')?></td><td><input type="text" name="address" value="<?php echo $erow->address ?>"> </td></tr>
-    <tr><td><?php echo form_label('City')?></td><td><input type="text" name="city" value="<?php echo $erow->city ?>"> </td></tr>
-    <tr><td><?php echo form_label('State')?></td><td><input type="text" name="state" value="<?php echo $erow->state ?>"> </td></tr>
-    <tr><td><?php echo form_label('zip')?></td><td><input type="text" name="zip" value="<?php echo $erow->zip ?>"> </td></tr>
-    <tr><td><?php echo form_label('country')?></td><td><input type="text" name="country" value="<?php echo $erow->country ?>"> </td></tr>
-    <tr><td><?php echo form_label('Email')?></td><td><input type="text" name="email" value="<?php echo $erow->email ?>"> </td></tr>
-    <tr><td><?php echo form_label('Phone')?></td><td><input type="text" name="phone" value="<?php echo $erow->phone ?>" maxlength="13"> </td></tr>
-    <tr><td><?php echo form_label('Date OF birth')?></td><td><input type="text" id="datepicker" name="dob" value="<?php echo date('n/j/Y', strtotime('+0 year, +0 days',$erow->dob));   ?>"> </td></tr>
+     <tr><td><?php echo form_label($this->lang->line('address'))?></td><td><input type="text" name="address" value="<?php echo $erow->address ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('city'))?></td><td><input type="text" name="city" value="<?php echo $erow->city ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('state'))?></td><td><input type="text" name="state" value="<?php echo $erow->state ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('zip'))?></td><td><input type="text" name="zip" value="<?php echo $erow->zip ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('country'))?></td><td><input type="text" name="country" value="<?php echo $erow->country ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('email'))?></td><td><input type="text" name="email" value="<?php echo $erow->email ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('phone'))?></td><td><input type="text" name="phone" value="<?php echo $erow->phone ?>" maxlength="13"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('date_of'))?></td><td><input type="text" id="datepicker" name="dob" value="<?php echo date('n/j/Y', strtotime('+0 year, +0 days',$erow->dob));   ?>"> </td></tr>
    
-    <tr><td><?php echo form_label('Department')?></td><td>
+    <tr><td><?php echo form_label($this->lang->line('department'))?></td><td>
 <table><tr><td>
         <?php foreach ($depa as $my_depa) ?>  
           
@@ -211,7 +211,7 @@ value="<-">
     
     <label name="ToLB"></label>
 </td></tr></table>
-        </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
+        </td></tr><tr><td><?php echo form_label($this->lang->line('branch'))?></td><td>
     <table><tr><td>
 <select multiple size="7" name="FromLJ" style="width:150">
     <?php $j=0;
@@ -248,14 +248,14 @@ value="<-">
 </td></tr></table></td></tr>
     
    
-    <tr><td><?php echo form_label('Employee Id')?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>
-    <tr><td><?php echo form_label('Photo')?></td><td><img src="<?php echo base_url();?>uploads/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
-    <tr><td><?php echo form_submit('UPDATE','update') ?></td> 
+    <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('photo'))?></td><td><img src="<?php echo base_url();?>uploads/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
+    <tr><td><?php echo form_submit('UPDATE',$this->lang->line('update')) ?></td> 
        
         
         <?php echo form_close(); 
     echo form_open('employees/cancel')?>
-        <td><?php echo form_submit('Cancel','cancel') ?></td>
+        <td><?php echo form_submit('Cancel',$this->lang->line('cancel')) ?></td>
     </tr> 
         
         <?php echo form_close();
@@ -265,7 +265,7 @@ value="<-">
     <?php echo $error;
 $id= $erow->id?>
 <?php echo form_open_multipart('employees/do_upload/'."$id");?>
-<input type="file" name="userfile" size="50" /><input type="submit" value="upload" /></form>
+<input type="file" name="userfile" size="50" /><input type="submit" value="<?php $this->lang->line('photo') ?>" /></form>
     
 </table>
     <?php echo validation_errors(); ?>

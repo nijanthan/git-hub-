@@ -14,8 +14,8 @@ class Poslanguage{
         $CI->lang->load($lang);
              }
         else{
-       $CI->config->set_item('language','malayalam'); 
-       $CI->lang->load('malayalam');
+       $CI->config->set_item('language','english'); 
+       $CI->lang->load('english');
         }
         
     }

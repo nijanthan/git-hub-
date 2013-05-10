@@ -1,5 +1,4 @@
-<html>    
-<head>
+
 <script language="javascript"> 
 function move(tbFrom, tbTo) 
 {
@@ -131,19 +130,19 @@ $( "#datepicker" ).datepicker();
                         'name'=>'combo_box');
      echo form_open_multipart('employees/add_employee_details/',$form);?>
 
-<tr><td><?php echo form_label('First Name')?> </td><td><?php echo form_input('first_name',set_value('first_name'), 'id="first_name" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Last Name')?></td><td><?php echo form_input('last_name',set_value('last_name'), 'id="llast_name" autofocus')?></td></tr>
-    <tr><td><?php echo form_label('Sex')?></td><td><select name="sex"><option name="male" value="Male">Male</option><option name="Female" value="FeMale">Female</option></select></td></tr>
-     <tr><td><?php echo form_label('Age')?></td><td><?php  echo form_input('age',set_value('age'), 'id="age" autofocus')?></td></tr>
-     <tr><td><?php echo form_label('Address')?></td><td><?php echo form_input('address',set_value('address'), 'id="address" autofocus')?></td></tr>
-    <tr><td><?php echo form_label('City')?></td><td><?php echo form_input('city',set_value('city'), 'id="city" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('State')?></td><td><?php echo form_input('state',set_value('state'), 'id="state" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('zip')?></td><td><?php echo form_input('zip',set_value('zip'), 'id="zip" autofocus')?></td></tr>
-    <tr><td><?php echo form_label('country')?></td><td><?php echo form_input('country',set_value('country'), 'id="country" autofocus')?></td></tr>
-    <tr><td><?php echo form_label('Email')?></td><td><?php echo form_input('email',set_value('email'), 'id="email" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Phone')?></td><td><?php echo form_input('phone',set_value('phone'), 'id="phone" autofocus')?></td></tr>
-    <tr><td><?php echo form_label('Date OF birth')?></td><td><?php echo form_input('dob',set_value('dob'), 'id="dob" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Department')?></td><td>
+<tr><td><?php echo form_label($this->lang->line('first_name'))?> </td><td><?php echo form_input('first_name',set_value('first_name'), 'id="first_name" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('last_name'))?></td><td><?php echo form_input('last_name',set_value('last_name'), 'id="llast_name" autofocus')?></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('sex'))?></td><td><select name="sex"><option name="male" value="Male">Male</option><option name="Female" value="FeMale">Female</option></select></td></tr>
+     <tr><td><?php echo form_label($this->lang->line('age'))?></td><td><?php  echo form_input('age',set_value('age'), 'id="age" autofocus')?></td></tr>
+     <tr><td><?php echo form_label($this->lang->line('address'))?></td><td><?php echo form_input('address',set_value('address'), 'id="address" autofocus')?></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('city'))?></td><td><?php echo form_input('city',set_value('city'), 'id="city" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('state'))?></td><td><?php echo form_input('state',set_value('state'), 'id="state" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('zip'))?></td><td><?php echo form_input('zip',set_value('zip'), 'id="zip" autofocus')?></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('country'))?></td><td><?php echo form_input('country',set_value('country'), 'id="country" autofocus')?></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('email'))?></td><td><?php echo form_input('email',set_value('email'), 'id="email" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('phone'))?></td><td><?php echo form_input('phone',set_value('phone'), 'id="phone" autofocus')?></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('date_of'))?></td><td><?php echo form_input('dob',set_value('dob'), 'id="dob" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('department'))?></td><td>
 <table><tr><td>
 <select multiple size="7" name="FromLB" style="width:150">
 
@@ -170,7 +169,7 @@ value="<-">
     
     <label name="ToLB"></label>
 </td></tr></table>
-        </td></tr><tr><td><?php echo form_label('Branch')?></td><td>
+        </td></tr><tr><td><?php echo form_label($this->lang->line('branch'))?></td><td>
     <table><tr><td>
 <select multiple size="7" name="FromLJ" style="width:150">
     <?php foreach ($branch as $brow) {
@@ -191,13 +190,13 @@ value="<-">
 <select multiple size="7" name="ToLJ" style="width:150">
 </select>
 </td></tr></table></td></tr>
-    <tr><td><?php echo form_label('Employee Id')?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
-    <tr><td><?php echo form_label('Password')?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
+    <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('password'))?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td></td> 
        
-   <td><input type="submit" name="Save" value="Save" >
+   <td><input type="submit" name="Save" value="<?php echo $this->lang->line('save') ?>" >
           
-        <?php echo form_submit('Cancel','Cancel') ?></td>
+        <?php echo form_submit('Cancel', $this->lang->line('cancel')) ?></td>
     </tr> 
         
         
@@ -239,7 +238,7 @@ value="<-">
 		
 	});
 </script>
-                <div id="upload" ><span>Upload Photo<span></div><span id="status" ></span>
+                <div id="upload" ><span><?php echo $this->lang->line('photo') ?><span></div><span id="status" ></span>
 		
 		<ul id="files" ></ul>
 
@@ -249,5 +248,3 @@ value="<-">
 
 </form>
 <?php echo validation_errors(); ?>
-</body>
-</html> 

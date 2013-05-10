@@ -10,11 +10,14 @@ class Employees extends CI_Controller{
         $this->load->library('unit_test');
         session_start();        
         $this->load->helper(array('form', 'url'));
-        $this->changelanguage();
+        $this->load->library('poslanguage');                 
+        $this->poslanguage->set_language();
     }
     function index(){
+        $this->load->library('poslanguage');                 
+        $this->poslanguage->set_language();
         $this->get_employee_details();
-        $this->changelanguage();
+        
        // $this->employee_testing();
     } 
     function employee_testing(){
@@ -51,8 +54,10 @@ class Employees extends CI_Controller{
                 $data['count']=$this->employeesmodel->employeecount();             
 	        $data["row"] = $this->employeesmodel->get_employees_details($config["per_page"], $page);
 	        $data["links"] = $this->pagination->create_links(); 
-                $this->changelanguage();
+                
+                $this->load->view('template/header');
                 $this->load->view('employee_list',$data);
+                $this->load->view('template/footer');
     }
     function edit_employee_details($id){
                 $this->load->model('employeesmodel');
@@ -332,7 +337,9 @@ function do_upload($id)
                     $this->load->model('branch');
                     $data['branch']=  $this->branch->get_branch();
                     $data['depa']=  $this->department->get_department();
+                    $this->load->view('template/header');
                     $this->load->view('add_new_employee',$data);
+                    $this->load->view('template/footer');
              }
         }
         function add_employee_details(){
@@ -346,22 +353,22 @@ function do_upload($id)
                 
                 
                  $this->load->library('form_validation');
-                $this->form_validation->set_rules("first_name","First_name","required"); 
-                $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
-                $this->form_validation->set_rules('age', 'Age', 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
-                $this->form_validation->set_rules("last_name","Last_name","required"); 
-                $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
-                $this->form_validation->set_rules('password','Password',"required");
-                $this->form_validation->set_rules('address','Address',"required");
-                $this->form_validation->set_rules('city','City',"required");
-                $this->form_validation->set_rules('state','State',"required");
-                $this->form_validation->set_rules('zip','Zip',"required");
-                $this->form_validation->set_rules('dob','Dob',"required");
+                $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
+                $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules('age', $this->lang->line('age'), 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules("last_name",$this->lang->line('last_name'),"required"); 
+                $this->form_validation->set_rules('email', $this->lang->line('email'), 'valid_email|required');
+                $this->form_validation->set_rules('password',$this->lang->line('password'),"required");
+                $this->form_validation->set_rules('address',$this->lang->line('address'),"required");
+                $this->form_validation->set_rules('city',$this->lang->line('city'),"required");
+                $this->form_validation->set_rules('state',$this->lang->line('state'),"required");
+                $this->form_validation->set_rules('zip',$this->lang->line('zip'),"required");
+                $this->form_validation->set_rules('dob',$this->lang->line('date_of'),"required");
                 
-                $this->form_validation->set_rules('age','Age',"required");
+              
                // $this->form_validation->set_rules('branch','Branch',"required");
-                $this->form_validation->set_rules('employee_id','Employee_id',"required");
-                $this->form_validation->set_rules('country','Country',"required");
+                $this->form_validation->set_rules('employee_id',$this->lang->line('user_name'),"required");
+                $this->form_validation->set_rules('country',$this->lang->line('country'),"required");
                 $id=  $this->input->post('id');
 	  
 	    if ( $this->form_validation->run() !== false ) {
@@ -401,7 +408,9 @@ function do_upload($id)
                   $data['depa']=  $this->department->get_department();
                   $this->load->model('branch');
                   $data['branch']=  $this->branch->get_branch();
-                  $this->load->view('add_new_employee',$data);
+                    $this->load->view('template/header');
+                    $this->load->view('add_new_employee',$data);
+                    $this->load->view('template/footer');
                               
                           }
                           }
@@ -412,7 +421,9 @@ function do_upload($id)
                    $data['depa']=  $this->department->get_department();
                    $this->load->model('branch');
                    $data['branch']=  $this->branch->get_branch();
-                   $this->load->view('add_new_employee',$data);
+                   $this->load->view('add_new_employee',$data); $this->load->view('template/header');
+                    $this->load->view('add_new_employee',$data);
+                    $this->load->view('template/footer');
                         
                           }
             }else{
@@ -424,7 +435,9 @@ function do_upload($id)
                   $data['depa']=  $this->department->get_department();
                   $this->load->model('branch');
                   $data['branch']=  $this->branch->get_branch();
-                  $this->load->view('add_new_employee',$data);
+                   $this->load->view('template/header');
+                    $this->load->view('add_new_employee',$data);
+                    $this->load->view('template/footer');
               }
     
              }
@@ -516,16 +529,7 @@ function do_upload($id)
         function edit_branch($dep){
             $_SESSION['edit_bran']=$dep;
         }
-         function changelanguage(){
-        if(!isset($_SESSION['lang'])){
-        $this->config->set_item('language','english'); 
-        $this->lang->load('english');
-        }else{            
-        $lang= $_SESSION['lang'];
-        $this->config->set_item('language',"$lang"); 
-        $this->lang->load("$lang");
-        }
-    }
+      
 
 
 }

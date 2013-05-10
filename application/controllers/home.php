@@ -7,13 +7,15 @@ class Home extends CI_Controller
         $this->load->helper('form');
         session_start();
         $this->load->library('session');
+        $this->load->library('poslanguage');                 
+        $this->load->library('poslanguage');                 
+        $this->poslanguage->set_language();
         
        
     }
     function index(){
         if(!isset($_SESSION['Uid'])){
-            redirect('userlogin');
-            
+            redirect('userlogin');            
         }
         
     }
@@ -28,18 +30,10 @@ class Home extends CI_Controller
         
         $this->acl_session_for_user();
         $this->load->view('template/header');
-        $this->load->view('home');       
+        $this->load->view('home');   
+        $this->load->view('template/footer');
                 
     }
-     function changelanguage(){
-        if(!isset($_SESSION['lang'])){
-        $this->config->set_item('language','english'); 
-        $this->lang->load('english');
-        }else{            
-        $lang= $_SESSION['lang'];
-        $this->config->set_item('language',"$lang"); 
-        $this->lang->load("$lang");
-        }
-    }
+    
 }
 ?>

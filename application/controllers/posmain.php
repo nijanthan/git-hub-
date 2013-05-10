@@ -9,11 +9,15 @@ class Posmain extends CI_Controller{
         session_start();        
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
+        $this->load->library('poslanguage');                 
+        $this->poslanguage->set_language();
         
     }
     function index()
     {
-        $this->load->view('home'); 
+            $this->load->view('template/header');
+            $this->load->view('home');
+            $this->load->view('template/footer');
     }
    
     function home(){
@@ -23,7 +27,9 @@ class Posmain extends CI_Controller{
                redirect('employees');
            }else{
                echo "U have No Permission to View Employees Details";
-               $this->load->view('home'); 
+               $this->load->view('template/header');
+               $this->load->view('home');
+               $this->load->view('template/footer');
            }
        }
        if($this->input->post('logout')){

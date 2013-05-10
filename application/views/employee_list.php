@@ -25,7 +25,7 @@ foreach ($row as $erow){
             }?>
         
         </td>
-        <td style="width: 100px"><a href="<?php echo base_url() ?>index.php/employees/edit_employee_details/<?php echo $erow->id ?>">Edit</a><td><td style="width: 100px"><a href="<?php echo base_url() ?>index.php/employee_permissions/edit_employee_permission/<?php echo $erow->id ?>">Edit permission</a></td>
+        <td style="width: 100px"><a href="<?php echo base_url() ?>index.php/employees/edit_employee_details/<?php echo $erow->id ?>"><?php echo $this->lang->line('edit') ?></a><td><td style="width: 100px"><a href="<?php echo base_url() ?>index.php/employee_permissions/edit_employee_permission/<?php echo $erow->id ?>"><?php echo $this->lang->line('edit_permission') ?></a></td>
     
     </tr>
     <?php ?>
@@ -34,5 +34,5 @@ foreach ($row as $erow){
 
 
 ?>  
-<tb><input type="submit" name="delete_all" value="<?php $this->lang->line('item') ?>"></td><tb><input type="submit" name="Add_employee" value="Add New Employee"></td><tb><input type="submit" name="edit_all" value="Send Email"></td><td><?php echo form_submit('BacktoHome','Back To Home') ?></td>
+<tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_employee" value="<?php echo $this->lang->line('add_new_user') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
      <?php echo form_close() ?> 
