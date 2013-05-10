@@ -4,8 +4,8 @@ if(!isset($_SESSION['Uid'])){
 }else{ 
 echo form_open('posmain/home');
 ?><h1>POS HOME</h1><td><?php echo form_submit('logout',$this->lang->line('logout'));?></td>
-<table><tr><td style="width: 200"><?php echo form_label($this->lang->line('employee')) ?></td><td><?php echo form_label($this->lang->line('item')) ?></td></tr>
-    <tr><td><?php echo form_submit('Employees',$this->lang->line('employee'))?></td><td><?php echo form_submit('Items',$this->lang->line('item'));?></td></tr>
+<table><tr><td style="width: 200"><?php echo form_label($this->lang->line('employee')) ?></td><td><?php echo form_label($this->lang->line('item')) ?></td><td><?php echo form_label($this->lang->line('department')) ?></td></tr>
+    <tr><td><?php echo form_submit('Employees',$this->lang->line('employee'))?></td><td><?php echo form_submit('Items',$this->lang->line('item'));?></td><td><?php echo form_submit('department',$this->lang->line('department'));?></td></tr>
     
 </table>
 <?php

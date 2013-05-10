@@ -66,3 +66,8 @@ ERROR - 2013-05-10 08:01:37 --> Severity: Warning  --> Missing argument 1 for Em
 ERROR - 2013-05-10 08:01:37 --> Severity: Notice  --> Undefined variable: ud C:\wamp\www\PointOfSale\application\controllers\employees.php 532
 ERROR - 2013-05-10 08:01:51 --> Query error: Column 'emp_id' cannot be null
 ERROR - 2013-05-10 08:02:34 --> Query error: Column 'emp_id' cannot be null
+ERROR - 2013-05-10 10:28:13 --> 404 Page Not Found --> department
+ERROR - 2013-05-10 10:28:26 --> 404 Page Not Found --> department
+ERROR - 2013-05-10 10:30:10 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 28
+ERROR - 2013-05-10 10:30:10 --> Severity: Notice  --> Undefined variable: depa C:\wamp\www\PointOfSale\application\views\department.php 3
+ERROR - 2013-05-10 10:30:10 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 3
