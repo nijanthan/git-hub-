@@ -32,6 +32,19 @@ $lang['save']='Save';
 $lang['cancel']='Cancel';
 $lang['update']='Update';
 $lang['add']='Add';
+$lang['department_name']='Department Name';
+$lang['read']='Read';
+$lang['item_read']='Read Items';
+$lang['item_add']='Add Items';
+$lang['item_edit']='Edit Items';
+$lang['item_delete']='Delete Items';
+$lang['user_read']='Read Users';
+$lang['user_add']='Add Users';
+$lang['user_edit']='Edit Users ';
+$lang['user_delete']='Delete Users';
+$lang['on']='On';
+$lang['off']='Off';
+
 
 
 ?>﻿

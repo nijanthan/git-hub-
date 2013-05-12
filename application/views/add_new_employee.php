@@ -6,7 +6,7 @@ function move(tbFrom, tbTo)
  var arrFrom = new Array(); var arrTo = new Array(); 
  var arrLU = new Array();
  var i;
- for (i = 0; i < tbTo.options.length; i++) 
+ for (i = 0;i < tbTo.options.length; i++) 
  {
   arrLU[tbTo.options[i].text] = tbTo.options[i].value;
   arrTo[i] = tbTo.options[i].text;
@@ -167,7 +167,7 @@ value="<-">
     
 </select>
     
-    <label name="ToLB"></label>
+   
 </td></tr></table>
         </td></tr><tr><td><?php echo form_label($this->lang->line('branch'))?></td><td>
     <table><tr><td>

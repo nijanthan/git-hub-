@@ -8,7 +8,8 @@ class DepartmentCI extends CI_Controller{
         session_start();        
         $this->load->library('session');
         $this->load->helper(array('form', 'url'));
-        $this->load->library('poslanguage');                 
+        $this->load->library('poslanguage'); 
+        $this->load->library('form_validation');
         $this->poslanguage->set_language();
     }
     function index(){
@@ -23,7 +24,7 @@ class DepartmentCI extends CI_Controller{
     function get_department(){
                 $this->load->model('department');
        // $data['depa']=$this->department->get_department();
-        
+       
                
                 $this->load->library("pagination"); 
                
@@ -47,10 +48,56 @@ class DepartmentCI extends CI_Controller{
             redirect('posmain');
         }
         if($this->input->post('add')){
+                $this->load->model('branch');
+                $data['branch']=  $this->branch->get_branch();
                 $this->load->view('template/header');
-                $this->load->view('add_department');
+                $_SESSION['add_depa']='null';
+                $this->load->view('add_department',$data);
                 $this->load->view('template/footer');
         }
     }
+    function select_department($depa){
+         $_SESSION['add_depa']=$depa;
+    }
+    function add_department(){
+       $this->load->model('department');
+       $_SESSION['add_depa'];
+           
+           $this->form_validation->set_rules("department_name",$this->lang->line('department_name'),"required"); 
+           if ( $this->form_validation->run() !== false and $_SESSION['add_depa']!='null') {
+               $depart=$this->input->post('department_name');
+               $id=$this->department->add_department($depart);
+               $this->add_department_branch($id);
+           }
+       
+           
+    
+    }
+     function add_department_branch($id){
+            
+            $str=$_SESSION['add_depa'];
+            $depart = preg_split('/[\,\.\ ]/', $str);
+            $this->load->model('department');
+            $branch_id=array();
+            $i=0;
+            foreach ($depart as $bra){
+
+                $temp_depart =  preg_split("/,/", $bra);
+                if($temp_depart){
+                    foreach ($temp_depart as $temp){
+                      
+                        $branch_id[$i]=$temp;
+                        $i++;
+                    } 
+                } else {
+                    $branch_id[$i]=$temp;
+                        $i++;  
+                }
+            }  
+            for($ii=1; $ii<count($branch_id); $ii++){
+               $this->department->set_branch_department($id,$branch_id[$ii]);
+            }
+
+        }
 }
 ?>

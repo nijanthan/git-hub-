@@ -32,5 +32,17 @@ $lang['save']='സേവ്';
 $lang['cancel']='ഉപേക്ഷിക്കുക';
 $lang['update']='പുതുക്കുക';
 $lang['add']='ആഡ് ';
+$lang['department_name']='വകുപ്പ്‌ പേര്';
+$lang['read']='റീഡ് ';
+$lang['item_read']='ഇനം റീഡ് ';
+$lang['item_add']='ഇനം ആഡ് ';
+$lang['item_edit']='ഇനം തിരുത്തൽ ';
+$lang['item_delete']='ഇനം എടുത്തുകളയുക';
+$lang['user_read']='ഉദ്യോഗസ്ഥന്‍ റീഡ് ';
+$lang['user_add']='ഉദ്യോഗസ്ഥന്‍ ആഡ് ';
+$lang['user_edit']='ഉദ്യോഗസ്ഥന്‍ തിരുത്തൽ ';
+$lang['user_delete']='ഉദ്യോഗസ്ഥന്‍ എടുത്തുകളയുക';
+$lang['on']='ഓണ്‍';
+$lang['off']='ഓഫ്‌';
 
 ?>﻿

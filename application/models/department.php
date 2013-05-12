@@ -69,7 +69,17 @@ function get_department_count(){
            }
           return false;
    }
-
+   function  add_department($depart){
+       $data=array('dep_name'=>$depart);
+       $this->db->insert('department',$data);
+        $id=$this->db->insert_id();
+       return $id;
+   }
+   function set_branch_department($id,$branch_id){
+       $data=array('branch_id'=>$branch_id,
+                    'department_id'=>$id);
+                $this->db->insert('depabranch',$data);
+   }
     
 }
 ?>
