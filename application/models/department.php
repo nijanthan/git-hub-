@@ -104,11 +104,7 @@ function get_department_count(){
        $this->db->where('department_id',$id);
        $this->db->delete('depabranch');
    }
-   function get_user_branchs($id){
-       $this->db->select()->from('userbranchs')->where('emp_id',$id);
-       $sql=  $this->db->get();
-       return $sql->result();
-   }
+   
    
     
 }

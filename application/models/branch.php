@@ -64,5 +64,10 @@ class Branch extends CI_Model{
         $this->db->where('emp_id',$id);
         $this->db->delete('userbranchs');
     }
+    function get_user_branchs($id){
+       $this->db->select()->from('userbranchs')->where('emp_id',$id);
+       $sql=  $this->db->get();
+       return $sql->result();
+   }
 }
 ?>

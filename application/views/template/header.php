@@ -38,10 +38,7 @@ var lang = document.getElementById("chnagelang").value;
 
 </head>
 <body> <form action="">  
-        <table><tr>
-            <td><select>
-                    <option>  </option>
-            </select></td>                
+        <table style="float: right"><tr>                        
            <td><select  name="ToLB" id="chnagelang" style="width:150">    
    <option name="english" value="english" onClick="set_language(this.form.ToLB)">English</option>
    <option name="malayalam" value="malayalam" onClick="set_language(this.form.ToLB)">Malayalam</option>
