@@ -6,6 +6,12 @@ class Setting extends CI_Model{
     function get_branch_setting(){
         $this->db->select()->from('settings');
         $sql=$this->db->get();
+        foreach ($sql->result() as $row) {
+           
+                 $data= $row->branch ;                  
+                 
+    }
+    return $data;
     }
 }
 ?>

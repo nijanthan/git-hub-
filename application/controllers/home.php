@@ -29,6 +29,8 @@ class Home extends CI_Controller
         
         $this->acl_session_for_user();
         $this->load->model('setting');
+        $data['branch_settings']=$this->setting->get_branch_setting();
+        $data['row']=
         $this->load->view('template/header');
         $this->load->view('home');   
         $this->load->view('template/footer');
