@@ -42,6 +42,14 @@ $lang['user_read']='Read Users';
 $lang['user_add']='Add Users';
 $lang['user_edit']='Edit Users ';
 $lang['user_delete']='Delete Users';
+$lang['depa_read']='Read Department';
+$lang['depa_add']='Add Department';
+$lang['depa_edit']='Edit Department';
+$lang['depa_delete']='Delete Department';
+$lang['branch_read']='Read Branch';
+$lang['branch_add']='Add Branch';
+$lang['branch_edit']='Edit Branch';
+$lang['branch_delete']='Delate Branch';
 $lang['on']='On';
 $lang['off']='Off';
 

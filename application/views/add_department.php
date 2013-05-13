@@ -156,19 +156,48 @@ value="<-">
 </table></td><td>
 <table >
 <tr><td><label><?php echo $this->lang->line('user_read'); ?> </label> </td>
-    <td><div class="switch demo3" ><input type="checkbox" name="user_read"><label><i></i></label></td>
+    <td><div class="switch demo3" ><input type="checkbox" name="user_read" value="0001"><label><i></i></label></td>
 </tr>
 <tr><td><label><?php echo $this->lang->line('user_add'); ?></label> </td>
-    <td><div class="switch demo3" ><input type="checkbox"  name="user_add"><label><i></i></label></td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="user_add"  value="0010"><label><i></i></label></td>
 </tr>
 <tr><td><label><?php echo $this->lang->line('user_edit');?></label> </td>
-    <td><div class="switch demo3" ><input type="checkbox"  name="user_edit"><label><i></i></label></td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="user_edit" value="0100"><label><i></i></label></td>
 </tr>
 <tr><td><label><?php echo $this->lang->line('user_delete');  ?></label> </td>
-    <td><div class="switch demo3" ><input type="checkbox"  name="user_delete"><label><i></i></label></td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="user_delete" value="1000"><label><i></i></label></td>
+</tr>
+</table></td><td>
+<table >
+<tr><td><label><?php echo $this->lang->line('branch_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="branch_read" value="0001"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('branch_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="branch_add" value="0010"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('branch_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="branch_edit" value="0100"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('branch_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="branch_delete" value="1000"><label><i></i></label></td>
+</tr>
+</table></td><td>
+<table >
+<tr><td><label><?php echo $this->lang->line('depa_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="depa_read" value="0001"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('depa_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="depa_add" value="0010"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('depa_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="depa_edit" value="0100"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('depa_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="depa_delete" value="1000"><label><i></i></label></td>
 </tr>
 </table></td></tr>
 </table></section>
 
-<?php echo form_submit('save',$this->lang->line('save'));
+<?php echo form_submit('save',$this->lang->line('save'));echo form_submit('cancel',$this->lang->line('cancel'));
 echo form_close() ?>
+<?php echo validation_errors(); ?>

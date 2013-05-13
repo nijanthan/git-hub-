@@ -42,6 +42,14 @@ $lang['user_read']='ഉദ്യോഗസ്ഥന്‍ റീഡ് ';
 $lang['user_add']='ഉദ്യോഗസ്ഥന്‍ ആഡ് ';
 $lang['user_edit']='ഉദ്യോഗസ്ഥന്‍ തിരുത്തൽ ';
 $lang['user_delete']='ഉദ്യോഗസ്ഥന്‍ എടുത്തുകളയുക';
+$lang['depa_read']='വകുപ്പ്‌ റീഡ് ';
+$lang['depa_add']='വകുപ്പ്‌ ആഡ് ';
+$lang['depa_edit']='വകുപ്പ്‌ തിരുത്തൽ ';
+$lang['depa_delete']='വകുപ്പ്‌ എടുത്തുകളയുക';
+$lang['branch_read']='ബ്രാഞ്ച്  റീഡ് ';
+$lang['branch_add']='ബ്രാഞ്ച്  ആഡ് ';
+$lang['branch_edit']='ബ്രാഞ്ച് തിരുത്തൽ ';
+$lang['branch_delete']='ബ്രാഞ്ച് എടുത്തുകളയുക';
 $lang['on']='ഓണ്‍';
 $lang['off']='ഓഫ്‌';
 

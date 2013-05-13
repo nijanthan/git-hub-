@@ -80,6 +80,31 @@ function get_department_count(){
                     'department_id'=>$id);
                 $this->db->insert('depabranch',$data);
    }
+   function delete_department($id){
+       $this->db->where('id',$id);
+       $this->db->delete('department');       
+   }
+   function delete_item_permission($id){
+        $this->db->where('depart_id',$id);
+        $this->db->delete('item_per');
+   }
+   function delete_user_permission($id){
+        $this->db->where('depart_id',$id);        
+        $this->db->delete('user_per');
+   }
+   function delete_branch_permission($id){
+        $this->db->where('depart_id',$id);        
+        $this->db->delete('branch_per');
+   }
+    function delete_depart_permission($id){
+        $this->db->where('depart_id',$id);        
+        $this->db->delete('depart_per');
+   }
+   function delete_depart_branch($id){
+       $this->db->where('department_id',$id);
+       $this->db->delete('depabranch');
+   }
+   
     
 }
 ?>

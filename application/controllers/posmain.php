@@ -46,7 +46,9 @@ class Posmain extends CI_Controller{
        }
        
     }
-    
+    function department(){
+        redirect('departmentCI');
+    }
     
     
 }

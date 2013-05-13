@@ -7,8 +7,7 @@ class Home extends CI_Controller
         $this->load->helper('form');
         session_start();
         $this->load->library('session');
-        $this->load->library('poslanguage');                 
-        $this->load->library('poslanguage');                 
+        $this->load->library('poslanguage');                                       
         $this->poslanguage->set_language();
         
        
@@ -29,6 +28,7 @@ class Home extends CI_Controller
     function pos_home(){
         
         $this->acl_session_for_user();
+        $this->load->model('setting');
         $this->load->view('template/header');
         $this->load->view('home');   
         $this->load->view('template/footer');

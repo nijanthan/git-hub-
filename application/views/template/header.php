@@ -10,35 +10,27 @@
 <script type="text/javascript" src="<?php echo base_url();?>js/ajaxupload.3.5.js" ></script>
 <script language="javascript"> 
 
-function makeAjaxCall1(value){
+function language(value){
     var jibi=value;
   
 	$.ajax({
             
 		type: "post",
 		url: "http://localhost/PointOfSale/index.php/userlogin/setlanguage/"+jibi,
-		cache: false			
+					
 		
         });
-        alert('Language is Changed');
+        alert('Language is Changed To '+value);
          window.location.reload(true);
 
         
 }
 
-function ajaxsave1(tbTo){
-var arrjibi="" ; var arrTo = new Array(); 
-var monish=".";
+function set_language(){
+
 var lang = document.getElementById("chnagelang").value;
- var arrLU = new Array();
- var i;
- for (i = 0; i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;
- arrjibi=arrjibi+monish+tbTo.options[i].value;
- }
-    makeAjaxCall1(lang);
+ 
+    language(lang);
 
 }
 
@@ -46,10 +38,14 @@ var lang = document.getElementById("chnagelang").value;
 
 </head>
 <body> <form action="">  
-<select  name="ToLB" id="chnagelang" style="width:150">
-    
-   <option name="english" value="english" onClick="ajaxsave1(this.form.ToLB)">English</option>
-      <option name="malayalam" value="malayalam" onClick="ajaxsave1(this.form.ToLB)">Malayalam</option>
-</select> 
+        <table><tr>
+            <td><select>
+                    <option>  </option>
+            </select></td>                
+           <td><select  name="ToLB" id="chnagelang" style="width:150">    
+   <option name="english" value="english" onClick="set_language(this.form.ToLB)">English</option>
+   <option name="malayalam" value="malayalam" onClick="set_language(this.form.ToLB)">Malayalam</option>
+</select></td></tr>
+            <table>
 </form>
         
