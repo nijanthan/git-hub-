@@ -16,6 +16,7 @@ class Home extends CI_Controller
         if(!isset($_SESSION['Uid'])){
             redirect('userlogin');            
         }
+        $this->pos_home();
         
     }
     function acl_session_for_user(){
@@ -38,6 +39,10 @@ class Home extends CI_Controller
         $this->load->view('home');   
         $this->load->view('template/footer');
                 
+    }
+    function set_branchs($branch){
+        $_SESSION['user_branch']=$branch;
+        echo "jii";
     }
     
 }

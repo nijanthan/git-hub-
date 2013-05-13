@@ -16,7 +16,7 @@ function language(value){
 	$.ajax({
             
 		type: "post",
-		url: "http://localhost/PointOfSale/index.php/userlogin/setlanguage/"+jibi,
+		url: "http://localhost/PointOfSale/index.php/userlogin/setlanguage/"+jibi
 					
 		
         });
