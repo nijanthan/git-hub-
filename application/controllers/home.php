@@ -44,6 +44,16 @@ class Home extends CI_Controller
         $_SESSION['user_branch']=$branch;
         echo "jii";
     }
+    function change_branch(){
+       $this->load->model('branch');
+       $data=$this->branch->get_user_branch_id_list($_SESSION['Uid']);
+       for($i=0;$i<count($data);$i++){
+          if($this->input->post($data[$i])){
+              echo $data[$i];
+          }
+       }
+     
+    }
     
 }
 ?>

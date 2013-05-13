@@ -69,5 +69,16 @@ class Branch extends CI_Model{
        $sql=  $this->db->get();
        return $sql->result();
    }
+   function get_user_branch_id_list($id){
+        $this->db->select()->from('userbranchs')->where('emp_id',$id);
+         $sql=  $this->db->get();
+        $j=0;
+        foreach ($sql->result() as $row) {
+                
+             $data[$j] = $row->branch_id  ;
+             $j++;
+            }
+            return $data;
+   }
 }
 ?>

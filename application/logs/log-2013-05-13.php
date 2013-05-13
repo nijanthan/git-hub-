@@ -6,3 +6,4 @@ ERROR - 2013-05-13 06:48:11 --> Query error: Unknown column '13' in 'where claus
 ERROR - 2013-05-13 06:48:14 --> Query error: Unknown column '13' in 'where clause'
 ERROR - 2013-05-13 07:05:40 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 5
 ERROR - 2013-05-13 07:05:41 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\department.php 5
+ERROR - 2013-05-13 11:57:00 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\home.php 51
