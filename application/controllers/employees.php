@@ -346,7 +346,7 @@ function do_upload($id)
             if($this->input->post('Add_employee')){
                     $this->load->model('department');
                     $this->load->model('branch');
-                    $data['branch']=  $this->branch->get_branch();
+                    $data['branch']=  $this->branch->get_branch($_SESSION['Uid']);
                     $data['depa']=  $this->department->get_department();
                     $this->load->view('template/header');
                     $this->load->view('add_new_employee',$data);

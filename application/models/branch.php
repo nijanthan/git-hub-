@@ -80,5 +80,21 @@ class Branch extends CI_Model{
             }
             return $data;
    }
+   function get_user_for_branch($id){
+       $this->db->select()->from('userbranchs')->where('emp_id',$id);
+       $sql=$this->db->get();
+       return $sql->result();
+       
+   }
+   function get_user_seleted_branch($data){
+          $this->db->select()->from('branch')->where('id',$data);
+                $sql=  $this->db->get();
+              
+                foreach ($sql->result() as $row) {            
+             $data = $row->store_name   ;
+            
+            } 
+            return $data;
+   }
 }
 ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 13, 2013 at 11:26 AM
+-- Generation Time: May 15, 2013 at 08:44 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -65,14 +65,20 @@ CREATE TABLE IF NOT EXISTS `branch_per` (
   `depart_id` int(11) NOT NULL,
   `branch_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `branch_per`
 --
 
 INSERT INTO `branch_per` (`id`, `permission`, `depart_id`, `branch_id`) VALUES
-(12, '1111', 17, 1);
+(12, '1111', 17, 1),
+(13, '1010', 18, 1),
+(14, '1010', 18, 4),
+(15, '1000', 19, 1),
+(16, '1000', 19, 3),
+(17, '1000', 19, 4),
+(18, '1000', 19, 2);
 
 -- --------------------------------------------------------
 
@@ -85,14 +91,20 @@ CREATE TABLE IF NOT EXISTS `depabranch` (
   `branch_id` int(11) NOT NULL,
   `department_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `depabranch`
 --
 
 INSERT INTO `depabranch` (`id`, `branch_id`, `department_id`) VALUES
-(16, 1, 17);
+(16, 1, 17),
+(17, 1, 18),
+(18, 4, 18),
+(19, 1, 19),
+(20, 3, 19),
+(21, 4, 19),
+(22, 2, 19);
 
 -- --------------------------------------------------------
 
@@ -104,14 +116,16 @@ CREATE TABLE IF NOT EXISTS `department` (
   `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
   `dep_name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- Dumping data for table `department`
 --
 
 INSERT INTO `department` (`id`, `dep_name`) VALUES
-(17, 'Sales Man');
+(17, 'Sales Man'),
+(18, 'Stock Man'),
+(19, 'Art');
 
 -- --------------------------------------------------------
 
@@ -125,14 +139,20 @@ CREATE TABLE IF NOT EXISTS `depart_per` (
   `depart_id` int(11) NOT NULL,
   `branch_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `depart_per`
 --
 
 INSERT INTO `depart_per` (`id`, `permission`, `depart_id`, `branch_id`) VALUES
-(12, '1111', 17, 1);
+(12, '1111', 17, 1),
+(13, '111', 18, 1),
+(14, '111', 18, 4),
+(15, '1000', 19, 1),
+(16, '1000', 19, 3),
+(17, '1000', 19, 4),
+(18, '1000', 19, 2);
 
 -- --------------------------------------------------------
 
@@ -186,14 +206,20 @@ CREATE TABLE IF NOT EXISTS `item_per` (
   `depart_id` int(11) NOT NULL,
   `branch_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `item_per`
 --
 
 INSERT INTO `item_per` (`id`, `permission`, `depart_id`, `branch_id`) VALUES
-(12, '1111', 17, 1);
+(12, '1111', 17, 1),
+(13, '1101', 18, 1),
+(14, '1101', 18, 4),
+(15, '1111', 19, 1),
+(16, '1111', 19, 3),
+(17, '1111', 19, 4),
+(18, '1111', 19, 2);
 
 -- --------------------------------------------------------
 
@@ -250,32 +276,15 @@ CREATE TABLE IF NOT EXISTS `userdepart` (
   `depart_name` varchar(100) NOT NULL,
   `emp_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=69 ;
 
 --
 -- Dumping data for table `userdepart`
 --
 
 INSERT INTO `userdepart` (`id`, `depart_id`, `depart_name`, `emp_id`) VALUES
-(22, 1, 'Sales Man', 45),
-(23, 7, 'Store Main', 45),
-(24, 5, 'Sales Support ', 45),
-(43, 1, 'Sales Man', 47),
-(44, 5, 'Sales Support ', 47),
-(45, 2, 'Stock Man', 47),
-(54, 1, 'Sales Man', 48),
-(55, 1, 'Sales Man', 49),
-(56, 4, 'Support Managers', 49),
-(57, 1, 'Sales Man', 50),
-(58, 3, 'Office Supplies', 50),
-(59, 6, 'Marketing Office', 50),
-(60, 3, 'Office Supplies', 51),
-(61, 5, 'Sales Support ', 51),
-(62, 1, 'Sales Man', 52),
-(63, 4, 'Support Managers', 52),
-(64, 4, 'Support Managers', 53),
-(65, 3, 'Office Supplies', 54),
-(66, 17, 'Sales Man', 55);
+(67, 17, 'Sales Man', 55),
+(68, 18, 'Stock Man', 55);
 
 -- --------------------------------------------------------
 
@@ -326,14 +335,20 @@ CREATE TABLE IF NOT EXISTS `user_per` (
   `depart_id` int(11) NOT NULL,
   `branch_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `user_per`
 --
 
 INSERT INTO `user_per` (`id`, `permission`, `depart_id`, `branch_id`) VALUES
-(12, '1111', 17, 1);
+(12, '1111', 17, 1),
+(13, '1101', 18, 1),
+(14, '1101', 18, 4),
+(15, '1000', 19, 1),
+(16, '1000', 19, 3),
+(17, '1000', 19, 4),
+(18, '1000', 19, 2);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

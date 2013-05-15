@@ -104,7 +104,46 @@ function get_department_count(){
        $this->db->where('department_id',$id);
        $this->db->delete('depabranch');
    }
-   
+   function get_user_deprtment($id){
+       $this->db->select()->from('depabranch')->where('branch_id',$id);
+        $sql=  $this->db->get();
+        $j=0;
+        foreach ($sql->result() as $row) {
+                $this->db->select()->from('department')->where('id',$row->department_id);
+                $sql=  $this->db->get();
+              
+                foreach ($sql->result() as $row) {            
+             $data[$j] = $row->dep_name  ;
+            
+            } $j++;
+        }
+            return $data;
+       
+   }
+   function get_user_deprtment_id($id){
+       $this->db->select()->from('depabranch')->where('branch_id',$id);
+        $sql=  $this->db->get();
+        $j=0;
+        foreach ($sql->result() as $row) {
+                $this->db->select()->from('department')->where('id',$row->department_id);
+                $sql=  $this->db->get();
+              
+                foreach ($sql->result() as $row) {            
+             $data[$j] = $row->id  ;
+            
+            } $j++;
+        }
+            return $data;
+       
+   }
+   function get_user_seleted_depa($d_id){
+       $this->db->select()->from('department')->where('id',$d_id);
+                $sql=  $this->db->get();              
+                foreach ($sql->result() as $row) {            
+             $data = $row->dep_name  ;            
+            }
+            return $data;
+   }
    
     
 }
