@@ -48,6 +48,7 @@ class CI_Controller {};
 * @property CI_Config $config
 * @property CI_Loader $load
 * @property CI_Session $session
+*
 */
 
 class CI_Model {};
