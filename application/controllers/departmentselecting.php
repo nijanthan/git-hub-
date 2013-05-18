@@ -2,6 +2,13 @@
 class Departmentselecting extends CI_Controller{
     function __construct() {
         parent::__construct();
+         $this->load->helper('form');
+        $this->load->helper('url');
+        $this->load->library('unit_test');
+        session_start();        
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('poslanguage');                 
+        $this->poslanguage->set_language();
     }
     function index(){
         
@@ -12,7 +19,7 @@ class Departmentselecting extends CI_Controller{
                     $this->load->model('branch');
                     $data['branch']= $this->branch->get_user_for_branch(55);
                     $data['depa']= $this->department->get_department();
-                  
+                   //$this->load->view('template/header');
                     $this->load->view('ruffpaper',$data);
                    
     }
@@ -38,15 +45,11 @@ class Departmentselecting extends CI_Controller{
              
                  for($j=0;$j<count($selected_depa);$j++){
             $depa=$this->department->get_user_seleted_depa($selected_depa[$j]);
-            echo "<option value=$jibi.$id[$j]>  $depa </option>";
-            
-                 }
-             
+            echo "<option value=$jibi.$selected_depa[$j]>  $depa  </option>";            
+                 }             
         }else{
-        for($i=0;$i< count($data);$i++){
-          
-       echo "<option value=$jibi.$id[$i]>$data[$i]   </option>";
-           
+        for($i=0;$i< count($data);$i++){          
+       echo "<option value=$jibi.$id[$i]>$data[$i]   </option>";           
         }
         }
     }
@@ -84,29 +87,8 @@ $r=0;
         }
         return $new_depa;
     }
-    function department($b_id,$d_id){
-        $this->load->model('branch');
-        $this->load->model('department');
-        $branch=$this->branch->get_user_seleted_branch($b_id);
-        $depa=$this->department->get_user_seleted_depa($d_id);
-                echo $branch.$depa;
-        
-         
-    }
-    function my_department($b_id,$d_id,$bid,$data){
-       if($bid=='undefined'){
-		   $ido=$b_id.".".$d_id;
-	   }else{
-		   $ido=$b_id.".".$d_id;
-	   }
-         $this->load->model('branch');
-        $this->load->model('department');
-        $branch=$this->branch->get_user_seleted_branch($b_id);
-        $depa=$this->department->get_user_seleted_depa($d_id);
-       
-        echo "<option  value=".$ido." >" . urldecode($data). $depa.$ido." </option>";
-       
-    }
+  
+   
     function get_department_branch($annan){
         $idArray=array();
         $idArray = explode('.',$annan );
@@ -133,10 +115,19 @@ $r=0;
         
     }
     function get_selected_department($id){
-        echo "<input type=text name=depa value=$id>";
+        echo "<input type=hidden name=depa value=$id>";
     }
    function save(){
        echo urldecode($this->input->post('depa'));
+   }
+   function check_department_branch($jibi,$id){
+       $idArray=array();
+        $idArray = explode('.',$id );
+        $b_id=$idArray[0];
+        $d_id=$idArray[1];
+        if($jibi==$b_id){
+            echo 'TRUE';
+        }
    }
 }
 ?>

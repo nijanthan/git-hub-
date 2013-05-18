@@ -168,84 +168,191 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label($this->lang->line('date_of'))?></td><td><input type="text" id="datepicker" name="dob" value="<?php echo date('n/j/Y', strtotime('+0 year, +0 days',$erow->dob));   ?>"> </td></tr>
    
     <tr><td><?php echo form_label($this->lang->line('department'))?></td><td>
-<table><tr><td>
-        <?php foreach ($depa as $my_depa) ?>  
+
+            <script>
+function select_branch(tbTo)
+{    
+ var arrLU="";
+    for (i = 0;i < tbTo.options.length; i++) 
+ {
+  arrLU =arrLU+" "+tbTo.options[i].value;           
+ } 
+var jibi = document.getElementById("branch").value;
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/add/"+jibi+"/"+arrLU,false);
+
+xmlhttp.send();
+document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+}
+function move(tbFrom, tbTo) 
+{      
+ var arrFrom = new Array(); var arrTo = new Array(); 
+ var arrLU = new Array();
+ var i;
+ for (i = 0;i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;
+ }
+ var fLength = 0;
+ var tLength = arrTo.length;
+ for(i = 0; i < tbFrom.options.length; i++) 
+ {
+  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
+  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
+  {
+   arrTo[tLength] = tbFrom.options[i].text;
+   tLength++;
+  }
+  else 
+  {
+   arrFrom[fLength] = tbFrom.options[i].text;
+   fLength++;
+  }
+}
+
+tbFrom.length = 0;
+tbTo.length = 0;
+var ii;
+
+for(ii = 0; ii < arrFrom.length; ii++) 
+{
+  var no = new Option();
+  no.value = arrLU[arrFrom[ii]];
+  no.text = arrFrom[ii];  
+  tbFrom[ii] = no;  
+}
+
+for(ii = 0; ii < arrTo.length; ii++) 
+{
+ var no = new Option();
+ no.value = arrLU[arrTo[ii]];  
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_department_branch/"+arrLU[arrTo[ii]],false);
+                xmlhttp.send();
+              no.text = xmlhttp.responseText;
+ tbTo[ii] = no; 
+}
+}
+function backmove(tbFrom, tbTo) 
+{
+ var jibi = document.getElementById("branch").value;
+ var arrFrom = new Array(); var arrTo = new Array(); 
+ var arrLU = new Array();
+ var i;
+ for (i = 0;i < tbTo.options.length; i++) 
+ {
+  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
+  arrTo[i] = tbTo.options[i].text;  
+ }
+ var fLength = 0;
+ var tLength = arrTo.length;
+ for(i = 0; i < tbFrom.options.length; i++) 
+ {
+  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
+  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
+  {
+   arrTo[tLength] = tbFrom.options[i].text;
+   tLength++;
+  }
+  else 
+  {
+   arrFrom[fLength] = tbFrom.options[i].text;
+   fLength++;
+  }
+}
+tbFrom.length = 0;
+tbTo.length = 0;
+var ii;
+for(ii = 0; ii < arrFrom.length; ii++) 
+{
+  var no = new Option();
+  no.value = arrLU[arrFrom[ii]];
+  no.text = arrFrom[ii];  
+  tbFrom[ii] = no; 
+}
+for(ii = 0; ii < arrTo.length; ii++) 
+{
+ var no = new Option();
+ no.value = arrLU[arrTo[ii]]; 
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/check_department_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
+                xmlhttp.send();
+                if(xmlhttp.responseText=='TRUE'){                   
+                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/set_department_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
+                xmlhttp.send();                
+                no.text = xmlhttp.responseText;
+                tbTo[ii] = no; 
+ }
+}
+}
+function get_selected(tbTo){
+var arrLU="";
+    for (i = 0;i <tbTo.options.length; i++) 
+ {
+  arrLU =arrLU+" "+tbTo.options[i].value; 
+  } 
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {
+        xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        if(arrLU!=""){
+        xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_selected_department/"+arrLU,false);
+        xmlhttp.send();
+            document.getElementById("mine").innerHTML=xmlhttp.responseText; 
+            
+           }else{
+                document.getElementById("mine").innerHTML="";
+           }
+}
+</script>
+<select id="branch" name="FromLJ" style="width:150">
+    <?php foreach ($branch as $brow) {
           
-<select multiple size="7" name="FromLB" style="width:150">
-  <?php $j=0;
-  while($j<count($depa)) {
-                
-               
-                   ?><option name="<?php foreach ($all_depa as $all_d){ if($depa[$j]==$all_d->dep_name) echo $all_d->id; }?>" 
-                           value="<?php foreach ($all_depa as $all_d){ if($depa[$j]==$all_d->dep_name) echo $all_d->id;} ?>"> 
-                       <?php    foreach ($all_depa as $all_d){ if($depa[$j]==$all_d->dep_name) echo $all_d->dep_name;}?></option>                
-                           
-                         
-                   
-                      
-           
-           
-        <?php  
-        $j++;
-        } 
-        ?>
-  
+        ?> <option name="<?php echo $brow->branch_id ?>" value="<?php echo $brow->branch_id ?>" onClick="select_branch(this.form.lang)" > <?php echo $brow->branch_name ?></option>
+<?php }?>
+
 </select>
-</td>
-<td align="center" valign="middle">
-<input type="button" onClick="move(this.form.FromLB,this.form.ToLB),ajaxsave(this.form.ToLB)" 
-value="->"><br />
-<input type="button" onClick="move(this.form.ToLB,this.form.FromLB),ajaxsave(this.form.ToLB)" 
+<select multiple id="myDiv" name="ToLJ" style="width: 150">
+</select>
+<input type="button" onClick="move(this.form.ToLJ,this.form.lang),get_selected(this.form.lang)" 
+value="->">
+<input type="button" onClick="backmove(this.form.lang,this.form.ToLJ),get_selected(this.form.lang)" 
 value="<-">
-</td>
-
-
-<td>
-   
-<select multiple size="7" name="ToLB" style="width:150">
-     <?php foreach ($selected_depart as $serow){ ?>
-    <option name="<?php echo $serow->depart_id  ?>" value="<?php echo $serow->depart_id  ?>"> <?php echo $serow->depart_name   ?></option>
-    <?php }?>
-    
-</select>
-    
-    <label name="ToLB"></label>
-</td></tr></table>
-        </td></tr><tr><td><?php echo form_label($this->lang->line('branch'))?></td><td>
-    <table><tr><td>
-<select multiple size="7" name="FromLJ" style="width:150">
-    <?php $j=0;
-  while($j<count($all_branch)) {
-                
-                ?><option name="<?php foreach ($branch as $all_d){ if($all_branch[$j]==$all_d->store_name) echo $all_d->id; }?>" 
-                           value="<?php foreach ($branch as $all_d){ if($all_branch[$j]==$all_d->store_name) echo $all_d->id;} ?>"> 
-                       <?php    foreach ($branch as $all_d){ if($all_branch[$j]==$all_d->store_name) echo $all_d->store_name;}?></option>                
-              
-                   
-                      
-           
-           
-        <?php  
-        $j++;
-        } 
-        ?>
+<select multiple  name="lang" size="7" name="ToLJed" style="width: 250">
 
 </select>
-</td>
-<td align="center" valign="middle">
-<input type="button" onClick="move(this.form.FromLJ,this.form.ToLJ),ajaxbranch(this.form.ToLJ)" 
-value="->"><br />
-<input type="button" onClick="move(this.form.ToLJ,this.form.FromLJ),ajaxbranch(this.form.ToLJ)"
-value="<-">
-</td>
-<td>
-<select multiple size="7" name="ToLJ" style="width:150">
-    <?php foreach ($selected_branch as $se_branch) {?>
-    
-     <option name="<?php echo $se_branch->branch_id   ?>" value="<?php echo$se_branch->branch_id  ?>"> <?php echo $se_branch->branch_name   ?></option>
-    <?php }?>
-</select>
-</td></tr></table></td></tr>
+<div id="mine" ></div>
+        </td></tr>
     
    
     <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>
