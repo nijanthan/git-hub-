@@ -22,17 +22,24 @@ class Posmain extends CI_Controller{
              $this->acl_session_for_user();
         }
     }
-   function acl_session_for_user(){
+   function acl_session_for_user($b_id){
         $this->load->library('acluser');                 
-        $this->acluser->user_item_permissions($_SESSION['Uid']);
-        $this->acluser->user_employee_permissions($_SESSION['Uid']);
+        $this->acluser->user_item_permissions($b_id);
+        $this->acluser->user_employee_permissions($b_id);
         
     }
   
     function department(){
         redirect('departmentCI');
     }
-    
+    function change_user_branch($brnch){
+        $this->load->model('aclpermissionmodel');
+        if($this->aclpermissionmodel->check_user_branch($brnch,$_SESSION['Uid'])){
+            $this->acl_session_for_user($brnch);
+        }
+        
+        
+    }
     
 }
 ?>
