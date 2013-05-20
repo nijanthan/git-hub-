@@ -1,120 +1,4 @@
-<html>    
-<head>
-<script language="javascript"> 
-function move(tbFrom, tbTo) 
-{
-    
- var arrFrom = new Array(); var arrTo = new Array(); 
- var arrLU = new Array();
- var i;
- for (i = 0; i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;
- }
- var fLength = 0;
- var tLength = arrTo.length;
- for(i = 0; i < tbFrom.options.length; i++) 
- {
-  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
-  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
-  {
-   arrTo[tLength] = tbFrom.options[i].text;
-   tLength++;
-  }
-  else 
-  {
-   arrFrom[fLength] = tbFrom.options[i].text;
-   fLength++;
-  }
-}
 
-tbFrom.length = 0;
-tbTo.length = 0;
-var ii;
-
-for(ii = 0; ii < arrFrom.length; ii++) 
-{
-  var no = new Option();
-  no.value = arrLU[arrFrom[ii]];
-  no.text = arrFrom[ii];
-  tbFrom[ii] = no;
-  
-}
-
-for(ii = 0; ii < arrTo.length; ii++) 
-{
- var no = new Option();
- no.value = arrLU[arrTo[ii]];
- 
- no.text = arrTo[ii];
-
- tbTo[ii] = no;
- 
- 
- 
- 
-}
-}
-
-function makeAjaxCall(value){
-    var jibi=value;
-	$.ajax({
-            
-		type: "post",
-		url: "http://localhost/PointOfSale/index.php/employees/edit_department/"+jibi,
-		cache: false			
-		
- });
-}
-function branchAjaxCall(value){
-    var jibi=value;
-	$.ajax({
-            
-		type: "post",
-		url: "http://localhost/PointOfSale/index.php/employees/edit_branch/"+jibi,
-		cache: false			
-		
- });
- 
-}
-function ajaxsave(tbTo){
-var arrjibi="" ; var arrTo = new Array(); 
-var monish=".";
- var arrLU = new Array();
- var i;
- for (i = 0; i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;
- arrjibi=arrjibi+monish+tbTo.options[i].value;
- }
-  makeAjaxCall(arrjibi);
-}
-function ajaxbranch(tbTo){
-var arrjibi="" ; var arrTo = new Array(); 
-var monish=".";
- var arrLU = new Array();
- var i;
- for (i = 0; i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;
- arrjibi=arrjibi+monish+tbTo.options[i].value;
- }
-  branchAjaxCall(arrjibi);
-}
-</script>
-
-
-<script>
-$(function() {
-$( "#datepicker" ).datepicker();
-});
-</script>
-
-</head>
-<body>
 
 	
 
@@ -131,11 +15,6 @@ foreach ($row as $erow){
 
 ?>
 
-
-
-<link rel="stylesheet" href="<?php echo base_url();?>css/jquery-ui.css" />
-<script src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
-<script src="<?php echo base_url();?>js/jquery-ui.js"></script>
 
 <script>
 $(function() {
@@ -328,7 +207,8 @@ var arrLU="";
         if(arrLU!=""){
         xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_selected_department/"+arrLU,false);
         xmlhttp.send();
-            document.getElementById("mine").innerHTML=xmlhttp.responseText; 
+            
+            document.getElementById("depa").value = xmlhttp.responseText;
             
            }else{
                 document.getElementById("mine").innerHTML="";
@@ -349,15 +229,20 @@ value="->">
 <input type="button" onClick="backmove(this.form.lang,this.form.ToLJ),get_selected(this.form.lang)" 
 value="<-">
 <select multiple  name="lang" size="7" name="ToLJed" style="width: 250">
-
+<?php foreach ($selected_depart as $s_b_row) {
+     foreach ($selected_branch as $b_row){
+    if($b_row->branch_id==$s_b_row->branch_id ){
+    ?>
+    <option value="<?php echo $s_b_row->branch_id.".".$s_b_row->depart_id  ?>"><?php echo  $b_row->branch_name ." ( " . $s_b_row->depart_name ." )"?></option>
+    <?php } } }?>
 </select>
-<div id="mine" ></div>
+<input type="hidden" name="depa" id="depa">
         </td></tr>
     
    
     <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('photo'))?></td><td><img src="<?php echo base_url();?>uploads/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
-    <tr><td><?php echo form_submit('UPDATE',$this->lang->line('update')) ?></td> 
+    <tr><td><input type="submit" name="UPDATE" value="update" onclick="get_selected(this.form.lang)"></td> 
        
         
         <?php echo form_close(); 

@@ -54,6 +54,30 @@ class Home extends CI_Controller
        }
      
     }
+      function home_fun(){
+       if($this->input->post('Employees')){
+           echo $_SESSION['Emp_per']['read'];
+           if($_SESSION['Emp_per']['read']==1){
+               redirect('employees');
+           }else{
+               echo "U have No Permission to View Employees Details";
+               $this->load->view('template/header');
+               $this->load->view('home');
+               $this->load->view('template/footer');
+           }
+       }
+       if($this->input->post('logout')){
+           session_destroy();
+           redirect('userlogin');
+       }
+       if($this->input->post('department')){
+           redirect('departmentCI');
+       }
+       
+    }
+     function department(){
+        redirect('departmentCI');
+    }
     
 }
 ?>

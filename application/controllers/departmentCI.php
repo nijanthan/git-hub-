@@ -45,7 +45,7 @@ class DepartmentCI extends CI_Controller{
     }
     function department(){
         if($this->input->post('back')){
-            redirect('posmain');
+            redirect('home');
         }
         if($this->input->post('add')){
                 $this->load->model('branch');

@@ -187,7 +187,7 @@ var arrLU="";
         if(arrLU!=""){
         xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_selected_department/"+arrLU,false);
         xmlhttp.send();
-            document.getElementById("mine").innerHTML=xmlhttp.responseText; 
+             document.getElementById("depa").value = xmlhttp.responseText;
             
            }else{
                 document.getElementById("mine").innerHTML="";
@@ -207,10 +207,10 @@ var arrLU="";
 value="->">
 <input type="button" onClick="backmove(this.form.lang,this.form.ToLJ),get_selected(this.form.lang)" 
 value="<-">
-<select multiple  name="lang" size="7" name="ToLJed" style="width: 250">
+<select multiple  name="lang" size="7"  style="width: 250">
 
 </select>
-<div id="mine" ></div></td></tr>
+<input type="hidden" name="depa3" id="depa"></td></tr>
     <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('password'))?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td></td> 

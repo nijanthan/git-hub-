@@ -19,33 +19,16 @@ class Posmain extends CI_Controller{
             $this->load->view('login');
             $this->load->view('template/footer');
         }else{
-            $this->load->view('template/header');
-            $this->load->view('home');
-            $this->load->view('template/footer');
+             $this->acl_session_for_user();
         }
     }
-   
-    function home(){
-       if($this->input->post('Employees')){
-           echo $_SESSION['Emp_per']['read'];
-           if($_SESSION['Emp_per']['read']==1){
-               redirect('employees');
-           }else{
-               echo "U have No Permission to View Employees Details";
-               $this->load->view('template/header');
-               $this->load->view('home');
-               $this->load->view('template/footer');
-           }
-       }
-       if($this->input->post('logout')){
-           session_destroy();
-           redirect('userlogin');
-       }
-       if($this->input->post('department')){
-           redirect('departmentCI');
-       }
-       
+   function acl_session_for_user(){
+        $this->load->library('acluser');                 
+        $this->acluser->user_item_permissions($_SESSION['Uid']);
+        $this->acluser->user_employee_permissions($_SESSION['Uid']);
+        
     }
+  
     function department(){
         redirect('departmentCI');
     }

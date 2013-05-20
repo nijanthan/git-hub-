@@ -71,9 +71,10 @@ class Employees extends CI_Controller{
                 
                 $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                 $data['depa']= $this->department->get_department(); 
+                $this->load->view('template/header');
                 $this->load->view('edit_employee_details',$data);
-                 $_SESSION['edit_bran']="nul";
-                 $_SESSION['edit_depa']="nul";
+                $this->load->view('template/footer');
+               
         
     }
      function get_selected_branchs($depart,$id){
@@ -152,7 +153,6 @@ $r=0;
     }
     function upadate_employee_details(){
        
-        
        $this->load->library('form_validation');
                 $this->form_validation->set_rules("first_name","First_name","required"); 
                 $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
@@ -166,7 +166,8 @@ $r=0;
                 $this->form_validation->set_rules('zip','Zip',"required");
                 $this->form_validation->set_rules('dob','Dob',"required");                
                 $this->form_validation->set_rules('age','Age',"required");
-               // $this->form_validation->set_rules('branch','Branch',"required");
+                $this->form_validation->set_rules('depa','depa',"required");
+               
                 $this->form_validation->set_rules('employee_id','Employee_id',"required");
                 $this->form_validation->set_rules('country','Country',"required");
                  $id=  $this->input->post('id');
@@ -184,7 +185,7 @@ $r=0;
                           $state=$this->input->post('state');
                           $zip=$this->input->post('zip');
                           $country=$this->input->post('country');
-                          $branch=$this->input->post('branch');
+                          $department=urldecode($this->input->post('depa'));
                           $yourdatetime =$this->input->post('dob');
                           $image_name=$this->input->post('image_name');
                           $age=  $this->input->post('age');
@@ -193,20 +194,16 @@ $r=0;
                           $dob= strtotime($yourdatetime); 
                          
                          $this->load->model('employeesmodel');
-                         if($_SESSION['edit_depa']!="" and $_SESSION['edit_bran']!=""){
+                        
                          $this->employeesmodel->update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
-                         if($_SESSION['edit_depa']!="nul"){
-                         $this->update_user_department($id);}
-                         if($_SESSION['edit_bran']!="nul"){
-                         $this->update_user_branch($id);
-                         }
+                         
+                         $this->update_user_department($id,$department);
+                         
+                         $this->update_user_branch($id,$department);
+                         
                          $this->get_employee_details();
-                         }else{
-                             echo "Select the Branchs and department for the user";
-                              $this->load->model('branch');
-        $data['branch']=  $this->branch->get_branch();
-        $this->edit_employee_details($id);
-                         }
+                        
+                           
                           
                           
     }else{
@@ -216,58 +213,63 @@ $r=0;
         
         }
 }
-function update_user_branch($id){
-    $str=$_SESSION['edit_bran'];
+function update_user_branch($id,$depapartment){
+   
      $this->load->model('branch');
       $this->branch->delete_user_branchs($id);
-            $branch = preg_split('/[\,\.\ ]/', $str);
-           
-            $branch_id=array();
-            $i=0;
-            foreach ($branch as $bra){
-
-                $temp_branch =  preg_split("/,/", $bra);
-                if($temp_branch){
-                    foreach ($temp_branch as $temp){
-                      
-                        $branch_id[$i]=$temp;
-                        $i++;
-                    } 
-                } else {
-                    $branch_id[$i]=$temp;
-                        $i++;  
-                }
-            }  
-            for($ii=1; $ii<count($branch_id); $ii++){
-               $this->branch->set_branch($id,$branch_id[$ii]);
+              
+           $new_depa=array();
+           $branch=array();        
+           $bid=array();
+           $bid = explode(' ',$depapartment);
+           $l=0;
+           for($i=1;$i<count($bid);$i++){
+               $depart=array();
+               $depart=explode('.',$bid[$i]);
+                        $branch[$l]=$depart[0];
+                       $l++;               
+               }               
+               $arr=$branch;
+        $len = count($arr);
+        for ($i = 0; $i < $len; $i++) {
+        $temp = $arr[$i];
+        $j = $i;
+        for ($k = 0; $k < $len; $k++) {
+            if ($k != $j) {
+            if ($temp == $arr[$k]) {               
+                $arr[$k]=" ";                
+            }
+            }
+        }
+        }
+$r=0;
+        for ($i = 0; $i < $len; $i++) {
+       if($arr[$i]==" "){           
+       }
+       else{
+            $new_depa[$r]=$arr[$i];
+           $r++;
+       }
+        }           
+            for($k=0;$k<count($new_depa);$k++)
+            {
+               $this->branch->set_branch($id,$new_depa[$k]);
             }
 }
-function update_user_department($id){
-     $str= $_SESSION['edit_depa'];
+function update_user_department($id,$depapartment){
+     
      $this->load->model('department');
      $this->department->delete_user_depart($id);
      
-            $depart = preg_split('/[\,\.\ ]/', $str);
-            
-            $depart_id=array();
-            $i=0;
-            foreach ($depart as $bra){
-
-                $temp_depart =  preg_split("/,/", $bra);
-                if($temp_depart){
-                    foreach ($temp_depart as $temp){
-                      
-                        $depart_id[$i]=$temp;
-                        $i++;
-                    } 
-                } else {
-                    $depart_id[$i]=$temp;
-                        $i++;  
-                }
-            }  
-            for($ii=1; $ii<count($depart_id); $ii++){
-               $this->department->set_department($id,$depart_id[$ii]);
-            }
+           $bid=array();
+           $bid = explode(' ',$depapartment);
+           for($i=1;$i<count($bid);$i++){
+               $depart=array();
+               $depart=explode('.',$bid[$i]);
+                            
+               $this->department->set_department($id,$depart[1],$depart[0]);
+           }
+             
 
     
 }
@@ -308,24 +310,21 @@ function do_upload($id)
                 $this->load->model('department');
                 $data['row']=  $this->employeesmodel->edit_employee($id); 
                
-                $data['selected_branch']=$this->branch->get_selected_branch($id);
+               $data['selected_branch']=$this->branch->get_selected_branch($id);
                 $data['selected_depart']=$this->department->get_user_depart($id);
-                $this->load->model('department');
-                $depa=$this->department->get_all_departmentg();
-                $this->load->model('branch');
-                $branch=$this->branch->get_all_branch();
-                $data['all_branch']=$this->get_selected_branchs($branch,$id);
-                $data['branch']=$this->branch->get_branch();
-                $data['all_depa']=  $this->department->get_department();
-                $data['depa']=$this->get_selected_departments($depa,$id);
+                
+                $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
+                $data['depa']= $this->department->get_department(); 
+                $this->load->view('template/header');
                 $this->load->view('edit_employee_details',$data);
+                $this->load->view('template/footer');
                 
         }
        
         
         function delete_selected_employees(){
             if($this->input->post('BacktoHome')){
-                redirect('posmain');
+                redirect('home');
             }
            if($this->input->post('delete_all')){
               $data1 = $this->input->post('mycheck'); 
@@ -405,7 +404,7 @@ function do_upload($id)
                           $this->add_user_branchs($id,$department);
                           $this->add_user_department($id,$department);
                           $this->load->model('employeepermission');
-                          $this->employeepermission->adda_default_permission($id);
+                         
                           $this->get_employee_details();
                             
                          

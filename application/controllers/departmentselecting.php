@@ -115,12 +115,12 @@ $r=0;
         
     }
     function get_selected_department($id){
-        echo "<input type=hidden name=depa value=$id>";
+        echo $id;
     }
    function save(){
        echo urldecode($this->input->post('depa'));
    }
-   function check_department_branch($jibi,$id){
+   function check_department_branchidden($jibi,$id){
        $idArray=array();
         $idArray = explode('.',$id );
         $b_id=$idArray[0];
