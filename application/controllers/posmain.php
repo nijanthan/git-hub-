@@ -19,14 +19,22 @@ class Posmain extends CI_Controller{
             $this->load->view('login');
             $this->load->view('template/footer');
         }else{
-             $this->acl_session_for_user(4);
+            $this->set_user_default_branch();
+            ///
         }
+    }
+    function set_user_default_branch(){
+        $this->load->model('branch');
+        $data=$this->branch->get_user_default_branch($_SESSION['Uid']);
+         $this->acl_session_for_user($data);
+         redirect('home');
     }
    function acl_session_for_user($b_id){
         $this->load->library('acluser');                 
-        $this->acluser->user_item_permissions($b_id,99);
-       $this->acluser->user_employee_permissions($b_id,99);
-       $this->acluser->user_department_permissions($b_id,99);
+        $this->acluser->user_item_permissions($b_id,$_SESSION['Uid']);
+        $this->acluser->user_employee_permissions($b_id,$_SESSION['Uid']);
+        $this->acluser->user_department_permissions($b_id,$_SESSION['Uid']);
+        $this->acluser->user_branch_permissions($b_id,$_SESSION['Uid']);
         
     }
   

@@ -36,7 +36,7 @@ class Employees extends CI_Controller{
     }
     function get_employee_details(){
         
-        
+        if($_SESSION['user_per']['read']==1){ 
                 $this->load->helper("url");
                 $this->load->model('employeesmodel');
                 $this->load->model('branch');
@@ -58,8 +58,12 @@ class Employees extends CI_Controller{
                 $this->load->view('template/header');
                 $this->load->view('employee_list',$data);
                 $this->load->view('template/footer');
+        }else{
+            redirect('home');
+        }
     }
     function edit_employee_details($id){
+        if($_SESSION['user_per']['edit']==1){ 
                 $this->load->model('employeesmodel');
                 $this->load->model('branch');
                 $this->load->model('department');
@@ -75,7 +79,10 @@ class Employees extends CI_Controller{
                 $this->load->view('edit_employee_details',$data);
                 $this->load->view('template/footer');
                
-        
+        }else{
+            echo "You have No permission to Edit users";
+            redirect('employees/get_employee_details');
+        }
     }
      function get_selected_branchs($depart,$id){
         $this->load->model('branch');
@@ -152,7 +159,7 @@ $r=0;
         $this->get_employee_details();
     }
     function upadate_employee_details(){
-       
+       if($_SESSION['user_per']['edit']==1){ 
        $this->load->library('form_validation');
                 $this->form_validation->set_rules("first_name","First_name","required"); 
                 $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
@@ -212,6 +219,10 @@ $r=0;
         $this->edit_employee_details($id);
         
         }
+       }else{
+           echo "You Have No Permission To Edit Users";
+           $this->get_employee_details();
+       }
 }
 function update_user_branch($id,$depapartment){
    
@@ -327,38 +338,47 @@ function do_upload($id)
                 redirect('home');
             }
            if($this->input->post('delete_all')){
+               if($_SESSION['user_per']['delete']==1){ 
               $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){
               $deleted_by=$_SESSION['Uid'];
               $this->load->model('employeesmodel');
               foreach( $data1 as $key => $value){           
-             $this->employeesmodel->delete_employee($value,$deleted_by); 
-            
-              }}
-            $this->get_employee_details();
+             $this->employeesmodel->delete_employee($value,$deleted_by);             
+              }              
               }
+            $this->get_employee_details();
+              }else{
+                echo "U have No Permission to Delete New User";
+                $this->get_employee_details();
+              }
+           }
             if($this->input->post('Add_employee')){
+                 if($_SESSION['user_per']['add']==1){  
                     $this->load->model('department');
                     $this->load->model('branch');
                     $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                     $data['depa']= $this->department->get_department();  
                    
-                    $this->load->view('template/header');
+                   // $this->load->view('template/header');
                     $this->load->view('add_new_employee',$data);
                     $this->load->view('template/footer');
+             
+             
+             }else{
+                 echo "U have No Permission to Add New User";
+                $this->get_employee_details();
              }
+        }
         }
         function add_employee_details(){
             
-            
-           if ($this->input->post('Cancel')) {
-             $this->get_employee_details();
-  
+           if($_SESSION['user_per']['add']==1){             
+      if ($this->input->post('Cancel')) {
+             $this->get_employee_details(); 
             }
-            if ($this->input->post('Save')) {
-                
-                
-                 $this->load->library('form_validation');
+            if ($this->input->post('Save')) {                            
+                $this->load->library('form_validation');
                 $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
                 $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
                 $this->form_validation->set_rules('age', $this->lang->line('age'), 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
@@ -369,15 +389,12 @@ function do_upload($id)
                 $this->form_validation->set_rules('city',$this->lang->line('city'),"required");
                 $this->form_validation->set_rules('state',$this->lang->line('state'),"required");
                 $this->form_validation->set_rules('zip',$this->lang->line('zip'),"required");
-                $this->form_validation->set_rules('dob',$this->lang->line('date_of'),"required");               
-              
+                $this->form_validation->set_rules('dob',$this->lang->line('date_of'),"required");                           
                 $this->form_validation->set_rules('depa',  $this->lang->line('department'),"required");
                 $this->form_validation->set_rules('employee_id',$this->lang->line('user_name'),"required");
                 $this->form_validation->set_rules('country',$this->lang->line('country'),"required");
-                $id=  $this->input->post('id');
-	  
-	    if ( $this->form_validation->run() !== false ) {
-               
+                $id=  $this->input->post('id');	  
+	    if ( $this->form_validation->run() !== false ) {        
 			  $this->load->model('employeesmodel');
                           $first_name=$this->input->post('first_name');
                           $last_name=  $this->input->post('last_name');
@@ -391,22 +408,18 @@ function do_upload($id)
                           $zip=$this->input->post('zip');
                           $country=$this->input->post('country');
                           $department=urldecode($this->input->post('depa'));
-                          $yourdatetime =$this->input->post('dob');
-                          
+                          $yourdatetime =$this->input->post('dob');                          
                           $age=  $this->input->post('age');
                           $sex= $this->input->post('sex');
                           $dob= strtotime($yourdatetime);
                           $created_by=$_SESSION['Uid'];
                           $this->load->model('employeesmodel');
-                          if($this->employeesmodel->user_checking($email,$emp_id,$dob)==FALSE){
-                              
-                          $id= $this->employeesmodel->adda_new_employee($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$_SESSION['image_name']);
+                          if($this->employeesmodel->user_checking($email,$emp_id,$dob)==FALSE){                              
+                          $id= $this->employeesmodel->adda_new_employee($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,'10');
                           $this->add_user_branchs($id,$department);
                           $this->add_user_department($id,$department);
-                          $this->load->model('employeepermission');
-                         
-                          $this->get_employee_details();
-                            
+                          $this->load->model('employeepermission');                         
+                          $this->get_employee_details();                           
                          
                           }
                           else{
@@ -422,19 +435,19 @@ function do_upload($id)
                         
                           }
             }else{
-                   //echo  ."<br>";
-                  
-                  $this->load->model('department');
+                    $this->load->model('department');
                     $this->load->model('branch');
                     $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                     $data['depa']= $this->department->get_department(); 
-                   $this->load->view('template/header');
+                    $this->load->view('template/header');
                     $this->load->view('add_new_employee',$data);
                     $this->load->view('template/footer');
-              }
-    
-             }
-                
+              }    
+             }                
+        }else{
+               echo "U have No Permission to Add New User";
+                $this->get_employee_details();
+           }
         }
        function add_user_department($id,$depapartment){
            
@@ -518,22 +531,9 @@ $r=0;
              $this->load->view('edit_employee_permission',$data);
         }
         function getoptionvalue(){
-            echo "haii";
-            
+           
         }
-        function add_jibi($ud){
-           $_SESSION['depart']=$ud;
-        }
-        function add_branch($branch){
-             $_SESSION['branch']=$branch;
-        }
-        function edit_department($dep){
-            $_SESSION['edit_depa']=$dep;
-        }
-        function edit_branch($dep){
-            $_SESSION['edit_bran']=$dep;
-        }
-      
+       
 
 
 }

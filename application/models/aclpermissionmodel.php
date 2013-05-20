@@ -59,6 +59,15 @@ class Aclpermissionmodel extends CI_Model
         return $value;      
     }
     
-    
+    function branch_permission($did,$bid)
+    {
+        $this->db->select('permission')->from('branch_per')->where('depart_id',$did)->where('branch_id', $bid);
+        $query = $this->db->get();
+        $value="";
+        foreach ($query->result() as $row) {           
+                 $value =$row->permission;           
+        }       
+        return $value;      
+    }
 }
 ?>

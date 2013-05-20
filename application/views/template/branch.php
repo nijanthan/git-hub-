@@ -3,7 +3,7 @@
 <script>
     function change_branch(){
         var jibi = document.getElementById("branch").value;
-        alert(jibi);
+        alert('Branch Is Changed')
     
      var xmlhttp;
         if (window.XMLHttpRequest)
@@ -19,7 +19,7 @@
         xmlhttp.send();
         }
 </script>
-<?php echo $_SESSION['jibi'];
+<?php 
 echo form_open('home/change_branch') ?>
 <select id="branch">
 <?php foreach ($row as $brow){ 

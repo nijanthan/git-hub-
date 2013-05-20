@@ -50,12 +50,12 @@ class Acluser{
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
          
         $emp = array(
-                   'item'=>$num,
+                   'user'=>$num,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,
                    'delete'=>$delete               );
-        $_SESSION['Emp_per']=$emp;       
+        $_SESSION['user_per']=$emp;       
         
     }
     function user_department_permissions($bid,$id){
@@ -72,9 +72,9 @@ class Acluser{
         if($num/10%10==0){  $add=0; }else{  $add=1; }
         if($num/100%10==0){ $edit=0; }else{  $edit=1; }
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
-         echo $num;
+        
         $emp = array(
-                   'item'=>$num,
+                   'depa'=>$num,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,
@@ -89,15 +89,15 @@ class Acluser{
           $deaprt=$CI->aclpermissionmodel->get_user_department($id,$bid);          
          $num=0000;
          for($i=0;$i<count($deaprt);$i++){
-         $num=$num+$CI->aclpermissionmodel->branch_permission($deaprt[$i],$bid); 
-         }         
+        $num=$num+$CI->aclpermissionmodel->branch_permission($deaprt[$i],$bid); 
+         }        echo $num;
         if($num%10==0){  $read=0; }else{  $read=1; }
         if($num/10%10==0){  $add=0; }else{  $add=1; }
         if($num/100%10==0){ $edit=0; }else{  $edit=1; }
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
-         echo $num;
+         
         $emp = array(
-                   'item'=>$num,
+                   'branch'=>$num,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,

@@ -31,84 +31,37 @@ function move(tbFrom, tbTo)
    fLength++;
   }
 }
-
 tbFrom.length = 0;
 tbTo.length = 0;
 var ii;
-
 for(ii = 0; ii < arrFrom.length; ii++) 
 {
   var no = new Option();
   no.value = arrLU[arrFrom[ii]];
   no.text = arrFrom[ii];
-  tbFrom[ii] = no;
-  
+  tbFrom[ii] = no;  
 }
-
 for(ii = 0; ii < arrTo.length; ii++) 
 {
  var no = new Option();
- no.value = arrLU[arrTo[ii]];
- 
+ no.value = arrLU[arrTo[ii]]; 
  no.text = arrTo[ii];
-
  tbTo[ii] = no;
- 
- 
- 
- 
 }
 }
 
-function makeAjaxCall(value){
-    var jibi=value;
-	$.ajax({
-            
-		type: "post",
-		url: "http://localhost/PointOfSale/index.php/employees/add_jibi/"+jibi,
-		cache: false,				
-		data: $('combo_box').serialize(),
-		success: function(json){						
-                }
- });
-}
-function branchAjaxCall(value){
-    var jibi=value;
-	$.ajax({
-            
-		type: "post",
-		url: "http://localhost/PointOfSale/index.php/departmentCI/select_department/"+jibi,
-		cache: false,				
-		data: $('combo_box').serialize(),
-		success: function(json){						
-                }
- });
-}
-function ajaxsave(tbTo){
-var arrjibi="" ; var arrTo = new Array(); 
-var monish=".";
- var arrLU = new Array();
- var i;
- for (i = 0; i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;
- arrjibi=arrjibi+monish+tbTo.options[i].value;
- }
-  makeAjaxCall(arrjibi);
-}
 function ajaxbranch(tbTo){
 var arrjibi="" ; var arrTo = new Array(); 
-var monish=".";
+
  var arrLU = new Array();
  var i;
  for (i = 0; i < tbTo.options.length; i++) 
  {
   arrLU[tbTo.options[i].text] = tbTo.options[i].value;
   arrTo[i] = tbTo.options[i].text;
- arrjibi=arrjibi+monish+tbTo.options[i].value;
+ arrjibi=arrjibi+" "+tbTo.options[i].value;
  }
-  branchAjaxCall(arrjibi);
+  document.getElementById("department").value =arrjibi;
 }
 </script>
 <?php echo form_open('departmentCI/add_department') ;?>
@@ -125,7 +78,7 @@ var monish=".";
           
         <?php  }?>
            
-
+           <input type="hidden" name="branchs" id="department">
 </select>
 </td>
 <td align="center" valign="middle">

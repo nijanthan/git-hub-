@@ -1,196 +1,43 @@
-<html>
-<head>
-<script>
-function select_branch(tbTo)
-{    
- var arrLU="";
-    for (i = 0;i < tbTo.options.length; i++) 
- {
-  arrLU =arrLU+" "+tbTo.options[i].value;           
- } 
-var jibi = document.getElementById("branch").value;
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/add/"+jibi+"/"+arrLU,false);
+                      
+ <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.3.2.js" ></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/ajaxupload.3.5.js" ></script>
 
-xmlhttp.send();
-document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-}
-function move(tbFrom, tbTo) 
-{      
- var arrFrom = new Array(); var arrTo = new Array(); 
- var arrLU = new Array();
- var i;
- for (i = 0;i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;
- }
- var fLength = 0;
- var tLength = arrTo.length;
- for(i = 0; i < tbFrom.options.length; i++) 
- {
-  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
-  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
-  {
-   arrTo[tLength] = tbFrom.options[i].text;
-   tLength++;
-  }
-  else 
-  {
-   arrFrom[fLength] = tbFrom.options[i].text;
-   fLength++;
-  }
-}
-
-tbFrom.length = 0;
-tbTo.length = 0;
-var ii;
-
-for(ii = 0; ii < arrFrom.length; ii++) 
-{
-  var no = new Option();
-  no.value = arrLU[arrFrom[ii]];
-  no.text = arrFrom[ii];  
-  tbFrom[ii] = no;  
-}
-
-for(ii = 0; ii < arrTo.length; ii++) 
-{
- var no = new Option();
- no.value = arrLU[arrTo[ii]];  
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_department_branch/"+arrLU[arrTo[ii]],false);
-                xmlhttp.send();
-              no.text = xmlhttp.responseText;
- tbTo[ii] = no; 
-}
-}
-function backmove(tbFrom, tbTo) 
-{
- var jibi = document.getElementById("branch").value;
- var arrFrom = new Array(); var arrTo = new Array(); 
- var arrLU = new Array();
- var i;
- for (i = 0;i < tbTo.options.length; i++) 
- {
-  arrLU[tbTo.options[i].text] = tbTo.options[i].value;
-  arrTo[i] = tbTo.options[i].text;  
- }
- var fLength = 0;
- var tLength = arrTo.length;
- for(i = 0; i < tbFrom.options.length; i++) 
- {
-  arrLU[tbFrom.options[i].text] = tbFrom.options[i].value;
-  if (tbFrom.options[i].selected && tbFrom.options[i].value != "") 
-  {
-   arrTo[tLength] = tbFrom.options[i].text;
-   tLength++;
-  }
-  else 
-  {
-   arrFrom[fLength] = tbFrom.options[i].text;
-   fLength++;
-  }
-}
-tbFrom.length = 0;
-tbTo.length = 0;
-var ii;
-for(ii = 0; ii < arrFrom.length; ii++) 
-{
-  var no = new Option();
-  no.value = arrLU[arrFrom[ii]];
-  no.text = arrFrom[ii];  
-  tbFrom[ii] = no; 
-}
-for(ii = 0; ii < arrTo.length; ii++) 
-{
- var no = new Option();
- no.value = arrLU[arrTo[ii]]; 
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/check_department_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
-                xmlhttp.send();
-                if(xmlhttp.responseText=='TRUE'){                   
-                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/set_department_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
-                xmlhttp.send();                
-                no.text = xmlhttp.responseText;
-                tbTo[ii] = no; 
- }
-}
-}
-function get_selected(tbTo){
-var arrLU="";
-    for (i = 0;i <tbTo.options.length; i++) 
- {
-  arrLU =arrLU+" "+tbTo.options[i].value; } 
-        var xmlhttp;
-        if (window.XMLHttpRequest)
-        {
-        xmlhttp=new XMLHttpRequest();
-        }
-        else
-        {
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        if(arrLU!=""){
-        xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_selected_department/"+arrLU,false);
-        xmlhttp.send();
-            document.getElementById("mine").innerHTML=xmlhttp.responseText; 
-           }else{
-                document.getElementById("mine").innerHTML="";
-           }
-}
-</script>
-</head>
+<link rel="stylesheet" href="<?php echo base_url();?>css/jquery-ui.css" />
+<script src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
+<script src="<?php echo base_url();?>js/jquery-ui.js"></script>
 <body>
-   
-<?php
-                    $form =array('id'=>'form1',
-                        'runat'=>'server',
-                        'name'=>'combo_box');
-     echo form_open_multipart('employees/add_employee_details/',$form);?>
-    <table>
-<select id="branch" name="FromLJ" style="width:150">
-    <?php foreach ($branch as $brow) {
-          
-        ?> <option name="<?php echo $brow->branch_id ?>" value="<?php echo $brow->branch_id ?>" onClick="select_branch(this.form.lang)" > <?php echo $brow->branch_name ?></option>
-<?php }?>
+<script type="text/javascript" >
+    
+ 	$(function(){
+ 		var btnUpload=$('#upload');
 
-</select>
-<select multiple id="myDiv" name="ToLJ" style="width: 150">
-</select>
-<input type="button" onClick="move(this.form.ToLJ,this.form.lang),get_selected(this.form.lang)" 
-value="->">
-<input type="button" onClick="backmove(this.form.lang,this.form.ToLJ),get_selected(this.form.lang)" 
-value="<-">
-<select multiple  name="lang" size="7" name="ToLJed" style="width: 250">
-
-</select>
-<p id="mine" ></p></table>
-<?php  echo form_submit('save','save'); ?>
-</form>
-
-</body>
+		var status=$('#status');
+		new AjaxUpload(btnUpload, {
+			action: '<?php echo base_url();?>index.php/employees/add_employee_image',
+			name: 'uploadfile',
+			onSubmit: function(file, ext){
+				 if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){ 
+                    // extension is not allowed 
+					status.text('Only JPG, PNG or GIF files are allowed');
+					return false;
+				}
+				status.text('Uploading...');
+			},
+			onComplete: function(file, response){
+				//On completion clear the status
+				status.text('');
+				//Add uploaded file to list
+				if(response==="success"){
+					$('<li></li>').appendTo('#files').html('<img src="<?php echo base_url();?>uploads/'+file+'" alt="" /><br />'+file).addClass('success');
+				} else{
+					$('<li></li>').appendTo('#files').text(file).addClass('error');
+				}
+			}
+		});
+		
+	});
+</script>
+                <div id="upload" ><span>Upload<span></div><span id="status" ></span>
+		
+		<ul id="files" ></ul>
+                </body>

@@ -50,7 +50,7 @@ function login(){
                 $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
                
                 $this->load->view('template/header');
-                redirect('home/pos_home');
+                redirect('posmain/set_user_default_branch');
                 $this->load->view('template/footer');
             }else{
                 echo "Invalid Username and password";

@@ -2,7 +2,15 @@
 
 
 
- 
+ <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.3.2.js" ></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/ajaxupload.3.5.js" ></script>
+
+<link rel="stylesheet" href="<?php echo base_url();?>css/jquery-ui.css" />
+<script src="<?php echo base_url();?>js/jquery-1.9.1.js"></script>
+<script src="<?php echo base_url();?>js/jquery-ui.js"></script>
+
+
+
 
 </head>
 <body>
@@ -210,7 +218,7 @@ value="<-">
 <select multiple  name="lang" size="7"  style="width: 250">
 
 </select>
-<input type="hidden" name="depa3" id="depa"></td></tr>
+<input type="hidden" name="depa" id="depa"></td></tr>
     <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('password'))?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td></td> 
@@ -230,9 +238,10 @@ value="<-">
     <?php form_close() ?>
     <?php //echo validation_errors(); ?>
    </table>
-                <script type="text/javascript" >
-	$(function(){
-		var btnUpload=$('#upload');
+                                 <script type="text/javascript" >
+ 	$(function(){
+ 		var btnUpload=$('#upload');
+
 		var status=$('#status');
 		new AjaxUpload(btnUpload, {
 			action: '<?php echo base_url();?>index.php/employees/add_employee_image',
@@ -263,7 +272,8 @@ value="<-">
 		
 		<ul id="files" ></ul>
 
-   
+              
+
 
 
 
