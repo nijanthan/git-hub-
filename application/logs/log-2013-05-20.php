@@ -77,3 +77,4 @@ ERROR - 2013-05-20 15:31:19 --> Severity: Warning  --> Missing argument 1 for Em
 ERROR - 2013-05-20 15:31:23 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\employee_list.php 8
 ERROR - 2013-05-20 15:53:44 --> 404 Page Not Found --> departmentCI/edit
 ERROR - 2013-05-20 16:27:45 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 95
+ERROR - 2013-05-20 16:52:53 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 95

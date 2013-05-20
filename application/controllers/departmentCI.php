@@ -85,14 +85,17 @@ class DepartmentCI extends CI_Controller{
     }    
     function add_department(){
         if($_SESSION['Depa_per']['add']==1){ 
-       $this->load->model('department');            
-           $this->form_validation->set_rules("department_name",$this->lang->line('department_name'),"required"); 
-           $this->form_validation->set_rules('branchs',$this->lang->line('branch'),"required");
+                $this->load->model('department');            
+                $this->form_validation->set_rules("department_name",$this->lang->line('department_name'),"required"); 
+                $this->form_validation->set_rules('branchs',$this->lang->line('branch'),"required");
+                
            if ($this->form_validation->run()) {
                 $branch_list=$this->input->post('branchs');
                 $depart=$this->input->post('department_name');
+             if($this->check_department_is_already_added($depart,$branch_list)){
+                 
                 $id=$this->department->add_department($depart);
-                $this->add_department_branch($id,$branch);               
+                $this->add_department_branch($id,$branch_list);               
                 $item_add=  $this->input->post('item_read');
                 $item_read=$this->input->post('item_add');
                 $item_edit=$this->input->post('item_edit');
@@ -114,7 +117,15 @@ class DepartmentCI extends CI_Controller{
                 $branch_delete=$this->input->post('branch_delete');
                 $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;               
                 $this->add_permission($item,$depa,$user,$branch,$id,$branch_list);
-               redirect('posmain/department');               
+               redirect('posmain/department'); 
+               }else{
+                $this->load->model('branch');
+                $data['branch']=  $this->branch->get_branch();
+                $this->load->view('template/header');
+                $_SESSION['add_depa']='null';
+                $this->load->view('add_department',$data);
+                $this->load->view('template/footer');
+               }
            }else{
                 $this->load->model('branch');
                 $data['branch']=  $this->branch->get_branch();
@@ -126,12 +137,22 @@ class DepartmentCI extends CI_Controller{
            
         }
            else{
-               echo "You Have No permission to add department";
-               $this->get_department();
+                echo "You Have No permission to add department";
+                $this->get_department();
            }       
            if($this->input->post('cancel')){
                 redirect('posmain/department');
            }    
+    }
+    function check_department_is_already_added($depart,$branch_list){
+        if($_SESSION['Depa_per']['add']==1){ 
+                $branch_id=array();
+                $branch_id = explode(' ',$branchid );
+                
+                }
+                else{
+                    echo "You Have No Permission To add";
+                }
     }
     function add_permission($item,$depa,$user,$branch,$depart_id,$branchid){
          if($_SESSION['Depa_per']['add']==1){ 
