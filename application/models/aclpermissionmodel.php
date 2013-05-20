@@ -14,10 +14,23 @@ class Aclpermissionmodel extends CI_Model
             return FALSE;
         }
     }
-    function item_permission($id)
-    {
-        $this->db->select('permission')->from('itempermission')->where('emp_id', $id);
+    function get_user_department($id,$bid){
+        $this->db->select()->from('userdepart')->where('emp_id',$id)->where('branch_id',$bid);
         $query = $this->db->get();
+        $value=array();
+        $i=0;
+        foreach ($query->result() as $row) {           
+                 $value[] =$row->depart_id ;  
+                 $i++;
+                
+        }
+        return $value;
+    }
+    function item_permission($did,$bid)
+    {
+        $this->db->select('permission')->from('item_per')->where('depart_id',$did)->where('branch_id', $bid);
+        $query = $this->db->get();
+        $value="";
         foreach ($query->result() as $row) {           
                  $value =$row->permission;           
         }
@@ -25,17 +38,27 @@ class Aclpermissionmodel extends CI_Model
         return $value;
       
     }
-    function empl_permission($id)
+    function empl_permission($did,$bid)
     {
-        $this->db->select('permission')->from('employeepermission')->where('emp_id', $id);
+        $this->db->select('permission')->from('user_per')->where('depart_id',$did)->where('branch_id', $bid);
         $query = $this->db->get();
+        $value="";
         foreach ($query->result() as $row) {           
                  $value =$row->permission;           
-        }
-       
-        return $value;
-      
+        }       
+        return $value;      
     }
+     function department_permission($did,$bid)
+    {
+        $this->db->select('permission')->from('depart_per')->where('depart_id',$did)->where('branch_id', $bid);
+        $query = $this->db->get();
+        $value="";
+        foreach ($query->result() as $row) {           
+                 $value =$row->permission;           
+        }       
+        return $value;      
+    }
+    
     
 }
 ?>

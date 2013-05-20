@@ -19,13 +19,14 @@ class Posmain extends CI_Controller{
             $this->load->view('login');
             $this->load->view('template/footer');
         }else{
-             $this->acl_session_for_user();
+             $this->acl_session_for_user(4);
         }
     }
    function acl_session_for_user($b_id){
         $this->load->library('acluser');                 
-        $this->acluser->user_item_permissions($b_id);
-        $this->acluser->user_employee_permissions($b_id);
+        $this->acluser->user_item_permissions($b_id,99);
+       $this->acluser->user_employee_permissions($b_id,99);
+       $this->acluser->user_department_permissions($b_id,99);
         
     }
   
