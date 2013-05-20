@@ -148,7 +148,9 @@ class DepartmentCI extends CI_Controller{
         if($_SESSION['Depa_per']['add']==1){ 
                 $branch_id=array();
                 $branch_id = explode(' ',$branchid );
-                
+                  for($ii=1; $ii<count($branch_id); $ii++){
+                  
+                  }
                 }
                 else{
                     echo "You Have No Permission To add";
