@@ -11,12 +11,16 @@ class BranchCI extends CI_Controller{
                 $this->poslanguage->set_language();
     }
     function index(){
+        if($_SESSION['Setting']['Branch']==1){
          if(!isset($_SESSION['Uid'])){
                 $this->load->view('template/header');
                 $this->load->view('login');
                 $this->load->view('template/footer');
             }else{
                 $this->get_branch();
+        }
+        }else{
+            redirect('home');
         }
     }
     function get_branch(){
@@ -44,7 +48,7 @@ class BranchCI extends CI_Controller{
     function edit_branch_details($id){
        if($_SESSION['Branch_per']['edit']==1){
            $this->load->model('branch');
-           $data['row']=  $this->branch->get_branch_details($id);
+           $data['row']=  $this->branch->get_branch_details_for_edit($id);
            $this->load->view('template/header');
            $this->load->view('edit_branch',$data);
            $this->load->view('template/footer');

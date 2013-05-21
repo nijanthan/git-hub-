@@ -178,3 +178,41 @@ ERROR - 2013-05-21 13:09:16 --> Severity: Notice  --> Undefined property: Branch
 ERROR - 2013-05-21 13:09:26 --> Severity: Notice  --> Undefined property: BranchCI::$branchCI C:\wamp\www\PointOfSale\application\controllers\branchCI.php 49
 ERROR - 2013-05-21 13:11:10 --> Severity: Warning  --> Missing argument 1 for BranchCI::edit_branch_details() C:\wamp\www\PointOfSale\application\controllers\branchCI.php 44
 ERROR - 2013-05-21 13:43:25 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 45
+ERROR - 2013-05-21 13:58:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\controllers\home.php 29
+ERROR - 2013-05-21 13:58:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 13:58:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 13:58:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 13:58:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 13:58:17 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 13:58:17 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 13:58:17 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 13:58:17 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 13:58:27 --> Severity: Notice  --> Undefined property: Posmain::$pos_setting C:\wamp\www\PointOfSale\application\controllers\posmain.php 29
+ERROR - 2013-05-21 13:58:27 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\controllers\home.php 29
+ERROR - 2013-05-21 13:58:27 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 13:58:27 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 13:58:27 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 13:58:27 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 14:01:04 --> Severity: Notice  --> Undefined property: Posmain::$pos_setting C:\wamp\www\PointOfSale\application\controllers\posmain.php 28
+ERROR - 2013-05-21 14:01:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\controllers\home.php 29
+ERROR - 2013-05-21 14:01:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 14:01:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 14:01:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 14:01:04 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 14:01:39 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
+ERROR - 2013-05-21 14:02:00 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 49
+ERROR - 2013-05-21 14:02:56 --> Severity: Notice  --> Undefined property: Posmain::$pos_setting C:\wamp\www\PointOfSale\application\controllers\posmain.php 30
+ERROR - 2013-05-21 14:02:56 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\controllers\home.php 29
+ERROR - 2013-05-21 14:02:56 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 14:02:56 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 7
+ERROR - 2013-05-21 14:02:56 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 14:02:56 --> Severity: Notice  --> Undefined index: Setting C:\wamp\www\PointOfSale\application\views\home.php 8
+ERROR - 2013-05-21 14:03:34 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 49
+ERROR - 2013-05-21 14:04:03 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 49
+ERROR - 2013-05-21 14:04:36 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 49
+ERROR - 2013-05-21 14:15:24 --> Severity: Warning  --> Missing argument 2 for Branch::get_branch_details(), called in C:\wamp\www\PointOfSale\application\controllers\branchCI.php on line 47 and defined C:\wamp\www\PointOfSale\application\models\branch.php 125
+ERROR - 2013-05-21 14:15:24 --> Severity: Notice  --> Undefined variable: start C:\wamp\www\PointOfSale\application\models\branch.php 126
+ERROR - 2013-05-21 14:17:16 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
+ERROR - 2013-05-21 14:20:25 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
+ERROR - 2013-05-21 18:03:12 --> Query error: Table 'pos.itempermission' doesn't exist
+ERROR - 2013-05-21 18:05:43 --> Query error: Table 'pos.itempermission' doesn't exist

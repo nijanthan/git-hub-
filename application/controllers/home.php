@@ -20,37 +20,23 @@ class Home extends CI_Controller
         
     }
     
-    function pos_home(){
-        
-       
+    function pos_home(){             
         $this->load->model('setting');
-        $this->load->model('branch');
-        
+        $this->load->model('branch');        
         $data['branch_settings']=$this->setting->get_branch_setting();
         $data['row']=  $this->branch->get_user_branchs($_SESSION['Uid']);
         $this->load->view('template/header');
+        if($_SESSION['Setting']['Branch']==1){
         $this->load->view('template/branch',$data);
+          }
         $this->load->view('home');   
-        $this->load->view('template/footer');
-                
+        $this->load->view('template/footer');                
     }
     function set_branchs($branch){
-        $_SESSION['user_branch']=$branch;
-        echo "jii";
-    }
-    function change_branch(){
-       $this->load->model('branch');
-       $data=$this->branch->get_user_branch_id_list($_SESSION['Uid']);
-       for($i=0;$i<count($data);$i++){
-          if($this->input->post($data[$i])){
-              echo $data[$i];
-          }
-       }
-     
-    }
+        $_SESSION['user_branch']=$branch;        
+    }    
       function home_main(){
-       if($this->input->post('Employees')){
-           
+       if($this->input->post('Employees')){           
            if($_SESSION['user_per']['read']==1){
                redirect('employees');
            }else{
@@ -58,8 +44,7 @@ class Home extends CI_Controller
                $this->pos_home();
            }
        }
-       if($this->input->post('department')){
-          
+       if($this->input->post('department')){          
            if($_SESSION['Depa_per']['read']==1){
                redirect('departmentCI');
            }else{
@@ -78,9 +63,7 @@ class Home extends CI_Controller
                echo "U have No Permission to View Branch Details";
                $this->pos_home();
            }
-       }
-       
-       
+       }       
     }
      function department(){
         redirect('departmentCI');

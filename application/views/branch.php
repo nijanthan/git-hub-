@@ -1,4 +1,4 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); if($_SESSION['Setting']['Branch']==1){
 echo $links; 
  echo form_open('branchCI/branch_details');
     
@@ -29,4 +29,7 @@ foreach ($row as $erow){
 
 ?>  
 <tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_branch" value="<?php echo $this->lang->line('branch_add') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
-     <?php echo form_close() ?> 
+     <?php echo form_close(); }else{
+         redirect('home');
+     }
+?> 
