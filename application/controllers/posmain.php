@@ -26,10 +26,11 @@ class Posmain extends CI_Controller{
     function set_user_default_branch(){
         $this->load->model('branch');
         $data=$this->branch->get_user_default_branch($_SESSION['Uid']);
-         $this->acl_session_for_user($data);
+        $this->acl_session_for_user($data);
          redirect('home');
     }
    function acl_session_for_user($b_id){
+       $_SESSION['Bid']=$b_id;
         $this->load->library('acluser');                 
         $this->acluser->user_item_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_employee_permissions($b_id,$_SESSION['Uid']);

@@ -26,13 +26,14 @@ class DepartmentCI extends CI_Controller{
                 $this->load->model('department');            
                 $this->load->library("pagination");                
 	        $config["base_url"] = base_url()."index.php/departmentCI/get_department";
-	        $config["total_rows"] = $this->department->get_department_count();
+	        $config["total_rows"] = $this->department->get_department_count($_SESSION['Bid']);
 	        $config["per_page"] = 5;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;               
-                $data['count']=$this->department->get_department_count();         
-	        $data["depa"] = $this->department->get_department_details($config["per_page"], $page);
+                $data['count']=$this->department->get_department_count($_SESSION['Bid']);         
+	        $data["depa"] = $this->department->get_department_details($config["per_page"], $page,$_SESSION['Bid']);
+                $data['all_depa']=$this->department->get_department();
 	        $data["links"] = $this->pagination->create_links();                 
                 $this->load->view('template/header');
                 $this->load->view('department',$data);
@@ -49,10 +50,9 @@ class DepartmentCI extends CI_Controller{
         if($this->input->post('add')){
              if($_SESSION['Depa_per']['add']==1){ 
                 $this->load->model('branch');
-                $data['branch']=  $this->branch->get_branch();
-                $this->load->view('template/header');
-                $_SESSION['add_depa']='null';
-                $this->load->view('add_department',$data);
+               // $data['branch']=  $this->branch->get_users_default_branch($_SESSION['Bid']);
+                $this->load->view('template/header');               
+                $this->load->view('add_department');
                 $this->load->view('template/footer');
         }
         else{
@@ -87,15 +87,15 @@ class DepartmentCI extends CI_Controller{
         if($_SESSION['Depa_per']['add']==1){ 
                 $this->load->model('department');            
                 $this->form_validation->set_rules("department_name",$this->lang->line('department_name'),"required"); 
-                $this->form_validation->set_rules('branchs',$this->lang->line('branch'),"required");
+               // $this->form_validation->set_rules('branchs',$this->lang->line('branch'),"required");
                 
            if ($this->form_validation->run()) {
-                $branch_list=$this->input->post('branchs');
+                $this->load->model('branch');
                 $depart=$this->input->post('department_name');
-             if($this->check_department_is_already_added($depart,$branch_list)){
+             if($this->branch->check_deaprtment_is_already($depart,$_SESSION['Bid'])!=TRUE){
                  
-                $id=$this->department->add_department($depart);
-                $this->add_department_branch($id,$branch_list);               
+                $id=$this->department->add_department($depart,$_SESSION['Bid']);
+                $this->add_department_branch($id,$_SESSION['Bid']);               
                 $item_add=  $this->input->post('item_read');
                 $item_read=$this->input->post('item_add');
                 $item_edit=$this->input->post('item_edit');
@@ -116,21 +116,21 @@ class DepartmentCI extends CI_Controller{
                 $branch_edit=$this->input->post('branch_edit');
                 $branch_delete=$this->input->post('branch_delete');
                 $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;               
-                $this->add_permission($item,$depa,$user,$branch,$id,$branch_list);
-               redirect('posmain/department'); 
+                $this->add_permission($item,$depa,$user,$branch,$id,$_SESSION['Bid']);
+               redirect('posmain/department');
+               
                }else{
+                   echo "This is department is already added in this branch";
                 $this->load->model('branch');
                 $data['branch']=  $this->branch->get_branch();
-                $this->load->view('template/header');
-                $_SESSION['add_depa']='null';
+                $this->load->view('template/header');                
                 $this->load->view('add_department',$data);
                 $this->load->view('template/footer');
                }
            }else{
                 $this->load->model('branch');
                 $data['branch']=  $this->branch->get_branch();
-                $this->load->view('template/header');
-                $_SESSION['add_depa']='null';
+                $this->load->view('template/header');                
                 $this->load->view('add_department',$data);
                 $this->load->view('template/footer');
            }
@@ -144,41 +144,23 @@ class DepartmentCI extends CI_Controller{
                 redirect('posmain/department');
            }    
     }
-    function check_department_is_already_added($depart,$branch_list){
-        if($_SESSION['Depa_per']['add']==1){ 
-                $branch_id=array();
-                $branch_id = explode(' ',$branchid );
-                  for($ii=1; $ii<count($branch_id); $ii++){
-                  
-                  }
-                }
-                else{
-                    echo "You Have No Permission To add";
-                }
-    }
+   
     function add_permission($item,$depa,$user,$branch,$depart_id,$branchid){
          if($_SESSION['Depa_per']['add']==1){ 
-                $branch_id=array();
-                $branch_id = explode(' ',$branchid );
-                $this->load->model('permissions');           
-            for($ii=1; $ii<count($branch_id); $ii++){
-                $this->permissions->set_item_permission($item,$depart_id,$branch_id[$ii]);
-                $this->permissions->set_user_permission($user,$depart_id,$branch_id[$ii]);
-                $this->permissions->set_depart_permission($depa,$depart_id,$branch_id[$ii]);
-                $this->permissions->set_branch_permission($branch,$depart_id,$branch_id[$ii]);
-            }
+                $this->load->model('permissions');
+                $this->permissions->set_item_permission($item,$depart_id,$branchid);
+                $this->permissions->set_user_permission($user,$depart_id,$branchid);
+                $this->permissions->set_depart_permission($depa,$depart_id,$branchid);
+                $this->permissions->set_branch_permission($branch,$depart_id,$branchid);
+            
          }else{
              $this->get_department();
          }
     }
      function add_department_branch($id,$branch){
-         if($_SESSION['Depa_per']['add']==1){ 
-                $branch_id=array();
-                $branch_id = explode(' ',$branch );
-                $this->load->model('department');           
-                for($ii=1; $ii<count($branch_id); $ii++){
-                $this->department->set_branch_department($id,$branch_id[$ii]);
-                }
+         if($_SESSION['Depa_per']['add']==1){                 
+                $this->load->model('department');                
+                $this->department->set_branch_department($id,$branch);                
                 }else{
                     $this->get_department();
                 }
@@ -192,16 +174,17 @@ class DepartmentCI extends CI_Controller{
                 $this->department->delete_branch_permission($id);
                 $this->department->delete_depart_permission($id);
                 $this->department->delete_depart_branch($id);                 
-                $this->get_department();
+                redirect('departmentCI/get_department');
             }else{
                 redirect('departmentCI/get_department');
             }            
         }
         function edit_department($id){
-            if($_SESSION['Depa_per']['edit']==1){                 
+            if($_SESSION['Depa_per']['edit']==1){  
+                
             }else{
                 echo "you have No permission To Edit department";                
-                $this->get_department();
+                redirect('departmentCI');
             }
         }
 }

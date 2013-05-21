@@ -69,28 +69,7 @@ var arrjibi="" ; var arrTo = new Array();
             
     <?php echo form_label($this->lang->line('department_name'));?></td><td><?php echo form_input('department_name',set_value('department_name'), 'id="department_name" autofocus')?></td>
     </tr>
-<tr><td><?php echo form_label($this->lang->line('branch'))?></td><td>
-  
-<select multiple size="7" name="FromLJ" style="width:150">
-    <?php foreach ($branch as $brow) {
-          
-           ?>   <option name="<?php echo $brow->id  ?>" value="<?php echo $brow->id  ?>" > <?php echo $brow->store_name  ?></option> 
-          
-        <?php  }?>
-           
-           <input type="hidden" name="branchs" id="department">
-</select>
-</td>
-<td align="center" valign="middle">
-<input type="button" onClick="move(this.form.FromLJ,this.form.ToLJ),ajaxbranch(this.form.ToLJ)" 
-value="->"><br />
-<input type="button" onClick="move(this.form.ToLJ,this.form.FromLJ),ajaxbranch(this.form.ToLJ)"
-value="<-">
-</td>
-<td>
-<select multiple size="7" name="ToLJ" style="width:150">
-</select>
-</td></tr></table>
+</table>
 <br><section class="main">
 <table border="1"><tr><td>
 <table>

@@ -7,8 +7,7 @@ class Branch extends CI_Model{
     function get_branch(){
         $this->db->select()->from('branch');
         $sql=  $this->db->get();
-        return $sql->result();
-                
+        return $sql->result();                
     }
     function set_branch($id,$branch_id){
         echo $branch_id;
@@ -19,8 +18,7 @@ class Branch extends CI_Model{
             }
             $data=array('emp_id'=>$id,
                     'branch_name'=>$name,
-                    'branch_id'=>$branch_id);
-                       
+                    'branch_id'=>$branch_id);                       
                 $this->db->insert('userbranchs',$data);
     }
     function get_user_branch($id){
@@ -88,11 +86,9 @@ class Branch extends CI_Model{
    }
    function get_user_seleted_branch($data){
           $this->db->select()->from('branch')->where('id',$data);
-                $sql=  $this->db->get();
-              
+                $sql=  $this->db->get();              
                 foreach ($sql->result() as $row) {            
-             $data = $row->store_name   ;
-            
+                $data = $row->store_name   ;            
             } 
             return $data;
    }
@@ -105,6 +101,23 @@ class Branch extends CI_Model{
             
             } 
             return $data; 	
+   }
+   function get_users_default_branch($id){
+       $this->db->select()->from('userbranchs')->where('id',$id);
+                $sql=  $this->db->get();              
+                foreach ($sql->result() as $row) {            
+                $data = $row->branch_name    ;            
+            } 
+            return $data; 
+   }
+   function check_deaprtment_is_already($depart,$branch){
+       $this->db->select()->from('userdepart')->where('branch_id',$branch)->where('depart_name',$depart);
+       $sql=  $this->db->get();
+       if($sql->num_rows()>0){
+           return TRUE;
+       }else{
+           return FALSE;
+       }
    }
 }
 ?>

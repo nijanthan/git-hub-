@@ -56,12 +56,15 @@ function delete_user_depart($id){
     $this->db->where('emp_id',$id);
     $this->db->delete('userdepart');
 }
-function get_department_count(){
-     return $this->db->count_all("department");
+function get_department_count($branch){
+   $this->db->where('branch_id',$branch);
+   $this->db->from('depabranch');
+   return $this->db->count_all_results();
 }
- public function get_department_details($limit, $start) {
-      
-        $query = $this->db->get("department");
+ public function get_department_details($limit,$start,$brnch) {
+        $this->db->limit($limit, $start);  
+        $this->db->where('branch_id',$brnch);
+        $query = $this->db->get("depabranch");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -70,8 +73,10 @@ function get_department_count(){
            }
           return false;
    }
-   function  add_department($depart){
-       $data=array('dep_name'=>$depart);
+   function  add_department($depart,$bid){
+       $data=array('dep_name'=>$depart,
+                   'branch_id'=>$bid
+           );
        $this->db->insert('department',$data);
         $id=$this->db->insert_id();
        return $id;

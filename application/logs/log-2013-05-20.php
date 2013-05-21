@@ -78,3 +78,5 @@ ERROR - 2013-05-20 15:31:23 --> Severity: Warning  --> Invalid argument supplied
 ERROR - 2013-05-20 15:53:44 --> 404 Page Not Found --> departmentCI/edit
 ERROR - 2013-05-20 16:27:45 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 95
 ERROR - 2013-05-20 16:52:53 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 95
+ERROR - 2013-05-20 17:29:51 --> Severity: Warning  --> Missing argument 2 for Departmentselecting::add() C:\wamp\www\PointOfSale\application\controllers\departmentselecting.php 26
+ERROR - 2013-05-20 17:29:51 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\departmentselecting.php 27
