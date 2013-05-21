@@ -177,3 +177,4 @@ ERROR - 2013-05-21 13:07:04 --> Severity: Warning  --> Invalid argument supplied
 ERROR - 2013-05-21 13:09:16 --> Severity: Notice  --> Undefined property: BranchCI::$branchCI C:\wamp\www\PointOfSale\application\controllers\branchCI.php 49
 ERROR - 2013-05-21 13:09:26 --> Severity: Notice  --> Undefined property: BranchCI::$branchCI C:\wamp\www\PointOfSale\application\controllers\branchCI.php 49
 ERROR - 2013-05-21 13:11:10 --> Severity: Warning  --> Missing argument 1 for BranchCI::edit_branch_details() C:\wamp\www\PointOfSale\application\controllers\branchCI.php 44
+ERROR - 2013-05-21 13:43:25 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 45

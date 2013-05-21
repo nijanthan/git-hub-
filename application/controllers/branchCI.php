@@ -45,10 +45,13 @@ class BranchCI extends CI_Controller{
        if($_SESSION['Branch_per']['edit']==1){
            $this->load->model('branch');
            $data['row']=  $this->branch->get_branch_details($id);
+           $this->load->view('template/header');
+           $this->load->view('edit_branch',$data);
+           $this->load->view('template/footer');
            
        }else{
            echo "you have no permission To edit Branch";
-          redirect('branchCI');
+           redirect('branchCI');
        }
        
     }

@@ -19,24 +19,31 @@ class Posmain extends CI_Controller{
             $this->load->view('login');
             $this->load->view('template/footer');
         }else{
-            $this->set_user_default_branch();
-            ///
+            $this->set_user_default_branch();                
         }
     }
     function set_user_default_branch(){
         $this->load->model('branch');
         $data=$this->branch->get_user_default_branch($_SESSION['Uid']);
         $this->acl_session_for_user($data);
+        $this->pos_setting;
          redirect('home');
     }
    function acl_session_for_user($b_id){
        $_SESSION['Bid']=$b_id;
-        $this->load->library('acluser');                 
+        $this->load->library('acluser');        
         $this->acluser->user_item_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_employee_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_department_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_branch_permissions($b_id,$_SESSION['Uid']);
         
+    }
+    function pos_setting(){
+        $this->load->model('setting');
+        $data=  $this->setting->get_setting();
+        $setting=array('Branch'=>$data[0],
+            'Depart'=>$data[1]);
+        $_SESSION['Setting']=$setting;
     }
   
     function department(){
