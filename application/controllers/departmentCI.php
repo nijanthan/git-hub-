@@ -180,12 +180,89 @@ class DepartmentCI extends CI_Controller{
             }            
         }
         function edit_department($id){
-            if($_SESSION['Depa_per']['edit']==1){  
-                
+            if($_SESSION['Depa_per']['edit']==1){ 
+                 $this->load->model('department');
+                 $data['row']=$this->department->get_seleted_department_details($id);
+                 $this->load->view('template/header');
+                 $this->load->view('edit_department',$data);
+                 $this->load->view('template/footer');
             }else{
                 echo "you have No permission To Edit department";                
                 redirect('departmentCI');
             }
+        }
+        function update_department(){
+          if($_SESSION['Depa_per']['edit']==1){ 
+                 $this->load->model('department');            
+                 $this->form_validation->set_rules("department",$this->lang->line('department_name'),"required");                              
+           if ($this->form_validation->run()) {
+                 $this->load->model('branch');
+                 $depart=$this->input->post('department');
+                 $id=$this->input->post('id') ;
+             if($this->branch->check_deaprtment_is_already_for_update($depart,$_SESSION['Bid'],$id)!=TRUE){
+                 $this->department->update_department($id,$depart);
+                 $this->get_department();
+             }else{
+                 echo "$depart  department is allready added";;
+                 $this->edit_department($id);
+             }
+           }
+          }else{
+              echo "You ahve no permission to edit department";
+          }
+          if($this->input->post('cancel')){
+              redirect('departmentCI');
+          }
+        }
+        function edit_department_permission($id){
+                 $this->load->model('department');
+                 $data['row']=$this->department->get_seleted_department_details($id);
+                 $this->load->model('permissions');
+                 $data['user']=$this->permissions->get_user_permission($id,$_SESSION['Bid'],$id);
+                 $data['item']=$this->permissions->get_item_permission($id,$_SESSION['Bid'],$id);
+                 $data['depart']=$this->permissions->get_depart_permission($id,$_SESSION['Bid'],$id);
+                 $data['branch']=$this->permissions->get_branch_permission($id,$_SESSION['Bid'],$id);
+               
+                 $this->load->view('template/header');
+                 $this->load->view('edit_department_permission',$data);
+                 $this->load->view('template/footer');
+        }
+        function update_department_permission(){
+            if($this->input->post('cancel')){
+                $this->get_department();
+            }
+            if($this->input->post('update')){
+                $item_add=  $this->input->post('item_read');
+                $item_read=$this->input->post('item_add');
+                $item_edit=$this->input->post('item_edit');
+                $item_delete=$this->input->post('item_delete');
+                $item=$item_add+$item_delete+$item_edit+$item_read;               
+                $user_read=$this->input->post('user_read');
+                $user_add=$this->input->post('user_add');
+                $user_edit=$this->input->post('user_edit');
+                $user_delete=$this->input->post('user_delete');
+                $user=$user_add+$user_delete+$user_edit+$user_read;               
+                $depa_read=$this->input->post('depa_read');
+                $depa_add=$this->input->post('depa_add');
+                $depa_edit=$this->input->post('depa_edit');
+                $depa_delete=$this->input->post('depa_delete');
+                $depa=$depa_add+$depa_delete+$depa_edit+$depa_read;                 
+                $branch_read=$this->input->post('branch_read');
+                $branch_add=$this->input->post('branch_add');
+                $branch_edit=$this->input->post('branch_edit');
+                $branch_delete=$this->input->post('branch_delete');
+                $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;  
+                $id=$this->input->post('id');
+                $this->update_permission($item,$user,$depa,$branch,$id,$_SESSION['Bid']);
+                $this->get_department();
+            }
+        }
+        function update_permission($item,$user,$depa,$branch,$depart_id,$branchid){
+            $this->load->model('permissions');
+            $this->permissions->update_item_permission($item,$depart_id,$branchid);
+            $this->permissions->update_user_permission($user,$depart_id,$branchid);
+            $this->permissions->update_depart_permission($depa,$depart_id,$branchid);
+            $this->permissions->update_branch_permission($branch,$depart_id,$branchid);
         }
 }
 ?>

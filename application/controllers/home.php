@@ -59,7 +59,7 @@ class Home extends CI_Controller
            }
        }
        if($this->input->post('department')){
-           $_SESSION['Depa_per']['read'];
+          
            if($_SESSION['Depa_per']['read']==1){
                redirect('departmentCI');
            }else{
@@ -70,6 +70,14 @@ class Home extends CI_Controller
        if($this->input->post('logout')){
            session_destroy();
            redirect('userlogin');
+       }
+       if($this->input->post('branch')){
+           if($_SESSION['Branch_per']['read']==1){
+               redirect('branchCI');
+           }else{
+               echo "U have No Permission to View Branch Details";
+               $this->pos_home();
+           }
        }
        
        

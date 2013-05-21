@@ -150,7 +150,19 @@ function get_department_count($branch){
             }
             return $data;
    }
-   
-    
+   function get_seleted_department_details($id){
+       $this->db->select()->from('department')->where('id',$id);
+       $sql=$this->db->get();
+       return $sql->result();
+   }
+    function update_department($id,$depart){
+       $data=array('dep_name'=>$depart);
+       $this->db->where('id',$id);
+       $this->db->update('department',$data);
+       
+       $value=array('depart_name'=>$depart);
+       $this->db->where('depart_id',$id);
+       $this->db->update('userdepart',$value);
+   }
 }
 ?>

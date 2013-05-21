@@ -108,3 +108,72 @@ ERROR - 2013-05-21 09:44:27 --> Severity: Warning  --> imagejpeg(http://localhos
 ERROR - 2013-05-21 09:44:27 --> Severity: Warning  --> imagejpeg(http://localhost/PointOfSale/uploads/jibi3.jpg): failed to open stream: HTTP wrapper does not support writeable connections C:\wamp\www\PointOfSale\application\controllers\upload.php 185
 ERROR - 2013-05-21 09:45:20 --> 404 Page Not Found --> upload/images
 ERROR - 2013-05-21 09:45:20 --> 404 Page Not Found --> upload/vpb_uploader.php
+ERROR - 2013-05-21 09:58:18 --> Severity: Notice  --> Undefined property: DepartmentCI::$department C:\wamp\www\PointOfSale\application\controllers\departmentCI.php 184
+ERROR - 2013-05-21 09:58:42 --> Severity: Notice  --> Undefined property: stdClass::$depart_name C:\wamp\www\PointOfSale\application\views\edit_department.php 3
+ERROR - 2013-05-21 09:59:03 --> Severity: Notice  --> Undefined property: stdClass::$depart_name C:\wamp\www\PointOfSale\application\views\edit_department.php 3
+ERROR - 2013-05-21 09:59:32 --> Severity: Notice  --> Undefined property: stdClass::$depart_name C:\wamp\www\PointOfSale\application\views\edit_department.php 3
+ERROR - 2013-05-21 09:59:33 --> Severity: Notice  --> Undefined property: stdClass::$depart_name C:\wamp\www\PointOfSale\application\views\edit_department.php 3
+ERROR - 2013-05-21 09:59:33 --> Severity: Notice  --> Undefined property: stdClass::$depart_name C:\wamp\www\PointOfSale\application\views\edit_department.php 3
+ERROR - 2013-05-21 10:41:53 --> Query error: Unknown column '0' in 'field list'
+ERROR - 2013-05-21 10:45:12 --> Query error: Unknown column '0' in 'field list'
+ERROR - 2013-05-21 10:50:03 --> Query error: Unknown column '0' in 'field list'
+ERROR - 2013-05-21 11:11:45 --> Query error: Unknown column 'dep_name' in 'field list'
+ERROR - 2013-05-21 11:58:14 --> Severity: Notice  --> Undefined variable: deart C:\wamp\www\PointOfSale\application\views\edit_department_permission.php 59
+ERROR - 2013-05-21 12:00:58 --> 404 Page Not Found --> departmentCI/update_department_permission
+ERROR - 2013-05-21 12:45:06 --> 404 Page Not Found --> branchCI/index
+ERROR - 2013-05-21 12:45:08 --> 404 Page Not Found --> branchCI/index
+ERROR - 2013-05-21 12:45:10 --> 404 Page Not Found --> branch
+ERROR - 2013-05-21 12:45:15 --> 404 Page Not Found --> branchCI/index
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\branch.php 16
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\branch.php 16
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\branch.php 16
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\branch.php 16
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:45:28 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:45:28 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\branch.php 17
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined property: stdClass::$user_id C:\wamp\www\PointOfSale\application\views\branch.php 18
+ERROR - 2013-05-21 12:46:20 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:46:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 20
+ERROR - 2013-05-21 12:57:36 --> 404 Page Not Found --> branch
+ERROR - 2013-05-21 13:03:09 --> 404 Page Not Found --> branchCI/branch_details
+ERROR - 2013-05-21 13:03:14 --> 404 Page Not Found --> branchCI/branch_details
+ERROR - 2013-05-21 13:03:18 --> 404 Page Not Found --> branchCI/branch_details
+ERROR - 2013-05-21 13:06:54 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 8
+ERROR - 2013-05-21 13:07:04 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\branch.php 8
+ERROR - 2013-05-21 13:09:16 --> Severity: Notice  --> Undefined property: BranchCI::$branchCI C:\wamp\www\PointOfSale\application\controllers\branchCI.php 49
+ERROR - 2013-05-21 13:09:26 --> Severity: Notice  --> Undefined property: BranchCI::$branchCI C:\wamp\www\PointOfSale\application\controllers\branchCI.php 49
+ERROR - 2013-05-21 13:11:10 --> Severity: Warning  --> Missing argument 1 for BranchCI::edit_branch_details() C:\wamp\www\PointOfSale\application\controllers\branchCI.php 44
