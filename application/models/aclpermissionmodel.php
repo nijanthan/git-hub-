@@ -15,7 +15,7 @@ class Aclpermissionmodel extends CI_Model
         }
     }
     function get_user_department($id,$bid){
-        $this->db->select()->from('userdepart')->where('emp_id',$id)->where('branch_id',$bid);
+        $this->db->select()->from('userdepart')->where('emp_id',$id)->where('branch_id',$bid)->where('active_status',0);
         $query = $this->db->get();
         $value=array();
         $i=0;

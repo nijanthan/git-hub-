@@ -106,5 +106,37 @@ class Acluser{
         
     }
     
+   
+     function set_admin_permission(){
+            $branch = array(
+                   'branch'=>1,
+                   'read'=>1,
+                   'add'=> 1,
+                   'edit' =>1,
+                   'delete'=>1 );
+            $item = array(
+                   'branch'=>1,
+                   'read'=>1,
+                   'add'=> 1,
+                   'edit' =>1,
+                   'delete'=>1 );
+            $depa = array(
+                   'branch'=>1,
+                   'read'=>1,
+                   'add'=> 1,
+                   'edit' =>1,
+                   'delete'=>1 );
+            $user = array(
+                   'branch'=>1,
+                   'read'=>1,
+                   'add'=> 1,
+                   'edit' =>1,
+                   'delete'=>1 );
+        $_SESSION['Branch_per']=$branch; 
+        $_SESSION['Depa_per']=$depa; 
+        $_SESSION['user_per']=$user; 
+        $_SESSION['Item_per']=$item;
+    }
+    
 }
 ?>

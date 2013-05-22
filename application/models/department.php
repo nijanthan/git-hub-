@@ -72,8 +72,23 @@ function get_department_count($branch){
                 $data[] = $row;
             }
             return $data;
+           }          
+   }
+   function get_department_admin_count($branch){
+            $this->db->where('branch_id ',$branch);
+            $this->db->from('department');
+            return $this->db->count_all_results();
+   }
+   function get_department_admin_details($limit,$start,$branch){
+       $this->db->limit($limit, $start); 
+       $this->db->where('branch_id ',$branch);
+        $query = $this->db->get("department");
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
            }
-          return false;
    }
    function  add_department($depart,$bid){
        $data=array('dep_name'=>$depart,
@@ -171,6 +186,24 @@ function get_department_count($branch){
        $value=array('depart_name'=>$depart);
        $this->db->where('depart_id',$id);
        $this->db->update('userdepart',$value);
+   }
+   function activate_department($id){
+       $data=array('active_status'=>0);
+       $this->db->where('id',$id);             
+       $this->db->update('department',$data);
+       $this->db->where('depart_id',$id);             
+       $this->db->update('userdepart',$data);
+       $this->db->where('department_id ',$id);             
+       $this->db->update('depabranch',$data);
+   }
+   function deactivate_department($id){
+        $data=array('active_status'=>1);
+       $this->db->where('id',$id);             
+       $this->db->update('department',$data);
+       $this->db->where('depart_id',$id);             
+       $this->db->update('userdepart',$data);
+       $this->db->where('department_id ',$id);             
+       $this->db->update('depabranch',$data);
    }
 }
 ?>

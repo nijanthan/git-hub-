@@ -291,3 +291,31 @@ ERROR - 2013-05-22 12:51:42 --> Query error: Unknown column 'active_status' in '
 ERROR - 2013-05-22 12:51:43 --> Query error: Unknown column 'active_status' in 'where clause'
 ERROR - 2013-05-22 12:52:55 --> Query error: Unknown column 'active_status' in 'where clause'
 ERROR - 2013-05-22 12:52:59 --> Query error: Unknown column 'active_status' in 'where clause'
+ERROR - 2013-05-22 14:35:27 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-22 14:35:42 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-22 14:37:48 --> 404 Page Not Found --> departmentCI/department_delete
+ERROR - 2013-05-22 14:38:46 --> 404 Page Not Found --> departmentCI/department_delete
+ERROR - 2013-05-22 14:44:16 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-22 15:31:57 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:31:57 --> Severity: Warning  --> Missing argument 1 for Department::get_department_admin_count(), called in C:\wamp\www\PointOfSale\application\controllers\departmentCI.php on line 35 and defined C:\wamp\www\PointOfSale\application\models\department.php 77
+ERROR - 2013-05-22 15:31:57 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:31:57 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 84
+ERROR - 2013-05-22 15:33:36 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-22 15:33:37 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:33:37 --> Severity: Warning  --> Missing argument 1 for Department::get_department_admin_count(), called in C:\wamp\www\PointOfSale\application\controllers\departmentCI.php on line 35 and defined C:\wamp\www\PointOfSale\application\models\department.php 77
+ERROR - 2013-05-22 15:33:37 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:33:37 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 84
+ERROR - 2013-05-22 15:34:49 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-22 15:37:20 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-22 15:37:24 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:37:24 --> Severity: Warning  --> Missing argument 1 for Department::get_department_admin_count(), called in C:\wamp\www\PointOfSale\application\controllers\departmentCI.php on line 35 and defined C:\wamp\www\PointOfSale\application\models\department.php 77
+ERROR - 2013-05-22 15:37:24 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:37:24 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 84
+ERROR - 2013-05-22 15:38:15 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:38:16 --> Severity: Warning  --> Missing argument 1 for Department::get_department_admin_count(), called in C:\wamp\www\PointOfSale\application\controllers\departmentCI.php on line 35 and defined C:\wamp\www\PointOfSale\application\models\department.php 77
+ERROR - 2013-05-22 15:38:16 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:38:16 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 84
+ERROR - 2013-05-22 15:38:48 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:38:48 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 78
+ERROR - 2013-05-22 15:38:48 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\department.php 84
+ERROR - 2013-05-22 16:07:37 --> 404 Page Not Found --> departmentCI/to_deactivate_department

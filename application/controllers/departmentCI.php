@@ -22,6 +22,24 @@ class DepartmentCI extends CI_Controller{
         }
     }
     function get_department(){
+        if($_SESSION['admin']==2){
+            $this->load->model('department');            
+            $this->load->model('branch');
+                $this->load->library("pagination");                
+	        $config["base_url"] = base_url()."index.php/departmentCI/get_department";
+	        $config["total_rows"] = $this->department->get_department_admin_count($_SESSION['Bid']);
+	        $config["per_page"] = 5;
+	        $config["uri_segment"] = 3;
+	        $this->pagination->initialize($config);	 
+	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;               
+                $data['count']=$this->department->get_department_admin_count($_SESSION['Bid']);         
+	        $data["depa"] = $this->department->get_department_admin_details($config["per_page"],$page,$_SESSION['Bid']);
+                $data['branch']=$this->branch->get_branch();
+	        $data["links"] = $this->pagination->create_links();                 
+                $this->load->view('template/header');
+                $this->load->view('department',$data);
+                $this->load->view('template/footer');
+        }else{
          if($_SESSION['Depa_per']['read']==1){ 
                 $this->load->model('department');            
                 $this->load->library("pagination");                
@@ -43,6 +61,7 @@ class DepartmentCI extends CI_Controller{
                 echo "Ypu Have No permission to Read Department Details";
                 redirect('home');
     }}
+    }
     function department(){
         if($this->input->post('back')){
                 redirect('home');
@@ -165,7 +184,7 @@ class DepartmentCI extends CI_Controller{
                     $this->get_department();
                 }
         }
-        function department_deletey($id){
+        function department_delete($id){
             if($_SESSION['Depa_per']['delete']==1){ 
                 $this->load->model('department');
                 $this->department->delete_department($id);
@@ -258,11 +277,21 @@ class DepartmentCI extends CI_Controller{
             }
         }
         function update_permission($item,$user,$depa,$branch,$depart_id,$branchid){
-            $this->load->model('permissions');
-            $this->permissions->update_item_permission($item,$depart_id,$branchid);
-            $this->permissions->update_user_permission($user,$depart_id,$branchid);
-            $this->permissions->update_depart_permission($depa,$depart_id,$branchid);
-            $this->permissions->update_branch_permission($branch,$depart_id,$branchid);
+                $this->load->model('permissions');
+                $this->permissions->update_item_permission($item,$depart_id,$branchid);
+                $this->permissions->update_user_permission($user,$depart_id,$branchid);
+                $this->permissions->update_depart_permission($depa,$depart_id,$branchid);
+                $this->permissions->update_branch_permission($branch,$depart_id,$branchid);
+        }
+        function to_activate_department($id){
+                $this->load->model('department');
+                $this->department->activate_department($id);   
+                redirect('departmentCI');
+        }
+        function  to_deactivate_department($id){
+                $this->load->model('department');
+                $this->department->deactivate_department($id);
+                redirect('departmentCI');
         }
 }
 ?>
