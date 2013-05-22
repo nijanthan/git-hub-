@@ -27,9 +27,20 @@ class Posmain extends CI_Controller{
     function set_user_default_branch(){
         $this->load->model('branch');
         $data=$this->branch->get_user_default_branch($_SESSION['Uid']);
-        $this->pos_setting();
-        $this->acl_session_for_user($data);        
-        redirect('home');
+        $this->pos_setting();       
+        if($_SESSION['admin']==2){
+             $this->acl_session_for_user($data);        
+             redirect('home');
+        }else{
+             if($this->branch->check_branch_is_in_acive($data)){
+             $this->acl_session_for_user($data);        
+             redirect('home');
+        }else{
+            $id =$this->branch->is_in_active_branchs($_SESSION['Uid']);
+             $this->acl_session_for_user($data);        
+             redirect('home');
+        }
+        }
     }
    function acl_session_for_user($b_id){
        $_SESSION['Bid']=$b_id;

@@ -19,14 +19,22 @@
         xmlhttp.send();
         }
 </script>
-<?php 
-echo form_open('home/change_branch') ?>
 <select id="branch">
+<?php 
+echo form_open('home/change_branch') ; 
+if($_SESSION['admin']==2){
+    foreach ($row as $brow){ ?>
+        <option onclick="change_branch()" value="<?php echo $brow->id ?>" ><?php echo $brow->store_name  ?></option>
+   <?php }
+}else{
+?>
+
 <?php foreach ($row as $brow){ 
-   
+     for($i=0;$i<count($a_row);$i++){
+         if($a_row[$i]==$brow->branch_id){
     ?><option onclick="change_branch()" value="<?php echo $brow->branch_id ?>" ><?php echo $brow->branch_name ?></option>
     
-   <?php } ?>
+   <?php }}}} ?>
 </select>
     <?php echo form_close(); 
 }

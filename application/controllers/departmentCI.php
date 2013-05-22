@@ -165,15 +165,15 @@ class DepartmentCI extends CI_Controller{
                     $this->get_department();
                 }
         }
-        function department_delete($id){
+        function department_deletey($id){
             if($_SESSION['Depa_per']['delete']==1){ 
                 $this->load->model('department');
                 $this->department->delete_department($id);
-                $this->department->delete_item_permission($id);
-                $this->department->delete_user_permission($id);
-                $this->department->delete_branch_permission($id);
-                $this->department->delete_depart_permission($id);
-                $this->department->delete_depart_branch($id);                 
+                //$this->department->delete_item_permission($id);
+                //$this->department->delete_user_permission($id);
+                //$this->department->delete_branch_permission($id);
+                //$this->department->delete_depart_permission($id);
+                //$this->department->delete_depart_branch($id);                 
                 redirect('departmentCI/get_department');
             }else{
                 redirect('departmentCI/get_department');

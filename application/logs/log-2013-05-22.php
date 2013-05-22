@@ -215,3 +215,79 @@ ERROR - 2013-05-22 08:19:20 --> Severity: Notice  --> Array to string conversion
 ERROR - 2013-05-22 08:31:14 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
 ERROR - 2013-05-22 08:32:08 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
 ERROR - 2013-05-22 10:00:59 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
+ERROR - 2013-05-22 10:45:47 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 10:46:45 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 10:47:25 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 10:47:57 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:22:31 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:22:31 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:22:31 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:22:31 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:22:45 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:23:01 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:23:01 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:23:34 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:23:35 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:23:35 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:23:35 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:23:35 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:15 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:15 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:15 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:15 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:29 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:24:29 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:29 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:29 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:24:29 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:25:55 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:25:55 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:25:55 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:25:55 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:33:36 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:33:51 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:34:56 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:34:56 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:34:56 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:34:56 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:34:56 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:08 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:08 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:08 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:08 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:38 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:35:54 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:35:54 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:54 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:54 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:35:54 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:38 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:38 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:38 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:38 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:47 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:47 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:47 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:36:47 --> Severity: Notice  --> Undefined offset: 1 C:\wamp\www\PointOfSale\application\views\template\branch.php 34
+ERROR - 2013-05-22 11:37:56 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:40:09 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 11:44:11 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 59
+ERROR - 2013-05-22 12:19:48 --> Severity: Warning  --> Missing argument 1 for BranchCI::edit_branch_details() C:\wamp\www\PointOfSale\application\controllers\branchCI.php 51
+ERROR - 2013-05-22 12:19:48 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\branchCI.php 52
+ERROR - 2013-05-22 12:20:04 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\branchCI.php 124
+ERROR - 2013-05-22 12:21:13 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\branchCI.php 124
+ERROR - 2013-05-22 12:50:47 --> Query error: Unknown column 'userdepart' in 'where clause'
+ERROR - 2013-05-22 12:50:55 --> Query error: Unknown column 'userdepart' in 'where clause'
+ERROR - 2013-05-22 12:50:59 --> Query error: Unknown column 'userdepart' in 'where clause'
+ERROR - 2013-05-22 12:51:42 --> Query error: Unknown column 'active_status' in 'where clause'
+ERROR - 2013-05-22 12:51:43 --> Query error: Unknown column 'active_status' in 'where clause'
+ERROR - 2013-05-22 12:52:55 --> Query error: Unknown column 'active_status' in 'where clause'
+ERROR - 2013-05-22 12:52:59 --> Query error: Unknown column 'active_status' in 'where clause'

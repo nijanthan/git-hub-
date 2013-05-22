@@ -58,12 +58,14 @@ function delete_user_depart($id){
 }
 function get_department_count($branch){
    $this->db->where('branch_id',$branch);
+   $this->db->where('active_status',0);
    $this->db->from('depabranch');
    return $this->db->count_all_results();
 }
  public function get_department_details($limit,$start,$brnch) {
         $this->db->limit($limit, $start);  
         $this->db->where('branch_id',$brnch);
+        $this->db->where('active_status',0);
         $query = $this->db->get("depabranch");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -87,8 +89,14 @@ function get_department_count($branch){
                 $this->db->insert('depabranch',$data);
    }
    function delete_department($id){
-       $this->db->where('id',$id);
-       $this->db->delete('department');       
+       $data=array('active_status'=>1);
+       $this->db->where('id',$id);             
+       $this->db->update('department',$data);
+       $this->db->where('depart_id',$id);             
+       $this->db->update('userdepart',$data);
+       $this->db->where('department_id ',$id);             
+       $this->db->update('depabranch',$data);
+             
    }
    function delete_item_permission($id){
         $this->db->where('depart_id',$id);
