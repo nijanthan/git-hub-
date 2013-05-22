@@ -161,24 +161,20 @@ $r=0;
     function upadate_employee_details(){
        if($_SESSION['user_per']['edit']==1){ 
        $this->load->library('form_validation');
-                $this->form_validation->set_rules("first_name","First_name","required"); 
-                $this->form_validation->set_rules('phone', 'Phone', 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
-                $this->form_validation->set_rules('age', 'Age', 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
-                $this->form_validation->set_rules("last_name","Last_name","required"); 
-                $this->form_validation->set_rules('email', 'Email', 'valid_email|required');
-                
-                $this->form_validation->set_rules('address','Address',"required");
-                $this->form_validation->set_rules('city','City',"required");
-                $this->form_validation->set_rules('state','State',"required");
-                $this->form_validation->set_rules('zip','Zip',"required");
-                $this->form_validation->set_rules('dob','Dob',"required");                
-                $this->form_validation->set_rules('age','Age',"required");
-                $this->form_validation->set_rules('depa','depa',"required");
-               
+                $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
+                $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules('age', $this->lang->line('age'), 'required|max_length[2]|regex_match[/^[0-9]+$/]|xss_clean');
+                $this->form_validation->set_rules("last_name",$this->lang->line('last_name'),"required"); 
+                $this->form_validation->set_rules('email', $this->lang->line('email'), 'valid_email|required');                
+                $this->form_validation->set_rules('address',$this->lang->line('address'),"required");
+                $this->form_validation->set_rules('city',$this->lang->line('city'),"required");
+                $this->form_validation->set_rules('state',$this->lang->line('state'),"required");
+                $this->form_validation->set_rules('zip',$this->lang->line('zip'),"required");
+                $this->form_validation->set_rules('dob',$this->lang->line('date_of'),"required");                 
+                $this->form_validation->set_rules('depa',$this->lang->line('department'),"required");              
                 $this->form_validation->set_rules('employee_id','Employee_id',"required");
                 $this->form_validation->set_rules('country','Country',"required");
-                 $id=  $this->input->post('id');
-	  
+                $id=  $this->input->post('id');	  
 	    if ( $this->form_validation->run() !== false ) {
 			  $this->load->model('employeesmodel');
                           $first_name=$this->input->post('first_name');
@@ -196,28 +192,17 @@ $r=0;
                           $yourdatetime =$this->input->post('dob');
                           $image_name=$this->input->post('image_name');
                           $age=  $this->input->post('age');
-                          $sex= $this->input->post('sex');
-                          
-                          $dob= strtotime($yourdatetime); 
-                         
-                         $this->load->model('employeesmodel');
-                        
-                         $this->employeesmodel->update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
-                         
-                         $this->update_user_department($id,$department);
-                         
-                         $this->update_user_branch($id,$department);
-                         
-                         $this->get_employee_details();
-                        
-                           
-                          
-                          
+                          $sex= $this->input->post('sex');                          
+                          $dob= strtotime($yourdatetime);                          
+                          $this->load->model('employeesmodel');                        
+                          $this->employeesmodel->update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
+                          $this->update_user_department($id,$department);                         
+                          $this->update_user_branch($id,$department);                         
+                          $this->get_employee_details();                                                             
     }else{
         $this->load->model('branch');
         $data['branch']=  $this->branch->get_branch();
-        $this->edit_employee_details($id);
-        
+        $this->edit_employee_details($id);        
         }
        }else{
            echo "You Have No Permission To Edit Users";
@@ -502,18 +487,13 @@ $r=0;
             $new_depa[$r]=$arr[$i];
            $r++;
        }
-        }
-            
+        }            
             for($k=0;$k<count($new_depa);$k++)
             {
-               $this->branch->set_branch($id,$new_depa[$k]);
-                
-            }
-//
-        }
-        
-         
-        function add_employee_image(){
+               $this->branch->set_branch($id,$new_depa[$k]);                
+            }//
+        }       
+         function add_employee_image(){
               $uploaddir = './uploads/'; 
                $file = $uploaddir . basename($_FILES['uploadfile']['name']); 
                $_SESSION['image_name']=basename($_FILES['uploadfile']['name']); 
@@ -523,7 +503,6 @@ $r=0;
                 } else {
                         echo "error";
                 }
-
         }
         function edit_employee_permission($id){
              $this->load->model('employeesmodel');

@@ -52,6 +52,13 @@ $lang['branch_edit']='Edit Branch';
 $lang['branch_delete']='Delate Branch';
 $lang['on']='On';
 $lang['off']='Off';
+$lang['branch_name']='Branch Name';
+$lang['place']='Place';
+$lang['website']='Website';
+$lang['fax']='Fax';
+$lang['tax1']='Tax 1';
+$lang['tax2']='Tax 2';
+
 
 
 

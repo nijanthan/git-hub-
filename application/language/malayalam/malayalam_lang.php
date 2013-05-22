@@ -52,5 +52,10 @@ $lang['branch_edit']='ബ്രാഞ്ച് തിരുത്തൽ ';
 $lang['branch_delete']='ബ്രാഞ്ച് എടുത്തുകളയുക';
 $lang['on']='ഓണ്‍';
 $lang['off']='ഓഫ്‌';
-
+$lang['branch_name']='ബ്രാഞ്ച് ശകലം';
+$lang['place']='സ്ഥലം';
+$lang['website']='വെബ്സൈറ്റ് ';
+$lang['fax']='ഫക്സ് ';
+$lang['tax1']='നികുതി 1';
+$lang['tax2']='നികുതി 2';
 ?>﻿

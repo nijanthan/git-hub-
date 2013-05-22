@@ -15,7 +15,7 @@ foreach ($row as $erow){
     
     <tr><td><input type="checkbox" name="mycheck[]" value="<?php echo $erow->id ?>" /><td style="width: 100px"><?php echo $erow->store_name ; ?>
         </td><td  style="width: 100px"><?php echo $erow->store_phone  ?></td><td  style="width: 150px"><?php echo $erow->store_fax  ?></td>
-        <td style="width: 100px"><?php echo $erow->store_place ?></td><td  style="width: 100px">
+        <td style="width: 100px"><?php echo $erow->store_city ?></td><td  style="width: 100px">
             
            
         </td>

@@ -120,10 +120,13 @@ class Branch extends CI_Model{
        } 
    }
    function branchcount(){
-       return $this->db->count_all("branch");
+       $this->db->where('active_status',0);      
+       $this->db->from('branch');
+       return $this->db->count_all_results();      
    }
    function get_branch_details($limit, $start) {
-        $this->db->limit($limit, $start);        
+        $this->db->limit($limit, $start);   
+        $this->db->where('active_status',0);
         $query = $this->db->get("branch");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -137,6 +140,27 @@ class Branch extends CI_Model{
         $this->db->select()->from('branch')->where('id',$id);
         $sql=$this->db->get();
         return $sql->result();
+   }
+   function update_branch_details($id,$name,$city,$state,$zip,$country,$phone,$fax,$email,$tax1,$tax2,$website){
+        $data=array('store_name'=>$name,
+                    'store_city '=>$city	,
+                    'store_state'=>$state,	
+                    'store_zip'=>$zip,
+                    'store_country'=>$country,
+                    'store_website'=>$website,
+                    'store_phone'=>$phone,
+                    'store_email'=>$email,
+                    'store_fax'=>$fax,
+                    'store_tax1'=>$tax1,
+                    'store_tax2'=>$tax2 );
+        $this->db->where('id',$id);
+        $this->db->update('branch',$data);
+   }
+   function delete_branch($id){
+       $data=array('delete_status '=>1);
+
+       $this->db->where('id',$id);
+       $this->db->update('branch',$data);
    }
 }
 ?>

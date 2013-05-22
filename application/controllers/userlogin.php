@@ -12,12 +12,9 @@ class Userlogin extends CI_Controller
         $this->load->library('form_validation');
         session_start();
         $this->load->library('poslanguage');                 
-        $this->poslanguage->set_language();
-         
-      
+        $this->poslanguage->set_language();     
     }
-    function index(){
-       
+    function index(){       
         if(!isset($_SESSION['Uid'])){
             $this->load->view('template/header');
             $this->load->view('login');
@@ -26,9 +23,7 @@ class Userlogin extends CI_Controller
             $this->load->view('template/header');
             $this->load->view('home');
             $this->load->view('template/footer');
-        }
-       
-     
+        }     
         } 
 function employee()
 {
@@ -48,22 +43,30 @@ function login(){
             if($this->logindetails->login($username,$password)){
                
                 $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
-               
-                $this->load->view('template/header');
-                redirect('posmain/set_user_default_branch');
-                $this->load->view('template/footer');
+                if($this->logindetails->check_admin($_SESSION['Uid'])){
+                     $_SESSION['admin']=2;
+                     $this->load->view('template/header');
+                     redirect('posmain/set_user_default_branch');
+                     $this->load->view('template/footer');
+                }else{
+               if($this->logindetails->is_in_active_branchs($_SESSION['Uid'])!=0){
+                    $_SESSION['admin']=0;
+                    $this->load->view('template/header');
+                    redirect('posmain/set_user_default_branch');
+                    $this->load->view('template/footer');
+               }else{
+                   echo "Your Branchs Are Not corrently Active Please Contact With Admin";
+                   $this->load->view('template/header');
+                   $this->load->view('login');
+                   $this->load->view('template/footer');
+               }}
             }else{
-                echo "Invalid Username and password";
-                
+                echo "Invalid Username and password";                
                 $this->load->view('template/header');
                 $this->load->view('login');
-                $this->load->view('template/footer');
-                 
-            }
-            
-            
-        }  else {
-           
+                $this->load->view('template/footer');                 
+            }           
+            }  else {          
               
              $this->load->view('template/header');
              $this->load->view('login');

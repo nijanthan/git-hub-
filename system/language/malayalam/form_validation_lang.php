@@ -1,9 +1,9 @@
 <?php
 
 $lang['required']			= " %s കണ്ടം രേഖപ്പെടുത്തുക.";
-$lang['isset']				= "The %s field must have a value.";
-$lang['valid_email']		= "The %s field must contain a valid email address.";
-$lang['valid_emails']		= "The %s field must contain all valid email addresses.";
+$lang['isset']				= " %s കണ്ട്ണ്ടത്തിൽ തിര്ച്ചയയും  വാല്യൂ  വേണം .";
+$lang['valid_email']		= " %s കണ്ടം ഒരു  യഥാര്‍ത്ഥമായ ഇമെയിൽ  അല്ല ..";
+$lang['valid_emails']		= " %s കണ്ട്ണ്ടത്തിൽ തിര്ച്ചയയും  യഥാര്‍ത്ഥമായ ഇമെയിൽ വേണം .";
 $lang['valid_url']			= "The %s field must contain a valid URL.";
 $lang['valid_ip']			= "The %s field must contain a valid IP.";
 $lang['min_length']			= "The %s field must be at least %s characters in length.";
@@ -15,7 +15,7 @@ $lang['alpha_dash']			= "The %s field may only contain alpha-numeric characters,
 $lang['numeric']			= "The %s field must contain only numbers.";
 $lang['is_numeric']			= "The %s field must contain only numeric characters.";
 $lang['integer']			= "The %s field must contain an integer.";
-$lang['regex_match']		= "The %s field is not in the correct format.";
+$lang['regex_match']		= " %s ഒരു  യഥാര്‍ത്ഥമായ ഫോർമാറ്റ്‌ അല്ല .";
 $lang['matches']			= "The %s field does not match the %s field.";
 $lang['is_unique'] 			= "The %s field must contain a unique value.";
 $lang['is_natural']			= "The %s field must contain only positive numbers.";

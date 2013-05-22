@@ -216,3 +216,8 @@ ERROR - 2013-05-21 14:17:16 --> Severity: Notice  --> Array to string conversion
 ERROR - 2013-05-21 14:20:25 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 48
 ERROR - 2013-05-21 18:03:12 --> Query error: Table 'pos.itempermission' doesn't exist
 ERROR - 2013-05-21 18:05:43 --> Query error: Table 'pos.itempermission' doesn't exist
+ERROR - 2013-05-21 18:28:55 --> Could not find the language line "branch_name"
+ERROR - 2013-05-21 18:28:55 --> Could not find the language line "place"
+ERROR - 2013-05-21 18:29:26 --> Could not find the language line "place"
+ERROR - 2013-05-21 18:29:26 --> Could not find the language line "place"
+ERROR - 2013-05-21 18:34:25 --> Could not find the language line "tax2"
