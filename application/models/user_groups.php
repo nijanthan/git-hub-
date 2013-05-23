@@ -1,16 +1,16 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Department extends CI_Model{
+class User_groups extends CI_Model{
     function __construct() {
         parent::__construct();
     }
-    function get_department(){
-        $this->db->select()->from('department');
+    function get_user_groups(){
+        $this->db->select()->from('user_groups');
         $sql=$this->db->get();
         return $sql->result(); 
     }
-    function set_department($id,$depa_id,$branch_id){
-        $this->db->select()->from('department')->where('id',$depa_id);
+    function set_user_groups($id,$depa_id,$branch_id){
+        $this->db->select()->from('user_groups')->where('id',$depa_id);
             $sql=$this->db->get();
             foreach ($sql->result() as $row) {
                 $name= $row->dep_name ;
@@ -19,16 +19,16 @@ class Department extends CI_Model{
                     'depart_name'=>$name,
                     'depart_id'=>$depa_id,
                     'branch_id'=>$branch_id);
-                $this->db->insert('userdepart',$data);
+                $this->db->insert('users_X_user_groups',$data);
     }
     function get_user_depart($id){
-        $this->db->select()->from('userdepart')->where('emp_id',$id);
+        $this->db->select()->from('users_X_user_groups')->where('emp_id',$id);
         $sql=  $this->db->get();
        
             return $sql->result();
     }
     function get_all_user_depart($id){
-        $this->db->select()->from('userdepart')->where('emp_id',$id);
+        $this->db->select()->from('users_X_user_groups')->where('emp_id',$id);
         $sql=  $this->db->get();
         $j=0;
         foreach ($sql->result() as $row)
@@ -39,8 +39,8 @@ class Department extends CI_Model{
             }
             return $data;
     }
-    function get_all_departmentg(){
-        $this->db->select()->from('department');
+    function get_all_user_groupsg(){
+        $this->db->select()->from('user_groups');
         $sql=  $this->db->get();
         $j=0;
         foreach ($sql->result() as $row)
@@ -54,19 +54,19 @@ class Department extends CI_Model{
 }
 function delete_user_depart($id){
     $this->db->where('emp_id',$id);
-    $this->db->delete('userdepart');
+    $this->db->delete('users_X_user_groups');
 }
-function get_department_count($branch){
+function get_user_groups_count($branch){
    $this->db->where('branch_id',$branch);
    $this->db->where('active_status',0);
-   $this->db->from('depabranch');
+   $this->db->from('user_groups_X_branchs');
    return $this->db->count_all_results();
 }
- public function get_department_details($limit,$start,$brnch) {
+ public function get_user_groups_details($limit,$start,$brnch) {
         $this->db->limit($limit, $start);  
         $this->db->where('branch_id',$brnch);
         $this->db->where('active_status',0);
-        $query = $this->db->get("depabranch");
+        $query = $this->db->get('user_groups_X_branchs');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -74,15 +74,17 @@ function get_department_count($branch){
             return $data;
            }          
    }
-   function get_department_admin_count($branch){
+   function get_user_groups_admin_count($branch){
             $this->db->where('branch_id ',$branch);
-            $this->db->from('department');
+            $this->db->where('delete_status',0);
+            $this->db->from('user_groups');
             return $this->db->count_all_results();
    }
-   function get_department_admin_details($limit,$start,$branch){
+   function get_user_groups_admin_details($limit,$start,$branch){
        $this->db->limit($limit, $start); 
+       $this->db->where('delete_status',0);
        $this->db->where('branch_id ',$branch);
-        $query = $this->db->get("department");
+        $query = $this->db->get('user_groups');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -90,36 +92,36 @@ function get_department_count($branch){
             return $data;
            }
    }
-   function  add_department($depart,$bid){
+   function  add_user_groups($depart,$bid){
        $data=array('dep_name'=>$depart,
                    'branch_id'=>$bid
            );
-       $this->db->insert('department',$data);
+       $this->db->insert('user_groups',$data);
         $id=$this->db->insert_id();
        return $id;
    }
-   function set_branch_department($id,$branch_id){
+   function set_branch_user_groups($id,$branch_id){
        $data=array('branch_id'=>$branch_id,
-                    'department_id'=>$id);
-                $this->db->insert('depabranch',$data);
+                    'user_group_id'=>$id);
+                $this->db->insert('user_groups_X_branchs',$data);
    }
-   function delete_department($id){
+   function delete_user_groups($id){
        $data=array('active_status'=>1);
        $this->db->where('id',$id);             
-       $this->db->update('department',$data);
+       $this->db->update('user_groups',$data);
        $this->db->where('depart_id',$id);             
-       $this->db->update('userdepart',$data);
-       $this->db->where('department_id ',$id);             
-       $this->db->update('depabranch',$data);
+       $this->db->update('users_X_user_groups',$data);
+       $this->db->where('user_group_id ',$id);             
+       $this->db->update('user_groups_X_branchs',$data);
              
    }
    function delete_item_permission($id){
         $this->db->where('depart_id',$id);
-        $this->db->delete('item_per');
+        $this->db->delete('item_X_page_permissions');
    }
    function delete_user_permission($id){
         $this->db->where('depart_id',$id);        
-        $this->db->delete('user_per');
+        $this->db->delete('user_X_page_X_permissions');
    }
    function delete_branch_permission($id){
         $this->db->where('depart_id',$id);        
@@ -127,18 +129,18 @@ function get_department_count($branch){
    }
     function delete_depart_permission($id){
         $this->db->where('depart_id',$id);        
-        $this->db->delete('depart_per');
+        $this->db->delete('user_groups_X_page_X_permissions');
    }
    function delete_depart_branch($id){
-       $this->db->where('department_id',$id);
-       $this->db->delete('depabranch');
+       $this->db->where('user_group_id',$id);
+       $this->db->delete('user_groups_X_branchs');
    }
    function get_user_deprtment($id){
-       $this->db->select()->from('depabranch')->where('branch_id',$id);
+       $this->db->select()->from('user_groups_X_branchs')->where('branch_id',$id);
         $sql=  $this->db->get();
         $j=0;
         foreach ($sql->result() as $row) {
-                $this->db->select()->from('department')->where('id',$row->department_id);
+                $this->db->select()->from('user_groups')->where('id',$row->user_group_id);
                 $sql=  $this->db->get();
               
                 foreach ($sql->result() as $row) {            
@@ -150,11 +152,11 @@ function get_department_count($branch){
        
    }
    function get_user_deprtment_id($id){
-       $this->db->select()->from('depabranch')->where('branch_id',$id);
+       $this->db->select()->from('user_groups_X_branchs')->where('branch_id',$id);
         $sql=  $this->db->get();
         $j=0;
         foreach ($sql->result() as $row) {
-                $this->db->select()->from('department')->where('id',$row->department_id);
+                $this->db->select()->from('user_groups')->where('id',$row->user_group_id);
                 $sql=  $this->db->get();
               
                 foreach ($sql->result() as $row) {            
@@ -166,44 +168,52 @@ function get_department_count($branch){
        
    }
    function get_user_seleted_depa($d_id){
-       $this->db->select()->from('department')->where('id',$d_id);
+       $this->db->select()->from('user_groups')->where('id',$d_id);
                 $sql=  $this->db->get();              
                 foreach ($sql->result() as $row) {            
              $data = $row->dep_name  ;            
             }
             return $data;
    }
-   function get_seleted_department_details($id){
-       $this->db->select()->from('department')->where('id',$id);
+   function get_seleted_user_groups_details($id){
+       $this->db->select()->from('user_groups')->where('id',$id);
        $sql=$this->db->get();
        return $sql->result();
    }
-    function update_department($id,$depart){
+    function update_user_groups($id,$depart){
        $data=array('dep_name'=>$depart);
        $this->db->where('id',$id);
-       $this->db->update('department',$data);
-       
+       $this->db->update('user_groups',$data);       
        $value=array('depart_name'=>$depart);
        $this->db->where('depart_id',$id);
-       $this->db->update('userdepart',$value);
+       $this->db->update('users_X_user_groups',$value);
    }
-   function activate_department($id){
+   function activate_user_groups($id){
        $data=array('active_status'=>0);
        $this->db->where('id',$id);             
-       $this->db->update('department',$data);
+       $this->db->update('user_groups',$data);
        $this->db->where('depart_id',$id);             
-       $this->db->update('userdepart',$data);
-       $this->db->where('department_id ',$id);             
-       $this->db->update('depabranch',$data);
+       $this->db->update('users_X_user_groups',$data);
+       $this->db->where('user_group_id ',$id);             
+       $this->db->update('user_groups_X_branchs',$data);
    }
-   function deactivate_department($id){
+   function deactivate_user_groups($id){
         $data=array('active_status'=>1);
        $this->db->where('id',$id);             
-       $this->db->update('department',$data);
+       $this->db->update('user_groups',$data);
        $this->db->where('depart_id',$id);             
-       $this->db->update('userdepart',$data);
-       $this->db->where('department_id ',$id);             
-       $this->db->update('depabranch',$data);
+       $this->db->update('users_X_user_groups',$data);
+       $this->db->where('user_group_id ',$id);             
+       $this->db->update('user_groups_X_branchs',$data);
+   }
+   function delete_user_groups_for_admin($id){
+       $data=array('delete_status'=>1,'active_status'=>1);
+       $this->db->where('id',$id);             
+       $this->db->update('user_groups',$data);
+       $this->db->where('depart_id',$id);             
+       $this->db->update('users_X_user_groups',$data);
+       $this->db->where('user_group_id ',$id);             
+       $this->db->update('user_groups_X_branchs',$data);
    }
 }
 ?>

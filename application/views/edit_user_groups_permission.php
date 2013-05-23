@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>css/style.css" />
 
 
-<?php echo form_open('departmentCI/update_department_permission') ;?>
+<?php echo form_open('user_groupsCI/update_user_groups_permission') ;?>
 <table><tr><td>            
     <?php foreach ($row as $drow){
       echo form_label($drow->dep_name);  echo form_hidden('id',$drow->id);  }?></td>

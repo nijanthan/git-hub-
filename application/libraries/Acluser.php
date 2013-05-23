@@ -9,7 +9,7 @@ class Acluser{
          $CI=  get_instance();
          $CI->load->library('session');
          $CI->load->model('aclpermissionmodel');
-         $deaprt=$CI->aclpermissionmodel->get_user_department($id,$bid);
+         $deaprt=$CI->aclpermissionmodel->get_user_groups($id,$bid);
           
          $num=0000;
          for($i=0;$i<count($deaprt);$i++){
@@ -38,7 +38,7 @@ class Acluser{
          $CI=  get_instance();
          $CI->load->library('session');
          $CI->load->model('aclpermissionmodel');
-          $deaprt=$CI->aclpermissionmodel->get_user_department($id,$bid);          
+          $deaprt=$CI->aclpermissionmodel->get_user_groups($id,$bid);          
          $num=0000;
          for($i=0;$i<count($deaprt);$i++){
          $num=$num+$CI->aclpermissionmodel->empl_permission($deaprt[$i],$bid); 
@@ -58,14 +58,14 @@ class Acluser{
         $_SESSION['user_per']=$emp;       
         
     }
-    function user_department_permissions($bid,$id){
+    function user_groups_permissions($bid,$id){
          $CI=  get_instance();
          $CI->load->library('session');
          $CI->load->model('aclpermissionmodel');
-          $deaprt=$CI->aclpermissionmodel->get_user_department($id,$bid);          
+          $deaprt=$CI->aclpermissionmodel->get_user_groups($id,$bid);          
          $num=0000;
          for($i=0;$i<count($deaprt);$i++){
-         $num=$num+$CI->aclpermissionmodel->department_permission($deaprt[$i],$bid); 
+         $num=$num+$CI->aclpermissionmodel->user_groups_permission($deaprt[$i],$bid); 
          }
          
         if($num%10==0){  $read=0; }else{  $read=1; }
@@ -86,7 +86,7 @@ class Acluser{
          $CI=  get_instance();
          $CI->load->library('session');
          $CI->load->model('aclpermissionmodel');
-          $deaprt=$CI->aclpermissionmodel->get_user_department($id,$bid);          
+          $deaprt=$CI->aclpermissionmodel->get_user_groups($id,$bid);          
          $num=0000;
          for($i=0;$i<count($deaprt);$i++){
         $num=$num+$CI->aclpermissionmodel->branch_permission($deaprt[$i],$bid); 

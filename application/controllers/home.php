@@ -46,11 +46,11 @@ class Home extends CI_Controller
                $this->pos_home();
            }
        }
-       if($this->input->post('department')){          
+       if($this->input->post('user_groups')){          
            if($_SESSION['Depa_per']['read']==1){
-               redirect('departmentCI');
+                redirect('user_groupsCI');
            }else{
-               echo "U have No Permission to View Department Details";
+               echo "U have No Permission to View user_groups Details";
                $this->pos_home();
            }
        }
@@ -67,8 +67,8 @@ class Home extends CI_Controller
            }
        }       
     }
-     function department(){
-        redirect('departmentCI');
+     function user_groups(){
+        redirect('user_groupsCI');
     }
     
 }

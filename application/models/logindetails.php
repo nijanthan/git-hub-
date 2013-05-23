@@ -22,7 +22,7 @@ class Logindetails extends CI_Model{
         }        
     }
     function is_in_active_branchs($Uid){                
-        $this->db->select()->from('userbranchs')->where('emp_id',$Uid);
+        $this->db->select()->from('users_X_branchs')->where('emp_id',$Uid);
         $sql_b=  $this->db->get();
         $data=array();
         $value=0;
@@ -30,7 +30,7 @@ class Logindetails extends CI_Model{
             $data[]=$brow->branch_id ;
         }
         for($i=0;$i<count($data);$i++){
-           $this->db->select()->from('branch')->where('id',$data[$i])->where('active_status',0);
+           $this->db->select()->from('branchs')->where('id',$data[$i])->where('active_status',0);
            $sql=  $this->db->get();
            if($sql->num_rows()>0){
                $value=$value+1;
@@ -42,6 +42,15 @@ class Logindetails extends CI_Model{
     }
     function check_admin($id){
         $this->db->select()->from('users')->where('id',$id)->where('user_type',2);
+        $sql=$this->db->get();
+        if($sql->num_rows()>0){
+            return TRUE;
+        }else{
+            return FALSE;
+        }
+    }
+    function check_user_is_active_or_not($id){
+        $this->db->select()->from('users_X_branchs')->where('emp_id',$id)->where('user_active',0)->where('user_delete ',0);
         $sql=$this->db->get();
         if($sql->num_rows()>0){
             return TRUE;

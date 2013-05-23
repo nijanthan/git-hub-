@@ -1,5 +1,5 @@
 <?php
-class Departmentselecting extends CI_Controller{
+class User_groupsselecting extends CI_Controller{
     function __construct() {
         parent::__construct();
          $this->load->helper('form');
@@ -15,10 +15,10 @@ class Departmentselecting extends CI_Controller{
         $this->get();
     }
     function get(){
-                    $this->load->model('department');
+                    $this->load->model('user_groups');
                     $this->load->model('branch');
                     $data['branch']= $this->branch->get_user_for_branch(55);
-                    $data['depa']= $this->department->get_department();
+                    $data['depa']= $this->user_groups->get_user_groups();
                    //$this->load->view('template/header');
                     $this->load->view('ruffpaper',$data);
                    
@@ -37,14 +37,14 @@ class Departmentselecting extends CI_Controller{
                    $k++;
                }
                }
-        $this->load->model('department');
-        $data=$this->department->get_user_deprtment($jibi);
-        $id=$this->department->get_user_deprtment_id($jibi);
+        $this->load->model('user_groups');
+        $data=$this->user_groups->get_user_deprtment($jibi);
+        $id=$this->user_groups->get_user_deprtment_id($jibi);
         if(count($monish)>0){
             $selected_depa=$this->get_selected($monish,$id);
              
                  for($j=0;$j<count($selected_depa);$j++){
-            $depa=$this->department->get_user_seleted_depa($selected_depa[$j]);
+            $depa=$this->user_groups->get_user_seleted_depa($selected_depa[$j]);
             echo "<option value=$jibi.$selected_depa[$j]>  $depa  </option>";            
                  }             
         }else{
@@ -89,38 +89,38 @@ $r=0;
     }
   
    
-    function get_department_branch($annan){
+    function get_user_groups_branch($annan){
         $idArray=array();
         $idArray = explode('.',$annan );
         $b_id=$idArray[0];
         $d_id=$idArray[1];
         $this->load->model('branch');
-        $this->load->model('department');
+        $this->load->model('user_groups');
         $branch=$this->branch->get_user_seleted_branch($b_id);
-        $depa=$this->department->get_user_seleted_depa($d_id);
+        $depa=$this->user_groups->get_user_seleted_depa($d_id);
         echo $branch." ( ".$depa." )";
     }
-    function set_department_branch($jibi,$id){
+    function set_user_groups_branch($jibi,$id){
         $idArray=array();
         $idArray = explode('.',$id );
         $b_id=$idArray[0];
         $d_id=$idArray[1];
         $this->load->model('branch');
-        $this->load->model('department');
+        $this->load->model('user_groups');
         $branch=$this->branch->get_user_seleted_branch($b_id);
-        $depa=$this->department->get_user_seleted_depa($d_id);
+        $depa=$this->user_groups->get_user_seleted_depa($d_id);
         if($jibi==$b_id){
              echo  $depa;
         }
         
     }
-    function get_selected_department($id){
+    function get_selected_user_groups($id){
         echo $id;
     }
    function save(){
        echo urldecode($this->input->post('depa'));
    }
-   function check_department_branchidden($jibi,$id){
+   function check_user_groups_branchidden($jibi,$id){
        $idArray=array();
         $idArray = explode('.',$id );
         $b_id=$idArray[0];

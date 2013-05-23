@@ -43,6 +43,14 @@ function login(){
             if($this->logindetails->login($username,$password)){
                
                 $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
+                if(!$this->logindetails->check_user_is_active_or_not($_SESSION['Uid']))
+                {
+                   echo "Your Account Has Been Deactivated Please contact with Admin";
+                   $this->load->view('template/header');
+                   $this->load->view('login');
+                   $this->load->view('template/footer');
+                   
+                }else{
                 if($this->logindetails->check_admin($_SESSION['Uid'])){
                      $_SESSION['admin']=2;
                      $this->load->view('template/header');
@@ -59,7 +67,7 @@ function login(){
                    $this->load->view('template/header');
                    $this->load->view('login');
                    $this->load->view('template/footer');
-               }}
+               }}}
             }else{
                 echo "Invalid Username and password";                
                 $this->load->view('template/header');

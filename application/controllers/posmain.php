@@ -49,7 +49,7 @@ class Posmain extends CI_Controller{
         }else{
         $this->acluser->user_item_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_employee_permissions($b_id,$_SESSION['Uid']);
-        $this->acluser->user_department_permissions($b_id,$_SESSION['Uid']);
+        $this->acluser->user_groups_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_branch_permissions($b_id,$_SESSION['Uid']);
         }
     }
@@ -61,8 +61,8 @@ class Posmain extends CI_Controller{
         echo $_SESSION['Setting']=$setting;
     }
   
-    function department(){
-        redirect('departmentCI');
+    function user_groups(){
+        redirect('user_groupsCI');
     }
     function change_user_branch($brnch){
         $this->load->model('aclpermissionmodel');

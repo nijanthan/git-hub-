@@ -46,7 +46,7 @@ $( "#datepicker" ).datepicker();
     <tr><td><?php echo form_label($this->lang->line('phone'))?></td><td><input type="text" name="phone" value="<?php echo $erow->phone ?>" maxlength="13"> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('date_of'))?></td><td><input type="text" id="datepicker" name="dob" value="<?php echo date('n/j/Y', strtotime('+0 year, +0 days',$erow->dob));   ?>"> </td></tr>
    
-    <tr><td><?php echo form_label($this->lang->line('department'))?></td><td>
+    <tr><td><?php echo form_label($this->lang->line('user_groups'))?></td><td>
 
             <script>
 function select_branch(tbTo)
@@ -66,7 +66,7 @@ else
   {
   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
   }
-xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/add/"+jibi+"/"+arrLU,false);
+xmlhttp.open("GET","<?php echo base_url() ?>index.php/user_groupsselecting/add/"+jibi+"/"+arrLU,false);
 
 xmlhttp.send();
 document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
@@ -123,7 +123,7 @@ for(ii = 0; ii < arrTo.length; ii++)
                 {
                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_department_branch/"+arrLU[arrTo[ii]],false);
+                xmlhttp.open("GET","<?php echo base_url() ?>index.php/user_groupsselecting/get_user_groups_branch/"+arrLU[arrTo[ii]],false);
                 xmlhttp.send();
               no.text = xmlhttp.responseText;
  tbTo[ii] = no; 
@@ -179,10 +179,10 @@ for(ii = 0; ii < arrTo.length; ii++)
                 {
                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
                 }
-                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/check_department_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
+                xmlhttp.open("GET","<?php echo base_url() ?>index.php/user_groupsselecting/check_user_groups_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
                 xmlhttp.send();
                 if(xmlhttp.responseText=='TRUE'){                   
-                xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/set_department_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
+                xmlhttp.open("GET","<?php echo base_url() ?>index.php/user_groupsselecting/set_user_groups_branch/"+jibi+"/"+arrLU[arrTo[ii]],false);
                 xmlhttp.send();                
                 no.text = xmlhttp.responseText;
                 tbTo[ii] = no; 
@@ -205,7 +205,7 @@ var arrLU="";
         xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
         }
         if(arrLU!=""){
-        xmlhttp.open("GET","<?php echo base_url() ?>index.php/departmentselecting/get_selected_department/"+arrLU,false);
+        xmlhttp.open("GET","<?php echo base_url() ?>index.php/user_groupsselecting/get_selected_user_groups/"+arrLU,false);
         xmlhttp.send();
             
             document.getElementById("depa").value = xmlhttp.responseText;
