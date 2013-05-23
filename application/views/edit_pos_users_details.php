@@ -30,7 +30,7 @@ $( "#datepicker" ).datepicker();
 <table>
     <?php $form =array('id'=>'form1',
                         'runat'=>'server');
-    echo form_open('employees/upadate_employee_details',$form)?>
+    echo form_open('pos_users/upadate_pos_users_details',$form)?>
     <input type="hidden" name="id" value="<?php echo $erow->id?>">
     <tr><td><?php echo form_label($this->lang->line('first_name'))?> </td><td><input type="text" name="first_name" value="<?php echo $erow->first_name ?>"> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('last_name'))?></td><td><input type="text" name="last_name" value="<?php echo $erow->last_name ?>"> </td></tr>
@@ -240,13 +240,13 @@ value="<-">
         </td></tr>
     
    
-    <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><input type="text" name="employee_id" value="<?php echo $erow->user_id ?>"> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><input type="text" name="pos_users_id" value="<?php echo $erow->user_id ?>"> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('photo'))?></td><td><img src="<?php echo base_url();?>uploads/<?php if($file_name=="null"){ echo $erow->image;}else{echo $file_name;}?>"><input type="hidden" name="image_name" value="<?php if($file_name=='null'){ echo $erow->image;}else{echo $file_name;} ?>" </td></tr>
     <tr><td><input type="submit" name="UPDATE" value="update" onclick="get_selected(this.form.lang)"></td> 
        
         
         <?php echo form_close(); 
-    echo form_open('employees/cancel')?>
+    echo form_open('pos_users/cancel')?>
         <td><?php echo form_submit('Cancel',$this->lang->line('cancel')) ?></td>
     </tr> 
         
@@ -258,7 +258,7 @@ value="<-">
 }?>
     <?php echo $error;
 $id= $erow->id?>
-<?php echo form_open_multipart('employees/do_upload/'."$id");?>
+<?php echo form_open_multipart('pos_users/do_upload/'."$id");?>
 <input type="file" name="userfile" size="50" /><input type="submit" value="<?php $this->lang->line('photo') ?>" /></form>
     
 </table>

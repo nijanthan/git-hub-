@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Employees extends CI_Controller{
+class Pos_users extends CI_Controller{
      
     function __construct() {
        
@@ -16,13 +16,13 @@ class Employees extends CI_Controller{
     function index(){
         $this->load->library('poslanguage');                 
         $this->poslanguage->set_language();
-        $this->get_employee_details();
+        $this->get_pos_users_details();
         
-       // $this->employee_testing();
+       // $this->pos_users_testing();
     } 
-    function employee_testing(){
-         $this->load->model('employeesmodel');
-        $test= $this->employeesmodel->get();
+    function pos_users_testing(){
+         $this->load->model('pos_users_model');
+        $test= $this->pos_users_model->get();
   
           $expected_result ='is_true';
 
@@ -34,61 +34,61 @@ class Employees extends CI_Controller{
         
         
     }
-    function get_employee_details(){
+    function get_pos_users_details(){
          if($_SESSION['admin']==2){
              $this->load->helper("url");
-                $this->load->model('employeesmodel');
+                $this->load->model('pos_users_model');
                 $this->load->model('branch');
                 $_SESSION['depart']="null";
                 $_SESSION['branch']="null";
                 
                 $this->load->library("pagination"); 
-	        $config["base_url"] = base_url()."index.php/employees/get_employee_details";
-	        $config["total_rows"] = $this->employeesmodel->employeecount_for_admin($_SESSION['Bid']);
+	        $config["base_url"] = base_url()."index.php/pos_users/get_pos_users_details";
+	        $config["total_rows"] = $this->pos_users_model->pos_users_count_for_admin($_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
                 $data['branch']=$this->branch->get_selected_branch_for_view();
-                $data['count']=$this->employeesmodel->employeecount_for_admin($_SESSION['Bid']);         
-	        $data["row"] = $this->employeesmodel->get_employees_details_for_admin($config["per_page"], $page,$_SESSION['Bid']);
-                $data['urow']= $this->employeesmodel->get_branch_employess_for_admin();
+                $data['count']=$this->pos_users_model->pos_users_count_for_admin($_SESSION['Bid']);         
+	        $data["row"] = $this->pos_users_model->get_pos_users_details_for_admin($config["per_page"], $page,$_SESSION['Bid']);
+                $data['urow']= $this->pos_users_model->get_branch_pos_users_for_admin();
 	        $data["links"] = $this->pagination->create_links(); 
                 
                 $this->load->view('template/header');
-                $this->load->view('employee_list',$data);
+                $this->load->view('pos_users_list',$data);
                 $this->load->view('template/footer');
          }else{
         if($_SESSION['user_per']['read']==1){ 
                 $this->load->helper("url");
-                $this->load->model('employeesmodel');
+                $this->load->model('pos_users_model');
                 $this->load->model('branch');                   
                 $this->load->library("pagination"); 
-	        $config["base_url"] = base_url()."index.php/employees/get_employee_details";
-	        $config["total_rows"] = $this->employeesmodel->employeecount($_SESSION['Uid'],$_SESSION['Bid']);
+	        $config["base_url"] = base_url()."index.php/pos_users/get_pos_users_details";
+	        $config["total_rows"] = $this->pos_users_model->pos_users_count($_SESSION['Uid'],$_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
                 $data['branch']=$this->branch->get_selected_branch_for_user_view();
-                $data['count']=$this->employeesmodel->employeecount($_SESSION['Uid'],$_SESSION['Bid']);             
-	        $data["row"] = $this->employeesmodel->get_employees_details($config["per_page"], $page,$_SESSION['Uid'],$_SESSION['Bid']);
-                $data['urow']=$this->employeesmodel->get_user_details_for_user($_SESSION['Uid']);
+                $data['count']=$this->pos_users_model->pos_users_count($_SESSION['Uid'],$_SESSION['Bid']);             
+	        $data["row"] = $this->pos_users_model->get_pos_users_details($config["per_page"], $page,$_SESSION['Uid'],$_SESSION['Bid']);
+                $data['urow']=$this->pos_users_model->get_user_details_for_user($_SESSION['Uid']);
 	        $data["links"] = $this->pagination->create_links(); 
                 
                 $this->load->view('template/header');
-                $this->load->view('employee_list',$data);
+                $this->load->view('pos_users_list',$data);
                 $this->load->view('template/footer');
         }else{
             redirect('home');
         }}
     }
-    function edit_employee_details($id){
+    function edit_pos_users_details($id){
         if($_SESSION['user_per']['edit']==1){ 
-                $this->load->model('employeesmodel');
+                $this->load->model('pos_users_model');
                 $this->load->model('branch');
                 $this->load->model('user_groups');
-                $data['row']=  $this->employeesmodel->edit_employee($id); 
+                $data['row']=  $this->pos_users_model->edit_pos_users($id); 
                 $data['error']="";
                 $data['file_name']="null";
                 $data['selected_branch']=$this->branch->get_selected_branch($id);
@@ -97,12 +97,12 @@ class Employees extends CI_Controller{
                 $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                 $data['depa']= $this->user_groups->get_user_groups(); 
                 $this->load->view('template/header');
-                $this->load->view('edit_employee_details',$data);
+                $this->load->view('edit_pos_users_details',$data);
                 $this->load->view('template/footer');
                
         }else{
             echo "You have No permission to Edit users";
-            redirect('employees/get_employee_details');
+            redirect('pos_users/get_pos_users_details');
         }
     }
      function get_selected_branchs($depart,$id){
@@ -177,9 +177,9 @@ $r=0;
     }
     
     function cancel(){
-        $this->get_employee_details();
+        $this->get_pos_users_details();
     }
-    function upadate_employee_details(){
+    function upadate_pos_users_details(){
        if($_SESSION['user_per']['edit']==1){ 
        $this->load->library('form_validation');
                 $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
@@ -193,15 +193,15 @@ $r=0;
                 $this->form_validation->set_rules('zip',$this->lang->line('zip'),"required");
                 $this->form_validation->set_rules('dob',$this->lang->line('date_of'),"required");                 
                 $this->form_validation->set_rules('depa',$this->lang->line('user_groups'),"required");              
-                $this->form_validation->set_rules('employee_id','Employee_id',"required");
+                $this->form_validation->set_rules('pos_users_id','pos_users_id',"required");
                 $this->form_validation->set_rules('country','Country',"required");
                 $id=  $this->input->post('id');	  
 	    if ( $this->form_validation->run() !== false ) {
-			  $this->load->model('employeesmodel');
+			  $this->load->model('pos_users_model');
                           $first_name=$this->input->post('first_name');
                           $last_name=  $this->input->post('last_name');
                           $email=$this->input->post('email');
-			  $emp_id=$this->input->post('employee_id');
+			  $emp_id=$this->input->post('pos_users_id');
                           $password=$this->input->post('password');
                           $address=$this->input->post('address');
                           $phone=$this->input->post('phone');
@@ -215,19 +215,19 @@ $r=0;
                           $age=  $this->input->post('age');
                           $sex= $this->input->post('sex');                          
                           $dob= strtotime($yourdatetime);                          
-                          $this->load->model('employeesmodel');                        
-                          $this->employeesmodel->update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
+                          $this->load->model('pos_users_model');                        
+                          $this->pos_users_model->update_pos_users($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name);
                           $this->update_user_user_groups($id,$user_groups);                         
                           $this->update_user_branch($id,$user_groups);                         
-                          $this->get_employee_details();                                                             
+                          $this->get_pos_users_details();                                                             
     }else{
         $this->load->model('branch');
         $data['branch']=  $this->branch->get_branch();
-        $this->edit_employee_details($id);        
+        $this->edit_pos_users_details($id);        
         }
        }else{
            echo "You Have No Permission To Edit Users";
-           $this->get_employee_details();
+           $this->get_pos_users_details();
        }
 }
 function update_user_branch($id,$depapartment){
@@ -322,10 +322,10 @@ function do_upload($id)
             
                 $data['error']=$error;
                 $data['file_name']=$file_name;
-                $this->load->model('employeesmodel');
+                $this->load->model('pos_users_model');
                 $this->load->model('branch');
                 $this->load->model('user_groups');
-                $data['row']=  $this->employeesmodel->edit_employee($id); 
+                $data['row']=  $this->pos_users_model->edit_pos_users($id); 
                
                $data['selected_branch']=$this->branch->get_selected_branch($id);
                 $data['selected_depart']=$this->user_groups->get_user_depart($id);
@@ -333,13 +333,13 @@ function do_upload($id)
                 $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                 $data['depa']= $this->user_groups->get_user_groups(); 
                 $this->load->view('template/header');
-                $this->load->view('edit_employee_details',$data);
+                $this->load->view('edit_pos_users_details',$data);
                 $this->load->view('template/footer');
                 
         }
        
         
-        function delete_selected_employees(){
+        function delete_selected_pos_users(){
             if($this->input->post('BacktoHome')){
                 redirect('home');
             }
@@ -348,33 +348,33 @@ function do_upload($id)
               $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){
               $deleted_by=$_SESSION['Uid'];
-              $this->load->model('employeesmodel');
+              $this->load->model('pos_users_model');
               foreach( $data1 as $key => $value){           
-             $this->employeesmodel->delete_employee($value,$deleted_by,$_SESSION['Bid']);             
+             $this->pos_users_model->delete_pos_users($value,$deleted_by,$_SESSION['Bid']);             
               }              
               }
-            $this->get_employee_details();
+            $this->get_pos_users_details();
               }else{
                 echo "U have No Permission to Delete New User";
-                $this->get_employee_details();
+                $this->get_pos_users_details();
               }
            }
            if($this->input->post('delete_user_for_admin')){
                  if($_SESSION['admin']==2){ 
               $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){              
-              $this->load->model('employeesmodel');
+              $this->load->model('pos_users_model');
               foreach( $data1 as $key => $value){           
-             $this->employeesmodel->delete_employee_for_admin($value,$_SESSION['Bid']);             
+             $this->pos_users_model->delete_pos_users_for_admin($value,$_SESSION['Bid']);             
               }              
               }
-            $this->get_employee_details();
+            $this->get_pos_users_details();
               }else{
               
-               redirect('employees');
+               redirect('pos_users');
               }
            }
-            if($this->input->post('Add_employee')){
+            if($this->input->post('Add_pos_users')){
                  if($_SESSION['user_per']['add']==1){  
                     $this->load->model('user_groups');
                     $this->load->model('branch');
@@ -382,38 +382,39 @@ function do_upload($id)
                     $data['depa']= $this->user_groups->get_user_groups();  
                    
                    // $this->load->view('template/header');
-                    $this->load->view('add_new_employee',$data);
+                    $this->load->view('add_new_pos_users',$data);
                     $this->load->view('template/footer');
              
              
              }else{
                  echo "U have No Permission to Add New User";
-                $this->get_employee_details();
+                $this->get_pos_users_details();
              }
         }
         if($this->input->post('activate')){
              $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){                      
-              $this->load->model('employeesmodel');
+              $this->load->model('pos_users_model');
               foreach( $data1 as $key => $value){                   
-                $this->employeesmodel->activate_user($value); 
+                $this->pos_users_model->activate_user($value,$_SESSION['Bid']); 
               }
-        }redirect('employees');
-        }if($this->input->post('deactivate')){
+        }redirect('pos_users');
+        }
+        if($this->input->post('deactivate')){
              $data1 = $this->input->post('mycheck'); 
               if(!$data1==''){              
-              $this->load->model('employeesmodel');
+              $this->load->model('pos_users_model');
               foreach( $data1 as $key => $value){  
-                  $this->employeesmodel->deactivate_user($value); 
+                  $this->pos_users_model->deactivate_user($value,$_SESSION['Bid']); 
               }
-        } redirect('employees');
+        } redirect('pos_users');
         
         }}
-        function add_employee_details(){
+        function add_pos_users_details(){
             
            if($_SESSION['user_per']['add']==1){             
       if ($this->input->post('Cancel')) {
-             $this->get_employee_details(); 
+             $this->get_pos_users_details(); 
             }
             if ($this->input->post('Save')) {                            
                 $this->load->library('form_validation');
@@ -429,15 +430,15 @@ function do_upload($id)
                 $this->form_validation->set_rules('zip',$this->lang->line('zip'),"required");
                 $this->form_validation->set_rules('dob',$this->lang->line('date_of'),"required");                           
                 $this->form_validation->set_rules('depa',  $this->lang->line('user_groups'),"required");
-                $this->form_validation->set_rules('employee_id',$this->lang->line('user_name'),"required");
+                $this->form_validation->set_rules('pos_users_id',$this->lang->line('user_name'),"required");
                 $this->form_validation->set_rules('country',$this->lang->line('country'),"required");
                 $id=  $this->input->post('id');	  
 	    if ( $this->form_validation->run() !== false ) {        
-			  $this->load->model('employeesmodel');
+			  $this->load->model('pos_users_model');
                           $first_name=$this->input->post('first_name');
                           $last_name=  $this->input->post('last_name');
                           $email=$this->input->post('email');
-			  $emp_id=$this->input->post('employee_id');
+			  $emp_id=$this->input->post('pos_users_id');
                           $password=$this->input->post('password');
                           $address=$this->input->post('address');
                           $phone=$this->input->post('phone');
@@ -451,13 +452,13 @@ function do_upload($id)
                           $sex= $this->input->post('sex');
                           $dob= strtotime($yourdatetime);
                           $created_by=$_SESSION['Uid'];
-                          $this->load->model('employeesmodel');
-                          if($this->employeesmodel->user_checking($email,$emp_id,$dob)==FALSE){                              
-                          $id= $this->employeesmodel->adda_new_employee($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,'10');
+                          $this->load->model('pos_users_model');
+                          if($this->pos_users_model->user_checking($email,$emp_id,$dob)==FALSE){                              
+                          $id= $this->pos_users_model->adda_new_pos_users($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,'10');
                           $this->add_user_branchs($id,$user_groups);
                           $this->add_user_user_groups($id,$user_groups);
-                          $this->load->model('employeepermission');                         
-                          $this->get_employee_details();                           
+                                                  
+                          $this->get_pos_users_details();                           
                          
                           }
                           else{
@@ -468,7 +469,7 @@ function do_upload($id)
                     $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                     $data['depa']= $this->user_groups->get_user_groups(); 
                    $this->load->view('template/header');
-                    $this->load->view('add_new_employee',$data);
+                    $this->load->view('add_new_pos_users',$data);
                     $this->load->view('template/footer');
                         
                           }
@@ -478,13 +479,13 @@ function do_upload($id)
                     $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
                     $data['depa']= $this->user_groups->get_user_groups(); 
                     $this->load->view('template/header');
-                    $this->load->view('add_new_employee',$data);
+                    $this->load->view('add_new_pos_users',$data);
                     $this->load->view('template/footer');
               }    
              }                
         }else{
                echo "U have No Permission to Add New User";
-                $this->get_employee_details();
+                $this->get_pos_users_details();
            }
         }
        function add_user_user_groups($id,$depapartment){
@@ -546,7 +547,7 @@ $r=0;
                $this->branch->set_branch($id,$new_depa[$k]);                
             }
         }       
-         function add_employee_image(){
+         function add_pos_users_image(){
               $uploaddir = './uploads/'; 
                $file = $uploaddir . basename($_FILES['uploadfile']['name']); 
                $_SESSION['image_name']=basename($_FILES['uploadfile']['name']); 
@@ -557,25 +558,21 @@ $r=0;
                         echo "error";
                 }
         }
-        function edit_employee_permission($id){
-             $this->load->model('employeesmodel');
-             $data['irow']=  $this->employeesmodel->edit_employee(1); 
-             $this->load->view('edit_employee_permission',$data);
-        }
+      
         function to_deactivate_user($id){  
-                $this->load->model('employeesmodel');
-                $this->employeesmodel->deactivate_user($id,$_SESSION['Bid']);   
-                redirect('employees');
+                $this->load->model('pos_users_model');
+                $this->pos_users_model->deactivate_user($id,$_SESSION['Bid']);   
+                redirect('pos_users');
         }
         function to_activate_user($id){
-                $this->load->model('employeesmodel');
-                $this->employeesmodel->activate_user($id,$_SESSION['Bid']);   
-                redirect('employees');
+                $this->load->model('pos_users_model');
+                $this->pos_users_model->activate_user($id,$_SESSION['Bid']);   
+                redirect('pos_users');
         }
-        function delete_employee_details_in_admin($id){
-                $this->load->model('employeesmodel');
-                $this->employeesmodel->delete_user_for_admin($id,$_SESSION['Bid']);   
-                redirect('employees');
+        function delete_pos_users_details_in_admin($id){
+                $this->load->model('pos_users_model');
+                $this->pos_users_model->delete_user_for_admin($id,$_SESSION['Bid']);   
+                redirect('pos_users');
         }
         
        

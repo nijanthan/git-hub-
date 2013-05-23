@@ -20,7 +20,7 @@
                     $form =array('id'=>'form1',
                         'runat'=>'server',
                         'name'=>'combo_box');
-     echo form_open_multipart('employees/add_employee_details/',$form);?><table>
+     echo form_open_multipart('pos_users/add_pos_users_details/',$form);?><table>
 
 <tr><td><?php echo form_label($this->lang->line('first_name'))?> </td><td><?php echo form_input('first_name',set_value('first_name'), 'id="first_name" autofocus')?> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('last_name'))?></td><td><?php echo form_input('last_name',set_value('last_name'), 'id="llast_name" autofocus')?></td></tr>
@@ -219,7 +219,7 @@ value="<-">
 
 </select>
 <input type="hidden" name="depa" id="depa"></td></tr>
-    <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><?php echo form_input('employee_id',set_value('employee_id'), 'id="employee_id" autofocus')?> </td></tr>
+    <tr><td><?php echo form_label($this->lang->line('user_name'))?></td><td><?php echo form_input('pos_users_id',set_value('pos_users_id'), 'id="pos_users_id" autofocus')?> </td></tr>
     <tr><td><?php echo form_label($this->lang->line('password'))?></td><td><?php echo form_input('password',set_value('password'), 'id="password" autofocus')?></td></tr>
    <tr><td></td> 
        
@@ -244,7 +244,7 @@ value="<-">
 
 		var status=$('#status');
 		new AjaxUpload(btnUpload, {
-			action: '<?php echo base_url();?>index.php/employees/add_employee_image',
+			action: '<?php echo base_url();?>index.php/pos_users/add_pos_users_image',
 			name: 'uploadfile',
 			onSubmit: function(file, ext){
 				 if (! (ext && /^(jpg|png|jpeg|gif)$/.test(ext))){ 

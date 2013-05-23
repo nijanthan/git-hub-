@@ -38,11 +38,11 @@ class Home extends CI_Controller
        // $_SESSION['user_branch']=$branch;        
     }    
       function home_main(){
-       if($this->input->post('Employees')){           
+       if($this->input->post('pos_users')){           
            if($_SESSION['user_per']['read']==1){
-               redirect('employees');
+               redirect('pos_users');
            }else{
-               echo "U have No Permission to View Employees Details";
+               echo "U have No Permission to View  users Details";
                $this->pos_home();
            }
        }

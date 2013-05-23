@@ -202,3 +202,15 @@ ERROR - 2013-05-23 18:09:25 --> Severity: Notice  --> Object of class User_group
 ERROR - 2013-05-23 18:09:25 --> Severity: Notice  --> Undefined property: User_groupsCI::$Object C:\wamp\www\PointOfSale\system\core\Model.php 51
 ERROR - 2013-05-23 18:09:25 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\controllers\user_groupsCI.php 48
 ERROR - 2013-05-23 18:10:37 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 18:50:54 --> 404 Page Not Found --> employees
+ERROR - 2013-05-23 18:54:48 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 18:58:41 --> Severity: Warning  --> Missing argument 2 for Pos_users_model::activate_user(), called in C:\wamp\www\PointOfSale\application\controllers\pos_users.php on line 399 and defined C:\wamp\www\PointOfSale\application\models\pos_users_model.php 145
+ERROR - 2013-05-23 18:58:41 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\pos_users_model.php 148
+ERROR - 2013-05-23 18:58:45 --> Severity: Warning  --> Missing argument 2 for Pos_users_model::deactivate_user(), called in C:\wamp\www\PointOfSale\application\controllers\pos_users.php on line 407 and defined C:\wamp\www\PointOfSale\application\models\pos_users_model.php 151
+ERROR - 2013-05-23 18:58:45 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\pos_users_model.php 154
+ERROR - 2013-05-23 18:58:45 --> 404 Page Not Found --> pos_userss
+ERROR - 2013-05-23 19:00:49 --> Severity: Warning  --> Missing argument 2 for Pos_users_model::deactivate_user(), called in C:\wamp\www\PointOfSale\application\controllers\pos_users.php on line 407 and defined C:\wamp\www\PointOfSale\application\models\pos_users_model.php 151
+ERROR - 2013-05-23 19:00:49 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\pos_users_model.php 154
+ERROR - 2013-05-23 19:00:54 --> Severity: Warning  --> Missing argument 2 for Pos_users_model::activate_user(), called in C:\wamp\www\PointOfSale\application\controllers\pos_users.php on line 399 and defined C:\wamp\www\PointOfSale\application\models\pos_users_model.php 145
+ERROR - 2013-05-23 19:00:54 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\pos_users_model.php 148
+ERROR - 2013-05-23 19:08:45 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch

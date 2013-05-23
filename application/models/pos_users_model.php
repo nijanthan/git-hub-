@@ -1,11 +1,11 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Employeesmodel extends CI_Model{
+class Pos_users_model extends CI_Model{
     function __construct() {
         parent::__construct();
     }
     
-    function employeecount($id,$branch){       
+    function pos_users_count($id,$branch){       
             $this->db->where('emp_id <>',$id);
             $this->db->where('user_delete ',0);
             $this->db->where('user_active',0);        
@@ -14,7 +14,7 @@ class Employeesmodel extends CI_Model{
             return $this->db->count_all_results();
         
     }
-     public function get_employees_details($limit,$start,$id,$branch) {
+     public function get_pos_users_details($limit,$start,$id,$branch) {
             $this->db->limit($limit, $start);
             $this->db->where('emp_id <>',$id);
             $this->db->where('user_delete ',0);
@@ -34,13 +34,13 @@ class Employeesmodel extends CI_Model{
             $sql=$this->db->get();
             return $sql->result();   
    }
-   function employeecount_for_admin($branch){  
+   function pos_users_count_for_admin($branch){  
             $this->db->where('branch_id ',$branch);
             $this->db->where('user_delete',0);
             $this->db->from('users_X_branchs');
             return $this->db->count_all_results();
    }
-   function get_employees_details_for_admin($limit, $start,$branch) {
+   function get_pos_users_details_for_admin($limit, $start,$branch) {
             $this->db->limit($limit, $start);   
             $this->db->where('branch_id',$branch);
             $this->db->where('user_delete',0);
@@ -53,13 +53,13 @@ class Employeesmodel extends CI_Model{
            }
           return false;          
       }
-      function get_branch_employess_for_admin(){
+      function get_branch_pos_users_for_admin(){
           $this->db->where('delete_status ',0);
           $this->db->where('user_type <>',2);
           $sql=$this->db->get('users');
           return $sql->result();
       }
-   function edit_employee($id){
+   function edit_pos_users($id){
        $this->db->select()->from('users')->where('id',$id);
         $sql=$this->db->get();       
         return $sql->result();
@@ -72,7 +72,7 @@ class Employeesmodel extends CI_Model{
     }    
     }
    }
-   function update_employee($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name){
+   function update_pos_users($age,$sex,$id,$first_name,$last_name,$emp_id,$address,$city,$state,$zip,$country,$email,$phone,$dob,$image_name){
        $data=array(
            'age'=>$age,
            'sex'=>$sex,
@@ -93,19 +93,19 @@ class Employeesmodel extends CI_Model{
        $this->db->where('id',$id);
        $this->db->update('users',$data);
    }
-   function delete_employee($id,$deleted_by,$branch){          
+   function delete_pos_users($id,$deleted_by,$branch){          
        $value=array('user_active'=>1,'deleted_by'=>$deleted_by);
        $this->db->where('emp_id',$id); 
        $this->db->where('branch_id',$branch);
        $this->db->update('users_X_branchs',$value);       
    }
-   function delete_employee_for_admin($id,$branch){       
+   function delete_pos_users_for_admin($id,$branch){       
        $this->db->where('emp_id',$id); 
        $value=array('user_active'=>1,'user_delete'=>1);
        $this->db->where('branch_id',$branch);
        $this->db->update('users_X_branchs',$value);
    }
-   function adda_new_employee($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$image_name){
+   function adda_new_pos_users($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$image_name){
             
        $pass=md5($password);
        $data=array(
