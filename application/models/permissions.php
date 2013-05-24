@@ -23,7 +23,7 @@ class Permissions extends CI_Model{
         $data=array('permission'=>$item,
                     'depart_id'=>$depart_id,
                     'branch_id'=>$branch_id);
-        $this->db->insert('user_groups_page_permissions',$data);
+        $this->db->insert('user_groups_x_page_x_permissions',$data);
         
     }
      function set_branch_permission($item,$depart_id,$branch_id){
@@ -49,7 +49,7 @@ class Permissions extends CI_Model{
     function update_depart_permission($item,$depart_id,$branch_id){
         $data=array('permission'=>$item);
         $this->db->where('depart_id ',$depart_id)->where('branch_id',$branch_id); 
-        $this->db->update('user_groups_page_permissions',$data);
+        $this->db->update('user_groups_x_page_x_permissions',$data);
         
     }
      function update_branch_permission($item,$depart_id,$branch_id){
@@ -75,7 +75,7 @@ class Permissions extends CI_Model{
                 return $data; 
     }
     function get_depart_permission($id,$bid){
-         $this->db->select()->from('user_groups_page_permissions')->where('depart_id ',$id)->where('branch_id',$bid); 	 
+         $this->db->select()->from('user_groups_x_page_x_permissions')->where('depart_id ',$id)->where('branch_id',$bid); 	 
                 $sql=  $this->db->get();              
                 foreach ($sql->result() as $row) {            
                 $data = $row->permission    ;            

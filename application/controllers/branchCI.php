@@ -26,7 +26,22 @@ class BranchCI extends CI_Controller{
          //}
     }
     function get_branch(){
-        
+        if($_SESSION['admin']==2){
+        $this->load->library("pagination"); 
+                $this->load->model('branch');
+	        $config["base_url"] = base_url()."index.php/branchCI/get_branch";
+	        $config["total_rows"] = $this->branch->branchcount_for_admin($_SESSION['Uid']);
+	        $config["per_page"] = 8;
+	        $config["uri_segment"] = 3;
+	        $this->pagination->initialize($config);	 
+	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;                
+                $data['count']=$this->branch->branchcount_for_admin($_SESSION['Uid']);             
+	        $data["row"] = $this->branch->get_branch_details_for_admin($config["per_page"], $page,$_SESSION['Uid']);
+	        $data["links"] = $this->pagination->create_links(); 
+                $this->load->view('template/header');
+                $this->load->view('branch',$data);
+                $this->load->view('template/footer');
+        }else{
          if($_SESSION['Branch_per']['read']==1){
                 $this->load->library("pagination"); 
                 $this->load->model('branch');
@@ -47,6 +62,7 @@ class BranchCI extends CI_Controller{
              echo "You have no permission To read Branch details";
              redirect('home');
          }
+    }
     }
     function edit_branch_details($id){
        if (!$_SERVER['HTTP_REFERER']){ redirect('branchCI');}  else{

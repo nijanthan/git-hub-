@@ -277,6 +277,8 @@ class User_groupsCI extends CI_Controller{
           }
         }
         function edit_user_groups_permission($id){
+            
+            if($_SESSION['full_per']==4444){
                  $this->load->model('user_groups');
                  $data['row']=$this->user_groups->get_seleted_user_groups_details($id);
                  $this->load->model('permissions');
@@ -288,6 +290,11 @@ class User_groupsCI extends CI_Controller{
                  $this->load->view('template/header');
                  $this->load->view('edit_user_groups_permission',$data);
                  $this->load->view('template/footer');
+            }else{
+                echo "You have no permission to edit User permissions";
+               
+                redirect('user_groupsCI');
+            }
         }
         function update_user_groups_permission(){
             if($this->input->post('cancel')){

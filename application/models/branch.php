@@ -133,7 +133,7 @@ class Branch extends CI_Model{
    function get_branch_details($limit, $start) {
         $this->db->limit($limit, $start);   
         $this->db->where('active_status',0);
-        $query = $this->db->get("branch");
+        $query = $this->db->get("branchs");
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -141,6 +141,11 @@ class Branch extends CI_Model{
             return $data;
            }
           return false;
+   }
+   function branchcount_for_admin($id){           
+            $this->db->where('user_delete',0);
+            $this->db->from('users_X_branchs');
+            return $this->db->count_all_results();
    }
    function get_branch_details_for_edit($id){
         $this->db->select()->from('branchs')->where('id',$id);
@@ -163,13 +168,14 @@ class Branch extends CI_Model{
         $this->db->update('branchs',$data);
    }
    function delete_branch($id){
-       $data=array('delete_status '=>1);
+       $data=array('active_status '=>1);
 
-       $this->db->where('id',$id);
-       $this->db->update('branchs',$data);
+       $this->db->where('branch_id',$id);
+       $this->db->update('users_x_branchs',$data);
    }
-   function check_branch_is_in_acive($id){
-        $this->db->select()->from('branchs')->where('id',$id)->where('active_status ',0);
+   function check_branch_is_in_active($id,$eid){
+       
+        $this->db->select()->from('users_x_branchs')->where('branch_id',$id)->where('emp_id',$eid)->where('active_status',0)->where('delete_status',0);
         $sql=$this->db->get();
         if($sql->num_rows()>0){
             return TRUE;

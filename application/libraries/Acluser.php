@@ -23,7 +23,7 @@ class Acluser{
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
          
         $item = array(
-                   'item'=>$num,
+                   'item'=>$read."".$add."".$edit."".$delete,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,
@@ -34,7 +34,7 @@ class Acluser{
         
         
     }
-    function user_employee_permissions($bid,$id){
+    function user_pos_users_permissions($bid,$id){
          $CI=  get_instance();
          $CI->load->library('session');
          $CI->load->model('aclpermissionmodel');
@@ -50,7 +50,7 @@ class Acluser{
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
          
         $emp = array(
-                   'user'=>$num,
+                   'user'=>$read."".$add."".$edit."".$delete,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,
@@ -74,7 +74,7 @@ class Acluser{
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
         
         $emp = array(
-                   'depa'=>$num,
+                   'depa'=>$read."".$add."".$edit."".$delete,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,
@@ -97,7 +97,7 @@ class Acluser{
         if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
          
         $emp = array(
-                   'branch'=>$num,
+                   'branch'=>$read."".$add."".$edit."".$delete,
                    'read'=>$read,
                    'add'=> $add,
                    'edit' =>$edit,
@@ -136,6 +136,11 @@ class Acluser{
         $_SESSION['Depa_per']=$depa; 
         $_SESSION['user_per']=$user; 
         $_SESSION['Item_per']=$item;
+        $_SESSION['full_per']=4444;
+    }
+    function user_full_permissions(){
+        $user=$_SESSION['Depa_per']['depa']+ $_SESSION['Branch_per']['branch']+$_SESSION['user_per']['user']+$_SESSION['Item_per']['item'];
+        $_SESSION['full_per']=$user;
     }
     
 }

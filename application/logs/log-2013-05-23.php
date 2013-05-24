@@ -214,3 +214,13 @@ ERROR - 2013-05-23 19:00:49 --> Severity: Notice  --> Undefined variable: branch
 ERROR - 2013-05-23 19:00:54 --> Severity: Warning  --> Missing argument 2 for Pos_users_model::activate_user(), called in C:\wamp\www\PointOfSale\application\controllers\pos_users.php on line 399 and defined C:\wamp\www\PointOfSale\application\models\pos_users_model.php 145
 ERROR - 2013-05-23 19:00:54 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\pos_users_model.php 148
 ERROR - 2013-05-23 19:08:45 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-23 19:16:08 --> Query error: Table 'pos.user_groups_page_permissions' doesn't exist
+ERROR - 2013-05-23 19:19:40 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:21:13 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:23:31 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:24:29 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:24:40 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:24:41 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:24:42 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:24:42 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61
+ERROR - 2013-05-23 19:24:43 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\application\controllers\posmain.php 61

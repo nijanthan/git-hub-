@@ -31,13 +31,14 @@ class Posmain extends CI_Controller{
              $this->acl_session_for_user($data);        
              redirect('home');
         }else{
-             if($this->branch->check_branch_is_in_acive($data)){
+             if($this->branch->check_branch_is_in_active($data,$_SESSION['Uid'])){
              $this->acl_session_for_user($data);        
              redirect('home');
+            
         }else{
             $id =$this->branch->is_in_active_branchs($_SESSION['Uid']);
-             $this->acl_session_for_user($data);        
-             redirect('home');
+            $this->acl_session_for_user($id);        
+            redirect('home');           
         }
         }
     }
@@ -48,9 +49,10 @@ class Posmain extends CI_Controller{
             $this->acluser->set_admin_permission();
         }else{
         $this->acluser->user_item_permissions($b_id,$_SESSION['Uid']);
-        $this->acluser->user_employee_permissions($b_id,$_SESSION['Uid']);
+        $this->acluser->user_pos_users_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_groups_permissions($b_id,$_SESSION['Uid']);
         $this->acluser->user_branch_permissions($b_id,$_SESSION['Uid']);
+        $this->acluser->user_full_permissions();
         }
     }
     function pos_setting(){
@@ -58,7 +60,7 @@ class Posmain extends CI_Controller{
         $data=  $this->setting->get_setting();
         $setting=array('Branch'=>$data[0],
             'Depart'=>$data[1]);
-        echo $_SESSION['Setting']=$setting;
+         $_SESSION['Setting']=$setting;
     }
   
     function user_groups(){
