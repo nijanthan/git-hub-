@@ -84,5 +84,19 @@ class Aclpermissionmodel extends CI_Model
             return $value;
         }
     }
+    function user_supplier_permission($did,$bid)
+    {
+        $this->db->select('permission')->from('suppliers_x_page_permissions')->where('depart_id',$did)->where('branch_id', $bid);
+        $query = $this->db->get();
+         $value=0000;
+        if($query->num_rows()>0){
+        foreach ($query->result() as $row) {           
+                 $value =$row->permission;           
+        }       
+        return $value;  
+        }else{
+            return $value;
+        }
+    }
 }
 ?>

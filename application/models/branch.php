@@ -125,15 +125,20 @@ class Branch extends CI_Model{
            return FALSE;
        } 
    }
-   function branchcount(){
-       $this->db->where('active_status',0);      
-       $this->db->from('branchs');
+   function branchcount($id){
+       $this->db->where('active_status',0); 
+       $this->db->where('delete_status',0);
+       $this->db->where('emp_id',$id);
+       $this->db->from('users_x_branchs');
+       
        return $this->db->count_all_results();      
    }
-   function get_branch_details($limit, $start) {
+   function get_branch_details($limit, $start,$id) {
         $this->db->limit($limit, $start);   
         $this->db->where('active_status',0);
-        $query = $this->db->get("branchs");
+        $this->db->where('delete_status',0);
+        $this->db->where('emp_id',$id);
+        $query = $this->db->get('users_x_branchs');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -142,10 +147,22 @@ class Branch extends CI_Model{
            }
           return false;
    }
-   function branchcount_for_admin($id){           
-            $this->db->where('user_delete',0);
-            $this->db->from('users_X_branchs');
+   function branchcount_for_admin(){           
+            $this->db->where('delete_status',0);
+            $this->db->from('branchs');
             return $this->db->count_all_results();
+   }
+   function get_branch_details_for_admin($limit, $start) {
+        $this->db->limit($limit, $start);   
+        $this->db->where('delete_status',0);
+        $query = $this->db->get("branchs");
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+           }
+          return false;
    }
    function get_branch_details_for_edit($id){
         $this->db->select()->from('branchs')->where('id',$id);
@@ -167,9 +184,41 @@ class Branch extends CI_Model{
         $this->db->where('id',$id);
         $this->db->update('branchs',$data);
    }
-   function delete_branch($id){
+   function add_new_branch($name,$city,$state,$zip,$country,$phone,$fax,$email,$tax1,$tax2,$website){
+        $data=array('store_name'=>$name,
+                    'store_city '=>$city	,
+                    'store_state'=>$state,	
+                    'store_zip'=>$zip,
+                    'store_country'=>$country,
+                    'store_website'=>$website,
+                    'store_phone'=>$phone,
+                    'store_email'=>$email,
+                    'store_fax'=>$fax,
+                    'store_tax1'=>$tax1,
+                    'store_tax2'=>$tax2 );        
+        $this->db->insert('branchs',$data);
+        $id=$this->db->insert_id();
+       return $id; 
+   }
+   function set_added_branch_for_user($id,$name,$uid){
+       $data=array('branch_id'=>$id,'branch_name'=>$name,'emp_id'=>$uid);
+       $this->db->insert('users_x_branchs',$data);
+   }
+   function delete_branch($id,$u_id){
+       $value=array('deleted_by'=>$u_id,'active_status '=>1);
+       $this->db->where('id',$id);
+       $this->db->update('branchs',$value);
+       
        $data=array('active_status '=>1);
 
+       $this->db->where('branch_id',$id);
+       $this->db->update('users_x_branchs',$data);
+   }
+   function delete_branch_for_admin($id){
+       $data=array('active_status '=>1,'delete_status'=>1);
+       $this->db->where('id',$id);
+       $this->db->update('branchs',$data);
+       
        $this->db->where('branch_id',$id);
        $this->db->update('users_x_branchs',$data);
    }
@@ -210,6 +259,34 @@ class Branch extends CI_Model{
            }
         }
         return $value;
+    }
+    function activate_branch($id){
+        $data=array('active_status'=>0);
+        $this->db->where('id',$id);
+        $this->db->update('branchs',$data);
+        
+        $this->db->where('branch_id',$id);
+        $this->db->update('users_x_branchs',$data);
+    }
+    function deactivate_branch($id){
+        $data=array('active_status'=>1);
+        $this->db->where('id',$id);
+        $this->db->update('branchs',$data);
+        
+        $this->db->where('branch_id',$id);
+        $this->db->update('users_x_branchs',$data);
+    }
+    function set_user_groups_branchs($dep_id,$id,$name,$uid){
+        $data=array('branch_id '=>$id,
+            'depart_id '=>$dep_id,
+            'emp_id'=>$uid,
+            'depart_name'=>$name);
+        $this->db->insert('users_x_user_groups',$data);
+    }
+    function user_groups_x_branchs($bid,$did){
+        $data=array('branch_id '=>$bid,
+            'user_group_id'=>$did);
+        $this->db->insert('user_groups_x_branchs',$data);
     }
 }
 ?>

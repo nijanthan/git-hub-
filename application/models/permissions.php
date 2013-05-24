@@ -33,6 +33,13 @@ class Permissions extends CI_Model{
         $this->db->insert('branch_x_page_x_permissions',$data);
         
     }
+    function set_supplier_permission($item,$depart_id,$branch_id){
+        $data=array('permission'=>$item,
+                    'depart_id'=>$depart_id,
+                    'branch_id'=>$branch_id);
+        $this->db->insert('suppliers_x_page_permissions',$data);
+        
+    }
     
     function update_item_permission($item,$depart_id,$branch_id){
         $data=array('permission'=>$item);
@@ -58,6 +65,13 @@ class Permissions extends CI_Model{
         $this->db->update('branch_x_page_x_permissions',$data);
         
     }
+    function update_supplier_permission($item,$depart_id,$branch_id){
+        $data=array('permission'=>$item);
+        $this->db->where('depart_id ',$depart_id)->where('branch_id',$branch_id); 
+        $this->db->update('suppliers_x_page_permissions',$data);
+        
+    }
+    
     function get_user_permission($id,$bid){
          $this->db->select()->from('user_X_page_X_permissions')->where('depart_id ',$id)->where('branch_id',$bid); 	 
                 $sql=  $this->db->get();              
@@ -84,6 +98,14 @@ class Permissions extends CI_Model{
     }
     function get_branch_permission($id,$bid){
          $this->db->select()->from('branch_x_page_x_permissions')->where('depart_id ',$id)->where('branch_id',$bid); 	 
+                $sql=  $this->db->get();              
+                foreach ($sql->result() as $row) {            
+                $data = $row->permission    ;            
+            } 
+                return $data; 
+    }
+    function get_supplier_permissions($id,$bid){
+         $this->db->select()->from('suppliers_x_page_permissions')->where('depart_id ',$id)->where('branch_id',$bid); 	 
                 $sql=  $this->db->get();              
                 foreach ($sql->result() as $row) {            
                 $data = $row->permission    ;            

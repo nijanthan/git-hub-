@@ -50,6 +50,10 @@ $lang['branch_read']='Read Branch';
 $lang['branch_add']='Add Branch';
 $lang['branch_edit']='Edit Branch';
 $lang['branch_delete']='Delate Branch';
+$lang['supplier_read']='Read Supplier ';
+$lang['supplier_add']='Add Supplier';
+$lang['supplier_edit']='Edit Supplier ';
+$lang['supplier_delete']='Delete Supplier';
 $lang['on']='On';
 $lang['off']='Off';
 $lang['branch_name']='Branch Name';
@@ -60,6 +64,8 @@ $lang['tax1']='Tax 1';
 $lang['tax2']='Tax 2';
 $lang['activate']='Activate';
 $lang['deactivate']='Deactivate';
+$lang['default_user_group']='Default User Group';
+$lang['user_group']='User Group Name';
 
 
 

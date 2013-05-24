@@ -118,7 +118,7 @@ class User_groupsCI extends CI_Controller{
                     if(!$data1==''){              
                     $this->load->model('user_groups');             
                     foreach( $data1 as $key => $value){                     
-                     $this->user_groups->delete_user_groups_for_admin($value);          
+                    $this->user_groups->delete_user_groups_for_admin($value);          
                  }                     
                }        
              }
@@ -172,8 +172,14 @@ class User_groupsCI extends CI_Controller{
                 $branch_add=$this->input->post('branch_add');
                 $branch_edit=$this->input->post('branch_edit');
                 $branch_delete=$this->input->post('branch_delete');
-                $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;               
-                $this->add_permission($item,$depa,$user,$branch,$id,$_SESSION['Bid']);
+                $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;                  
+                $sup_read=$this->input->post('sup_read');
+                $sup_add=$this->input->post('sup_add');
+                $sup_edit=$this->input->post('sup_edit');
+                $sup_delete=$this->input->post('sup_delete');
+                $supplier=$sup_add+$sup_delete+$sup_edit+$sup_read;
+                
+                $this->add_permission($item,$depa,$user,$branch,$supplier,$id,$_SESSION['Bid']);
                redirect('posmain/user_groups');
                
                }else{
@@ -202,13 +208,14 @@ class User_groupsCI extends CI_Controller{
            }    
     }
    
-    function add_permission($item,$depa,$user,$branch,$depart_id,$branchid){
+    function add_permission($item,$depa,$user,$branch,$supplier,$depart_id,$branchid){
          if($_SESSION['Depa_per']['add']==1){ 
                 $this->load->model('permissions');
                 $this->permissions->set_item_permission($item,$depart_id,$branchid);
                 $this->permissions->set_user_permission($user,$depart_id,$branchid);
                 $this->permissions->set_depart_permission($depa,$depart_id,$branchid);
                 $this->permissions->set_branch_permission($branch,$depart_id,$branchid);
+                $this->permissions->set_supplier_permission($supplier,$depart_id,$branchid);
             
          }else{
              $this->get_user_groups();
@@ -286,6 +293,7 @@ class User_groupsCI extends CI_Controller{
                  $data['item']=$this->permissions->get_item_permission($id,$_SESSION['Bid'],$id);
                  $data['depart']=$this->permissions->get_depart_permission($id,$_SESSION['Bid'],$id);
                  $data['branch']=$this->permissions->get_branch_permission($id,$_SESSION['Bid'],$id);
+                 $data['supplier']=$this->permissions->get_supplier_permissions($id,$_SESSION['Bid'],$id);
                
                  $this->load->view('template/header');
                  $this->load->view('edit_user_groups_permission',$data);
@@ -320,18 +328,25 @@ class User_groupsCI extends CI_Controller{
                 $branch_add=$this->input->post('branch_add');
                 $branch_edit=$this->input->post('branch_edit');
                 $branch_delete=$this->input->post('branch_delete');
-                $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;  
+                $branch=$branch_add+$branch_delete+$branch_edit+$branch_read;                  
+                $sup_read=$this->input->post('sup_read');
+                $sup_add=$this->input->post('sup_add');
+                $sup_edit=$this->input->post('sup_edit');
+                $sup_delete=$this->input->post('sup_delete');
+                $supplier=$sup_add+$sup_delete+$sup_edit+$sup_read;
+                        
                 $id=$this->input->post('id');
-                $this->update_permission($item,$user,$depa,$branch,$id,$_SESSION['Bid']);
+                $this->update_permission($item,$user,$depa,$branch,$supplier,$id,$_SESSION['Bid']);
                 $this->get_user_groups();
             }
         }
-        function update_permission($item,$user,$depa,$branch,$depart_id,$branchid){
+        function update_permission($item,$user,$depa,$branch,$supplier,$depart_id,$branchid){
                 $this->load->model('permissions');
                 $this->permissions->update_item_permission($item,$depart_id,$branchid);
                 $this->permissions->update_user_permission($user,$depart_id,$branchid);
                 $this->permissions->update_depart_permission($depa,$depart_id,$branchid);
                 $this->permissions->update_branch_permission($branch,$depart_id,$branchid);
+                $this->permissions->update_supplier_permission($supplier,$depart_id,$branchid);
         }
         function to_activate_user_groups($id){
                 $this->load->model('user_groups');

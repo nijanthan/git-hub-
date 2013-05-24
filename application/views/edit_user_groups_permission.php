@@ -67,7 +67,22 @@
 <tr><td><label><?php echo $this->lang->line('depa_delete');  ?></label> </td>
     <td><div class="switch demo3" ><input type="checkbox"  name="depa_delete" value="1000"<?php if($depart/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
 </tr>
-</table></td></tr>
+</table></td><td>
+    <table>
+<tr><td><label><?php echo $this->lang->line('supplier_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sup_read" value="0001" <?php if($supplier%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></div></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('supplier_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sup_add" value="0010" <?php if($supplier/10%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('supplier_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sup_edit" value="0100" <?php if($supplier/100%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('supplier_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sup_delete" value="1000" <?php if($supplier/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+</table>
+</td></tr>
 </table></section>
 
 <?php echo form_submit('update',$this->lang->line('save'));echo form_submit('cancel',$this->lang->line('cancel'));

@@ -67,6 +67,21 @@
 <tr><td><label><?php echo $this->lang->line('depa_delete');  ?></label> </td>
     <td><div class="switch demo3" ><input type="checkbox"  name="depa_delete" value="1000"><label><i></i></label></td>
 </tr>
+</table>
+</td><td>
+<table >
+<tr><td><label><?php echo $this->lang->line('supplier_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sup_read" value="0001"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('supplier_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="sup_add" value="0010"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('supplier_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="sup_edit" value="0100"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('supplier_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="sup_delete" value="1000"><label><i></i></label></td>
+</tr>
 </table></td></tr>
 </table></section>
 

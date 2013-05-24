@@ -82,6 +82,30 @@ class Acluser{
         $_SESSION['Depa_per']=$emp;       
         
     }
+     function user_supplier_permissions($bid,$id){
+         $CI=  get_instance();
+         $CI->load->library('session');
+         $CI->load->model('aclpermissionmodel');
+          $deaprt=$CI->aclpermissionmodel->get_user_groups($id,$bid);          
+         $num=0000;
+         for($i=0;$i<count($deaprt);$i++){
+         $num=$num+$CI->aclpermissionmodel->user_supplier_permission($deaprt[$i],$bid); 
+         }
+         
+        if($num%10==0){  $read=0; }else{  $read=1; }
+        if($num/10%10==0){  $add=0; }else{  $add=1; }
+        if($num/100%10==0){ $edit=0; }else{  $edit=1; }
+        if($num/1000%10==0){ $delete= 0; }else{  $delete= 1; }
+        
+        $emp = array(
+                   'depa'=>$read."".$add."".$edit."".$delete,
+                   'read'=>$read,
+                   'add'=> $add,
+                   'edit' =>$edit,
+                   'delete'=>$delete               );
+        $_SESSION['Depa_per']=$emp;       
+        
+    }
      function user_branch_permissions($bid,$id){
          $CI=  get_instance();
          $CI->load->library('session');
@@ -142,6 +166,7 @@ class Acluser{
         $user=$_SESSION['Depa_per']['depa']+ $_SESSION['Branch_per']['branch']+$_SESSION['user_per']['user']+$_SESSION['Item_per']['item'];
         $_SESSION['full_per']=$user;
     }
+    
     
 }
 ?>
