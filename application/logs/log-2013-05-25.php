@@ -141,3 +141,28 @@ ERROR - 2013-05-25 10:29:02 --> Severity: Warning  --> Invalid argument supplied
 ERROR - 2013-05-25 10:41:31 --> 404 Page Not Found --> customers/delete_pos_users_details_in_admin
 ERROR - 2013-05-25 10:46:25 --> 404 Page Not Found --> customers/delete_pos_users_details_in_admin
 ERROR - 2013-05-25 10:49:08 --> 404 Page Not Found --> customers/to_deactivate_customer
+ERROR - 2013-05-25 11:31:25 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 11:31:25 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 11:43:48 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 11:43:48 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 12:00:24 --> Query error: Unknown column 'supplier_delete' in 'where clause'
+ERROR - 2013-05-25 12:01:08 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:01:55 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:03:01 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:04:36 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:04:37 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:04:39 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:04:44 --> Could not find the language line "add_new_supplier"
+ERROR - 2013-05-25 12:07:34 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 12:07:34 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 12:07:36 --> Query error: Table 'pos.suppliersuppliers_x_branchs' doesn't exist
+ERROR - 2013-05-25 12:15:50 --> Severity: Notice  --> Undefined property: stdClass::$website C:\wamp\www\PointOfSale\application\views\edit_supplier.php 17
+ERROR - 2013-05-25 12:15:50 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\edit_supplier.php 18
+ERROR - 2013-05-25 12:17:24 --> 404 Page Not Found --> supliers
+ERROR - 2013-05-25 12:17:44 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\suppliers.php 221
+ERROR - 2013-05-25 12:17:44 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\suppliers.php 24
+ERROR - 2013-05-25 12:18:04 --> 404 Page Not Found --> supplier
+ERROR - 2013-05-25 12:18:17 --> 404 Page Not Found --> supplier
+ERROR - 2013-05-25 12:18:51 --> 404 Page Not Found --> supplier
+ERROR - 2013-05-25 12:19:06 --> 404 Page Not Found --> supplier
+ERROR - 2013-05-25 12:19:23 --> Query error: Unknown column 'created_by' in 'field list'

@@ -1,6 +1,6 @@
 <?php
- if($_SESSION['Customer_per']['edit']==1){
-     echo form_open('customers/update_customer');
+ if($_SESSION['Supplier_per']['edit']==1){
+     echo form_open('suppliers/update_supplier');
      echo "<table>";
      foreach ($row as $c_row){ echo form_hidden('id',$c_row->id);
      echo "<tr><td>"; echo form_label($this->lang->line('first_name'));echo "</td><td>";echo form_input('first_name',$c_row->first_name,'id="first_name" autofocus');echo "</td></tr>";

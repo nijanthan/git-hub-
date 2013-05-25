@@ -74,6 +74,14 @@ class Home extends CI_Controller
                $this->pos_home();
            }
        }
+       if($this->input->post('suppliers')){
+           if($_SESSION['Supplier_per']['read']==1){
+               redirect('suppliers');
+           }else{
+               echo "you Have no permission to read Customer Deatils";
+               $this->pos_home();
+           }
+       }
     }
      function user_groups(){
         redirect('user_groupsCI');

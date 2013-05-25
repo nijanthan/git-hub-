@@ -288,5 +288,14 @@ class Branch extends CI_Model{
             'user_group_id'=>$did);
         $this->db->insert('user_groups_x_branchs',$data);
     }
+    function branch_for_admin(){
+        $this->db->select()->from('users_x_branchs')->where('delete_status',0);
+        $sql=  $this->db->get();
+        $data="";
+        foreach ($sql->result as $row){
+            $data=$row->branch_id;
+        }
+        return $data;
+    }
 }
 ?>

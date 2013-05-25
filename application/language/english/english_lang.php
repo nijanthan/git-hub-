@@ -11,6 +11,7 @@ $lang['user']='Users';
 $lang['delete_user']='Delete User';
 $lang['add_new_user']='Add New User';
 $lang['add_new_customer']='Add New Customer';
+$lang['add_new_supplier']='Add New Supplier';
 $lang['delete_customer']='Delete Customer';
 
 $lang['back_to_home']='Back To Home';

@@ -11,6 +11,7 @@ $lang['user']='ഉദ്യോഗസ്ഥന്‍';
 $lang['delete_user']='ഉദ്യോഗസ്ഥനെ എടുത്തുകളയുക';
 $lang['add_new_user']='ആഡ് ന്യൂ  ഉദ്യോഗസ്ഥന്‍';
 $lang['add_new_customer']='ആഡ് ന്യൂ  കസ്റ്റമർ ';
+$lang['add_new_supplier']='ആഡ് ന്യൂ സപ്ലയർ  ';
 $lang['delete_customer']='കസ്റ്റമർനെ എടുത്തുകളയുക';
 $lang['back_to_home']='ബാക്ക് ടോ ഹോം ';
 $lang['edit']='തിരുത്തൽ ';

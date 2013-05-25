@@ -45,10 +45,17 @@ function login(){
                 $_SESSION['Uid']= $this->logindetails->loginid($username,$password);
                 if(!$this->logindetails->check_user_is_active_or_not($_SESSION['Uid']))
                 {
+                    if($this->logindetails->check_admin($_SESSION['Uid'])){
+                     $_SESSION['admin']=2;
+                     $this->load->view('template/header');
+                     redirect('posmain/set_user_default_branch');
+                     $this->load->view('template/footer');
+                }else{
                    echo "Your Account Has Been Deactivated Please contact with Admin";
                    $this->load->view('template/header');
                    $this->load->view('login');
                    $this->load->view('template/footer');
+                }
                    
                 }else{
                 if($this->logindetails->check_admin($_SESSION['Uid'])){

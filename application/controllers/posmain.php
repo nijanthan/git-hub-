@@ -28,7 +28,8 @@ class Posmain extends CI_Controller{
         $data=$this->branch->get_user_default_branch($_SESSION['Uid']);
         $this->pos_setting();       
         if($_SESSION['admin']==2){
-             $this->acl_session_for_user($data);        
+            $admin=  $this->branch->branch_for_admin();
+             $this->acl_session_for_user($admin);        
              redirect('home');
         }else{
              if($this->branch->check_branch_is_in_active($data,$_SESSION['Uid'])){
@@ -72,9 +73,12 @@ class Posmain extends CI_Controller{
     }
     function change_user_branch($brnch){
         $this->load->model('aclpermissionmodel');
+        if($_SESSION['admin']==2){
+            $this->acl_session_for_user($brnch);
+        }else{
         if($this->aclpermissionmodel->check_user_branch($brnch,$_SESSION['Uid'])){
             $this->acl_session_for_user($brnch);
-        }
+        }}
         
         
     }
