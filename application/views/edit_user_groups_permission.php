@@ -67,7 +67,7 @@
 <tr><td><label><?php echo $this->lang->line('depa_delete');  ?></label> </td>
     <td><div class="switch demo3" ><input type="checkbox"  name="depa_delete" value="1000"<?php if($depart/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
 </tr>
-</table></td><td>
+</table></td></tr><tr><td>
     <table>
 <tr><td><label><?php echo $this->lang->line('supplier_read'); ?> </label> </td>
     <td><div class="switch demo3" ><input type="checkbox" name="sup_read" value="0001" <?php if($supplier%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></div></td>
@@ -82,7 +82,58 @@
     <td><div class="switch demo3" ><input type="checkbox" name="sup_delete" value="1000" <?php if($supplier/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
 </tr>
 </table>
-</td></tr>
+</td>
+    
+    <td>
+    <table>
+<tr><td><label><?php echo $this->lang->line('item_kites_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="itemkit_read" value="0001" <?php if($supplier%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></div></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('item_kites_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="itemkit_add" value="0010" <?php if($supplier/10%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('item_kites_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="itemkit_edit" value="0100" <?php if($supplier/100%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('item_kites_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="itemkit_delete" value="1000" <?php if($supplier/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+</table>
+</td>
+<td>
+    <table>
+<tr><td><label><?php echo $this->lang->line('customer_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="cust_read" value="0001" <?php if($customer%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></div></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('customer_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="cust_add" value="0010" <?php if($customer/10%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('customer_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="cust_edit" value="0100" <?php if($customer/100%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('customer_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="cust_delete" value="1000" <?php if($customer/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+</table>
+</td>
+<td>
+    <table>
+<tr><td><label><?php echo $this->lang->line('do_sales'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="do_sales" value="0001" <?php if($sales%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></div></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('sales_return'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="retun_sales" value="0010" <?php if($sales/10%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('sales_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sales_edit" value="0100" <?php if($sales/100%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('sales_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sales_delete" value="1000" <?php if($sales/1000%10!=0){?> checked="checked" <?php } ?>><label><i></i></label></td>
+</tr>
+</table>
+</td>
+    
+    </tr>
 </table></section>
 
 <?php echo form_submit('update',$this->lang->line('save'));echo form_submit('cancel',$this->lang->line('cancel'));

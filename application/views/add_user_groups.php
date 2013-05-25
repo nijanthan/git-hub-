@@ -68,7 +68,7 @@
     <td><div class="switch demo3" ><input type="checkbox"  name="depa_delete" value="1000"><label><i></i></label></td>
 </tr>
 </table>
-</td><td>
+</td></tr><tr><td>
 <table >
 <tr><td><label><?php echo $this->lang->line('supplier_read'); ?> </label> </td>
     <td><div class="switch demo3" ><input type="checkbox" name="sup_read" value="0001"><label><i></i></label></td>
@@ -81,6 +81,48 @@
 </tr>
 <tr><td><label><?php echo $this->lang->line('supplier_delete');  ?></label> </td>
     <td><div class="switch demo3" ><input type="checkbox"  name="sup_delete" value="1000"><label><i></i></label></td>
+</tr>
+</table></td><td>
+<table >
+<tr><td><label><?php echo $this->lang->line('customer_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="cust_read" value="0001"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('customer_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="cust_add" value="0010"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('customer_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="cust_edit" value="0100"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('customer_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="cust_delete" value="1000"><label><i></i></label></td>
+</tr>
+</table></td><td>
+<table >
+<tr><td><label><?php echo $this->lang->line('item_kites_read'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="itemkit_read" value="0001"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('item_kites_add'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="itemkit_add" value="0010"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('item_kites_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="itemkit_edit" value="0100"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('item_kites_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="itemkit_delete" value="1000"><label><i></i></label></td>
+</tr>
+</table></td><td>
+<table >
+<tr><td><label><?php echo $this->lang->line('do_sales'); ?> </label> </td>
+    <td><div class="switch demo3" ><input type="checkbox" name="sales_read" value="0001"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('sales_return'); ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="sales_add" value="0010"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('sales_edit');?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="sales_edit" value="0100"><label><i></i></label></td>
+</tr>
+<tr><td><label><?php echo $this->lang->line('sales_delete');  ?></label> </td>
+    <td><div class="switch demo3" ><input type="checkbox"  name="sales_delete" value="1000"><label><i></i></label></td>
 </tr>
 </table></td></tr>
 </table></section>

@@ -38,10 +38,7 @@ class Pos_users extends CI_Controller{
          if($_SESSION['admin']==2){
              $this->load->helper("url");
                 $this->load->model('pos_users_model');
-                $this->load->model('branch');
-                $_SESSION['depart']="null";
-                $_SESSION['branch']="null";
-                
+                $this->load->model('branch');                  
                 $this->load->library("pagination"); 
 	        $config["base_url"] = base_url()."index.php/pos_users/get_pos_users_details";
 	        $config["total_rows"] = $this->pos_users_model->pos_users_count_for_admin($_SESSION['Bid']);

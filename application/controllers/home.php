@@ -65,7 +65,15 @@ class Home extends CI_Controller
                echo "U have No Permission to View Branch Details";
                $this->pos_home();
            }
-       }       
+       }
+       if($this->input->post('customers')){
+           if($_SESSION['Customer_per']['read']==1){
+               redirect('customers');
+           }else{
+               echo "you Have no permission to read Customer Deatils";
+               $this->pos_home();
+           }
+       }
     }
      function user_groups(){
         redirect('user_groupsCI');

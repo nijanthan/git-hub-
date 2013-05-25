@@ -178,8 +178,25 @@ class User_groupsCI extends CI_Controller{
                 $sup_edit=$this->input->post('sup_edit');
                 $sup_delete=$this->input->post('sup_delete');
                 $supplier=$sup_add+$sup_delete+$sup_edit+$sup_read;
+                 $cust_read=$this->input->post('cust_read');
+                $cust_add=$this->input->post('cust_add');
+                $cust_edit=$this->input->post('cust_edit');
+                $cust_delete=$this->input->post('cust_delete');
+                $customer=$cust_add+$cust_delete+$cust_edit+$cust_read;
                 
-                $this->add_permission($item,$depa,$user,$branch,$supplier,$id,$_SESSION['Bid']);
+                $sales_read=$this->input->post('do_sales');
+                $sales_add=$this->input->post('retun_sales');
+                $sales_edit=$this->input->post('sales_edit');
+                $sales_delete=$this->input->post('sales_delete');
+                $sales=$sales_add+$sales_read+$sales_delete+$sales_edit;
+                
+                $itemk_read=$this->input->post('itemkit_read');
+                $itemk_add=$this->input->post('itemkit_add');
+                $itemk_edit=$this->input->post('itemkit_edit');
+                $itemk_delete=$this->input->post('itemkit_delete');
+                $itemkites=$itemk_add+$itemk_delete+$itemk_edit+$itemk_read;
+                
+                $this->add_permission($item,$depa,$user,$branch,$supplier,$customer,$itemkites,$sales,$id,$_SESSION['Bid']);
                redirect('posmain/user_groups');
                
                }else{
@@ -208,7 +225,7 @@ class User_groupsCI extends CI_Controller{
            }    
     }
    
-    function add_permission($item,$depa,$user,$branch,$supplier,$depart_id,$branchid){
+    function add_permission($item,$depa,$user,$branch,$supplier,$customer,$itemkites,$sales,$depart_id,$branchid){
          if($_SESSION['Depa_per']['add']==1){ 
                 $this->load->model('permissions');
                 $this->permissions->set_item_permission($item,$depart_id,$branchid);
@@ -216,6 +233,9 @@ class User_groupsCI extends CI_Controller{
                 $this->permissions->set_depart_permission($depa,$depart_id,$branchid);
                 $this->permissions->set_branch_permission($branch,$depart_id,$branchid);
                 $this->permissions->set_supplier_permission($supplier,$depart_id,$branchid);
+                $this->permissions->set_customer_permission($customer,$depart_id,$branchid);
+                $this->permissions->set_item_kites_permission($itemkites,$depart_id,$branchid);
+                $this->permissions->set_sales_permission($sales,$depart_id,$branchid);
             
          }else{
              $this->get_user_groups();
@@ -285,7 +305,7 @@ class User_groupsCI extends CI_Controller{
         }
         function edit_user_groups_permission($id){
             
-            if($_SESSION['full_per']==4444){
+            if($_SESSION['full_per']==8888){
                  $this->load->model('user_groups');
                  $data['row']=$this->user_groups->get_seleted_user_groups_details($id);
                  $this->load->model('permissions');
@@ -294,6 +314,10 @@ class User_groupsCI extends CI_Controller{
                  $data['depart']=$this->permissions->get_depart_permission($id,$_SESSION['Bid'],$id);
                  $data['branch']=$this->permissions->get_branch_permission($id,$_SESSION['Bid'],$id);
                  $data['supplier']=$this->permissions->get_supplier_permissions($id,$_SESSION['Bid'],$id);
+                 $data['customer']=$this->permissions->get_customer_permission($id,$_SESSION['Bid'],$id);
+                 $data['item_kites']=$this->permissions->get_item_kites_permission($id,$_SESSION['Bid'],$id);
+                 $data['sales']=$this->permissions->get_sales_permission($id,$_SESSION['Bid'],$id);
+                 
                
                  $this->load->view('template/header');
                  $this->load->view('edit_user_groups_permission',$data);
@@ -334,19 +358,42 @@ class User_groupsCI extends CI_Controller{
                 $sup_edit=$this->input->post('sup_edit');
                 $sup_delete=$this->input->post('sup_delete');
                 $supplier=$sup_add+$sup_delete+$sup_edit+$sup_read;
+                
+                $cust_read=$this->input->post('cust_read');
+                $cust_add=$this->input->post('cust_add');
+                $cust_edit=$this->input->post('cust_edit');
+                $cust_delete=$this->input->post('cust_delete');
+                $customer=$cust_add+$cust_delete+$cust_edit+$cust_read;
+                
+                $sales_read=$this->input->post('do_sales');
+                $sales_add=$this->input->post('retun_sales');
+                $sales_edit=$this->input->post('sales_edit');
+                $sales_delete=$this->input->post('sales_delete');
+                $sales=$sales_add+$sales_read+$sales_delete+$sales_edit;
+                
+                $itemk_read=$this->input->post('itemkit_read');
+                $itemk_add=$this->input->post('itemkit_add');
+                $itemk_edit=$this->input->post('itemkit_edit');
+                $itemk_delete=$this->input->post('itemkit_delete');
+                $itemkites=$itemk_add+$itemk_delete+$itemk_edit+$itemk_read;
+                
+                
                         
                 $id=$this->input->post('id');
-                $this->update_permission($item,$user,$depa,$branch,$supplier,$id,$_SESSION['Bid']);
+                $this->update_permission($item,$user,$depa,$branch,$supplier,$customer,$sales,$itemkites,$id,$_SESSION['Bid']);
                 $this->get_user_groups();
             }
         }
-        function update_permission($item,$user,$depa,$branch,$supplier,$depart_id,$branchid){
+        function update_permission($item,$user,$depa,$branch,$supplier,$customer,$sales,$itemkites,$depart_id,$branchid){
                 $this->load->model('permissions');
                 $this->permissions->update_item_permission($item,$depart_id,$branchid);
                 $this->permissions->update_user_permission($user,$depart_id,$branchid);
                 $this->permissions->update_depart_permission($depa,$depart_id,$branchid);
                 $this->permissions->update_branch_permission($branch,$depart_id,$branchid);
                 $this->permissions->update_supplier_permission($supplier,$depart_id,$branchid);
+                $this->permissions->update_customer_permission($customer,$depart_id,$branchid);
+                $this->permissions->update_item_kites_permission($itemkites,$depart_id,$branchid);
+                $this->permissions->update_sales_permission($sales,$depart_id,$branchid);
         }
         function to_activate_user_groups($id){
                 $this->load->model('user_groups');

@@ -10,6 +10,9 @@ $lang['delete']='Delete';
 $lang['user']='Users';
 $lang['delete_user']='Delete User';
 $lang['add_new_user']='Add New User';
+$lang['add_new_customer']='Add New Customer';
+$lang['delete_customer']='Delete Customer';
+
 $lang['back_to_home']='Back To Home';
 $lang['edit']='Edit';
 $lang['edit_permission']='Edit Permission';
@@ -18,6 +21,8 @@ $lang['last_name']='Last Name';
 $lang['sex']='Sex';
 $lang['age']='Age';
 $lang['address']='Address';
+$lang['address1']='Address 1';
+$lang['address2']='Address 2';
 $lang['city']='City';
 $lang['state']='State';
 $lang['zip']='Zip ';
@@ -54,6 +59,25 @@ $lang['supplier_read']='Read Supplier ';
 $lang['supplier_add']='Add Supplier';
 $lang['supplier_edit']='Edit Supplier ';
 $lang['supplier_delete']='Delete Supplier';
+
+$lang['customer_read']='Read Customer ';
+$lang['customer_add']='Add Customer';
+$lang['customer_edit']='Edit Customer ';
+$lang['customer_delete']='Delete Customer';
+
+$lang['item_kites_read']='Read Item Kites ';
+$lang['item_kites_add']='Add Item Kites';
+$lang['item_kites_edit']='Edit Item Kites ';
+$lang['item_kites_delete']='Delete Item Kites';
+
+$lang['do_sales']=' sales ';
+$lang['sales_edit']='Item Price Edit';
+$lang['sales_return']='Sales Return ';
+$lang['sales_delete']='Sales Delete';
+
+$lang['sales']='Sales';
+$lang['customers']='Customers';
+$lang['Suppliers']='Suppliers';
 $lang['on']='On';
 $lang['off']='Off';
 $lang['branch_name']='Branch Name';
@@ -66,6 +90,10 @@ $lang['activate']='Activate';
 $lang['deactivate']='Deactivate';
 $lang['default_user_group']='Default User Group';
 $lang['user_group']='User Group Name';
+$lang['taxable']='Taxable';
+$lang['comments']='Comments';
+$lang['account_no']='Account Number';
+$lang['company']='Comapany';
 
 
 
