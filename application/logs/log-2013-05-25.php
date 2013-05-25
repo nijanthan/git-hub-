@@ -172,3 +172,7 @@ ERROR - 2013-05-25 12:55:44 --> Severity: Warning  --> Missing argument 2 for Us
 ERROR - 2013-05-25 12:55:44 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
 ERROR - 2013-05-25 12:56:29 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
 ERROR - 2013-05-25 12:56:29 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-25 13:33:20 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 13:33:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 13:33:31 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 13:33:31 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
