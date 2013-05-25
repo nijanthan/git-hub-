@@ -38,8 +38,10 @@ $lang['save']='Save';
 $lang['cancel']='Cancel';
 $lang['update']='Update';
 $lang['add']='Add';
+$lang['add_category']='Add Category';
 $lang['user_groups_name']='Department Name';
 $lang['read']='Read';
+$lang['add_new_item']='Add Item';
 $lang['item_read']='Read Items';
 $lang['item_add']='Add Items';
 $lang['item_edit']='Edit Items';
@@ -95,6 +97,22 @@ $lang['taxable']='Taxable';
 $lang['comments']='Comments';
 $lang['account_no']='Account Number';
 $lang['company']='Comapany';
+
+ $lang['code']='Item Code';
+ $lang['barcode']='Item Barcode';
+ $lang['item_name'] 	='Item Name';
+ $lang['description']='Item Description';
+ $lang['cost_price']='Cost Price';
+ $lang['unit_price']='Unit Price';
+ $lang['discount_amount']='Discount Amount';
+ $lang['start_date']='Starting Date';
+ $lang['end_date']='Ending Date';
+ $lang['tax1']='Tax1';
+ $lang['tax2']='Tax2';
+ $lang['quantity']='Quantity';
+ $lang['location'] 	='Location';
+ $lang['salling_price']='Salling Price';
+ $lang['cate_name']='Category Name';
 
 
 

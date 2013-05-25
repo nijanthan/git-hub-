@@ -176,3 +176,100 @@ ERROR - 2013-05-25 13:33:20 --> Severity: Notice  --> Undefined property: CI_DB_
 ERROR - 2013-05-25 13:33:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
 ERROR - 2013-05-25 13:33:31 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
 ERROR - 2013-05-25 13:33:31 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:05:25 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:05:25 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:06:03 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:06:03 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:49:27 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:49:27 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 14:52:16 --> Query error: Unknown column 'active_status' in 'where clause'
+ERROR - 2013-05-25 14:53:28 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 14:53:33 --> 404 Page Not Found --> items/items_details
+ERROR - 2013-05-25 14:53:35 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 11
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 11
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 11
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:41 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:42 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:53:42 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 11
+ERROR - 2013-05-25 14:53:42 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:42 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:53:42 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:53:42 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:56:46 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:56:46 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 12
+ERROR - 2013-05-25 14:57:37 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:57:37 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 14:58:52 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:58:52 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:58:52 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:58:52 --> Severity: Notice  --> Undefined property: stdClass::$last_name C:\wamp\www\PointOfSale\application\views\item_list.php 13
+ERROR - 2013-05-25 14:58:52 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 14:59:17 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:09:15 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:10:21 --> Query error: Table 'pos.itemss_x_branchs' doesn't exist
+ERROR - 2013-05-25 15:10:38 --> Query error: Unknown column 'items_id' in 'where clause'
+ERROR - 2013-05-25 15:13:12 --> Query error: Unknown column 'items_active' in 'field list'
+ERROR - 2013-05-25 15:13:38 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:13:52 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:13:54 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:14:47 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:14:52 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:15:25 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:15:30 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:15:34 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:17:00 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:17:13 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:19:03 --> Could not find the language line "add_new_item"
+ERROR - 2013-05-25 15:42:07 --> Severity: Notice  --> Undefined index: item_per C:\wamp\www\PointOfSale\application\controllers\items.php 146
+ERROR - 2013-05-25 15:42:07 --> Severity: Notice  --> Undefined index: item_per C:\wamp\www\PointOfSale\application\controllers\items.php 146
+ERROR - 2013-05-25 15:42:28 --> Severity: Notice  --> Undefined index: item_per C:\wamp\www\PointOfSale\application\views\add_item_category.php 2
+ERROR - 2013-05-25 15:42:28 --> Severity: Notice  --> Undefined index: item_per C:\wamp\www\PointOfSale\application\views\add_item_category.php 2
+ERROR - 2013-05-25 16:10:05 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:10:09 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:41:06 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:41:17 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:48:18 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:48:27 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:48:30 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:49:21 --> Could not find the language line "name"
+ERROR - 2013-05-25 16:55:53 --> Severity: Notice  --> Undefined index: item_per C:\wamp\www\PointOfSale\application\controllers\items.php 73
+ERROR - 2013-05-25 17:18:17 --> Could not find the language line "salling_price"
+ERROR - 2013-05-25 17:18:17 --> Could not find the language line "discount_amount"
+ERROR - 2013-05-25 17:18:33 --> Could not find the language line "discount_amount"
+ERROR - 2013-05-25 17:19:18 --> 404 Page Not Found --> items/add_new_item
+ERROR - 2013-05-25 18:17:59 --> Could not find the language line "cate_name"
+ERROR - 2013-05-25 18:18:06 --> Could not find the language line "dicount_amount"
+ERROR - 2013-05-25 18:18:33 --> Could not find the language line "dicount_amount"
+ERROR - 2013-05-25 18:35:17 --> Severity: Notice  --> Undefined variable: row C:\wamp\www\PointOfSale\application\views\add_item.php 18
+ERROR - 2013-05-25 18:35:17 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_item.php 18
+ERROR - 2013-05-25 18:38:58 --> 404 Page Not Found --> items/add_new_item
+ERROR - 2013-05-25 18:39:09 --> 404 Page Not Found --> items/add_new_item
+ERROR - 2013-05-25 18:56:37 --> 404 Page Not Found --> items/add_new_item
+ERROR - 2013-05-25 19:00:47 --> Could not find the language line "name"
+ERROR - 2013-05-25 19:01:17 --> 404 Page Not Found --> items/add_new_item
