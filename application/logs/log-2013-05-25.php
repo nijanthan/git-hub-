@@ -166,3 +166,9 @@ ERROR - 2013-05-25 12:18:17 --> 404 Page Not Found --> supplier
 ERROR - 2013-05-25 12:18:51 --> 404 Page Not Found --> supplier
 ERROR - 2013-05-25 12:19:06 --> 404 Page Not Found --> supplier
 ERROR - 2013-05-25 12:19:23 --> Query error: Unknown column 'created_by' in 'field list'
+ERROR - 2013-05-25 12:55:43 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-25 12:55:43 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-25 12:55:44 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-25 12:55:44 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-25 12:56:29 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-25 12:56:29 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
