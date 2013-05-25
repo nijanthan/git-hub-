@@ -273,3 +273,31 @@ ERROR - 2013-05-25 18:39:09 --> 404 Page Not Found --> items/add_new_item
 ERROR - 2013-05-25 18:56:37 --> 404 Page Not Found --> items/add_new_item
 ERROR - 2013-05-25 19:00:47 --> Could not find the language line "name"
 ERROR - 2013-05-25 19:01:17 --> 404 Page Not Found --> items/add_new_item
+ERROR - 2013-05-25 19:25:20 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\controllers\pos_users.php 384
+ERROR - 2013-05-25 19:25:20 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 206
+ERROR - 2013-05-25 19:25:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 206
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:30:53 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\add_new_pos_users.php 208
+ERROR - 2013-05-25 19:33:29 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-25 19:33:29 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-25 19:33:31 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-25 19:33:31 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-25 19:33:52 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-25 19:33:52 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-25 19:34:21 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 19:34:21 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-25 20:01:22 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\items.php 257
+ERROR - 2013-05-25 20:01:23 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\suppliers.php 24

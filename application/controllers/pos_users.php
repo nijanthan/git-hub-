@@ -375,7 +375,12 @@ function do_upload($id)
                  if($_SESSION['user_per']['add']==1){  
                     $this->load->model('user_groups');
                     $this->load->model('branch');
+                     if($_SESSION['admin']==2){ 
+                     $data['branch']=$this->branch->get_user_for_branch_admin();
+                     }
+                     else{
                     $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
+                     }
                     $data['depa']= $this->user_groups->get_user_groups();  
                    
                    // $this->load->view('template/header');

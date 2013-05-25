@@ -154,7 +154,8 @@ class Suppliers extends CI_Controller{
             if($this->input->post('save')){
                 if($_SESSION['Supplier_per']['add']==1){
                     $this->load->library('form_validation');
-                            $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
+                            $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required");
+                            $this->form_validation->set_rules("company",$this->lang->line('company'),"required");
                             $this->form_validation->set_rules("last_name",$this->lang->line('last_name'),"required"); 
                             $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
                             $this->form_validation->set_rules('email', $this->lang->line('email'), 'valid_email');                             	  
@@ -188,15 +189,13 @@ class Suppliers extends CI_Controller{
                                         $this->load->view('template/header');
                                         $this->load->view('add_supplier');
                                         $this->load->view('template/footer');
-                                   }
-                                    
-                                    
+                                   }                           
+                          
                         }else{
                                 $this->load->view('template/header');
                                 $this->load->view('add_supplier');
                                 $this->load->view('template/footer');
-                        }
-                    
+                        }                    
                 }else{
                     redirect('suppliers');
                 }

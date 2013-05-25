@@ -78,7 +78,7 @@ class Branch extends CI_Model{
              return $data;
    }
    function get_user_for_branch($id){
-       $this->db->select()->from('users_X_branchs')->where('emp_id',$id);
+       $this->db->select()->from('users_X_branchs')->where('emp_id',$id)->where('delete_status',0);
        $sql=$this->db->get();
        return $sql->result();
        
@@ -296,6 +296,11 @@ class Branch extends CI_Model{
             $data=$row->branch_id;
         }
         return $data;
+    }
+    function get_user_for_branch_admin(){
+        $this->db->select()->from('branchs')->where('delete_status',0);
+       $sql=$this->db->get();
+       return $sql->result();
     }
 }
 ?>
