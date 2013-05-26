@@ -112,7 +112,7 @@ class Item_model extends CI_Model{
         }
     }
     function get_item_category($id){
-        $this->db->select()->from('item_category_x_branchs')->where('branch_id',$id);
+        $this->db->select()->from('item_category_x_branchs')->where('branch_id',$id)->where('category_active',0);
         $sql=  $this->db->get();
         return $sql->result();        
     }
@@ -122,7 +122,7 @@ class Item_model extends CI_Model{
         return $sql->result(); 
     }
     function get_suppier_in_branch($id){
-        $this->db->select()->from('suppliers_x_branchs')->where('branch_id',$id);
+        $this->db->select()->from('suppliers_x_branchs')->where('branch_id',$id)->where('supplier_active',0);
         $sql=  $this->db->get();
         return $sql->result();  
     }
@@ -131,5 +131,53 @@ class Item_model extends CI_Model{
         $sql=  $this->db->get();
         return $sql->result(); 
     }
+    function get_selected_item($id){
+        $this->db->select()->from('items')->where('id',$id);
+        $sql=  $this->db->get();
+        return $sql->result();
+    }
+    function update_item($id,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier){
+        $data=array('code'=>$code,	
+            'barcode'=>$barcode,
+            'category_id'=>$category,            
+            'supplier_id'=>$suppier, 	
+            'name'=>$item_name,
+            'description'=>$description,
+            'cost_price'=>$cost,
+            'unit_price'=>$unit,
+            'salling_price'=>$saling,
+            'discount_amount'=>$discount,
+            'start_date'=>$start,
+            'end_date '=>$end,
+            'tax1'=>$tax1,
+            'tax2 '=>$tax2,
+            'quantity'=>$quantity,
+            'location'=>$location);
+        $this->db->where('id',$id);
+        $this->db->update('items',$data);
+    }
+    function add_item($id,$bid,$uid,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier){
+        $data=array('code'=>$code,	
+            'barcode'=>$barcode,
+            'category_id'=>$category,
+            'added_by '=>$uid,
+            'branch_id'=>$bid,
+            'supplier_id'=>$suppier, 	
+            'name'=>$item_name,
+            'description'=>$description,
+            'cost_price'=>$cost,
+            'unit_price'=>$unit,
+            'salling_price'=>$saling,
+            'discount_amount'=>$discount,
+            'start_date'=>$start,
+            'end_date '=>$end,
+            'tax1'=>$tax1,
+            'tax2 '=>$tax2,
+            'quantity'=>$quantity,
+            'location'=>$location);
+        $this->db->insert('items',$data);
+    }
+                                   
+                                   
 }
 ?>

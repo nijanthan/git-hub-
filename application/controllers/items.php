@@ -257,7 +257,42 @@ class Items extends CI_Controller{
         }
         if($this->input->post('save')){
              if($_SESSION['Item_per']['add']==1){
-                 
+                  $this->form_validation->set_rules("code",$this->lang->line('code'),"required");
+                            $this->form_validation->set_rules("item_name",$this->lang->line('item_name'),"required");
+                            $this->form_validation->set_rules("cost_price",$this->lang->line('cost_price'),'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
+                            $this->form_validation->set_rules('unit_price', $this->lang->line('unit_price'), 'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('discount_amount', $this->lang->line('discount_amount'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
+                            $this->form_validation->set_rules('tax1', $this->lang->line('tax1'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('tax2', $this->lang->line('tax2'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('quantity', $this->lang->line('quantity'),'required|max_length[40]|regex_match[/^[0-9]+$/]|xss_clean');
+                            $this->form_validation->set_rules("category",$this->lang->line('category'),"required");
+                            $this->form_validation->set_rules("supplier",$this->lang->line('supplier'),"required");
+                            $id=  $this->input->post('id');
+                        if ( $this->form_validation->run() !== false ) {
+                                    $this->load->model('item_model');
+                                    $code=$this->input->post('code');
+                                    $barcode=  $this->input->post('barcode');
+                                    $item_name=$this->input->post('item_name');
+                                    $description=$this->input->post('description');
+                                    $cost=$this->input->post('cost_price');
+                                    $unit=$this->input->post('unit_price');                                    
+                                    $saling=$this->input->post('salling_price');
+                                    $discount=$this->input->post('discount_amount');
+                                    $start=strtotime($this->input->post('start_date'));
+                                    $end=strtotime($this->input->post('end_date'));
+                                    $tax1=$this->input->post('tax1');
+                                    $tax2=$this->input->post('tax2');
+                                    $quantity=$this->input->post('quantity');
+                                    $location=$this->input->post('location');                                    
+                                    $category=$this->input->post('category');
+                                    $suppier=$this->input->post('supplier');
+                                    $this->item_model->add_item($id,$_SESSION['Bid'],$_SESSION['Uid'],$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
+                                    $this->get_items();
+            
+                        }else{
+                            $this->add_new_item_in_branch();
+                        }
+        
              } 
         }
     }
@@ -268,9 +303,9 @@ class Items extends CI_Controller{
         $this->load->view('template/footer');
     }
     function add_new_supplier(){   
-         if(!$_SERVER['HTTP_REFERER']){ redirect('suppliers'); }else{
+         if(!$_SERVER['HTTP_REFERER']){ redirect('items'); }else{
             if($this->input->post('cancel')){
-                $this->get_suppliers();
+                $this->add_new_item_in_branch();
             }
             if($this->input->post('save')){
                 if($_SESSION['Supplier_per']['add']==1){
@@ -321,6 +356,65 @@ class Items extends CI_Controller{
                     redirect('items');
                 }
             }
+        }
+    }
+    function edit_item_details($id){
+        if(!$_SERVER['HTTP_REFERER']){ redirect('items'); }else{
+        if($_SESSION['Item_per']['edit']==1){
+           $this->load->model('item_model');
+                    $data['row']=$this->item_model->get_item_category($_SESSION['Bid']);
+                    $data['crow']=$this->item_model->get_category($_SESSION['Bid']);
+                    $data['srow']=$this->item_model->get_suppier_in_branch($_SESSION['Bid']);
+                    $data['sb_row']=$this->item_model->get_supplier_details();
+                    $data['irow']=$this->item_model->get_selected_item($id);
+                    $this->load->view('template/header');
+                    $this->load->view('edit_item',$data);
+                    $this->load->view('template/footer');
+        }
+        }
+    }
+    function update_item(){
+        if(!$_SERVER['HTTP_REFERER']){ redirect('items'); }else{
+            if($this->input->post('cancel')){
+                redirect('items');
+            }
+        if($_SESSION['Item_per']['edit']==1){
+                            $this->form_validation->set_rules("code",$this->lang->line('code'),"required");
+                            $this->form_validation->set_rules("item_name",$this->lang->line('item_name'),"required");
+                            $this->form_validation->set_rules("cost_price",$this->lang->line('cost_price'),'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
+                            $this->form_validation->set_rules('unit_price', $this->lang->line('unit_price'), 'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('discount_amount', $this->lang->line('discount_amount'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
+                            $this->form_validation->set_rules('tax1', $this->lang->line('tax1'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('tax2', $this->lang->line('tax2'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('quantity', $this->lang->line('quantity'),'required|max_length[40]|regex_match[/^[0-9]+$/]|xss_clean');
+                            $this->form_validation->set_rules("category",$this->lang->line('category'),"required");
+                            $this->form_validation->set_rules("supplier",$this->lang->line('supplier'),"required");
+                            $id=  $this->input->post('id');
+                        if ( $this->form_validation->run() !== false ) {
+                                    $this->load->model('item_model');
+                                    $code=$this->input->post('code');
+                                    $barcode=  $this->input->post('barcode');
+                                    $item_name=$this->input->post('item_name');
+                                    $description=$this->input->post('description');
+                                    $cost=$this->input->post('cost_price');
+                                    $unit=$this->input->post('unit_price');                                    
+                                    $saling=$this->input->post('salling_price');
+                                    $discount=$this->input->post('discount_amount');
+                                    $start=strtotime($this->input->post('start_date'));
+                                    $end=strtotime($this->input->post('end_date'));
+                                    $tax1=$this->input->post('tax1');
+                                    $tax2=$this->input->post('tax2');
+                                    $quantity=$this->input->post('quantity');
+                                    $location=$this->input->post('location');                                    
+                                    $category=$this->input->post('category');
+                                    $suppier=$this->input->post('supplier');
+                                    $this->item_model->update_item($id,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
+                                    $this->get_items();
+            
+                        }else{
+                            $this->edit_item_details($id);
+                        }
+        }
         }
     }
     
