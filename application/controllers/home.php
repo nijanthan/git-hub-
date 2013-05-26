@@ -90,6 +90,9 @@ class Home extends CI_Controller
                $this->pos_home();
            }
        }
+       if($this->input->post('Gifts')){
+           redirect('gifts');
+       }
     }
      function user_groups(){
         redirect('user_groupsCI');

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 25, 2013 at 01:24 PM
+-- Generation Time: May 26, 2013 at 10:20 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -193,6 +193,47 @@ INSERT INTO `customers_x_page_x_permissions` (`id`, `permission`, `depart_id`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `items`
+--
+
+CREATE TABLE IF NOT EXISTS `items` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(100) NOT NULL,
+  `barcode` varchar(100) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  `supplier_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(100) NOT NULL,
+  `cost_price` varchar(50) NOT NULL,
+  `unit_price` varchar(50) NOT NULL,
+  `salling_price` varchar(100) NOT NULL,
+  `discount_amount` varchar(50) NOT NULL,
+  `start_date` varchar(25) NOT NULL,
+  `end_date` varchar(25) NOT NULL,
+  `tax1` varchar(50) NOT NULL,
+  `tax2` varchar(50) NOT NULL,
+  `quantity` int(100) NOT NULL,
+  `location` varchar(100) NOT NULL,
+  `added_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`id`, `code`, `barcode`, `category_id`, `branch_id`, `supplier_id`, `name`, `description`, `cost_price`, `unit_price`, `salling_price`, `discount_amount`, `start_date`, `end_date`, `tax1`, `tax2`, `quantity`, `location`, `added_by`) VALUES
+(1, '7787', '989989', 1, 2, 1, 'item1', '', '10', '10', '10', '', '0', '0', '', '', 0, 'one', 0),
+(2, '7787', 'u9898', 1, 0, 0, 'item1', '', '', '', '', '', '', '', '', '', 0, '', 0),
+(3, '7787', 'u9898', 1, 0, 0, 'item1', '', '', '', '', '', '', '', '', '', 0, '', 0),
+(4, '7787', 'u9898', 1, 0, 0, 'item1', '', '', '', '', '', '', '', '', '', 0, '', 0),
+(8, 'uhhju', '89878', 2, 2, 7, 'item3', '', '10', '10', '10', '102', '1369008000', '1369612800', '', '', 1000, '', 101),
+(9, 'uhhju', '89878', 1, 2, 6, 'item3', '', '10', '10', '10', '102', '1369008000', '1369612800', '', '', 1000, '', 101);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `items_kits_x_page_x_permissions`
 --
 
@@ -221,6 +262,87 @@ INSERT INTO `items_kits_x_page_x_permissions` (`id`, `permission`, `depart_id`, 
 (10, 1111, 36, 4),
 (11, 0, 37, 2),
 (12, 0, 43, 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `items_x_branchs`
+--
+
+CREATE TABLE IF NOT EXISTS `items_x_branchs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `branch_name` varchar(100) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  `item_active` int(11) NOT NULL,
+  `item_delete` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `items_x_branchs`
+--
+
+INSERT INTO `items_x_branchs` (`id`, `branch_id`, `branch_name`, `item_id`, `active_status`, `delete_status`, `item_active`, `item_delete`, `deleted_by`) VALUES
+(1, 2, 'K F C', 1, 0, 0, 1, 0, 0),
+(2, 1, 'K F C', 2, 0, 0, 1, 0, 0),
+(3, 1, 'K F C', 3, 0, 0, 1, 0, 0),
+(4, 1, 'K F C', 4, 0, 0, 1, 0, 0),
+(5, 2, 'Pizza Hut', 8, 0, 0, 0, 0, 0),
+(6, 2, 'Pizza Hut', 9, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item_category`
+--
+
+CREATE TABLE IF NOT EXISTS `item_category` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(100) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `item_category`
+--
+
+INSERT INTO `item_category` (`id`, `category_name`, `branch_id`, `active_status`, `delete_status`) VALUES
+(1, 'water', 2, 0, 0),
+(2, 'drinks', 2, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `item_category_x_branchs`
+--
+
+CREATE TABLE IF NOT EXISTS `item_category_x_branchs` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `branch_name` varchar(100) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `active_ststus` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  `category_active` int(11) NOT NULL,
+  `category_delete` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `item_category_x_branchs`
+--
+
+INSERT INTO `item_category_x_branchs` (`id`, `branch_id`, `branch_name`, `category_id`, `active_ststus`, `delete_status`, `category_active`, `category_delete`, `deleted_by`) VALUES
+(1, 2, 'Pizza Hut', 1, 0, 0, 0, 1, 0),
+(2, 2, 'Pizza Hut', 2, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -333,18 +455,20 @@ CREATE TABLE IF NOT EXISTS `suppliers` (
   `taxable` int(11) NOT NULL,
   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `suppliers`
 --
 
 INSERT INTO `suppliers` (`id`, `company_name`, `first_name`, `last_name`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `comments`, `account_number`, `active_status`, `delete_status`, `website`, `taxable`, `created_by`) VALUES
-(1, '', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
-(2, '', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
-(3, '', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
-(4, '', 'jibi', 'gopi', '', '7795398584', '', '', '', '', '', '', 'sasi', '', 0, 0, '', 0, 101),
-(5, '', 'nijan', 'xavier', '', '7795398580', '', '', '', '', '', '', '', '', 0, 0, '', 1, 101);
+(1, 'plus', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
+(2, 'kb', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
+(3, 'FND', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
+(4, 'IBM', 'jibi', 'gopi', '', '7795398584', '', '', '', '', '', '', 'sasi', '', 0, 0, '', 0, 101),
+(5, 'yahoo', 'nijan', 'xavier', '', '7795398580', '', '', '', '', '', '', '', '', 0, 0, '', 1, 101),
+(6, 'sssi', 'nijan', 'xavier', '', '7795398584', '', '', '', '', '', '', '', '', 0, 0, '', 0, 101),
+(7, 'zumi', 'kiran', 'kumar', '', '7795398583', '', '', '', '', '', '', '', '', 0, 0, '', 0, 101);
 
 -- --------------------------------------------------------
 
@@ -363,7 +487,7 @@ CREATE TABLE IF NOT EXISTS `suppliers_x_branchs` (
   `supplier_delete` int(11) NOT NULL,
   `deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `suppliers_x_branchs`
@@ -374,7 +498,9 @@ INSERT INTO `suppliers_x_branchs` (`id`, `branch_id`, `branch_name`, `supplier_i
 (2, 4, 'Dominos', 2, 0, 0, 1, 0, 102),
 (3, 4, 'Dominos', 3, 0, 0, 1, 0, 102),
 (4, 4, 'Dominos', 4, 0, 0, 1, 0, 0),
-(5, 4, 'Dominos', 5, 0, 0, 0, 0, 0);
+(5, 4, 'Dominos', 5, 0, 0, 0, 0, 0),
+(6, 2, 'Pizza Hut', 6, 0, 0, 0, 0, 0),
+(7, 2, 'Pizza Hut', 7, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 

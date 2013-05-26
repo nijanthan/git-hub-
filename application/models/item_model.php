@@ -157,6 +157,7 @@ class Item_model extends CI_Model{
         $this->db->update('items',$data);
     }
     function add_item($id,$bid,$uid,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier){
+        
         $data=array('code'=>$code,	
             'barcode'=>$barcode,
             'category_id'=>$category,
@@ -175,7 +176,21 @@ class Item_model extends CI_Model{
             'tax2 '=>$tax2,
             'quantity'=>$quantity,
             'location'=>$location);
-        $this->db->insert('items',$data);
+             $this->db->insert('items',$data);
+             return $this->db->insert_id();
+               
+    }
+    function item_in_items_branch($id,$bid){
+         $this->db->select()->from('branchs')->where('id',$bid);
+         $sql=$this->db->get();
+         $name="";
+         foreach ($sql->result() as $row){
+             $name=$row->store_name;
+         }
+        $value=array('branch_id'=>$bid,
+                    'item_id'=>$id,
+                    'branch_name'=>$name);
+                $this->db->insert('items_x_branchs',$value);
     }
                                    
                                    

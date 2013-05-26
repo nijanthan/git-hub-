@@ -284,10 +284,11 @@ class Items extends CI_Controller{
                                     $tax2=$this->input->post('tax2');
                                     $quantity=$this->input->post('quantity');
                                     $location=$this->input->post('location');                                    
-                                    $category=$this->input->post('category');
+                                    $category=$this->input->post('category')."<br>";
                                     $suppier=$this->input->post('supplier');
-                                    $this->item_model->add_item($id,$_SESSION['Bid'],$_SESSION['Uid'],$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
-                                    $this->get_items();
+                                    $item_id= $this->item_model->add_item($id,$_SESSION['Bid'],$_SESSION['Uid'],$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
+                                    $this->item_model->item_in_items_branch($item_id,$_SESSION['Bid']);
+                                    redirect('items');
             
                         }else{
                             $this->add_new_item_in_branch();
