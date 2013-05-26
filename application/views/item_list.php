@@ -10,7 +10,7 @@ if($count!=0){
           
           <tr><td><input type="checkbox" name="mycheck[]" value="<?php echo $erow->id ?>" /><td style="width: 100px"><?php echo $erow->code ; ?>
         </td><td  style="width: 100px"><?php echo $erow->name  ?></td><td  style="width: 150px"><?php echo $erow->quantity  ?></td>
-        <td style="width: 100px"><?php echo $erow->location ?></td><td  style="width: 100px">
+        <td style="width: 100px"><?php echo $erow->current_stock ?></td><td  style="width: 100px">
             
             <?php foreach ($branch as $user_b){
             if($user_b->item_id==$erow->id){
@@ -35,9 +35,9 @@ foreach ($row as $b_row){
 
     
     
-    <tr><td><input type="checkbox" name="mycheck[]" value="<?php echo $erow->id ?>" /><td style="width: 100px"><?php echo $erow->first_name; ?>
-        </td><td  style="width: 100px"><?php echo $erow->phone ?></td><td  style="width: 150px"><?php echo $erow->email ?></td>
-        <td style="width: 100px"><?php echo $erow->company_name ?></td><td  style="width: 100px">
+    <tr><td><input type="checkbox" name="mycheck[]" value="<?php echo $erow->id ?>" /><td style="width: 100px"><?php echo $erow->code ?>
+        </td><td  style="width: 100px"><?php echo $erow->name ?></td><td  style="width: 150px"><?php echo $erow->quantity ?></td>
+        <td style="width: 100px"><?php echo $erow->current_stock ?></td><td  style="width: 100px">
             
            <?php foreach ($branch as $user_b){
             if($user_b->item_id==$erow->id){
@@ -53,14 +53,14 @@ foreach ($row as $b_row){
     <?php ?>
 
 <?php }}}?></table> 
-<tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+<td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
   
 <?php }
 }else{   if($_SESSION['admin']==2){ ?>
-    <tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><td><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
  
 <?php }else{?>
-    <tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><td><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
  
 <?php }
 

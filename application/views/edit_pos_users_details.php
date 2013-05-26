@@ -216,10 +216,14 @@ var arrLU="";
 }
 </script>
 <select id="branch" name="FromLJ" style="width:150">
-    <?php foreach ($branch as $brow) {
+    <?php if($_SESSION['admin']==2){ 
+        foreach ($branch as $brow) {
+        
+ ?> <option name="<?php echo $brow->id ?>" value="<?php echo $brow->id ?>" onClick="select_branch(this.form.lang)" > <?php echo $brow->store_name ?></option><?php 
+        }}else{ foreach ($branch as $brow) {
           
         ?> <option name="<?php echo $brow->branch_id ?>" value="<?php echo $brow->branch_id ?>" onClick="select_branch(this.form.lang)" > <?php echo $brow->branch_name ?></option>
-<?php }?>
+<?php }}?>
 
 </select>
 <select multiple id="myDiv" name="ToLJ" style="width: 150">

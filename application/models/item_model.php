@@ -79,6 +79,13 @@ class Item_model extends CI_Model{
         $this->db->where('branch_id',$bid);
         $this->db->update('items_x_branchs',$data);
     }
+    function deactivate_items_by_user($id,$bid,$udi){
+        $data=array('item_active '=>1,
+            'deleted_by'=>$udi);
+        $this->db->where('item_id',$id);        
+        $this->db->where('branch_id',$bid);
+        $this->db->update('items_x_branchs',$data);
+    }
     function to_activate_item($id,$bid){
         $data=array('item_active '=>0);
         $this->db->where('item_id',$id);
@@ -144,7 +151,7 @@ class Item_model extends CI_Model{
             'name'=>$item_name,
             'description'=>$description,
             'cost_price'=>$cost,
-            'unit_price'=>$unit,
+            'current_stock'=>$unit,
             'salling_price'=>$saling,
             'discount_amount'=>$discount,
             'start_date'=>$start,
@@ -167,7 +174,7 @@ class Item_model extends CI_Model{
             'name'=>$item_name,
             'description'=>$description,
             'cost_price'=>$cost,
-            'unit_price'=>$unit,
+            'current_stock'=>$unit,
             'salling_price'=>$saling,
             'discount_amount'=>$discount,
             'start_date'=>$start,

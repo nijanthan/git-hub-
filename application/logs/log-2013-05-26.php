@@ -91,3 +91,97 @@ ERROR - 2013-05-26 10:03:42 --> Could not find the language line "category"
 ERROR - 2013-05-26 10:03:42 --> Could not find the language line "supplier"
 ERROR - 2013-05-26 10:05:40 --> Could not find the language line "category"
 ERROR - 2013-05-26 10:05:40 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 38
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 38
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:14 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 38
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 38
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:37:26 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 38
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$first_name C:\wamp\www\PointOfSale\application\views\item_list.php 38
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:38:31 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:40:05 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:40:05 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:40:05 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:40:05 --> Severity: Notice  --> Undefined property: stdClass::$phone C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:40:05 --> Severity: Notice  --> Undefined property: stdClass::$email C:\wamp\www\PointOfSale\application\views\item_list.php 39
+ERROR - 2013-05-26 10:40:05 --> Severity: Notice  --> Undefined property: stdClass::$company_name C:\wamp\www\PointOfSale\application\views\item_list.php 40
+ERROR - 2013-05-26 10:41:39 --> 404 Page Not Found --> items/delete_item
+ERROR - 2013-05-26 10:44:45 --> Severity: Notice  --> Undefined index: tem_per C:\wamp\www\PointOfSale\application\controllers\items.php 81
+ERROR - 2013-05-26 10:49:12 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\items.php 87
+ERROR - 2013-05-26 10:49:18 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\items.php 87
+ERROR - 2013-05-26 10:49:18 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\items.php 87
+ERROR - 2013-05-26 10:51:31 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\items.php 88
+ERROR - 2013-05-26 10:59:53 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-26 10:59:53 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-26 11:00:18 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:19 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:20 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:27 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:00:49 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_id C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:07:22 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\edit_pos_users_details.php 221
+ERROR - 2013-05-26 11:09:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:09:48 --> 404 Page Not Found --> user_groupsselecting/check_user_groups_branch
+ERROR - 2013-05-26 11:10:42 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-26 11:10:42 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-26 11:11:03 --> Severity: Warning  --> Missing argument 2 for User_groupsselecting::add() C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 26
+ERROR - 2013-05-26 11:11:03 --> Severity: Notice  --> Undefined variable: selected C:\wamp\www\PointOfSale\application\controllers\user_groupsselecting.php 27
+ERROR - 2013-05-26 11:12:54 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-26 11:12:54 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-26 11:17:48 --> Could not find the language line "name"
+ERROR - 2013-05-26 11:18:58 --> Could not find the language line "category"
+ERROR - 2013-05-26 11:18:58 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 11:23:29 --> Could not find the language line "name"
+ERROR - 2013-05-26 12:05:41 --> Could not find the language line "category"
+ERROR - 2013-05-26 12:05:41 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 12:06:17 --> Could not find the language line "category"
+ERROR - 2013-05-26 12:06:17 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 12:06:56 --> Could not find the language line "category"
+ERROR - 2013-05-26 12:06:56 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 12:07:25 --> Could not find the language line "category"
+ERROR - 2013-05-26 12:07:25 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 12:07:47 --> Could not find the language line "category"
+ERROR - 2013-05-26 12:07:47 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 12:07:55 --> Could not find the language line "category"
+ERROR - 2013-05-26 12:07:55 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 12:32:03 --> Could not find the language line "current_stock"

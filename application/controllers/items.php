@@ -78,13 +78,14 @@ class Items extends CI_Controller{
                 }
             }
             if($this->input->post('delete_all')){
-                 if($_SESSION['tem_per']['delete']==1){
+                 if($_SESSION['Item_per']['delete']==1){
                      $data = $this->input->post('mycheck'); 
-                            if(!$data==''){              
+                            if(!$data==''){   
+                             $this->load->model('item_model');
                             $this->load->model('pos_users_model');
                             foreach( $data as $key => $value){  
-                               $this->load->model('item_model');
-                               $this->item_model->delete_item_for_user($value,$_SESSION['Bid'],$_SESSION['Uid']);
+                               
+                               $this->item_model->deactivate_items_by_user($value,$_SESSION['Bid'],$_SESSION['Uid']);
                             }
                            }
                             redirect('items');
@@ -260,7 +261,7 @@ class Items extends CI_Controller{
                   $this->form_validation->set_rules("code",$this->lang->line('code'),"required");
                             $this->form_validation->set_rules("item_name",$this->lang->line('item_name'),"required");
                             $this->form_validation->set_rules("cost_price",$this->lang->line('cost_price'),'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
-                            $this->form_validation->set_rules('unit_price', $this->lang->line('unit_price'), 'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('stock', $this->lang->line('stock'), 'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
                             $this->form_validation->set_rules('discount_amount', $this->lang->line('discount_amount'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
                             $this->form_validation->set_rules('tax1', $this->lang->line('tax1'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
                             $this->form_validation->set_rules('tax2', $this->lang->line('tax2'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
@@ -383,7 +384,7 @@ class Items extends CI_Controller{
                             $this->form_validation->set_rules("code",$this->lang->line('code'),"required");
                             $this->form_validation->set_rules("item_name",$this->lang->line('item_name'),"required");
                             $this->form_validation->set_rules("cost_price",$this->lang->line('cost_price'),'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
-                            $this->form_validation->set_rules('unit_price', $this->lang->line('unit_price'), 'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('stock', $this->lang->line('current_stock'), 'required|max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
                             $this->form_validation->set_rules('discount_amount', $this->lang->line('discount_amount'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean'); 
                             $this->form_validation->set_rules('tax1', $this->lang->line('tax1'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
                             $this->form_validation->set_rules('tax2', $this->lang->line('tax2'),'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
@@ -415,6 +416,18 @@ class Items extends CI_Controller{
                         }else{
                             $this->edit_item_details($id);
                         }
+        }
+        }
+    }
+    function delete_item($id){
+        if(!$_SERVER['HTTP_REFERER']){ redirect('items'); }else{
+           
+        if($_SESSION['Item_per']['delete']==1){
+             $this->load->model('item_model');
+             $this->item_model->deactivate_items_by_user($id,$_SESSION['Bid'],$_SESSION['Uid']);
+             redirect('items');
+        }else{
+            echo "you Have no permission to delete items";
         }
         }
     }

@@ -113,6 +113,8 @@ $lang['company']='Comapany';
  $lang['location'] 	='Location';
  $lang['salling_price']='Salling Price';
  $lang['cate_name']='Category Name';
+ $lang['receiving_item']='Stock Items';
+ $lang['current_stock']='Available Stocks';
 
 
 

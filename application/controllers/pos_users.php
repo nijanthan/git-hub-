@@ -90,8 +90,12 @@ class Pos_users extends CI_Controller{
                 $data['file_name']="null";
                 $data['selected_branch']=$this->branch->get_selected_branch($id);
                 $data['selected_depart']=$this->user_groups->get_user_depart($id);
-                
+                if($_SESSION['admin']==2){ 
+                     $data['branch']=$this->branch->get_user_for_branch_admin();
+                     }
+                     else{
                 $data['branch']= $this->branch->get_user_for_branch($_SESSION['Uid']);
+                     }
                 $data['depa']= $this->user_groups->get_user_groups(); 
                 $this->load->view('template/header');
                 $this->load->view('edit_pos_users_details',$data);
