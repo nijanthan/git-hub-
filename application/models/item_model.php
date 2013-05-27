@@ -163,7 +163,7 @@ class Item_model extends CI_Model{
         $this->db->where('id',$id);
         $this->db->update('items',$data);
     }
-    function add_item($id,$bid,$uid,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier){
+    function add_item($bid,$uid,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier){
         
         $data=array('code'=>$code,	
             'barcode'=>$barcode,
@@ -199,7 +199,94 @@ class Item_model extends CI_Model{
                     'branch_name'=>$name);
                 $this->db->insert('items_x_branchs',$value);
     }
-                                   
+                     
+    
+    function add_stock_branch($Bid,$Iid,$price,$stock,$cat,$sup,$uid,$quantity,$salling){
+        $this->db->select()->from('branchs')->where('id',$Bid);
+        $sql=  $this->db->get();
+        $name="";
+        foreach ($sql->result() as $row){
+            $name=$row->store_name;
+        }
+        $date=strtotime(date('Y-m-d'));
+        $data=array('branch_id'=>$Bid,            
+            'branch_name'=>$name,
+            'item_id'=>$Iid,
+            'cost'=>$price,
+            'stock'=>$stock,
+            'category_id'=>$cat,
+            'supplier_id'=>$sup,
+            'date'=>$date,
+            'Quantity'=>$quantity,
+            'added_by'=>$uid,
+            'price',$salling);
+        $this->db->insert('stocks_history',$data);
+    }
+    function add_stock($id,$Bid,$saling,$unit){
+        $this->db->select()->from('branchs')->where('id',$Bid);
+        $sql=  $this->db->get();
+        $name="";
+        foreach ($sql->result() as $row){
+            $name=$row->store_name;
+        }
+        $data=array('item_id'=>$id,
+                     'branch_id'=>$Bid,
+                    'branch_name'=>$name,
+                    'price'=>$saling,
+                    'stock'=>$unit);
+                $this->db->insert('stocks',$data);
+    }
+    function update_item_stock_history($id,$Bid,$category,$suppier,$cost,$unit,$quantity,$saling)
+                {
+        $this->db->select()->from('stocks_history')->where('branch_id',$Bid)->where('item_id',$id);
+        $sql=  $this->db->get();
+        $hstock="";      
+        foreach ($sql->result() as $row){
+            $hstock=$row->stock;                        
+        }        
+        $data=array('category_id'=>$category,
+            'supplier_id'=>$suppier,
+            'cost'=>$cost,
+            'stock'=>$unit,
+            'Quantity'=>$quantity);        
+        $this->db->where('item_id',$id);
+        $this->db->where('branch_id',$Bid);
+        $this->db->update('stocks_history',$data);
+        
+        $this->update_stock($id, $Bid, $unit,$hstock,$saling);
+        
+        
+    }
+    function update_stock($id, $Bid, $unit,$hstock,$saling){
+        $this->db->select()->from('stocks')->where('branch_id',$Bid)->where('item_id',$id);
+        $sql=  $this->db->get();
+        $cstock="";   
+        $do_stock;
+        foreach ($sql->result() as $row){
+            $cstock=$row->stock; 
+        }
+        if($hstock <$unit){
+            $do_stock=$cstock+$unit-$hstock;            
+        }elseif ($hstock >$unit) {
+            $do_stock=$cstock-($hstock-$unit); 
+            if($do_stock<0){
+                $do_stock=0;
+            }
+        }else{
+            $do_stock=$hstock;
+        }
+                
+            
+        
+        $data=array('stock'=>$do_stock,'price'=>$saling);
+        $this->db->where('item_id',$id);
+        $this->db->where('branch_id',$Bid);
+        $this->db->update('stocks',$data);
+                
+        
+    }
+                                             	
+                                  
                                    
 }
 ?>

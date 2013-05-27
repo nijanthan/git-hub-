@@ -185,3 +185,32 @@ ERROR - 2013-05-26 12:07:47 --> Could not find the language line "supplier"
 ERROR - 2013-05-26 12:07:55 --> Could not find the language line "category"
 ERROR - 2013-05-26 12:07:55 --> Could not find the language line "supplier"
 ERROR - 2013-05-26 12:32:03 --> Could not find the language line "current_stock"
+ERROR - 2013-05-26 20:49:04 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-05-26 20:50:58 --> Could not find the language line "stock"
+ERROR - 2013-05-26 20:50:58 --> Could not find the language line "category"
+ERROR - 2013-05-26 20:50:58 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 20:50:58 --> Query error: Unknown column '0' in 'field list'
+ERROR - 2013-05-26 20:52:26 --> Could not find the language line "stock"
+ERROR - 2013-05-26 20:52:26 --> Could not find the language line "category"
+ERROR - 2013-05-26 20:52:26 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 20:53:44 --> Could not find the language line "stock"
+ERROR - 2013-05-26 20:53:44 --> Could not find the language line "category"
+ERROR - 2013-05-26 20:53:44 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 20:54:34 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-05-26 20:55:10 --> Could not find the language line "stock"
+ERROR - 2013-05-26 20:55:10 --> Could not find the language line "category"
+ERROR - 2013-05-26 20:55:10 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 20:55:15 --> 404 Page Not Found --> item
+ERROR - 2013-05-26 20:58:17 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2013-05-26 20:58:53 --> Could not find the language line "stock"
+ERROR - 2013-05-26 20:58:53 --> Could not find the language line "category"
+ERROR - 2013-05-26 20:58:53 --> Could not find the language line "supplier"
+ERROR - 2013-05-26 20:58:53 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\items.php 290
+ERROR - 2013-05-26 20:58:54 --> Severity: Notice  --> Undefined variable: item_id C:\wamp\www\PointOfSale\application\controllers\items.php 291
+ERROR - 2013-05-26 20:58:54 --> Query error: Column 'item_id' cannot be null
+ERROR - 2013-05-26 21:00:55 --> Could not find the language line "stock"
+ERROR - 2013-05-26 21:00:55 --> Could not find the language line "category"
+ERROR - 2013-05-26 21:00:55 --> Could not find the language line "supplier"

@@ -27,7 +27,7 @@ class Items extends CI_Controller{
                 $this->load->library("pagination"); 
                 $this->load->model('branch');
                 $this->load->model('item_model');
-	        $config["base_url"] = base_url()."index.php/item/get_items";
+	        $config["base_url"] = base_url()."index.php/items/get_items";
 	        $config["total_rows"] = $this->item_model->item_count_for_admin($_SESSION['Bid']);// get item count
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
@@ -45,7 +45,7 @@ class Items extends CI_Controller{
                 $this->load->library("pagination"); 
                 $this->load->model('branch');
                 $this->load->model('item_model');
-	        $config["base_url"] = base_url()."index.php/item/get_items";
+	        $config["base_url"] = base_url()."index.php/items/get_items";
                 $config["total_rows"] = $this->item_model->pos_item_count($_SESSION['Uid'],$_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
@@ -268,7 +268,7 @@ class Items extends CI_Controller{
                             $this->form_validation->set_rules('quantity', $this->lang->line('quantity'),'required|max_length[40]|regex_match[/^[0-9]+$/]|xss_clean');
                             $this->form_validation->set_rules("category",$this->lang->line('category'),"required");
                             $this->form_validation->set_rules("supplier",$this->lang->line('supplier'),"required");
-                            $id=  $this->input->post('id');
+                            
                         if ( $this->form_validation->run() !== false ) {
                                     $this->load->model('item_model');
                                     $code=$this->input->post('code');
@@ -276,7 +276,7 @@ class Items extends CI_Controller{
                                     $item_name=$this->input->post('item_name');
                                     $description=$this->input->post('description');
                                     $cost=$this->input->post('cost_price');
-                                    $unit=$this->input->post('unit_price');                                    
+                                    $unit=$this->input->post('stock');                                    
                                     $saling=$this->input->post('salling_price');
                                     $discount=$this->input->post('discount_amount');
                                     $start=strtotime($this->input->post('start_date'));
@@ -287,8 +287,11 @@ class Items extends CI_Controller{
                                     $location=$this->input->post('location');                                    
                                     $category=$this->input->post('category')."<br>";
                                     $suppier=$this->input->post('supplier');
-                                    $item_id= $this->item_model->add_item($id,$_SESSION['Bid'],$_SESSION['Uid'],$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
-                                    $this->item_model->item_in_items_branch($item_id,$_SESSION['Bid']);
+                                    $item_id= $this->item_model->add_item($_SESSION['Bid'],$_SESSION['Uid'],$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
+                                    $this->item_model->item_in_items_branch($item_id,$_SESSION['Bid']);                                    
+                                    $this->item_model->add_stock_branch($_SESSION['Bid'],$item_id,$cost,$unit,$category,$suppier,$_SESSION['Uid'],$quantity,$saling);
+                                    $this->item_model->add_stock($item_id,$_SESSION['Bid'],$saling,$unit);
+                                    
                                     redirect('items');
             
                         }else{
@@ -399,7 +402,7 @@ class Items extends CI_Controller{
                                     $item_name=$this->input->post('item_name');
                                     $description=$this->input->post('description');
                                     $cost=$this->input->post('cost_price');
-                                    $unit=$this->input->post('unit_price');                                    
+                                    $unit=$this->input->post('stock');                                    
                                     $saling=$this->input->post('salling_price');
                                     $discount=$this->input->post('discount_amount');
                                     $start=strtotime($this->input->post('start_date'));
@@ -411,6 +414,8 @@ class Items extends CI_Controller{
                                     $category=$this->input->post('category');
                                     $suppier=$this->input->post('supplier');
                                     $this->item_model->update_item($id,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier);
+                                    $this->item_model->update_item_stock_history($id,$_SESSION['Bid'],$category,$suppier,$cost,$unit,$quantity,$saling);
+                                    
                                     $this->get_items();
             
                         }else{

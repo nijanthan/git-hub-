@@ -115,6 +115,7 @@ $lang['company']='Comapany';
  $lang['cate_name']='Category Name';
  $lang['receiving_item']='Stock Items';
  $lang['current_stock']='Available Stocks';
+ $lang['receiving']='Receiving';
 
 
 
