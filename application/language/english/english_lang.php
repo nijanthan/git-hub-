@@ -116,6 +116,13 @@ $lang['company']='Comapany';
  $lang['receiving_item']='Stock Items';
  $lang['current_stock']='Available Stocks';
  $lang['receiving']='Receiving';
+ 
+ 
+ $lang['tax']='Tax';
+ $lang['commodity']=' Tax Commodity';
+ $lang['tax_area']='Tax Area';
+ $lang['tax_type']='Tax Type';
+ 
 
 
 

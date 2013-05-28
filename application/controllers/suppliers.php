@@ -46,14 +46,14 @@ class Suppliers extends CI_Controller{
                 $this->load->model('branch');
                 $this->load->model('supplier_model');
 	        $config["base_url"] = base_url()."index.php/supplier/get_suppliers";
-                $config["total_rows"] = $this->supplier_model->pos_supplier_count($_SESSION['Uid'],$_SESSION['Bid']);
+                $config["total_rows"] = $this->supplier_model->pos_supplier_count($_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
                 $data['branch']=$this->supplier_model->get_selected_branch_for_view();
-                $data['count']=$this->supplier_model->pos_supplier_count($_SESSION['Uid'],$_SESSION['Bid']);             
-	        $data["row"] = $this->supplier_model->get_supplier_details($config["per_page"], $page,$_SESSION['Uid'],$_SESSION['Bid']);
+                $data['count']=$this->supplier_model->pos_supplier_count($_SESSION['Bid']);             
+	        $data["row"] = $this->supplier_model->get_supplier_details($config["per_page"], $page,$_SESSION['Bid']);
                 $data['urow']=$this->supplier_model->get_suppliers();
 	        $data["links"] = $this->pagination->create_links(); 
                 

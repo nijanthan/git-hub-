@@ -97,6 +97,9 @@ class Home extends CI_Controller
            
            redirect('receiving');
        }
+       if($this->input->post('taxes')){
+           redirect('taxes_ci');
+       }
     }
      function user_groups(){
         redirect('user_groupsCI');

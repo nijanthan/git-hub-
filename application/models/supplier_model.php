@@ -29,7 +29,7 @@ class Supplier_model extends CI_Model{
           return false;          
    }
    function pos_supplier_count($id,$branch){       
-            $this->db->where('supplier_id <>',$id);
+          
             $this->db->where('supplier_delete ',0);
             $this->db->where('supplier_active',0);  
             $this->db->where('active_status',0);
@@ -39,8 +39,7 @@ class Supplier_model extends CI_Model{
         
     }
     function get_supplier_details($limit,$start,$id,$branch) {
-            $this->db->limit($limit, $start);
-            $this->db->where('supplier_id <>',$id);
+            $this->db->limit($limit, $start);            
             $this->db->where('supplier_delete ',0);
             $this->db->where('active_status',0);
             $this->db->where('supplier_active',0);        
