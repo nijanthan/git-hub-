@@ -193,3 +193,16 @@ ERROR - 2013-05-29 13:08:00 --> Severity: Notice  --> Undefined variable: id C:\
 ERROR - 2013-05-29 13:08:19 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 107
 ERROR - 2013-05-29 13:08:19 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 107 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
 ERROR - 2013-05-29 13:08:19 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55
+ERROR - 2013-05-29 14:24:12 --> 404 Page Not Found --> brands/index
+ERROR - 2013-05-29 15:45:33 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-29 15:45:33 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-29 15:47:00 --> Severity: Notice  --> Undefined property: Brands::$item_brands C:\wamp\www\PointOfSale\application\controllers\brands.php 22
+ERROR - 2013-05-29 15:54:32 --> 404 Page Not Found --> brands/brands_manage
+ERROR - 2013-05-29 15:54:53 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-29 15:54:53 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-29 16:29:51 --> 404 Page Not Found --> brands/edit_brands
+ERROR - 2013-05-29 16:38:23 --> 404 Page Not Found --> taxes_ci/update_brands
+ERROR - 2013-05-29 16:44:54 --> 404 Page Not Found --> departmentselecting
+ERROR - 2013-05-29 16:53:55 --> 404 Page Not Found --> brands/get_tax_types
+ERROR - 2013-05-29 16:54:58 --> 404 Page Not Found --> brands/get_tax_types
+ERROR - 2013-05-29 16:55:22 --> 404 Page Not Found --> brands/inactive_brands

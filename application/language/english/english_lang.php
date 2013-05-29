@@ -127,7 +127,8 @@ $lang['company']='Comapany';
  $lang['tdescription']='Tax Description';
  $lang['tschedule']='Tax Schedule';
  $lang['tpart']='Tax Part';
- 
+ $lang['brands']='Brands';
+ $lang['brands_name']='Brands Name';
  
  
 

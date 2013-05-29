@@ -100,6 +100,9 @@ class Home extends CI_Controller
        if($this->input->post('taxes')){
            redirect('taxes_ci');
        }
+       if($this->input->post('brand')){
+            redirect('brands');
+       }
     }
      function user_groups(){
         redirect('user_groupsCI');
