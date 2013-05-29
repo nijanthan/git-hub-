@@ -204,3 +204,13 @@ ERROR - 2013-05-28 17:16:30 --> 404 Page Not Found --> taxes
 ERROR - 2013-05-28 17:16:36 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 108
 ERROR - 2013-05-28 17:16:39 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 108
 ERROR - 2013-05-28 17:20:14 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 116
+ERROR - 2013-05-28 18:00:58 --> Query error: Unknown column 'vranch_id' in 'where clause'
+ERROR - 2013-05-28 18:01:12 --> Query error: Unknown column 'rate' in 'where clause'
+ERROR - 2013-05-28 18:05:06 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 39
+ERROR - 2013-05-28 18:05:06 --> 404 Page Not Found --> taxes
+ERROR - 2013-05-28 18:15:45 --> Severity: Notice  --> Undefined property: Taxes_ci::$taxes C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 160
+ERROR - 2013-05-28 18:16:25 --> Severity: Notice  --> Undefined property: Taxes_ci::$taxes C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 160
+ERROR - 2013-05-28 18:17:23 --> Severity: Notice  --> Undefined property: Taxes_ci::$taxes C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 160
+ERROR - 2013-05-28 18:17:46 --> Severity: Notice  --> Undefined property: Taxes_ci::$taxes C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 161
+ERROR - 2013-05-28 18:57:57 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-28 18:57:57 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295

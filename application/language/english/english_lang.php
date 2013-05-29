@@ -122,6 +122,11 @@ $lang['company']='Comapany';
  $lang['commodity']=' Tax Commodity';
  $lang['tax_area']='Tax Area';
  $lang['tax_type']='Tax Type';
+ $lang['tax_area']='Tax Area';
+ $lang['tCode']='Tax Code';
+ $lang['tdescription']='Tax Description';
+ $lang['tschedule']='Tax Schedule';
+ $lang['tpart']='Tax Part';
  
 
 
