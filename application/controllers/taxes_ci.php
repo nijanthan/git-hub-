@@ -41,15 +41,177 @@ class Taxes_ci extends CI_Controller{
            if($this->input->post('commodity')){
                $this->get_tax_commodity();
            }
+           if($this->input->post('tax_types')){
+               $this->get_tax_types();
+           }
        }
           
     }
+    function get_tax_types(){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+            if($_SESSION['admin']==2){// check user is admin or not
+                $this->load->library("pagination"); 
+                $this->load->model('taxes');                
+	        $config["base_url"] = base_url()."index.php/taxes_ci/get_tax_types";
+	        $config["total_rows"] = $this->taxes->get_tax_type_count_for_admin($_SESSION['Bid']);// get supplier count
+	        $config["per_page"] = 8;
+	        $config["uri_segment"] = 3;
+	        $this->pagination->initialize($config);	 
+	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;               
+                $data['count']=$this->taxes->get_tax_type_count_for_admin($_SESSION['Bid']);                 
+	        $data["row"] = $this->taxes->get_tax_type_details_for_admin($config["per_page"], $page,$_SESSION['Bid']);           
+	        $data["links"] = $this->pagination->create_links();               
+                $this->load->view('template/header');
+                $this->load->view('tax/tax_type_list',$data);
+                $this->load->view('template/footer');
+            }else{
+                $this->load->library("pagination");                 
+                $this->load->model('taxes');
+	        $config["base_url"] = base_url()."index.php/taxes_ci/get_tax_types";
+                $config["total_rows"] = $this->taxes->get_tax_type_count_for_user($_SESSION['Bid']);
+	        $config["per_page"] = 8;
+	        $config["uri_segment"] = 3;
+	        $this->pagination->initialize($config);	 
+	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;                
+                $data['count']=$this->taxes->get_tax_type_count_for_user($_SESSION['Bid']);             
+	        $data["row"] = $this->taxes->get_tax_type_details_for_user($config["per_page"], $page,$_SESSION['Bid']);               
+	        $data["links"] = $this->pagination->create_links(); 
+                $this->load->view('template/header');
+                $this->load->view('tax/tax_type_list',$data);
+                $this->load->view('template/footer');
+            }                      
+       }
+    }
+    function manage_tax_types(){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+             if($this->input->post('cancel')){
+                 redirect('taxes_ci/get_taxs');
+             }
+             if($this->input->post('delete_ad')){
+                 $this->load->model('taxes');                
+                 $data1 = $this->input->post('mycheck'); 
+                 if(!$data1==''){         
+                 foreach( $data1 as $key => $value){   
+                  $this->taxes->delete_tax_type_for_admin($value,$_SESSION['Uid']);
+             }
+             }   redirect('taxes_ci/get_tax_types');          
+         }
+         if($this->input->post('add_tax')){
+                $this->load->view('template/header');
+                $this->load->view('tax/add_tax_types');
+                $this->load->view('template/footer');   
+         }
+         if($this->input->post('delete')){
+                 $this->load->model('taxes');                    
+                 $data1 = $this->input->post('mycheck'); 
+                 if(!$data1==''){         
+                 foreach( $data1 as $key => $value){   
+                  $this->taxes->delete_tax_type_for_user($value,$_SESSION['Bid']);
+         }
+                 }redirect('taxes_ci/get_tax_types'); 
+         }
+         }
+    }
+    function edit_tax_type($id){
+          if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+            $this->load->model('taxes');
+            $data['row']=  $this->taxes->get_tax_types_for_edit($id);
+                $this->load->view('template/header');
+                $this->load->view('tax/edit_tax_types',$data);
+                $this->load->view('template/footer');     
+          }
+    }
+    function update_tax_type(){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+             if($this->input->post('cancel')){
+                 redirect('taxes_ci/get_tax_types');
+             }
+             if($this->input->post('save')){
+                $this->load->library('form_validation');
+                $this->form_validation->set_rules("name",$this->lang->line('tax_type'),'required'); 
+                $id=  $this->input->post('id');
+                  if ( $this->form_validation->run() !== false ) {
+			  $this->load->model('taxes');                          
+                          $name=$this->input->post('name');
+                          if($this->taxes->check_unique_tax_types($name,$_SESSION['Bid'],$id)){
+                              $this->taxes->update_tax_type($id,$name);
+                              redirect('taxes_ci/get_tax_types');                          
+                          }else{
+                              echo "this is tax type is already added in this branch";
+                              $this->edit_tax_type($id);
+                          }                          
+                  }else{
+                      $this->edit_tax_type($id);
+                      
+                  }
+             }
+         }
+    }
+    function delete_tax_type_for($id){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+            $this->load->model('taxes');
+            $this->taxes->delete_tax_type_for_admin($id,$_SESSION['Uid']);
+            redirect('taxes_ci/get_tax_types');  
+         }
+    }
+    function inactive_tax_types($id){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+            $this->load->model('taxes');
+            $this->taxes->inactivate_tx_type($id);
+            redirect('taxes_ci/get_tax_types');  
+         }
+    }
+    function active_tax_types($id){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+            $this->load->model('taxes');
+            $this->taxes->activate_tx_type($id);
+            redirect('taxes_ci/get_tax_types');  
+         }
+    }
+    function add_new_tax_type(){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+          $this->load->library('form_validation');
+                $this->form_validation->set_rules("name",$this->lang->line('tax_type'),'required'); 
+               
+                  if ( $this->form_validation->run() !== false ) {
+			  $this->load->model('taxes');                          
+                          $name=$this->input->post('name');
+                          if($this->taxes->check_unique_tax_types_for_add($name,$_SESSION['Bid'])){
+                              $this->taxes->add_new_tax_type($name,$_SESSION['Bid']);
+                              redirect('taxes_ci/get_tax_types');                          
+                          }else{
+                              echo "this is tax type is already added in this branch";
+                              $this->load->view('template/header');
+                              $this->load->view('tax/add_tax_types');
+                              $this->load->view('template/footer');  
+                          }                          
+                  }else{
+                     $this->load->view('template/header');
+                     $this->load->view('tax/add_tax_types');
+                     $this->load->view('template/footer');  
+                      
+                  }   
+         }
+    }
+    function delete_tax_type($id){
+          if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{             
+            $this->load->model('taxes');
+            $this->taxes->delete_tax_type_for_user($id,$_SESSION['Uid']);
+            redirect('taxes_ci/get_tax_types'); 
+            
+          }
+    }
+
+
+
+
+    // commmodity functions
     function get_tax_commodity(){
         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
             if($_SESSION['admin']==2){// check user is admin or not
                 $this->load->library("pagination"); 
                 $this->load->model('taxes');                
-	        $config["base_url"] = base_url()."index.php/taxes_ci/tax_area";
+	        $config["base_url"] = base_url()."index.php/taxes_ci/get_tax_commodity";
 	        $config["total_rows"] = $this->taxes->get_tax_commodity_count_for_admin($_SESSION['Bid']);// get supplier count
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
@@ -66,7 +228,7 @@ class Taxes_ci extends CI_Controller{
             }else{
                 $this->load->library("pagination");                 
                 $this->load->model('taxes');
-	        $config["base_url"] = base_url()."index.php/taxes_ci/tax_area";
+	        $config["base_url"] = base_url()."index.php/taxes_ci/get_tax_commodity";
                 $config["total_rows"] = $this->taxes->get_tax_commodity_count_for_user($_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
@@ -112,7 +274,7 @@ class Taxes_ci extends CI_Controller{
                 $data1 = $this->input->post('mycheck'); 
                 if(!$data1==''){         
                  foreach( $data1 as $key => $value){   
-                  $this->taxes->delete_tax_area($value,$_SESSION['Uid']);
+                  $this->taxes->delete_tax_commoodity_for_user($value,$_SESSION['Uid']);
                }
             
         }redirect('taxes_ci/get_tax_commodity');
@@ -241,14 +403,14 @@ class Taxes_ci extends CI_Controller{
            redirect('taxes_ci/get_tax_commodity');
          }
     }
-
-
-
-
-
-
-    // tax area funcctions
-    
+    function delete_tax_commodity($id){
+         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
+          $this->load->model('taxes');
+          $this->taxes->delete_tax_commoodity_for_user($id,$_SESSION['Uid']);  
+           redirect('taxes_ci/get_tax_commodity');
+         }
+    }
+    // tax area funcctions   
     
     
     function tax_area(){

@@ -159,3 +159,37 @@ ERROR - 2013-05-29 09:52:40 --> Severity: Notice  --> Undefined variable: uid C:
 ERROR - 2013-05-29 09:52:43 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 90
 ERROR - 2013-05-29 09:52:43 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 90 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
 ERROR - 2013-05-29 09:52:43 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55
+ERROR - 2013-05-29 10:00:18 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 293
+ERROR - 2013-05-29 10:05:45 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-29 10:05:45 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-29 10:23:20 --> Query error: Unknown column 'status' in 'where clause'
+ERROR - 2013-05-29 10:33:41 --> Query error: Table 'pos.taxes_type' doesn't exist
+ERROR - 2013-05-29 10:34:03 --> Could not find the language line "tax_typw"
+ERROR - 2013-05-29 10:34:20 --> Could not find the language line "tax_typw"
+ERROR - 2013-05-29 10:36:38 --> Could not find the language line "tax_typw"
+ERROR - 2013-05-29 10:36:39 --> 404 Page Not Found --> taxes
+ERROR - 2013-05-29 10:36:59 --> 404 Page Not Found --> taxes
+ERROR - 2013-05-29 10:37:02 --> Could not find the language line "tax_typw"
+ERROR - 2013-05-29 10:37:06 --> Could not find the language line "tax_typw"
+ERROR - 2013-05-29 10:37:12 --> Could not find the language line "tax_typw"
+ERROR - 2013-05-29 10:47:02 --> Severity: Notice  --> Use of undefined constant o - assumed 'o' C:\wamp\www\PointOfSale\application\models\taxes.php 356
+ERROR - 2013-05-29 10:57:37 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 92
+ERROR - 2013-05-29 10:57:37 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 92 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
+ERROR - 2013-05-29 10:57:37 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55
+ERROR - 2013-05-29 11:12:04 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 92
+ERROR - 2013-05-29 11:12:04 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 92 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
+ERROR - 2013-05-29 11:12:04 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55
+ERROR - 2013-05-29 11:13:35 --> Query error: Unknown column 'deleted_status' in 'where clause'
+ERROR - 2013-05-29 11:14:25 --> 404 Page Not Found --> taxes
+ERROR - 2013-05-29 13:07:55 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 107
+ERROR - 2013-05-29 13:07:55 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 107 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
+ERROR - 2013-05-29 13:07:55 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55
+ERROR - 2013-05-29 13:07:55 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 111
+ERROR - 2013-05-29 13:07:55 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 111
+ERROR - 2013-05-29 13:08:00 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 107
+ERROR - 2013-05-29 13:08:00 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 107 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
+ERROR - 2013-05-29 13:08:00 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55
+ERROR - 2013-05-29 13:08:00 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 111
+ERROR - 2013-05-29 13:08:19 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php 107
+ERROR - 2013-05-29 13:08:19 --> Severity: Warning  --> Missing argument 2 for Taxes::delete_tax(), called in C:\wamp\www\PointOfSale\application\controllers\taxes_ci.php on line 107 and defined C:\wamp\www\PointOfSale\application\models\taxes.php 54
+ERROR - 2013-05-29 13:08:19 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\taxes.php 55

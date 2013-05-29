@@ -57,7 +57,7 @@ class Taxes extends CI_Model{
         $this->db->update('taxes',$data);
     }
     function get_tax_types($bid){
-        $this->db->select()->from('tax_types')->where('branch_id',$bid)->where('active_status',0)->where('status',0);
+        $this->db->select()->from('tax_types')->where('branch_id',$bid)->where('active_status',0)->where('delete_status',0);
         $sql=$this->db->get();
         return $sql->result();
     }
@@ -310,5 +310,93 @@ class Taxes extends CI_Model{
         $this->db->where('id',$id);
         $this->db->update('taxes_commodity',$data);
     }
+    function delete_tax_commoodity_for_user($id,$uid){
+        $data=array('active_status'=>1,'deleted_by'=>$uid);
+        $this->db->where('id',$id);
+        $this->db->update('taxes_commodity',$data);
+    }
+    // tax type functions
+    function get_tax_type_count_for_admin($bid){
+            $this->db->where('delete_status',0); 
+            $this->db->where('branch_id',$bid);         
+            $this->db->from('tax_types');
+            return $this->db->count_all_results(); 
+    }
+    function get_tax_type_count_for_user($bid){
+            $this->db->where('delete_status',0);     
+            $this->db->where('active_status',0);
+            $this->db->where('branch_id',$bid);         
+            $this->db->from('tax_types');
+            return $this->db->count_all_results();
+    }
+    function get_tax_type_details_for_admin($limit, $start,$bid){
+                $this->db->limit($limit, $start);            
+                $this->db->where('delete_status',0); 
+                $this->db->where('branch_id',$bid); 
+                $query = $this->db->get('tax_types');
+                return $query->result();
+    }
+    function get_tax_type_details_for_user($limit, $start,$bid){
+                $this->db->limit($limit, $start);            
+                $this->db->where('delete_status',0); 
+                $this->db->where('active_status',0);
+                $this->db->where('branch_id',$bid); 
+                $query = $this->db->get('tax_types');
+                return $query->result();
+    }
+
+function get_tax_types_for_edit($id){
+    $this->db->select()->from('tax_types')->where('id',$id);
+    $sql=  $this->db->get();
+    return $sql->result();   
+}
+function check_unique_tax_types($name,$bid,$id){
+    $this->db->select()->from('tax_types')->where('type',$name)->where('branch_id',$bid)->where('id <>',$id)->where('delete_status',0);
+    $sql=  $this->db->get();
+    if($sql->num_rows()>0){
+        return FALSE;
+    }else{
+        return TRUE;
+    }
+}
+function update_tax_type($id,$name){
+    $data=array('type'=>$name);
+    $this->db->where('id',$id);
+    $this->db->update('tax_types',$data);
+}
+function delete_tax_type_for_admin($id,$bid){
+        $data=array('delete_status'=>1,'active_status'=>1,'deleted_by'=>$bid);
+        $this->db->where('id',$id);
+        $this->db->update('tax_types',$data);
+}
+function inactivate_tx_type($id){
+        $data=array('active_status'=>1);
+        $this->db->where('id',$id);
+        $this->db->update('tax_types',$data);
+}
+
+function activate_tx_type($id) {
+          $data=array('active_status'=>0);
+        $this->db->where('id',$id);
+        $this->db->update('tax_types',$data);
+}
+function check_unique_tax_types_for_add($name,$bid){
+    $this->db->select()->from('tax_types')->where('type',$name)->where('branch_id',$bid)->where('delete_status',0);
+    $sql=  $this->db->get();
+    if($sql->num_rows()>0){
+        return FALSE;
+      }else{
+          return TRUE;
+      }      
+}
+function add_new_tax_type($name,$bid){
+    $data=array('branch_id'=>$bid,'type'=>$name);
+    $this->db->insert('tax_types',$data);
+}
+function delete_tax_type_for_user($id,$uid){
+    $data=array('active_status'=>1,'deleted_by'=>$uid);
+    $this->db->where('id',$id);
+    $this->db->update('tax_types',$data);
+}
 }
 ?>
