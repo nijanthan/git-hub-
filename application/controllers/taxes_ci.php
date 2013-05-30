@@ -85,7 +85,7 @@ class Taxes_ci extends CI_Controller{
     function manage_tax_types(){
          if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
              if($this->input->post('cancel')){
-                 redirect('taxes_ci/get_taxs');
+                 redirect('home');
              }
              if($this->input->post('delete_ad')){
                  $this->load->model('taxes');                
@@ -267,7 +267,7 @@ class Taxes_ci extends CI_Controller{
                 $this->load->view('template/footer');
         }
         if($this->input->post('cancel')){
-              redirect('taxes_ci/get_taxs');
+              redirect('home');
         }
         if($this->input->post('delete')){
             $this->load->model('taxes');                   
@@ -525,7 +525,7 @@ class Taxes_ci extends CI_Controller{
                 $this->load->view('template/footer');
         }
         if($this->input->post('cancel')){
-              redirect('taxes_ci/get_taxs');
+              redirect('home');
         }
         if($this->input->post('delete')){
             $this->load->model('taxes');                   
@@ -658,7 +658,7 @@ class Taxes_ci extends CI_Controller{
                 $this->load->view('template/footer');
         }
         if($this->input->post('cancel')){
-            redirect('taxes_ci/get_taxs');
+            redirect('home');
         }
         if($this->input->post('delete_ad')){
             $this->load->model('taxes');        

@@ -428,3 +428,39 @@ ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdCla
 ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
 ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
 ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 17:25:35 --> Query error: Table 'pos.items_x_branchs' doesn't exist
+ERROR - 2013-05-30 17:27:22 --> Query error: Table 'pos.items_x_branchs' doesn't exist
+ERROR - 2013-05-30 17:29:10 --> Severity: Notice  --> Undefined property: stdClass::$item_id C:\wamp\www\PointOfSale\application\views\item_list.php 49
+ERROR - 2013-05-30 17:29:10 --> Severity: Notice  --> Undefined property: stdClass::$item_id C:\wamp\www\PointOfSale\application\views\item_list.php 49
+ERROR - 2013-05-30 17:29:10 --> Severity: Notice  --> Undefined property: stdClass::$item_id C:\wamp\www\PointOfSale\application\views\item_list.php 49
+ERROR - 2013-05-30 17:29:10 --> Severity: Notice  --> Undefined property: stdClass::$item_id C:\wamp\www\PointOfSale\application\views\item_list.php 49
+ERROR - 2013-05-30 17:29:10 --> Severity: Notice  --> Undefined property: stdClass::$item_id C:\wamp\www\PointOfSale\application\views\item_list.php 49
+ERROR - 2013-05-30 17:31:14 --> Severity: Notice  --> Undefined property: stdClass::$branch_name C:\wamp\www\PointOfSale\application\views\item_list.php 46
+ERROR - 2013-05-30 17:32:20 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-30 17:32:20 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-30 17:33:38 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-30 17:33:38 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-30 17:53:08 --> 404 Page Not Found --> item_category/index
+ERROR - 2013-05-30 17:53:10 --> 404 Page Not Found --> item_category/index
+ERROR - 2013-05-30 17:53:13 --> 404 Page Not Found --> item_category/index
+ERROR - 2013-05-30 17:53:39 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_cate_model.php 8
+ERROR - 2013-05-30 17:53:39 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_cate_model.php 8
+ERROR - 2013-05-30 18:07:47 --> 404 Page Not Found --> item_category/tax_area
+ERROR - 2013-05-30 18:17:30 --> 404 Page Not Found --> item_category/update_tax_area
+ERROR - 2013-05-30 18:29:26 --> Severity: Notice  --> Undefined variable: data C:\wamp\www\PointOfSale\application\controllers\item_category.php 133
+ERROR - 2013-05-30 18:29:26 --> Severity: Notice  --> Undefined variable: row C:\wamp\www\PointOfSale\application\views\item_category\edit_category.php 4
+ERROR - 2013-05-30 18:29:26 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\item_category\edit_category.php 4
+ERROR - 2013-05-30 18:30:04 --> Could not find the language line "name"
+ERROR - 2013-05-30 18:30:04 --> Query error: Table 'pos.item_category_x_branchs' doesn't exist
+ERROR - 2013-05-30 18:30:49 --> Could not find the language line "name"
+ERROR - 2013-05-30 18:31:03 --> Could not find the language line "name"
+ERROR - 2013-05-30 18:31:57 --> 404 Page Not Found --> item_category/inactive_item
+ERROR - 2013-05-30 18:32:28 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:32:34 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:32:57 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:33:41 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:33:45 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:33:50 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:34:20 --> 404 Page Not Found --> item_category/get_taxs
+ERROR - 2013-05-30 18:36:19 --> 404 Page Not Found --> item_category/active_item
+ERROR - 2013-05-30 18:46:47 --> Could not find the language line "name"

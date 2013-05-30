@@ -41,16 +41,15 @@ class Item_model extends CI_Model{
         
    }
    function get_selected_branch_for_view(){
-         $this->db->select()->from('items_x_branchs')->where('delete_status',0)->where('active_status',0);
+         $this->db->select()->from('branchs')->where('delete_status',0)->where('active_status',0);
          $sql=  $this->db->get();
          return $sql->result();             
     }
     function delete_items_for_user($id,$bid,$uid){
-        $data=array('item_active '=>1,
+        $data=array('active_status '=>1,
                     'deleted_by'=>$uid);
-        $this->db->where('item_id',$id);
-        $this->db->where('branch_id',$bid);
-        $this->db->update('items_x_branchs',$data);
+        $this->db->where('id',$id);
+        $this->db->update('items',$data);
     }
     function delete_items_details_in_admin($id,$uid){
         $data=array('active_status '=>1,
@@ -75,32 +74,8 @@ class Item_model extends CI_Model{
         $this->db->where('id',$id);        
         $this->db->update('items',$data);
     }
-    function add_category($name,$bid){
-        $data=array('category_name'=>$name,
-                    'branch_id'=>$bid);
-                $this->db->insert('item_category',$data);
-                return $this->db->insert_id();                
-    }
-    function add_item_category_branch($id,$bid){
-        $this->db->select()->from('branchs')->where('id',$bid);
-        $sql=  $this->db->get();
-        foreach ($sql->result() as $row){
-            $name=$row->store_name;
-        }
-        $data=array('branch_id'=>$bid,
-                    'branch_name'=>$name,
-                    'category_id'=>$id);
-                $this->db->insert('item_category_x_branchs',$data);
-    }
-    function check_item_category($cat,$bid){
-        $this->db->select()->from('item_category')->where('branch_id',$bid)->where('category_name',$cat);
-        $sql=  $this->db->get();
-        if($sql->num_rows()>0){
-            return TRUE;
-        }else{
-            return FALSE;
-        }
-    }
+    
+    
     function get_item_category($id){
         $this->db->select()->from('item_category_x_branchs')->where('branch_id',$id)->where('category_active',0);
         $sql=  $this->db->get();

@@ -13,8 +13,8 @@ if($count!=0){
         <td style="width: 100px"><?php echo $erow->selling_price ?></td><td  style="width: 100px">
             
             <?php foreach ($branch as $user_b){
-            if($user_b->item_id==$erow->id){
-                echo $user_b->branch_name;
+            if($user_b->id==$erow->branch_id){
+                echo $user_b->store_name;
             }
                     
             }?>
@@ -29,11 +29,7 @@ if($count!=0){
 foreach ($row as $erow){
         
    
-?>
-
-
-
-    
+?>   
     
     <tr><td><input type="checkbox" name="mycheck[]" value="<?php echo $erow->id ?>" /><td style="width: 100px"><?php echo $erow->code ?>
         </td><td  style="width: 100px"><?php echo $erow->name ?></td><td  style="width: 150px">
@@ -46,8 +42,8 @@ foreach ($row as $erow){
         <td style="width: 100px"><?php echo $erow->selling_price ?></td><td  style="width: 100px">
             
            <?php foreach ($branch as $user_b){
-            if($user_b->item_id==$erow->id){
-                echo $user_b->branch_name;
+            if($user_b->id==$erow->branch_id){
+                echo $user_b->store_name;
             }
                     
             }?>

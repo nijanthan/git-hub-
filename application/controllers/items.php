@@ -57,7 +57,7 @@ class Items extends CI_Controller{
                 $data['brands']=  $this->item_model->get_brands_user($_SESSION['Bid']);             
                 $data['count']=$this->item_model->pos_item_count($_SESSION['Bid']);             
 	        $data["row"] = $this->item_model->get_item_details($config["per_page"], $page,$_SESSION['Bid']);
-                $data['urow']=$this->item_model->get_items();
+                
 	        $data["links"] = $this->pagination->create_links(); 
                 
                 $this->load->view('template/header');
@@ -144,15 +144,7 @@ class Items extends CI_Controller{
                  redirect('home');
              } 
             }
-            if($this->input->post('add_category')){
-                if($_SESSION['Item_per']['add']==1 or $_SESSION['Item_per']['edit']==1){
-                     $this->load->view('template/header');
-                     $this->load->view('add_item_category');
-                     $this->load->view('template/footer');
-                 }else{
-                     $this->get_items();
-                 }
-            }
+           
             
         }
         

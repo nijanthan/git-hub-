@@ -103,6 +103,25 @@ class Home extends CI_Controller
        if($this->input->post('brand')){
             redirect('brands');
        }
+       if($this->input->post('categorys')){
+           redirect('item_category');
+       }
+       if($this->input->post('taxes')){
+               redirect('taxes_ci/taxes_details');
+           }
+           
+           if($this->input->post('tax_area')){
+               redirect('taxes_ci/tax_area');
+           }
+           if($this->input->post('commodity')){
+              redirect('taxes_ci/get_tax_commodity');
+           }
+           if($this->input->post('tax_types')){
+              redirect('taxes_ci/get_tax_types');
+           }
+           if($this->input->post('item_setting')){
+               redirect('item_setting');
+           }
     }
      function user_groups(){
         redirect('user_groupsCI');
