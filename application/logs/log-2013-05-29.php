@@ -206,3 +206,4 @@ ERROR - 2013-05-29 16:44:54 --> 404 Page Not Found --> departmentselecting
 ERROR - 2013-05-29 16:53:55 --> 404 Page Not Found --> brands/get_tax_types
 ERROR - 2013-05-29 16:54:58 --> 404 Page Not Found --> brands/get_tax_types
 ERROR - 2013-05-29 16:55:22 --> 404 Page Not Found --> brands/inactive_brands
+ERROR - 2013-05-29 18:08:17 --> 404 Page Not Found --> brands/inactive_brands

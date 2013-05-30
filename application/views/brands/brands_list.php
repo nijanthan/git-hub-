@@ -13,7 +13,7 @@ echo "<tr><td>";echo form_submit('delete_ad',$this->lang->line('delete'));echo "
 }else{
     foreach ($row as $trow ){ ?>
 <tr><td><input type="checkbox" name="mycheck[]" value="<?php echo $trow->id ?>" /></td><td><?php echo $trow->name ?></td>
-    <td><a href="<?php echo base_url() ?>index.php/taxes_ci/edit_tax_area/<?php echo $trow->id ?>">Edit</a></td><td><a href="<?php echo base_url() ?>index.php/taxes_ci/delete_tax_area/<?php echo $trow->id ?>">Delete</a></td></tr>
+    <td><a href="<?php echo base_url() ?>index.php/brands/edit_brands/<?php echo $trow->id ?>">Edit</a></td><td><a href="<?php echo base_url() ?>index.php/brands/delete_brands/<?php echo $trow->id ?>">Delete</a></td></tr>
 <?php }
 echo "<tr><td>";echo form_submit('delete',$this->lang->line('delete'));echo "</td><td>";echo form_submit('add_tax',$this->lang->line('add'));echo "</td><td>";echo form_submit('cancel',$this->lang->line('cancel')); echo "</td></tr>";
 
