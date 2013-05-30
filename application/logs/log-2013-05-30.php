@@ -196,3 +196,235 @@ ERROR - 2013-05-30 12:12:00 --> Could not find the language line "salling_price"
 ERROR - 2013-05-30 12:12:00 --> Severity: Notice  --> Undefined property: stdClass::$salling_price C:\wamp\www\PointOfSale\application\views\edit_item.php 26
 ERROR - 2013-05-30 12:12:00 --> Severity: Notice  --> Undefined property: stdClass::$tax1 C:\wamp\www\PointOfSale\application\views\edit_item.php 30
 ERROR - 2013-05-30 12:12:00 --> Severity: Notice  --> Undefined property: stdClass::$tax2 C:\wamp\www\PointOfSale\application\views\edit_item.php 31
+ERROR - 2013-05-30 12:29:08 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 51 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:08 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:08 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 58 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:08 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:34 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 51 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:34 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:34 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 58 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:34 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:37 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 51 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:37 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:37 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 58 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:37 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:38 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 51 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:38 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:29:38 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 58 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:29:38 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:30:22 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 51 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:30:22 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:30:22 --> Severity: Warning  --> Missing argument 2 for Item_model::pos_item_count(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 58 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 25
+ERROR - 2013-05-30 12:30:22 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 29
+ERROR - 2013-05-30 12:34:03 --> Severity: Warning  --> Missing argument 3 for Item_model::get_item_details(), called in C:\wamp\www\PointOfSale\application\controllers\items.php on line 59 and defined C:\wamp\www\PointOfSale\application\models\item_model.php 34
+ERROR - 2013-05-30 12:34:03 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\item_model.php 38
+ERROR - 2013-05-30 12:55:28 --> Could not find the language line "category"
+ERROR - 2013-05-30 12:59:42 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\views\edit_item.php 24
+ERROR - 2013-05-30 12:59:42 --> Severity: Notice  --> Undefined property: stdClass::$quantity C:\wamp\www\PointOfSale\application\views\edit_item.php 25
+ERROR - 2013-05-30 12:59:42 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 12:59:42 --> Severity: Notice  --> Undefined property: stdClass::$salling_price C:\wamp\www\PointOfSale\application\views\edit_item.php 26
+ERROR - 2013-05-30 12:59:43 --> Severity: Notice  --> Undefined property: stdClass::$tax1 C:\wamp\www\PointOfSale\application\views\edit_item.php 30
+ERROR - 2013-05-30 12:59:43 --> Severity: Notice  --> Undefined property: stdClass::$tax2 C:\wamp\www\PointOfSale\application\views\edit_item.php 31
+ERROR - 2013-05-30 13:06:40 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\views\edit_item.php 24
+ERROR - 2013-05-30 13:06:40 --> Severity: Notice  --> Undefined property: stdClass::$quantity C:\wamp\www\PointOfSale\application\views\edit_item.php 25
+ERROR - 2013-05-30 13:06:40 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:06:40 --> Severity: Notice  --> Undefined property: stdClass::$salling_price C:\wamp\www\PointOfSale\application\views\edit_item.php 26
+ERROR - 2013-05-30 13:06:40 --> Severity: Notice  --> Undefined property: stdClass::$tax1 C:\wamp\www\PointOfSale\application\views\edit_item.php 30
+ERROR - 2013-05-30 13:06:40 --> Severity: Notice  --> Undefined property: stdClass::$tax2 C:\wamp\www\PointOfSale\application\views\edit_item.php 31
+ERROR - 2013-05-30 13:07:44 --> Severity: Notice  --> Undefined property: stdClass::$landing_price C:\wamp\www\PointOfSale\application\views\edit_item.php 24
+ERROR - 2013-05-30 13:07:44 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:07:44 --> Severity: Notice  --> Undefined property: stdClass::$tax1 C:\wamp\www\PointOfSale\application\views\edit_item.php 30
+ERROR - 2013-05-30 13:07:44 --> Severity: Notice  --> Undefined property: stdClass::$tax2 C:\wamp\www\PointOfSale\application\views\edit_item.php 31
+ERROR - 2013-05-30 13:08:09 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:08:09 --> Severity: Notice  --> Undefined property: stdClass::$tax1 C:\wamp\www\PointOfSale\application\views\edit_item.php 30
+ERROR - 2013-05-30 13:08:09 --> Severity: Notice  --> Undefined property: stdClass::$tax2 C:\wamp\www\PointOfSale\application\views\edit_item.php 31
+ERROR - 2013-05-30 13:08:48 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:08:48 --> Severity: Notice  --> Undefined property: stdClass::$tax1 C:\wamp\www\PointOfSale\application\views\edit_item.php 30
+ERROR - 2013-05-30 13:08:48 --> Severity: Notice  --> Undefined property: stdClass::$tax2 C:\wamp\www\PointOfSale\application\views\edit_item.php 31
+ERROR - 2013-05-30 13:09:04 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:28:50 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:29:15 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:29:15 --> Could not find the language line "supplier_name"
+ERROR - 2013-05-30 13:30:16 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:31:19 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:31:40 --> Could not find the language line "salling_price"
+ERROR - 2013-05-30 13:39:34 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:39:34 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:39:34 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:39:34 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:39:34 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:39:34 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:40:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:40:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:40:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:40:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:40:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 13:40:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 14:17:19 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 14:17:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 14:17:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 14:17:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 14:17:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 14:17:20 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:02:26 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:02:26 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:02:26 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:02:26 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:02:26 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:02:26 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:11:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:14:06 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:14:06 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:14:06 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:14:06 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:14:06 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 15:14:06 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:01:48 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:01:48 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:01:48 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:01:48 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:01:48 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:01:48 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:03:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:03:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:03:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:03:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:03:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:03:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:05:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:05:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:05:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:05:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:05:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:05:09 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:06:16 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:06:16 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:06:16 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:06:16 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:06:16 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:06:16 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:07:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:07:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:07:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:07:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:07:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:07:52 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:08:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:09:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:09:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:09:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:09:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:09:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:09:54 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:10:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:10:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:10:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:10:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:10:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:10:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:11:50 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:11:50 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:11:50 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:11:50 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:11:50 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:11:50 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:12:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:12:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:12:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:12:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:12:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:12:18 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:14:59 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:14:59 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:14:59 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:15:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:15:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:15:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:21:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:21:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:21:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:21:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:21:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:21:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:22:42 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:22:42 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:22:42 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:22:42 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:22:42 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:22:42 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 33
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:38:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:39 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:39:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Undefined property: stdClass::$tax C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:40:23 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35
+ERROR - 2013-05-30 16:41:01 --> Severity: Notice  --> Undefined property: stdClass::$taxid C:\wamp\www\PointOfSale\application\views\edit_item.php 35

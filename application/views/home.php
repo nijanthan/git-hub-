@@ -9,8 +9,8 @@ echo form_open('home/home_main');
     <tr><td><?php echo form_submit('pos_users',$this->lang->line('pos_users'))?></td><td><?php echo form_submit('Items',$this->lang->line('item'));?></td><td><?php echo form_submit('taxes',$this->lang->line('tax'));?></td><td><?php if($_SESSION['Setting']['Depart']==1){ echo form_submit('user_groups',$this->lang->line('user_groups'));}?></td><td><?php if($_SESSION['Setting']['Branch']==1) { echo form_submit('branch',$this->lang->line('branch')); }?></td>
         <td><?php echo form_submit('sales',$this->lang->line('sales'))?></td><td><?php echo form_submit('suppliers',$this->lang->line('Suppliers'))?></td><td><?php echo form_submit('customers',$this->lang->line('customers'))?></td><td><?php echo form_submit('stock',$this->lang->line('receiving_item')) ?></td><td><?php echo form_submit('Gifts','Gifts') ?></td><td><?php echo form_submit('receiving',$this->lang->line('receiving')) ?></td></tr>
     <tr><td></td><td><?php echo form_submit('brand',$this->lang->line('brands'))?></td></tr>
-     <tr><td></td><td><?php echo form_submit('brand',$this->lang->line('brands'))?></td></tr>
-     
+     <tr><td></td><td><?php echo form_submit('item_setting',$this->lang->line('item_setting'))?></td></tr>
+     <tr><td></td><td><?php echo form_submit('categorys',$this->lang->line('category')) ?> </td></tr>
 </table>
 <?php
 

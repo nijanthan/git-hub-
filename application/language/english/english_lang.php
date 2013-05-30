@@ -135,6 +135,8 @@ $lang['company']='Comapany';
  $lang['mrf_price']='MRP (Maximum Retail Price)';
  $lang['supplier']='Supplier';
  $lang['tax_Inclusive']='Tax Inclusive';
+ $lang['category']='Category';
+ $lang['item_setting']='Item Setting';
 
  
  

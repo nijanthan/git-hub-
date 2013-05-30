@@ -23,11 +23,11 @@ if($count!=0){
         <td style="width: 100px"><a href="<?php echo base_url() ?>index.php/items/edit_item_details/<?php echo $erow->id ?>"><?php echo $this->lang->line('edit') ?></a><td>
         <td><a href=" <?php echo base_url() ?>index.php/items/delete_item_details_in_admin/<?php echo $erow->id ?>"><?php echo $this->lang->line('delete') ?></a></td>
     </tr><?php }?></table>
-    <tb><?php echo form_submit('activate',$this->lang->line('activate'))?></td><tb><?php echo form_submit('deactivate',$this->lang->line('deactivate'))?></td><td><input type="submit" name="delete_item_for_admin" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <tb><?php echo form_submit('activate',$this->lang->line('activate'))?></td><tb><?php echo form_submit('deactivate',$this->lang->line('deactivate'))?></td><td><input type="submit" name="delete_item_for_admin" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
   
      <?php }else{?><table ><?php
-foreach ($row as $b_row){
-          foreach ($urow as $erow){ if($b_row->item_id==$erow->id){
+foreach ($row as $erow){
+        
    
 ?>
 
@@ -58,15 +58,15 @@ foreach ($row as $b_row){
     </tr>
     <?php ?>
 
-<?php }}}?></table> 
-<td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+<?php }?></table> 
+<tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
   
 <?php }
 }else{   if($_SESSION['admin']==2){ ?>
-    <td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><td><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <td><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
  
 <?php }else{?>
-    <td><?php echo form_submit('add_category',$this->lang->line('add_category')) ?> </td><td><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <td><input type="submit" name="Add_item" value="<?php echo $this->lang->line('add_new_item') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
  
 <?php }
 
