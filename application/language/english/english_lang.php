@@ -104,18 +104,19 @@ $lang['company']='Comapany';
  $lang['description']='Item Description';
  $lang['cost_price']='Cost Price';
  $lang['unit_price']='Unit Price';
- $lang['discount_amount']='Discount Amount';
+ $lang['discount_amount']='Discount persentage';
  $lang['start_date']='Starting Date';
  $lang['end_date']='Ending Date';
  $lang['tax1']='Tax1';
  $lang['tax2']='Tax2';
  $lang['quantity']='Quantity';
  $lang['location'] 	='Location';
- $lang['salling_price']='Salling Price';
+ $lang['selling_price']='Selling Price';
  $lang['cate_name']='Category Name';
  $lang['receiving_item']='Stock Items';
  $lang['current_stock']='Available Stocks';
  $lang['receiving']='Receiving';
+ 
  
  
  $lang['tax']='Tax';
@@ -127,8 +128,14 @@ $lang['company']='Comapany';
  $lang['tdescription']='Tax Description';
  $lang['tschedule']='Tax Schedule';
  $lang['tpart']='Tax Part';
- $lang['brands']='Brands';
+ $lang['brands']='Brand';
  $lang['brands_name']='Brands Name';
+ $lang['item_settings']='Items Settings';
+ $lang['landing_cost']='Landing Cost';
+ $lang['mrf_price']='MRP (Maximum Retail Price)';
+ $lang['supplier']='Supplier';
+ $lang['tax_Inclusive']='Tax Inclusive';
+
  
  
 

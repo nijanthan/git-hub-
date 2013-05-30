@@ -10,23 +10,17 @@ class Item_model extends CI_Model{
     }
     function item_count_for_admin($branch){  
             $this->db->where('branch_id',$branch);
-            $this->db->where('item_delete',0);
+       
             $this->db->where('delete_status',0);
-            $this->db->from('items_x_branchs');
+            $this->db->from('items');
             return $this->db->count_all_results();
    }
    function get_item_details_for_admin($limit, $start,$branch) {
-            $this->db->limit($limit, $start);   
-            $this->db->where('branch_id',$branch);
-            $this->db->where('item_delete',0);
-            $query = $this->db->get('items_x_branchs');
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-           }
-          return false;          
+               $this->db->limit($limit, $start);            
+                $this->db->where('delete_status',0);               
+                $this->db->where('branch_id',$branch); 
+                $query = $this->db->get('items');
+                return $query->result();         
    }
    function pos_item_count($id,$branch){       
             $this->db->where('item_id <>',$id);
@@ -66,18 +60,17 @@ class Item_model extends CI_Model{
         $this->db->where('branch_id',$bid);
         $this->db->update('items_x_branchs',$data);
     }
-    function delete_items_details_in_admin($id,$bid){
-        $data=array('item_active '=>1,
-                    'item_delete '=>1);
-        $this->db->where('item_id',$id);
-        $this->db->where('branch_id',$bid);
-        $this->db->update('items_x_branchs',$data);
+    function delete_items_details_in_admin($id,$uid){
+        $data=array('active_status '=>1,
+                    'delete_status '=>1,
+                     'deleted_by'=>$uid);
+        $this->db->where('id',$id);
+        $this->db->update('items',$data);
     }
-    function deactivate_items($id,$bid){
-        $data=array('item_active '=>1);
-        $this->db->where('item_id',$id);
-        $this->db->where('branch_id',$bid);
-        $this->db->update('items_x_branchs',$data);
+    function deactivate_items($id,$uid){
+        $data=array('active_status '=>1);
+        $this->db->where('id',$id);
+        $this->db->update('items',$data);
     }
     function deactivate_items_by_user($id,$bid,$udi){
         $data=array('item_active '=>1,
@@ -87,10 +80,9 @@ class Item_model extends CI_Model{
         $this->db->update('items_x_branchs',$data);
     }
     function to_activate_item($id,$bid){
-        $data=array('item_active '=>0);
-        $this->db->where('item_id',$id);
-        $this->db->where('branch_id',$bid);
-        $this->db->update('items_x_branchs',$data);
+        $data=array('active_status '=>0);
+        $this->db->where('id',$id);        
+        $this->db->update('items',$data);
     }
     function add_category($name,$bid){
         $data=array('category_name'=>$name,
@@ -163,7 +155,7 @@ class Item_model extends CI_Model{
         $this->db->where('id',$id);
         $this->db->update('items',$data);
     }
-    function add_item($bid,$uid,$code,$barcode,$item_name,$description,$cost,$unit,$saling,$discount,$start,$end,$tax1,$tax2,$quantity,$location,$category,$suppier){
+    function add_item($bid,$uid,$tax,$area,$brand,$code,$barcode,$item_name,$description,$cost,$sellimg,$landing,$mrf,$discount,$start,$end,$location,$category,$suppier){
         
         $data=array('code'=>$code,	
             'barcode'=>$barcode,
@@ -174,18 +166,34 @@ class Item_model extends CI_Model{
             'name'=>$item_name,
             'description'=>$description,
             'cost_price'=>$cost,
-            'current_stock'=>$unit,
-            'salling_price'=>$saling,
+            'landing_cost'=>$landing,
+            'selling_price'=>$sellimg,
+            'mrf'=>$mrf,
             'discount_amount'=>$discount,
             'start_date'=>$start,
             'end_date '=>$end,
-            'tax1'=>$tax1,
-            'tax2 '=>$tax2,
-            'quantity'=>$quantity,
+            'tax_id'=>$tax,
+            'tax_area_id'=>$area,
+            'branch_id'=>$bid,
+            'brand_id'=>$brand,
+            
             'location'=>$location);
              $this->db->insert('items',$data);
              return $this->db->insert_id();
                
+    }
+    function item_setting($tax_in,$id,$bid){
+        $data=array('item_id'=>$id,
+            'branch_id'=>$bid, 	
+            'min_q'=>1,
+            'max_q'=>1, 	
+            'sales'=>1,
+            'purchase'=>1, 	
+            'salses_return'=>1, 	
+            'purchase_return'=>1, 	
+            'allow_negative'=>1, 	
+            'tax_inclusive'=>$tax_in);
+        $this->db->insert('items_settings',$data);
     }
     function item_in_items_branch($id,$bid){
          $this->db->select()->from('branchs')->where('id',$bid);
@@ -201,41 +209,8 @@ class Item_model extends CI_Model{
     }
                      
     
-    function add_stock_branch($Bid,$Iid,$price,$stock,$cat,$sup,$uid,$quantity,$salling){
-        $this->db->select()->from('branchs')->where('id',$Bid);
-        $sql=  $this->db->get();
-        $name="";
-        foreach ($sql->result() as $row){
-            $name=$row->store_name;
-        }
-        $date=strtotime(date('Y-m-d'));
-        $data=array('branch_id'=>$Bid,            
-            'branch_name'=>$name,
-            'item_id'=>$Iid,
-            'cost'=>$price,
-            'stock'=>$stock,
-            'category_id'=>$cat,
-            'supplier_id'=>$sup,
-            'date'=>$date,
-            'Quantity'=>$quantity,
-            'added_by'=>$uid,
-            'price',$salling);
-        $this->db->insert('stocks_history',$data);
-    }
-    function add_stock($id,$Bid,$saling,$unit){
-        $this->db->select()->from('branchs')->where('id',$Bid);
-        $sql=  $this->db->get();
-        $name="";
-        foreach ($sql->result() as $row){
-            $name=$row->store_name;
-        }
-        $data=array('item_id'=>$id,
-                     'branch_id'=>$Bid,
-                    'branch_name'=>$name,
-                    'price'=>$saling,
-                    'stock'=>$unit);
-                $this->db->insert('stocks',$data);
-    }
+  
+   
     function update_item_stock_history($id,$Bid,$category,$suppier,$cost,$unit,$quantity,$saling)
                 {
         $this->db->select()->from('stocks_history')->where('branch_id',$Bid)->where('item_id',$id);
@@ -275,17 +250,39 @@ class Item_model extends CI_Model{
         }else{
             $do_stock=$hstock;
         }
-                
-            
-        
         $data=array('stock'=>$do_stock,'price'=>$saling);
         $this->db->where('item_id',$id);
         $this->db->where('branch_id',$Bid);
         $this->db->update('stocks',$data);
-                
-        
-    }
-                                             	
+          }
+          function get_brands_user($bid){
+              $this->db->select()->from('brands')->where('branch_id',$bid)->where('active_status',0)->where('delete_status',0);
+              $sql=$this->db->get();
+              return $sql->result();
+          }
+          
+          function get_tax_for_user($bid){
+              $this->db->select()->from('taxes')->where('branch_id',$bid)->where('active_status',0)->where('delete_status',0);
+              $sql=$this->db->get();
+              return $sql->result();
+          }
+          
+         
+          function get_tax_area_for_user($bid){
+              $this->db->select()->from('taxes_area')->where('branch_id',$bid)->where('active_status',0)->where('delete_status',0);
+              $sql=$this->db->get();
+              return $sql->result();
+          }
+          function check_item($code,$bid){
+              $this->db->select()->from('items')->where('code',$code)->where('branch_id',$bid)->where('delete_status',0);
+              $sql=  $this->db->get();
+              if($sql->num_rows()>0){
+                  return FALSE;
+              }else{
+                  return TRUE;
+              }
+          }
+          
                                   
                                    
 }
