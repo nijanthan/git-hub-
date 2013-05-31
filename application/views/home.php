@@ -11,6 +11,7 @@ echo form_open('home/home_main');
     <tr><td></td><td><?php echo form_submit('brand',$this->lang->line('brands'))?></td><td><?php echo form_submit('tax_area',$this->lang->line('tax_area'));?></td></tr>
      <tr><td></td><td><?php echo form_submit('item_setting',$this->lang->line('item_setting'))?></td><td><?php echo form_submit('commodity',$this->lang->line('commodity'));?></td></tr>
      <tr><td></td><td><?php echo form_submit('categorys',$this->lang->line('category')) ?> </td><td><?php echo form_submit('tax_types',$this->lang->line('tax_type'));?></td></tr>
+     <tr><td></td><td><?php echo form_submit('item_code',$this->lang->line('EANUPC')) ?> </td></tr>
 </table>
 <?php
 

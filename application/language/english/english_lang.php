@@ -144,6 +144,7 @@ $lang['company']='Comapany';
  $lang['purchase']='Purchase';
  $lang['purchase_return']='Purchase Return';
  $lang['allow_negative']='Allow Negative';
+ $lang['EANUPC']='EAN/UPC Code';
 
  
  

@@ -57,6 +57,9 @@ class Item_model extends CI_Model{
                      'deleted_by'=>$uid);
         $this->db->where('id',$id);
         $this->db->update('items',$data);
+        $value=array('delete_status'=>1);
+        $this->db->where('item_id',$id);
+        $this->db->update('item_upc_ean_code',$value);
     }
     function deactivate_items($id,$uid){
         $data=array('active_status '=>1);

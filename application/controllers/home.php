@@ -121,6 +121,10 @@ class Home extends CI_Controller
            if($this->input->post('item_setting')){
                redirect('items_setting');
            }
+           if($this->input->post('item_code')){
+               redirect('item_code');
+           }
+               
     }
      function user_groups(){
         redirect('user_groupsCI');
