@@ -39,7 +39,7 @@ class Customers extends CI_Controller{
                 $data['urow']= $this->customer_model->get_customers();
 	        $data["links"] = $this->pagination->create_links();                 
                 $this->load->view('template/header');
-                $this->load->view('customer_list',$data);
+                $this->load->view('customers/customer_list',$data);
                 $this->load->view('template/footer');
             }else{
                 $this->load->library("pagination"); 
@@ -58,7 +58,7 @@ class Customers extends CI_Controller{
 	        $data["links"] = $this->pagination->create_links(); 
                 
                 $this->load->view('template/header');
-                $this->load->view('customer_list',$data);
+                $this->load->view('customers/customer_list',$data);
                 $this->load->view('template/footer');
             }
         }
@@ -71,8 +71,11 @@ class Customers extends CI_Controller{
             }
             if($this->input->post('Add_customer')){
                 if($_SESSION['Customer_per']['add']==1){
+                    $this->load->model('customer_model');
+                    $data['row']=$this->customer_model->get_customer_category($_SESSION['Bid']);
+                    $data['pay']=$this->customer_model->get_payment($_SESSION['Bid']);
                     $this->load->view('template/header');
-                    $this->load->view('add_customer');
+                    $this->load->view('customers/add_customer',$data);
                     $this->load->view('template/footer');
                 }else{
                     echo "You have no permission to add customer";
@@ -155,8 +158,13 @@ class Customers extends CI_Controller{
                 if($_SESSION['Customer_per']['add']==1){
                     $this->load->library('form_validation');
                             $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
+                            $this->form_validation->set_rules("cate_id",$this->lang->line('customer_cate'),"required"); 
+                            $this->form_validation->set_rules("payment",$this->lang->line('payment'),"required"); 
                             $this->form_validation->set_rules("last_name",$this->lang->line('last_name'),"required"); 
-                            $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
+                            $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'max_length[12]|regex_match[/^[0-9]+$/]|xss_clean');
+                            $this->form_validation->set_rules('Credit_Days', $this->lang->line('Credit Days'), 'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('Credit_Limit', $this->lang->line('Credit Limit'), 'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('Monthly_Credit_Balance', $this->lang->line('MonthlyCreditBalance'), 'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
                             $this->form_validation->set_rules('email', $this->lang->line('email'), 'valid_email');                             	  
                         if ( $this->form_validation->run() !== false ) {
                                     $this->load->model('customer_model');
@@ -174,26 +182,46 @@ class Customers extends CI_Controller{
                                     $address1=$this->input->post('address1');
                                     $address2=$this->input->post('address2');
                                     $company=$this->input->post('company');
-                                     $txable=0;
-                                    if($this->input->post('taxable')){
-                                         $txable=1;
-                                    }
+                                    
+                                    $cst=$this->input->post('cst');
+                                    $gst=$this->input->post('gst');
+                                    $payment=$this->input->post('payment');
+                                    $credit_limit=$this->input->post('Credit_Limit');
+                                    $days=$this->input->post('Credit_Days');
+                                    $month=$this->input->post('Monthly_Credit_Balance');
+                                    $bday=strtotime($this->input->post('birthday'));
+                                    $mdate=strtotime($this->input->post('Marragedate'));
+                                    $title= $this->input->post('tittle');
+                                    $customer_cate=$this->input->post('cate_id');
+                                    $bank_name=$this->input->post('bank_name');
+                                    $bank_location=  $this->input->post('bank_location');
+                                    $tax_no=  $this->input->post('tax_no');
+                                    
+                                    
+                                    
                                    if(!$this->customer_model->check_customer_already_in($phone,$_SESSION['Bid'])){
-                                    $id=$this->customer_model->add_customer($first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$txable,$_SESSION['Uid']);
+                                    $id=$this->customer_model->add_customer($tax_no,$cst,$gst,$payment,$credit_limit,$days,$month,$bday,$mdate,$title,$customer_cate,$bank_name,$bank_location,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$_SESSION['Uid'],$_SESSION['Bid']);
                                     $this->customer_model->add_customer_branchs($id,$_SESSION['Bid']);
                                     $this->get_customers();
                                     
                                    }else{
+                                       
                                         echo "this user is already added";
+                                        $this->load->model('customer_model');
+                                        $data['row']=$this->customer_model->get_customer_category($_SESSION['Bid']);
+                                        $data['pay']=$this->customer_model->get_payment($_SESSION['Bid']);
                                         $this->load->view('template/header');
-                                        $this->load->view('add_customer');
+                                        $this->load->view('customers/add_customer',$data);
                                         $this->load->view('template/footer');
                                    }
                                     
                                     
                         }else{
+                                $this->load->model('customer_model');
+                                $data['row']=$this->customer_model->get_customer_category($_SESSION['Bid']);
+                                $data['pay']=$this->customer_model->get_payment($_SESSION['Bid']);
                                 $this->load->view('template/header');
-                                $this->load->view('add_customer');
+                                $this->load->view('customers/add_customer',$data);
                                 $this->load->view('template/footer');
                         }
                     
@@ -207,9 +235,13 @@ class Customers extends CI_Controller{
          if(!$_SERVER['HTTP_REFERER']){ redirect('customers'); }else{
              if($_SESSION['Customer_per']['edit']==1){
                  $this->load->model('customer_model');
-                 $data['row']= $this->customer_model->get_customer_details_for_edit($id);
+                 
+                 $data['row']=$this->customer_model->get_customer_category($_SESSION['Bid']);
+                 $data['pay']=$this->customer_model->get_payment($_SESSION['Bid']);
+                 $data['spay']=  $this->customer_model->get_selected_payment($id,$_SESSION['Bid']);
+                 $data['irow']= $this->customer_model->get_customer_details_for_edit($id);
                   $this->load->view('template/header');
-                  $this->load->view('edit_customer',$data);
+                  $this->load->view('customers/edit_customer',$data);
                   $this->load->view('template/footer');
              }else{
                  redirect('customer');
@@ -225,9 +257,15 @@ class Customers extends CI_Controller{
             if($this->input->post('save')){
                 if($_SESSION['Customer_per']['edit']==1){
                     $this->load->library('form_validation');
+                    $id=  $this->input->post('id');
                             $this->form_validation->set_rules("first_name",$this->lang->line('first_name'),"required"); 
+                            $this->form_validation->set_rules("cate_id",$this->lang->line('customer_cate'),"required"); 
+                            $this->form_validation->set_rules("payment",$this->lang->line('payment'),"required"); 
                             $this->form_validation->set_rules("last_name",$this->lang->line('last_name'),"required"); 
-                            $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'required|max_length[10]|regex_match[/^[0-9]+$/]|xss_clean');
+                            $this->form_validation->set_rules('phone', $this->lang->line('phone'), 'max_length[12]|regex_match[/^[0-9]+$/]|xss_clean');
+                            $this->form_validation->set_rules('Credit_Days', $this->lang->line('Credit Days'), 'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('Credit_Limit', $this->lang->line('Credit Limit'), 'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
+                            $this->form_validation->set_rules('Monthly_Credit_Balance', $this->lang->line('MonthlyCreditBalance'), 'max_length[10]|regex_match[/^[0-9 .]+$/]|xss_clean');
                             $this->form_validation->set_rules('email', $this->lang->line('email'), 'valid_email');                             	  
                         if ( $this->form_validation->run() !== false ) {
                                     $this->load->model('customer_model');
@@ -245,26 +283,36 @@ class Customers extends CI_Controller{
                                     $address1=$this->input->post('address1');
                                     $address2=$this->input->post('address2');
                                     $company=$this->input->post('company');
-                                    $id=  $this->input->post('id');
-                                     $txable=0;
-                                    if($this->input->post('taxable')){
-                                         $txable=1;
-                                    }
+                                    
+                                    $cst=$this->input->post('cst');
+                                    $gst=$this->input->post('gst');
+                                    $payment=$this->input->post('payment');
+                                    $credit_limit=$this->input->post('Credit_Limit');
+                                    $days=$this->input->post('Credit_Days');
+                                    $month=$this->input->post('Monthly_Credit_Balance');
+                                    $bday=strtotime($this->input->post('birthday'));
+                                    $mdate=strtotime($this->input->post('Marragedate'));
+                                    $title= $this->input->post('tittle');
+                                    $customer_cate=$this->input->post('cate_id');
+                                    $bank_name=$this->input->post('bank_name');
+                                    $bank_location=  $this->input->post('bank_location');
+                                    $tax_no=  $this->input->post('tax_no');
+                                    
                                    if(!$this->customer_model->check_customer_already_for_update($id,$phone,$_SESSION['Bid'])){
-                                    $this->customer_model->update_customer($id,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$txable);
+                                    $this->customer_model->update_customer($tax_no,$id,$_SESSION['Bid'],$cst,$gst,$payment,$credit_limit,$days,$month,$bday,$mdate,$title,$customer_cate,$bank_name,$bank_location,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company);
                                     $this->get_customers();
                                     
                                    }else{
                                         echo "this user is already added";
                                         $this->load->view('template/header');
-                                        $this->load->view('add_customer');
+                                        $this->load->view('customers/add_customer');
                                         $this->load->view('template/footer');
                                    }
                                     
                                     
                         }else{
                                 $this->load->view('template/header');
-                                $this->load->view('add_customer');
+                                $this->load->view('customers/add_customer');
                                 $this->load->view('template/footer');
                         }
                     

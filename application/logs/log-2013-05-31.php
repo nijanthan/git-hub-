@@ -95,3 +95,127 @@ ERROR - 2013-05-31 16:44:55 --> Could not find the language line "name"
 ERROR - 2013-05-31 16:45:13 --> Could not find the language line "name"
 ERROR - 2013-05-31 16:45:30 --> Could not find the language line "name"
 ERROR - 2013-05-31 16:45:41 --> Could not find the language line "name"
+ERROR - 2013-05-31 17:05:55 --> Could not find the language line "tittle"
+ERROR - 2013-05-31 17:08:44 --> Could not find the language line "tittle"
+ERROR - 2013-05-31 17:36:02 --> Severity: Notice  --> Undefined property: Customers::$customer_model C:\wamp\www\PointOfSale\application\controllers\customers.php 74
+ERROR - 2013-05-31 17:37:00 --> Severity: Notice  --> Undefined variable: id C:\wamp\www\PointOfSale\application\models\customer_model.php 185
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Undefined variable: cpow C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:00 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:50:25 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 17:52:14 --> Query error: Unknown column 'pay_id' in 'where clause'
+ERROR - 2013-05-31 18:45:43 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:46:15 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:46:15 --> Severity: Notice  --> Undefined variable: row C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:46:15 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:46:15 --> Severity: Notice  --> Undefined variable: pay C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:46:15 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:47:22 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:47:22 --> Severity: Notice  --> Undefined variable: row C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:47:22 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:47:22 --> Severity: Notice  --> Undefined variable: pay C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:47:22 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:48:23 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:48:23 --> Query error: Unknown column 'first_name' in 'field list'
+ERROR - 2013-05-31 18:48:54 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:48:54 --> Severity: Notice  --> Array to string conversion C:\wamp\www\PointOfSale\system\database\drivers\mysql\mysql_driver.php 552
+ERROR - 2013-05-31 18:48:54 --> Query error: Unknown column 'Array' in 'field list'
+ERROR - 2013-05-31 18:50:28 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:52:02 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:52:02 --> Severity: Notice  --> Undefined variable: row C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:52:02 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:52:02 --> Severity: Notice  --> Undefined variable: pay C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:52:02 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:53:43 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:53:43 --> Severity: Notice  --> Undefined variable: row C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:53:43 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 44
+ERROR - 2013-05-31 18:53:43 --> Severity: Notice  --> Undefined variable: pay C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:53:43 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\add_customer.php 46
+ERROR - 2013-05-31 18:54:47 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:54:53 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:54:58 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 18:55:56 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 19:42:08 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 18
+ERROR - 2013-05-31 19:45:10 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 26
+ERROR - 2013-05-31 19:45:10 --> Query error: Unknown column 'taxable' in 'field list'
+ERROR - 2013-05-31 19:45:16 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 26
+ERROR - 2013-05-31 19:47:32 --> Severity: Notice  --> Undefined variable: it_row C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 18
+ERROR - 2013-05-31 19:47:32 --> Severity: Notice  --> Trying to get property of non-object C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 18
+ERROR - 2013-05-31 19:47:32 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 28
+ERROR - 2013-05-31 19:47:45 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 28
+ERROR - 2013-05-31 19:48:06 --> Severity: Notice  --> Undefined property: stdClass::$taxable C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 28
+ERROR - 2013-05-31 19:49:38 --> Severity: Notice  --> Undefined property: stdClass::$category_name C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 29
+ERROR - 2013-05-31 19:49:38 --> Severity: Notice  --> Undefined variable: pay C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 31
+ERROR - 2013-05-31 19:49:38 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\customers\edit_customer.php 31
+ERROR - 2013-05-31 20:15:59 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:15:59 --> Severity: Warning  --> Missing argument 29 for Customer_model::update_customer(), called in C:\wamp\www\PointOfSale\application\controllers\customers.php on line 300 and defined C:\wamp\www\PointOfSale\application\models\customer_model.php 99
+ERROR - 2013-05-31 20:15:59 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\customer_model.php 114
+ERROR - 2013-05-31 20:16:23 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:16:23 --> Severity: Notice  --> Undefined variable: uid C:\wamp\www\PointOfSale\application\models\customer_model.php 114
+ERROR - 2013-05-31 20:16:46 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:16:58 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:19:26 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:19:40 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:19:46 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:19:54 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:20:01 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:21:06 --> Could not find the language line "name"
+ERROR - 2013-05-31 20:21:20 --> Could not find the language line "name"
+ERROR - 2013-05-31 20:26:33 --> Could not find the language line "MonthlyCreditBalance"
+ERROR - 2013-05-31 20:29:07 --> Could not find the language line "MonthlyCreditBalance"

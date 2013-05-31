@@ -146,6 +146,19 @@ $lang['company']='Comapany';
  $lang['allow_negative']='Allow Negative';
  $lang['EANUPC']='EAN/UPC Code';
  $lang['customer_cate']='Customer Category';
+ $lang['birthday']='Birth Date';
+ $lang['Marragedate']='Marriage Date';
+ $lang['title_of_customer']='Tittle';
+ $lang['bank_name']='Bank Name';
+ $lang['bank_location']='Bank Location';
+ $lang['cst']='CST No.';
+ $lang['gst']='GST No.';
+ $lang['payment']='Payment';
+ $lang['Credit Days']='Credit Days';
+ $lang['Credit Limit']='Credit Limit';
+ $lang['Monthly Credit Balance']='Monthly Credit Balance';
+ $lang['tax_no']='Tax Reg No';
+
  
 
  

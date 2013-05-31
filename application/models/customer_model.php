@@ -59,7 +59,7 @@ class Customer_model extends CI_Model{
          $sql=  $this->db->get();
          return $sql->result();             
     }
-    function add_customer($first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$txable,$uid){
+    function add_customer($tax_no,$cst,$gst,$payment,$credit_limit,$days,$month,$bday,$mdate,$title,$customer_cate,$bank_name,$bank_location,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$uid,$bid){
         $data=array('first_name'=>$first_name,
                     'last_name'=>$last_name,
                     'email'=>$email,
@@ -73,13 +73,31 @@ class Customer_model extends CI_Model{
                     'company_name'=>$company,
                     'account_number'=>$account_no,
                     'address1'=>$address1,
-                    'address2'=>$address2,
-                    'taxable'=>$txable,
-                    'created_by'=>$uid );
+                    'address2'=>$address2,                    
+                    'created_by'=>$uid,
+            'bank_location'=>$bank_location,
+            'bank_name'=>$bank_name,
+            'category_id'=>$customer_cate,
+            'title'=>$title,
+            'mday'=>$mdate,
+            'bday'=>$bday,
+            'cst'=>$cst,
+            'gst'=>$gst,
+            'tax_no'=>$tax_no
+            
+            );
                 $this->db->insert('customers',$data);
-                return $this->db->insert_id();
+                $id=$this->db->insert_id();
+                $pay=array('customer_id'=>$id,
+                            'payment_type_id'=>$payment,
+                            'limit'=>$credit_limit,
+                            'credit_days'=>$days,
+                            'monthly_limit'=>$month,
+                            'branch_id'=>$bid);
+                $this->db->insert('customers_x_payment_types_details',$pay);
+                return $id;
     }
-     function update_customer($id,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$txable){
+     function update_customer($tax_no,$id,$bid,$cst,$gst,$payment,$credit_limit,$days,$month,$bday,$mdate,$title,$customer_cate,$bank_name,$bank_location,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company){
         $data=array('first_name'=>$first_name,
                     'last_name'=>$last_name,
                     'email'=>$email,
@@ -93,11 +111,29 @@ class Customer_model extends CI_Model{
                     'company_name'=>$company,
                     'account_number'=>$account_no,
                     'address1'=>$address1,
-                    'address2'=>$address2,
-                    'taxable'=>$txable
-                     );
-                     $this->db->where('id',$id);
+                    'address2'=>$address2,                    
+                    'bank_location'=>$bank_location,
+                    'bank_name'=>$bank_name,
+                    'category_id'=>$customer_cate,
+                    'title'=>$title,
+                    'mday'=>$mdate,
+                    'bday'=>$bday,
+                    'cst'=>$cst,
+                    'gst'=>$gst,
+                    'tax_no'=>$tax_no
+
+                    );
+                   $this->db->where('id',$id);
                    $this->db->update('customers',$data);
+                   $pay=array('customer_id'=>$id,
+                            'payment_type_id'=>$payment,
+                            'limit'=>$credit_limit,
+                            'credit_days'=>$days,
+                            'monthly_limit'=>$month,
+                            'branch_id'=>$bid);
+                        $this->db->where('customer_id',$id);
+                        $this->db->where('branch_id',$bid);
+                        $this->db->update('customers_x_payment_types_details',$pay);
                
     }
     
@@ -180,6 +216,29 @@ class Customer_model extends CI_Model{
         $this->db->where('customer_id',$id);
         $this->db->where('branch_id',$bid);
         $this->db->update('customers_x_branchs',$data);
+    }
+    function get_customer_category($bid){
+      $this->db->select()->from('customers_category')->where('branch_id',$bid)->where('active_status',0);
+        $sql=  $this->db->get();
+        return $sql->result();
+    }
+    function get_payment($bid){
+        $this->db->select()->from('branchs_x_payment_modes')->where('branch_id',$bid)->where('active_status',0);
+        $quesry=$this->db->get();
+        $data=array();
+        foreach ($quesry->result() as $myrow){
+            $this->db->select()->from('customers_payment_type')->where('id',$myrow->pay_id);
+            $sql=$this->db->get();
+            foreach ($sql->result() as $row){
+                $data[]=$row;
+            }
+        }
+        return $data;
+    }
+    function get_selected_payment($id,$bid){
+        $this->db->select()->from('customers_x_payment_types_details')->where('customer_id',$id)->where('branch_id',$bid);
+        $sql=$this->db->get();
+        return $sql->result();
     }
 }
 ?>
