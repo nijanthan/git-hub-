@@ -15,9 +15,7 @@ class Taxes_ci extends CI_Controller{
     function index(){  
           if(!isset($_SESSION['Uid'])){
                 redirect('home');
-                }else{
-            $this->get_taxs();
-        }
+                }
     }
     function get_taxs(){
         if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
@@ -29,21 +27,10 @@ class Taxes_ci extends CI_Controller{
     }
     function taxes(){
        if(!$_SERVER['HTTP_REFERER']){ redirect('taxes'); }else{
-           if($this->input->post('taxes')){
+           
                $this->taxes_details();
-           }
-           if($this->input->post('cancel')){
-               redirect('home');
-           }
-           if($this->input->post('tax_area')){
-               $this->tax_area();
-           }
-           if($this->input->post('commodity')){
-               $this->get_tax_commodity();
-           }
-           if($this->input->post('tax_types')){
-               $this->get_tax_types();
-           }
+           
+          
        }
           
     }

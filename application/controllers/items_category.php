@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
-class Item_category extends CI_Controller{
+class Items_category extends CI_Controller{
     function __construct() {
                 parent::__construct();
                 $this->load->helper('form');
@@ -24,7 +24,7 @@ class Item_category extends CI_Controller{
             if($_SESSION['admin']==2){// check user is admin or not
                 $this->load->library("pagination"); 
                 $this->load->model('item_cate_model');                
-	        $config["base_url"] = base_url()."index.php/item_category/get_category";
+	        $config["base_url"] = base_url()."index.php/items_category/get_category";
 	        $config["total_rows"] = $this->item_cate_model->get_item_cate_count_for_admin($_SESSION['Bid']);// get supplier count
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
@@ -39,7 +39,7 @@ class Item_category extends CI_Controller{
             }else{
                 $this->load->library("pagination");                 
                 $this->load->model('item_cate_model');
-	        $config["base_url"] = base_url()."index.php/item_category/get_category";
+	        $config["base_url"] = base_url()."index.php/items_category/get_category";
                 $config["total_rows"] = $this->item_cate_model->get_item_cate_count_for_user($_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
@@ -57,7 +57,7 @@ class Item_category extends CI_Controller{
                 
     }
     function edit_item($id){
-        if(!$_SERVER['HTTP_REFERER']){ redirect('item_category'); }else{
+        if(!$_SERVER['HTTP_REFERER']){ redirect('items_category'); }else{
              $this->load->model('item_cate_model');
              $data['row']= $this->item_cate_model->get_item_category_details($id);             
              $this->load->view('template/header');
@@ -77,7 +77,7 @@ class Item_category extends CI_Controller{
                           if($this->item_cate_model->check_item_is_unique_for_update($area,$id,$_SESSION['Bid']))
                           {                            
                       $this->item_cate_model->update_item($area,$id);
-                           redirect('item_category');
+                           redirect('items_category');
                           }else{                             
                           
                            echo "this tax arae is already added in this branch";
@@ -89,31 +89,24 @@ class Item_category extends CI_Controller{
             }
             }
             if($this->input->post('cancel')){
-                 redirect('item_category');
+                 redirect('items_category');
      
             }        
         }
     }
-    function delete_tax_area_for($id){
-        if(!$_SERVER['HTTP_REFERER']){ redirect('home'); }else{            
-            $this->load->model('item_cate_model');
-            $this->item_cate_model->delete_tax_area_for_admin($id,$_SESSION['Uid']);
-            redirect('item_category/tax_area');                     
-        }
-        
-    }
+    
     function active_tax_area($id){
-         if(!$_SERVER['HTTP_REFERER']){ redirect('item_category'); }else{
+         if(!$_SERVER['HTTP_REFERER']){ redirect('items_category'); }else{
          $this->load->model('item_cate_model');
          $this->item_cate_model->activate_tax_area($id);
-         redirect('item_category/tax_area');
+         redirect('items_category/tax_area');
         }
     }
    function inactive_tax_area($id){
-        if(!$_SERVER['HTTP_REFERER']){ redirect('item_category'); }else{
+        if(!$_SERVER['HTTP_REFERER']){ redirect('items_category'); }else{
          $this->load->model('item_cate_model');
          $this->item_cate_model->inactivate_tax_area($id);
-         redirect('item_category/tax_area');
+         redirect('items_category/tax_area');
          }
     }
     function manage_item(){
@@ -126,7 +119,7 @@ class Item_category extends CI_Controller{
                   $this->item_cate_model->delete_item_category_for_admin($value,$_SESSION['Uid']);
                }
           }
-        redirect('item_category');
+        redirect('items_category');
         }
          if($this->input->post('Activate')){
             $this->load->model('item_cate_model');                 
@@ -136,7 +129,7 @@ class Item_category extends CI_Controller{
                   $this->item_cate_model->active_item($value);
                }
           }
-        redirect('item_category');
+        redirect('items_category');
         }
          if($this->input->post('Deactivate')){
             $this->load->model('item_cate_model');                 
@@ -146,7 +139,7 @@ class Item_category extends CI_Controller{
                   $this->item_cate_model->inactive_item($value);
                }
           }
-        redirect('item_category');
+        redirect('items_category');
         }
         if($this->input->post('add_tax')){
                 $this->load->view('template/header');
@@ -161,17 +154,17 @@ class Item_category extends CI_Controller{
                 $data1 = $this->input->post('mycheck'); 
                 if(!$data1==''){         
                  foreach( $data1 as $key => $value){   
-                  $this->item_cate_model->delete_tax_area($value,$_SESSION['Uid']);
+                  $this->item_cate_model->delete_item_category_for_user($value,$_SESSION['Uid']);
                }
             
-        }redirect('item_category/tax_area');
+        }redirect('items_category');
          }
          }
     }
     function add_category(){
          if(!$_SERVER['HTTP_REFERER']){ redirect('home'); }else{
              if($this->input->post('cancel')){
-                 redirect('item_category');
+                 redirect('items_category');
              }if($this->input->post('save')){
             
                   $this->load->library('form_validation');
@@ -182,7 +175,7 @@ class Item_category extends CI_Controller{
                                     $this->load->model('item_cate_model');
                                     if(!$this->item_cate_model->check_item_category($cat,$_SESSION['Bid'])){
                                     $id=$this->item_cate_model->add_category($cat,$_SESSION['Bid'],$_SESSION['Uid']);                                    
-                                    redirect('item_category');
+                                    redirect('items_category');
                                     }else{
                                         echo "this category is already added";
                                         $this->load->view('template/header');
@@ -202,17 +195,30 @@ class Item_category extends CI_Controller{
         if(!$_SERVER['HTTP_REFERER']){ redirect('home'); }else{
             $this->load->model('item_cate_model');
             $this->item_cate_model->inactive_item($id);
-            redirect('item_category');
+            redirect('items_category');
         }
     }
     function active_item($id){
        if(!$_SERVER['HTTP_REFERER']){ redirect('home'); }else{
             $this->load->model('item_cate_model');
             $this->item_cate_model->active_item($id);
-            redirect('item_category');
+            redirect('items_category');
         } 
     }
-
+    function delete_item_for($id){
+      if(!$_SERVER['HTTP_REFERER']){ redirect('home'); }else{
+            $this->load->model('item_cate_model');
+            $this->item_cate_model->delete_item_category_for_admin($id,$_SESSION['Uid']);
+            redirect('items_category');
+        }   
+    }
+    function delete_item($id){
+        if(!$_SERVER['HTTP_REFERER']){ redirect('home'); }else{
+            $this->load->model('item_cate_model');
+            $this->item_cate_model->delete_item_category_for_user($id,$_SESSION['Uid']);
+            redirect('items_category');
+        }  
+    }
     
     }
 ?>

@@ -156,8 +156,6 @@ class Items extends CI_Controller{
                     $data['brands']=  $this->item_model->get_brands_user($_SESSION['Bid']);
                     $data['taxes']=  $this->item_model->get_tax_for_user($_SESSION['Bid']);
                     $data['area']=  $this->item_model->get_tax_area_for_user($_SESSION['Bid']);
-                    
-                    $data['row']=$this->item_model->get_item_category($_SESSION['Bid']);
                     $data['crow']=$this->item_model->get_category($_SESSION['Bid']);
                     $data['srow']=$this->item_model->get_suppier_in_branch($_SESSION['Bid']);
                     $data['sb_row']=$this->item_model->get_supplier_details();
@@ -315,8 +313,6 @@ class Items extends CI_Controller{
                     $data['brands']=  $this->item_model->get_brands_user($_SESSION['Bid']);
                     $data['taxes']=  $this->item_model->get_tax_for_user($_SESSION['Bid']);
                     $data['area']=  $this->item_model->get_tax_area_for_user($_SESSION['Bid']);
-                    
-                    $data['row']=$this->item_model->get_item_category($_SESSION['Bid']);
                     $data['crow']=$this->item_model->get_category($_SESSION['Bid']);
                     $data['srow']=$this->item_model->get_suppier_in_branch($_SESSION['Bid']);
                     $data['sb_row']=$this->item_model->get_supplier_details();

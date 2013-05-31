@@ -1,5 +1,5 @@
 <?php
-echo form_open('item_category/update_item');
+echo form_open('items_category/update_item');
 echo "<table>";
 foreach ($row as $tax1){
 echo form_hidden('id',$tax1->id);

@@ -78,8 +78,13 @@ class item_cate_model extends CI_Model{
         $this->db->update('item_category',$data);
     }
     function delete_item_category_for_admin($value,$uid){
-        $data=array('active_status'=>1,'delete_status'=>1);
+        $data=array('active_status'=>1,'delete_status'=>1,'deleted_by'=>$uid);
         $this->db->where('id',$value);
+        $this->db->update('item_category',$data);
+    }
+    function delete_item_category_for_user($id,$uid){
+         $data=array('active_status'=>1,'deleted_by'=>$uid);
+        $this->db->where('id',$id);
         $this->db->update('item_category',$data);
     }
    

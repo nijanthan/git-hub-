@@ -75,12 +75,7 @@ class Item_model extends CI_Model{
         $this->db->update('items',$data);
     }
     
-    
-    function get_item_category($id){
-        $this->db->select()->from('item_category_x_branchs')->where('branch_id',$id)->where('category_active',0);
-        $sql=  $this->db->get();
-        return $sql->result();        
-    }
+   
     function get_category($id){
         $this->db->select()->from('item_category')->where('branch_id',$id);
         $sql=  $this->db->get();
@@ -152,8 +147,8 @@ class Item_model extends CI_Model{
     function item_setting($tax_in,$id,$bid){
         $data=array('item_id'=>$id,
             'branch_id'=>$bid, 	
-            'min_q'=>1,
-            'max_q'=>1, 	
+            'min_q'=>0,
+            'max_q'=>0, 	
             'sales'=>1,
             'purchase'=>1, 	
             'salses_return'=>1, 	

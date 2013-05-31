@@ -137,6 +137,13 @@ $lang['company']='Comapany';
  $lang['tax_Inclusive']='Tax Inclusive';
  $lang['category']='Category';
  $lang['item_setting']='Item Setting';
+ $lang['bulk_edit']='Bulk Edit';
+ $lang['min_qty']='Min Qty';
+ $lang['max_qty']='Max Qty';
+ $lang['salses_return']='Sales Return';
+ $lang['purchase']='Purchase';
+ $lang['purchase_return']='Purchase Return';
+ $lang['allow_negative']='Allow Negative';
 
  
  
