@@ -86,3 +86,12 @@ ERROR - 2013-05-31 14:00:44 --> 404 Page Not Found --> item_code/edit_item
 ERROR - 2013-05-31 14:16:17 --> Query error: Unknown column 'emp_id' in 'where clause'
 ERROR - 2013-05-31 14:16:43 --> Query error: Unknown column 'item_id' in 'where clause'
 ERROR - 2013-05-31 14:17:54 --> Query error: Unknown column 'item_id' in 'where clause'
+ERROR - 2013-05-31 16:40:58 --> 404 Page Not Found --> customers_category
+ERROR - 2013-05-31 16:43:15 --> Could not find the language line "name"
+ERROR - 2013-05-31 16:43:27 --> Query error: Unknown column 'deleted_by' in 'field list'
+ERROR - 2013-05-31 16:44:03 --> Severity: Notice  --> Undefined property: CI_DB_mysql_result::$result C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-31 16:44:03 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\models\branch.php 295
+ERROR - 2013-05-31 16:44:55 --> Could not find the language line "name"
+ERROR - 2013-05-31 16:45:13 --> Could not find the language line "name"
+ERROR - 2013-05-31 16:45:30 --> Could not find the language line "name"
+ERROR - 2013-05-31 16:45:41 --> Could not find the language line "name"
