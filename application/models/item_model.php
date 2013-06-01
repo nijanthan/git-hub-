@@ -192,7 +192,7 @@ class Item_model extends CI_Model{
               }
           }
           function check_item_for_update($code,$id,$bid){
-              $this->db->select()->from('items')->where('delete_status',0)->where('id <>',$id)->where('branch_id',$bid);
+              $this->db->select()->from('items')->where('delete_status',0)->where('id <>',$id)->where('branch_id',$bid)->where('code',$code);
               $sql=  $this->db->get();
               if($sql->num_rows()>0){
                   return FALSE;

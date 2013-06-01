@@ -127,6 +127,9 @@ class Home extends CI_Controller
            if($this->input->post('customer_cate')){
                redirect('customer_category');
            }
+           if($this->input->post('supplier_items')){
+               redirect('supplier_vs_items');
+           }
                
     }
      function user_groups(){

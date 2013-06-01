@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2013 at 08:19 AM
+-- Generation Time: Jun 01, 2013 at 06:06 AM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -59,6 +59,30 @@ INSERT INTO `branchs` (`id`, `store_name`, `store_city`, `store_state`, `store_z
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `branchs_x_payment_modes`
+--
+
+CREATE TABLE IF NOT EXISTS `branchs_x_payment_modes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `pay_id` int(11) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `branchs_x_payment_modes`
+--
+
+INSERT INTO `branchs_x_payment_modes` (`id`, `branch_id`, `pay_id`, `active_status`) VALUES
+(1, 3, 1, 0),
+(2, 3, 2, 0),
+(3, 1, 3, 0),
+(4, 3, 4, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `branch_x_page_x_permissions`
 --
 
@@ -91,42 +115,131 @@ INSERT INTO `branch_x_page_x_permissions` (`id`, `permission`, `depart_id`, `bra
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `brands`
+--
+
+CREATE TABLE IF NOT EXISTS `brands` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `branch_id` int(11) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  `added_by` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `name`, `branch_id`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
+(1, 'TATA1', 3, 0, 0, 0, 0),
+(2, 'LG', 3, 0, 0, 0, 102),
+(3, 'NOKIA', 3, 0, 0, 0, 0),
+(4, 'SAMSUNG', 3, 0, 0, 0, 0),
+(5, 'ACER', 3, 0, 0, 0, 0),
+(6, 'THOSHIBA', 3, 0, 0, 0, 101),
+(7, 'SONY', 3, 1, 0, 0, 102),
+(8, 'IDEA', 3, 1, 0, 0, 102);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customers`
 --
 
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` int(200) unsigned NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
+  `title` varchar(10) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `address1` varchar(50) NOT NULL,
   `address2` varchar(50) NOT NULL,
+  `bday` int(20) NOT NULL,
+  `mday` int(20) NOT NULL,
   `city` varchar(50) NOT NULL,
   `state` varchar(50) NOT NULL,
   `zip` varchar(50) NOT NULL,
   `country` varchar(50) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `comments` varchar(255) NOT NULL,
   `company_name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `account_number` varchar(50) NOT NULL,
+  `bank_name` varchar(50) NOT NULL,
+  `bank_location` varchar(50) NOT NULL,
   `website` varchar(100) NOT NULL,
-  `taxable` varchar(10) NOT NULL,
+  `cst` varchar(50) NOT NULL,
+  `gst` varchar(50) NOT NULL,
+  `tax_no` varchar(50) NOT NULL,
   `created_by` int(11) NOT NULL,
   `active_status` int(11) NOT NULL,
   `delete_status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `first_name`, `last_name`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `comments`, `company_name`, `email`, `phone`, `account_number`, `website`, `taxable`, `created_by`, `active_status`, `delete_status`) VALUES
-(13, 'monish', 'km', '', '', '', '', '', '', '', '', 'jibi344443@yahoo.com', '7795398584', '', '', '0', 99, 0, 0),
-(14, 'sasi', 'gopan', '', '', '', '', '', '', '', '', '', '7795398589', '', '', '0', 99, 0, 0),
-(15, 'libin', 'kuran', '', '', '', '', '', '', '', '', '', '9945398584', '', '', '0', 99, 0, 0),
-(16, 'nijan', 'xavier', '', '', '', '', '', '', '', '', '', '7795398583', '', '', '0', 99, 0, 0),
-(17, 'monish', 'km', 'slvpg', '', '', '', '', '', '', '', '', '7795398584', '', '', '0', 102, 0, 0);
+INSERT INTO `customers` (`id`, `first_name`, `title`, `last_name`, `address1`, `address2`, `bday`, `mday`, `city`, `state`, `zip`, `country`, `category_id`, `comments`, `company_name`, `email`, `phone`, `account_number`, `bank_name`, `bank_location`, `website`, `cst`, `gst`, `tax_no`, `created_by`, `active_status`, `delete_status`) VALUES
+(21, 'jibi', 'Dr', 'gopi', 'kola', 'dsfds', 0, 0, 'dsfds', 'dsaf', 'dsf', 'ds', 2, 'gjshdgfjhws', 'hjdshk', 'julibeth@yahoo.in', '7785008584', '879', 'iuyi', 'jjh', 'kjhdsyhi', '9809', '098', '', 0, 0, 0),
+(22, 'jibi', 'Mr', 'gopi', 'kolanchira', 'erumely', 1370217600, 1371081600, 'kottaym', 'kerala', '676809', 'india', 6, 'nothng', 'pluskb', 'jibi344443@yahoo.com', '7795398584', 'SBC4554646', 'STB', 'erumely', 'hahiaiu', 'CST87686', 'GST89979', '', 101, 0, 0),
+(23, 'jibi', 'Mr', 'gopi', 'kolanchira', 'erumely', 1371081600, 1370476800, 'kottaym', 'kerala', '676809', 'india', 2, 'nothng', 'pluskb', 'julibeth@yahoo.in', '7795398584', 'SBT788979', 'SBT', 'erumely', 'http;//www.pluskb.com', 'CST87686', 'GST89979', 'REG7879', 101, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers_category`
+--
+
+CREATE TABLE IF NOT EXISTS `customers_category` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `category_name` varchar(100) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  `added_by` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `customers_category`
+--
+
+INSERT INTO `customers_category` (`id`, `branch_id`, `category_name`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
+(1, 3, 'Custome Sample One', 0, 0, 102, 101),
+(2, 3, 'Custome Sample Two', 0, 0, 101, 0),
+(3, 3, 'Custome Sample Three', 0, 0, 101, 0),
+(4, 3, 'Custome Sample Four', 0, 0, 101, 0),
+(6, 1, 'Custome Sample One', 0, 0, 101, 0),
+(7, 1, 'Custome Sample Two', 0, 0, 101, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers_payment_type`
+--
+
+CREATE TABLE IF NOT EXISTS `customers_payment_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(50) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `customers_payment_type`
+--
+
+INSERT INTO `customers_payment_type` (`id`, `type`, `active_status`) VALUES
+(1, 'Credit Only', 0),
+(2, 'Both Cash And Credit', 0),
+(3, 'Cash On Delivery', 0),
+(4, 'Only Cash', 0);
 
 -- --------------------------------------------------------
 
@@ -145,18 +258,16 @@ CREATE TABLE IF NOT EXISTS `customers_x_branchs` (
   `customer_delete` int(11) NOT NULL,
   `deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `customers_x_branchs`
 --
 
 INSERT INTO `customers_x_branchs` (`id`, `branch_id`, `branch_name`, `customer_id`, `active_status`, `delete_status`, `customer_active`, `customer_delete`, `deleted_by`) VALUES
-(9, 4, 'Dominos', 13, 0, 0, 0, 0, 99),
-(10, 4, 'Dominos', 14, 0, 0, 0, 0, 99),
-(11, 4, 'Dominos', 15, 0, 0, 0, 0, 99),
-(12, 4, 'Dominos', 16, 0, 0, 0, 0, 99),
-(13, 3, 'Mcdonalds', 17, 0, 0, 1, 0, 0);
+(15, 3, 'Mcdonalds', 21, 0, 0, 0, 0, 0),
+(16, 1, 'K F C', 22, 0, 0, 0, 0, 0),
+(17, 3, 'Mcdonalds', 23, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -193,6 +304,33 @@ INSERT INTO `customers_x_page_x_permissions` (`id`, `permission`, `depart_id`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customers_x_payment_types_details`
+--
+
+CREATE TABLE IF NOT EXISTS `customers_x_payment_types_details` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `payment_type_id` int(11) NOT NULL,
+  `limit` varchar(100) NOT NULL,
+  `balance` varchar(100) NOT NULL,
+  `credit_days` int(11) NOT NULL,
+  `monthly_limit` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `customers_x_payment_types_details`
+--
+
+INSERT INTO `customers_x_payment_types_details` (`id`, `branch_id`, `customer_id`, `payment_type_id`, `limit`, `balance`, `credit_days`, `monthly_limit`) VALUES
+(2, 3, 21, 2, '123', '', 12, '123'),
+(3, 1, 22, 3, '10000', '', 100, '10000'),
+(4, 3, 23, 2, '100000', '', 1000, '100000');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `items`
 --
 
@@ -206,37 +344,33 @@ CREATE TABLE IF NOT EXISTS `items` (
   `name` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL,
   `cost_price` varchar(50) NOT NULL,
-  `current_stock` varchar(50) NOT NULL,
-  `salling_price` varchar(100) NOT NULL,
+  `mrf` varchar(50) NOT NULL,
+  `landing_cost` varchar(50) NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `item_type_id` int(11) NOT NULL,
+  `selling_price` varchar(100) NOT NULL,
   `discount_amount` varchar(50) NOT NULL,
   `start_date` varchar(25) NOT NULL,
   `end_date` varchar(25) NOT NULL,
-  `tax1` varchar(50) NOT NULL,
-  `tax2` varchar(50) NOT NULL,
-  `quantity` int(100) NOT NULL,
+  `tax_id` int(11) NOT NULL,
+  `tax_area_id` int(11) NOT NULL,
   `location` varchar(100) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
   `added_by` int(11) NOT NULL,
+  `code_status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Dumping data for table `items`
 --
 
-INSERT INTO `items` (`id`, `code`, `barcode`, `category_id`, `branch_id`, `supplier_id`, `name`, `description`, `cost_price`, `current_stock`, `salling_price`, `discount_amount`, `start_date`, `end_date`, `tax1`, `tax2`, `quantity`, `location`, `added_by`) VALUES
-(1, '7785', '989989', 1, 2, 1, 'item1', '', '10', '10', '10', '', '0', '0', '', '', 0, 'one', 0),
-(2, '7787', 'u9898', 1, 2, 0, 'item1', '', '', '10', '', '', '', '', '', '', 0, '', 0),
-(3, '7786', 'u9898', 1, 2, 0, 'item1', '', '', '10', '', '', '', '', '', '', 0, '', 0),
-(4, '7787', 'u9898', 1, 2, 0, 'item1', '', '', '10', '', '', '', '', '', '', 0, '', 0),
-(8, 'uhhju', '89878', 2, 2, 7, 'item3', '', '10', '10', '10', '102', '1369008000', '1369612800', '', '', 1000, '', 101),
-(9, 'uhhju', '89878', 1, 2, 6, 'item3', '', '10', '10', '10', '102', '1369008000', '1369612800', '', '', 1000, '', 101),
-(21, 'I101', 'I1008', 3, 3, 8, 'Item 1', '', '10', '1000', '12', '', '0', '0', '', '', 12, '', 102),
-(22, 'I102', 'I1008', 3, 3, 8, 'item2', '', '15', '2000', '20', '', '0', '0', '', '', 1, '', 102),
-(23, 'I103', 'I1008', 3, 3, 8, 'item3', '', '11', '20', '14', '', '0', '0', '', '', 1, '', 102),
-(24, 'I104', 'I1008', 3, 3, 8, 'item3', '', '21', '30', '25', '', '0', '0', '', '', 1, '', 102),
-(25, 'I105', 'I1008', 3, 3, 8, 'item6', '', '18', '100', '20', '', '0', '0', '', '', 1, '', 102),
-(26, 'I107', 'I1008', 3, 3, 8, 'item 7', '', '26', '1000', '28', '', '0', '0', '', '', 2, '', 102),
-(27, 'I108', 'I1008', 3, 3, 8, 'item8', '', '6', '2', '10', '', '0', '0', '', '', 1, '', 102);
+INSERT INTO `items` (`id`, `code`, `barcode`, `category_id`, `branch_id`, `supplier_id`, `name`, `description`, `cost_price`, `mrf`, `landing_cost`, `brand_id`, `item_type_id`, `selling_price`, `discount_amount`, `start_date`, `end_date`, `tax_id`, `tax_area_id`, `location`, `deleted_by`, `active_status`, `delete_status`, `added_by`, `code_status`) VALUES
+(35, 'Code1233', 'I1008', 6, 3, 8, 'Item 1', 'Book', '123', '123', '15', 3, 0, '123', '12', '0', '0', 5, 2, 'dr', 3, 0, 0, 102, 1),
+(36, 'Code124', '', 3, 3, 8, 'item2', '', '12', '15', '14', 1, 0, '14', '', '0', '0', 1, 1, '', 0, 0, 0, 102, 1),
+(37, 'U657657', '', 3, 3, 8, 'item3', '', '12', '12', '12', 1, 0, '12', '', '0', '0', 1, 1, '', 3, 0, 0, 101, 1);
 
 -- --------------------------------------------------------
 
@@ -273,40 +407,33 @@ INSERT INTO `items_kits_x_page_x_permissions` (`id`, `permission`, `depart_id`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items_x_branchs`
+-- Table structure for table `items_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `items_x_branchs` (
+CREATE TABLE IF NOT EXISTS `items_settings` (
   `id` int(200) unsigned NOT NULL AUTO_INCREMENT,
-  `branch_id` int(11) NOT NULL,
-  `branch_name` varchar(100) NOT NULL,
-  `item_id` int(11) NOT NULL,
-  `active_status` int(11) NOT NULL,
-  `delete_status` int(11) NOT NULL,
-  `item_active` int(11) NOT NULL,
-  `item_delete` int(11) NOT NULL,
-  `deleted_by` int(11) NOT NULL,
+  `item_id` int(200) NOT NULL,
+  `branch_id` int(200) NOT NULL,
+  `min_q` varchar(50) NOT NULL,
+  `max_q` varchar(50) NOT NULL,
+  `sales` int(11) NOT NULL,
+  `purchase` int(11) NOT NULL,
+  `salses_return` int(11) NOT NULL,
+  `purchase_return` int(11) NOT NULL,
+  `allow_negative` int(11) NOT NULL,
+  `tax_inclusive` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `items_x_branchs`
+-- Dumping data for table `items_settings`
 --
 
-INSERT INTO `items_x_branchs` (`id`, `branch_id`, `branch_name`, `item_id`, `active_status`, `delete_status`, `item_active`, `item_delete`, `deleted_by`) VALUES
-(1, 2, 'quantity', 1, 0, 0, 0, 0, 102),
-(2, 1, 'K F C', 2, 0, 0, 0, 0, 0),
-(3, 1, 'K F C', 3, 0, 0, 0, 0, 0),
-(4, 1, 'K F C', 4, 0, 0, 0, 0, 0),
-(5, 2, 'Pizza Hut', 8, 0, 0, 0, 0, 102),
-(6, 2, 'Pizza Hut', 9, 0, 0, 0, 0, 102),
-(17, 3, 'Mcdonalds', 21, 0, 0, 0, 0, 0),
-(18, 3, 'Mcdonalds', 22, 0, 0, 0, 0, 0),
-(19, 3, 'Mcdonalds', 23, 0, 0, 0, 0, 0),
-(20, 3, 'Mcdonalds', 24, 0, 0, 0, 0, 0),
-(21, 3, 'Mcdonalds', 25, 0, 0, 0, 0, 0),
-(22, 3, 'Mcdonalds', 26, 0, 0, 0, 0, 0),
-(23, 3, 'Mcdonalds', 27, 0, 0, 0, 0, 0);
+INSERT INTO `items_settings` (`id`, `item_id`, `branch_id`, `min_q`, `max_q`, `sales`, `purchase`, `salses_return`, `purchase_return`, `allow_negative`, `tax_inclusive`, `updated_by`) VALUES
+(3, 35, 3, '0', '0', 0, 0, 0, 0, 1, 1, 102),
+(11, 36, 3, '0', '0', 1, 1, 1, 1, 1, 1, 102),
+(12, 37, 3, '0', '0', 1, 1, 1, 1, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -320,47 +447,47 @@ CREATE TABLE IF NOT EXISTS `item_category` (
   `branch_id` int(11) NOT NULL,
   `active_status` int(11) NOT NULL,
   `delete_status` int(11) NOT NULL,
+  `added_by` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `item_category`
 --
 
-INSERT INTO `item_category` (`id`, `category_name`, `branch_id`, `active_status`, `delete_status`) VALUES
-(1, 'water', 2, 0, 0),
-(2, 'drinks', 2, 0, 0),
-(3, 'Books', 3, 0, 0),
-(4, 'Pen', 3, 0, 0);
+INSERT INTO `item_category` (`id`, `category_name`, `branch_id`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
+(1, 'water', 2, 0, 0, 0, 0),
+(2, 'drinks', 2, 0, 0, 0, 0),
+(3, 'Books', 3, 0, 0, 0, 101),
+(4, 'Pen', 3, 0, 0, 0, 102),
+(5, 'TV', 3, 0, 0, 0, 102),
+(6, 'Laptop', 3, 0, 0, 101, 102),
+(7, 'SASI', 3, 0, 0, 102, 102);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `item_category_x_branchs`
+-- Table structure for table `item_upc_ean_code`
 --
 
-CREATE TABLE IF NOT EXISTS `item_category_x_branchs` (
-  `id` int(200) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `item_upc_ean_code` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `code` varchar(200) NOT NULL,
   `branch_id` int(11) NOT NULL,
-  `branch_name` varchar(100) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  `active_ststus` int(11) NOT NULL,
   `delete_status` int(11) NOT NULL,
-  `category_active` int(11) NOT NULL,
-  `category_delete` int(11) NOT NULL,
-  `deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
 
 --
--- Dumping data for table `item_category_x_branchs`
+-- Dumping data for table `item_upc_ean_code`
 --
 
-INSERT INTO `item_category_x_branchs` (`id`, `branch_id`, `branch_name`, `category_id`, `active_ststus`, `delete_status`, `category_active`, `category_delete`, `deleted_by`) VALUES
-(1, 2, 'Pizza Hut', 1, 0, 0, 0, 1, 0),
-(2, 2, 'Pizza Hut', 2, 0, 0, 0, 0, 0),
-(3, 3, 'Mcdonalds', 3, 0, 0, 0, 0, 0),
-(4, 3, 'Mcdonalds', 4, 0, 0, 0, 0, 0);
+INSERT INTO `item_upc_ean_code` (`id`, `item_id`, `code`, `branch_id`, `delete_status`) VALUES
+(14, 35, 'U6576575', 3, 0),
+(15, 36, 'U657666', 3, 0),
+(16, 37, 'U6576574', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -707,11 +834,11 @@ CREATE TABLE IF NOT EXISTS `taxes_area` (
 
 INSERT INTO `taxes_area` (`id`, `name`, `branch_id`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
 (1, 'kearal1', 3, 0, 0, 0, 0),
-(2, 'gova', 3, 0, 0, 0, 101),
+(2, 'gova', 3, 0, 0, 0, 102),
 (3, 'dhelhi', 3, 1, 1, 0, 101),
-(4, 'kerala', 3, 0, 0, 0, 101),
-(5, 'kerala', 3, 0, 0, 0, 101),
-(6, 'kerala', 3, 0, 0, 0, 102),
+(4, 'kerala', 3, 0, 1, 0, 101),
+(5, 'kerala', 3, 0, 1, 0, 101),
+(6, 'kerala', 3, 0, 1, 0, 101),
 (7, 'kerala', 3, 0, 0, 0, 0),
 (8, 'andhra', 3, 0, 0, 101, 102),
 (9, 'dhelhi', 3, 0, 0, 101, 102);
@@ -726,9 +853,9 @@ CREATE TABLE IF NOT EXISTS `taxes_commodity` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `branch_id` int(11) NOT NULL,
   `schedule` varchar(100) NOT NULL,
-  `tax_area` varchar(100) NOT NULL,
+  `tax_area` int(11) NOT NULL,
   `description` varchar(200) NOT NULL,
-  `Part` varchar(100) NOT NULL,
+  `part` varchar(100) NOT NULL,
   `code` varchar(200) NOT NULL,
   `tax` int(11) NOT NULL,
   `active_status` int(11) NOT NULL,
@@ -736,16 +863,19 @@ CREATE TABLE IF NOT EXISTS `taxes_commodity` (
   `added_by` int(11) NOT NULL,
   `deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `taxes_commodity`
 --
 
-INSERT INTO `taxes_commodity` (`id`, `branch_id`, `schedule`, `tax_area`, `description`, `Part`, `code`, `tax`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
-(1, 3, 'starts', 'kerala', '', '', 'C123', 1, 0, 0, 0, 0),
-(2, 3, 'starts', 'tamil', '', '', 'C124', 2, 0, 0, 0, 0),
-(3, 3, 'starts', 'gova', '', '', 'C125', 3, 0, 0, 0, 0);
+INSERT INTO `taxes_commodity` (`id`, `branch_id`, `schedule`, `tax_area`, `description`, `part`, `code`, `tax`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
+(1, 3, 'starts', 2, 'sasi', 'sasi', 'C123', 1, 0, 0, 0, 102),
+(2, 3, 'starts', 2, 'asfas', 'fafa', 'C124', 2, 0, 0, 0, 3),
+(3, 3, 'starts', 8, 'rwr', 'rrew', 'C125', 3, 0, 0, 0, 101),
+(4, 3, 'part', 1, 'orgin', 'start', 'C3455', 1, 0, 0, 101, 102),
+(5, 3, 'aa', 9, 'Part', '345', 'C345', 6, 0, 0, 101, 102),
+(6, 3, 'fvawer', 6, 'dis', 'vasrtw', 'C3457', 4, 0, 0, 101, 102);
 
 -- --------------------------------------------------------
 
@@ -759,20 +889,22 @@ CREATE TABLE IF NOT EXISTS `tax_types` (
   `branch_id` int(11) NOT NULL,
   `active_status` int(11) NOT NULL,
   `delete_status` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
+  `added_by` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tax_types`
 --
 
-INSERT INTO `tax_types` (`id`, `type`, `branch_id`, `active_status`, `delete_status`, `status`) VALUES
-(1, 'SERVICE', 3, 0, 0, 0),
-(2, 'VAT', 3, 0, 0, 0),
-(3, 'ADDITIONAL VAT', 3, 0, 0, 0),
-(4, 'EDUCESS', 3, 0, 0, 0),
-(5, 'HEDUCESS', 3, 0, 0, 0);
+INSERT INTO `tax_types` (`id`, `type`, `branch_id`, `active_status`, `delete_status`, `added_by`, `deleted_by`) VALUES
+(1, 'SERVICE', 3, 0, 0, 0, 102),
+(2, 'VAT', 3, 0, 0, 0, 3),
+(3, 'ADDITIONAL VAT', 3, 0, 0, 0, 0),
+(4, 'EDUCESS', 3, 0, 0, 0, 3),
+(5, 'HEDUCESS', 3, 0, 0, 0, 101),
+(7, 'SASI', 3, 0, 0, 0, 102);
 
 -- --------------------------------------------------------
 
