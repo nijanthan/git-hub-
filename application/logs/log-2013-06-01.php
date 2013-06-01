@@ -40,3 +40,25 @@ ERROR - 2013-06-01 06:57:03 --> Severity: Warning  --> Missing argument 4 for Su
 ERROR - 2013-06-01 06:57:03 --> Severity: Notice  --> Undefined variable: branch C:\wamp\www\PointOfSale\application\models\supplier_model.php 46
 ERROR - 2013-06-01 06:57:03 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\wamp\www\PointOfSale\application\views\supplier_list.php 29
 ERROR - 2013-06-01 09:16:28 --> Could not find the language line "add_item"
+ERROR - 2013-06-01 09:19:32 --> 404 Page Not Found --> supplier_vs_items/add_items
+ERROR - 2013-06-01 09:33:52 --> Query error: Table 'pos.items_x_branchs' doesn't exist
+ERROR - 2013-06-01 09:56:10 --> Query error: Unknown column 'active_status' in 'where clause'
+ERROR - 2013-06-01 09:56:39 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:39 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:39 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:40 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:40 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:52 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:52 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:52 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 09:56:52 --> Severity: Notice  --> Undefined property: stdClass::$current_stock C:\wamp\www\PointOfSale\application\models\receiving_items.php 27
+ERROR - 2013-06-01 10:23:55 --> Severity: Notice  --> Undefined variable: count C:\wamp\www\PointOfSale\application\views\supplier_vs_items\add_items.php 71
+ERROR - 2013-06-01 10:31:28 --> Severity: Notice  --> Undefined offset: 3 C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 82
+ERROR - 2013-06-01 10:31:32 --> Severity: Notice  --> Undefined offset: 3 C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 82
+ERROR - 2013-06-01 10:31:33 --> Severity: Notice  --> Undefined offset: 3 C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 82
+ERROR - 2013-06-01 10:31:52 --> Severity: Notice  --> Undefined variable: stock C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 91
+ERROR - 2013-06-01 10:31:52 --> Severity: Notice  --> Undefined variable: stock C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 91
+ERROR - 2013-06-01 11:06:56 --> Severity: Warning  --> preg_replace() expects at least 3 parameters, 2 given C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 90
+ERROR - 2013-06-01 11:06:56 --> Severity: Warning  --> preg_replace() expects at least 3 parameters, 2 given C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 90
+ERROR - 2013-06-01 11:08:58 --> Severity: Notice  --> Undefined offset: -1 C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 90
+ERROR - 2013-06-01 12:54:35 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 68

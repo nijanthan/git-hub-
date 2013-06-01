@@ -180,5 +180,16 @@ class Supplier_model extends CI_Model{
         $this->db->where('branch_id',$bid);
         $this->db->update('suppliers_x_branchs',$data);
     }
+    // suppplier vs items 
+    function get_items_for_suppliers($bid){
+        $this->db->select()->from('items')->where('active_status',0)->where('branch_id',$bid);
+        $sql=  $this->db->get();
+        return $sql->result();
+    }
+    function added_items_for_supplier($bid){
+        $this->db->select()->from('suppliers_x_items')->where('active_status',0)->where('branch_id',$bid);
+        $sql=  $this->db->get();
+        return $sql->result();
+    }
 }
 ?>

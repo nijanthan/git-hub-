@@ -64,5 +64,54 @@ class Supplier_vs_items extends CI_Controller{
         }
         
     }
+    function add_items($id){
+          if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+        $this->load->model('supplier_model');
+        $data['row']=  $this->supplier_model->added_items_for_supplier($_SESSION['Bid']);
+                $this->load->view('template/header');
+                $this->load->view('supplier_vs_items/add_items',$data);
+                $this->load->view('template/footer');
+          }
+    }
+    function get_selected_item()
+    {
+          if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+       $this->load->model('receiving_items');
+           $qo = mysql_real_escape_string( $_REQUEST['query'] );
+
+        $value=  $this->receiving_items->get_selected_item_details($qo,$_SESSION['Bid']);
+
+$data=$value[0];
+$sel=$value[3];
+$price=$value[1];
+$id=$value[2];
+   
+	    echo '<ul>'."\n";
+	    for($i=0;$i<count($data);$i++)
+	    {
+		$p = $data[$i];
+		$p = preg_replace('/(' . $qo . ')/i', '<span style="font-weight:bold;">'.'</span>', $p);
+		echo "\t".'<li id="autocomplete_'.$id[$i].'" rel="'.$price[$i].'_' . $sel[$i].'_' . $data[$i] .'_' . $id[$i]. '">'. utf8_encode( "$data[$i]" ) .'</li>'."\n";
+	    }
+	    echo '</ul>';
+          }
+	
+    }
+    function save_items(){
+          if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+        if($this->input->post('cancel')){
+            redirect('supplier_vs_items/get_suppliers');
+        }
+        if($this->input->post('save')){
+        $data=  $this->input->post('quty');
+        for($i=0;$i<count($data);$i++){
+           
+            echo $data[$i]."<br>";
+        }
+    }
+    }
+    }
+
+    
 }
 ?>

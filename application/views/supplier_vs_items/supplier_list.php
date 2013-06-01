@@ -47,7 +47,7 @@ foreach ($row as $b_row){
             }?>
         
         </td>
-        <td style="width: 100px"><a href="<?php echo base_url() ?>index.php/supplier_vs_items/add_items/<?php echo $erow->id ?>"><?php echo $this->lang->line('add_item') ?></a><td><td style="width: 100px"><a href="<?php echo base_url() ?>index.php/suppliers/delete_supplier/<?php echo $erow->id ?>"><?php echo $this->lang->line('delete') ?></a></td>
+        <td style="width: 100px"><a href="<?php echo base_url() ?>index.php/supplier_vs_items/add_items/<?php echo $erow->id ?>"><?php echo $this->lang->line('add_item') ?></a><td><td style="width: 100px"><a href="<?php echo base_url() ?>index.php/supplier_vs_items/edit_items/<?php echo $erow->id ?>"><?php echo $this->lang->line('edit') ?></a></td>
     
     </tr>
     <?php ?>

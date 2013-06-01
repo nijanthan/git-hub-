@@ -159,6 +159,7 @@ $lang['company']='Comapany';
  $lang['Monthly Credit Balance']='Monthly Credit Balance';
  $lang['tax_no']='Tax Reg No';
  $lang['supplier_items']='Supplier Vs Items';
+ $lang['add_item']='Items';
 
  
 

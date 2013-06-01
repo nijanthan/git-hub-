@@ -19,18 +19,19 @@ class Receiving_items extends CI_Model{
         $sql=  $this->db->get();
         $details=array();
         $cost=array();
-        $stock=array();
+        $sell=array();
         $id=array();
         foreach ($sql->result() as $row){
-            $details[]=$row->name;
-            $cost[]=$row->cost_price ;
-            $stock[]=$row->current_stock;
+            $details[]=$row->code;
+            $cost[]=$row->description ;            
             $id[]=$row->id;
+            $sell[]=$row->selling_price;
         }
         $sasi[0]=$details;
         $sasi[1]=$cost;
-        $sasi[2]=$stock;
-        $sasi[3]=$id;
+        $sasi[2]=$id;
+        $sasi[3]=$sell;
+        
         return $sasi;
         
     }
