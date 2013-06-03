@@ -15,6 +15,9 @@ class Supplier_model extends CI_Model{
             $this->db->from('suppliers_x_branchs');
             return $this->db->count_all_results();
    }
+   function  get_supplier_count_for_supplier_item($branch){
+       $this->db->select()->from('suppliers_x_branchs')->where('branch_id',$branch);
+   }
    function get_supplier_details_for_admin($limit, $start,$branch) {
             $this->db->limit($limit, $start);   
             $this->db->where('branch_id',$branch);
@@ -186,10 +189,32 @@ class Supplier_model extends CI_Model{
         $sql=  $this->db->get();
         return $sql->result();
     }
-    function added_items_for_supplier($bid){
-        $this->db->select()->from('suppliers_x_items')->where('active_status',0)->where('branch_id',$bid);
+    function added_items_for_supplier($bid,$sid){
+        $this->db->select()->from('suppliers_x_items')->where('branch_id',$bid)->where('supplier_id',$sid);
         $sql=  $this->db->get();
         return $sql->result();
+    }
+    function save_supplier($act,$Bid,$Uid,$itemid,$qut, $cost, $price,$discount,$sid){
+        $data=array('active_status'=>$act,'supplier_id'=>$sid,'item_id'=>$itemid,'cost'=>$cost,'quty'=>$qut,'price'=>$price,'discount'=>$discount,'branch_id'=>$Bid,'added_by'=>$Uid);
+        $this->db->insert('suppliers_x_items',$data);
+    }
+    function get_items_detsils($bid){
+        $this->db->select()->from('items')->where('active_status',0)->where('delete_status',0)->where('branch_id',$bid);
+        $sql=  $this->db->get();
+        return $sql->result();
+    }
+    function delete_item_is_already($sid,$Bid)
+    {
+        $this->db->where('supplier_id',$sid);
+        $this->db->where('branch_id',$Bid);
+        $this->db->delete('suppliers_x_items');
+     
+    }
+    function delete_suplier_for_user($id,$Bid,$Uid){
+        $data=array('active'=>1);
+        $this->db->where('branch_id',$Bid);
+        $this->db->where('supplier_id',$id);
+        $this->db->update('suppliers_x_items',$data);
     }
 }
 ?>

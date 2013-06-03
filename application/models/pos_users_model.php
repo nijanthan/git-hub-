@@ -10,7 +10,7 @@ class Pos_users_model extends CI_Model{
             $this->db->where('user_delete ',0);
             $this->db->where('user_active',0);        
             $this->db->where('branch_id ',$branch);         
-            $this->db->from('users_X_branchs');
+            $this->db->from('users_x_branchs');
             return $this->db->count_all_results();
         
     }
@@ -20,7 +20,7 @@ class Pos_users_model extends CI_Model{
             $this->db->where('user_delete ',0);
             $this->db->where('user_active',0);        
             $this->db->where('branch_id ',$branch); 
-       $query = $this->db->get('users_X_branchs');
+       $query = $this->db->get('users_x_branchs');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -37,14 +37,14 @@ class Pos_users_model extends CI_Model{
    function pos_users_count_for_admin($branch){  
             $this->db->where('branch_id ',$branch);
             $this->db->where('user_delete',0);
-            $this->db->from('users_X_branchs');
+            $this->db->from('users_x_branchs');
             return $this->db->count_all_results();
    }
    function get_pos_users_details_for_admin($limit, $start,$branch) {
             $this->db->limit($limit, $start);   
             $this->db->where('branch_id',$branch);
             $this->db->where('user_delete',0);
-            $query = $this->db->get('users_X_branchs');
+            $query = $this->db->get('users_x_branchs');
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -97,7 +97,7 @@ class Pos_users_model extends CI_Model{
        $value=array('user_active'=>1,'deleted_by'=>$deleted_by);
        $this->db->where('emp_id',$id); 
        $this->db->where('branch_id',$branch);
-       $this->db->update('users_X_branchs',$value);       
+       $this->db->update('users_x_branchs',$value);       
    }
    function delete_pos_users_for_admin($id,$branch){       
        $this->db->where('emp_id',$id); 
@@ -146,19 +146,19 @@ class Pos_users_model extends CI_Model{
                 $value=array('user_active'=>0);
                 $this->db->where('emp_id',$id); 
                 $this->db->where('branch_id',$branch);
-                $this->db->update('users_X_branchs',$value);
+                $this->db->update('users_x_branchs',$value);
        }
        function deactivate_user($id,$branch){                   
                 $value=array('user_active'=>1);
                 $this->db->where('emp_id',$id);
                 $this->db->where('branch_id',$branch);                
-                $this->db->update('users_X_branchs',$value);
+                $this->db->update('users_x_branchs',$value);
        }
        function delete_user_for_admin($id,$branch){                
                 $value=array('user_delete'=>1,'user_active'=>1);
                 $this->db->where('emp_id',$id);
                 $this->db->where('branch_id',$branch);
-                $this->db->update('users_X_branchs',$value);
+                $this->db->update('users_x_branchs',$value);
        }
 }
 ?>

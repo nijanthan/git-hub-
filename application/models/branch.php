@@ -19,10 +19,10 @@ class Branch extends CI_Model{
             $data=array('emp_id'=>$id,
                     'branch_name'=>$name,
                     'branch_id'=>$branch_id);                       
-                    $this->db->insert('users_X_branchs',$data);
+                    $this->db->insert('users_x_branchs',$data);
     }
     function get_user_branch($id){
-            $this->db->select()->from('users_X_branchs')->where('emp_id',$id);
+            $this->db->select()->from('users_x_branchs')->where('emp_id',$id);
             $sql=  $this->db->get();
             $j=0;
        foreach ($sql->result() as $row) {                
@@ -33,17 +33,17 @@ class Branch extends CI_Model{
             
     }
     function get_selected_branch($id){
-         $this->db->select()->from('users_X_branchs')->where('emp_id',$id);
+         $this->db->select()->from('users_x_branchs')->where('emp_id',$id);
          $sql=  $this->db->get();
          return $sql->result();               
     }
     function get_selected_branch_for_view(){
-         $this->db->select()->from('users_X_branchs')->where('delete_status',0);;
+         $this->db->select()->from('users_x_branchs')->where('delete_status',0);;
          $sql=  $this->db->get();
          return $sql->result();             
     }
     function get_selected_branch_for_user_view(){
-         $this->db->select()->from('users_X_branchs')->where('active_status',0)->where('delete_status',0);
+         $this->db->select()->from('users_x_branchs')->where('active_status',0)->where('delete_status',0);
          $sql=  $this->db->get();
          return $sql->result(); 
     }
@@ -59,16 +59,16 @@ class Branch extends CI_Model{
     }
     function delete_user_branchs($id){
         $this->db->where('emp_id',$id);
-        $this->db->delete('users_X_branchs');
+        $this->db->delete('users_x_branchs');
     }
     function get_user_branchs($id){
-       $this->db->select()->from('users_X_branchs')->where('emp_id',$id);
+       $this->db->select()->from('users_x_branchs')->where('emp_id',$id);
        $sql=  $this->db->get();
        return $sql->result();
        
    }
    function get_user_branch_id_list($id){
-        $this->db->select()->from('users_X_branchs')->where('emp_id',$id);
+        $this->db->select()->from('users_x_branchs')->where('emp_id',$id);
         $sql=  $this->db->get();
         $j=0;
         foreach ($sql->result() as $row) {                
@@ -78,7 +78,7 @@ class Branch extends CI_Model{
              return $data;
    }
    function get_user_for_branch($id){
-       $this->db->select()->from('users_X_branchs')->where('emp_id',$id)->where('delete_status',0);
+       $this->db->select()->from('users_x_branchs')->where('emp_id',$id)->where('delete_status',0);
        $sql=$this->db->get();
        return $sql->result();
        
@@ -100,7 +100,7 @@ class Branch extends CI_Model{
             return $data; 	
    }
    function get_users_default_branch($id){
-       $this->db->select()->from('users_X_branchs')->where('id',$id);
+       $this->db->select()->from('users_x_branchs')->where('id',$id);
                 $sql=  $this->db->get();              
                 foreach ($sql->result() as $row) {            
                 $data = $row->branch_name    ;            

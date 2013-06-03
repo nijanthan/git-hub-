@@ -62,3 +62,4 @@ ERROR - 2013-06-01 11:06:56 --> Severity: Warning  --> preg_replace() expects at
 ERROR - 2013-06-01 11:06:56 --> Severity: Warning  --> preg_replace() expects at least 3 parameters, 2 given C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 90
 ERROR - 2013-06-01 11:08:58 --> Severity: Notice  --> Undefined offset: -1 C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 90
 ERROR - 2013-06-01 12:54:35 --> Severity: Notice  --> Undefined index: HTTP_REFERER C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 68
+ERROR - 2013-06-01 14:52:06 --> Severity: Notice  --> Undefined offset: 0 C:\wamp\www\PointOfSale\application\controllers\supplier_vs_items.php 95

@@ -160,11 +160,29 @@ class Item_model extends CI_Model{
             'tax_inclusive'=>$tax_in);
         $this->db->insert('items_settings',$data);
     }
-              
-    
-  
-   
-          function get_brands_user($bid){
+    function item_supplier($item_id,$cost,$sellimg,$suppier,$Bid,$Uid){
+          $data=array('supplier_id'=>$suppier,
+              'item_id'=>$item_id,
+              'cost'=>$cost,
+              'price'=>$sellimg,
+              'branch_id'=>$Bid,
+              'added_by'=>$Uid);
+         $this->db->insert('suppliers_x_items',$data);
+    }
+    function update_item_supplier($item_id,$cost,$sellimg,$suppier,$Bid,$Uid){
+        $data=array('supplier_id'=>$suppier,
+              'cost'=>$cost,
+              'price'=>$sellimg);
+          $this->db->where('item_id',$item_id);
+          $this->db->where('branch_id',$Bid);
+          $this->db->insert('suppliers_x_items',$data);
+    }
+
+
+
+
+
+    function get_brands_user($bid){
               $this->db->select()->from('brands')->where('branch_id',$bid)->where('active_status',0)->where('delete_status',0);
               $sql=$this->db->get();
               return $sql->result();

@@ -290,6 +290,7 @@ class Items extends CI_Controller{
                                     if($this->item_model->check_item($code,$_SESSION['Bid'])){
                                     $item_id= $this->item_model->add_item($_SESSION['Bid'],$_SESSION['Uid'],$tax,$area,$brand,$code,$barcode,$item_name,$description,$cost,$sellimg,$landing,$mrf,$discount,$start,$end,$location,$category,$suppier);
                                     $this->item_model->item_setting($tax_in,$item_id,$_SESSION['Bid']);
+                                    $this->item_model->item_supplier($item_id,$cost,$sellimg,$suppier,$_SESSION['Bid'],$_SESSION['Uid']);
                                     redirect('items');
                                     }else{
                                         echo " this item is  already added in this branch";
@@ -361,7 +362,8 @@ class Items extends CI_Controller{
                                     $brand=  $this->input->post('brand');
                                     if($this->item_model->check_item_for_update($code,$id,$_SESSION['Bid'])){
                                     $item_id= $this->item_model->update_item($id,$tax,$area,$brand,$code,$barcode,$item_name,$description,$cost,$sellimg,$landing,$mrf,$discount,$start,$end,$location,$category,$suppier);
-                                 
+                                    $this->item_model->update_item_supplier($id,$cost,$sellimg,$suppier,$_SESSION['Bid'],$_SESSION['Uid']);
+                                    
                                     redirect('items');
                                     }else{
                                         echo " this item is  already added in this branch";

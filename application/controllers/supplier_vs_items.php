@@ -67,7 +67,9 @@ class Supplier_vs_items extends CI_Controller{
     function add_items($id){
           if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
         $this->load->model('supplier_model');
-        $data['row']=  $this->supplier_model->added_items_for_supplier($_SESSION['Bid']);
+        $data['row']=  $this->supplier_model->added_items_for_supplier($_SESSION['Bid'],$id);
+        $data['item']=  $this->supplier_model->get_items_detsils($_SESSION['Bid']);
+        $data['supplier_id']=$id;
                 $this->load->view('template/header');
                 $this->load->view('supplier_vs_items/add_items',$data);
                 $this->load->view('template/footer');
@@ -83,15 +85,16 @@ class Supplier_vs_items extends CI_Controller{
 
 $data=$value[0];
 $sel=$value[3];
-$price=$value[1];
+$dis=$value[1];
 $id=$value[2];
+$cost=$value[4];
    
 	    echo '<ul>'."\n";
 	    for($i=0;$i<count($data);$i++)
 	    {
 		$p = $data[$i];
 		$p = preg_replace('/(' . $qo . ')/i', '<span style="font-weight:bold;">'.'</span>', $p);
-		echo "\t".'<li id="autocomplete_'.$id[$i].'" rel="'.$price[$i].'_' . $sel[$i].'_' . $data[$i] .'_' . $id[$i]. '">'. utf8_encode( "$data[$i]" ) .'</li>'."\n";
+		echo "\t".'<li id="autocomplete_'.$data[$i].'" rel="'.$dis[$i].'_' . $data[$i].'_' . $cost[$i].'_' . $sel[$i].'_' . $data[$i] .'_' . $id[$i]. '">'. utf8_encode( "$data[$i]" ) .'</li>'."\n";
 	    }
 	    echo '</ul>';
           }
@@ -103,15 +106,32 @@ $id=$value[2];
             redirect('supplier_vs_items/get_suppliers');
         }
         if($this->input->post('save')){
-        $data=  $this->input->post('quty');
-        for($i=0;$i<count($data);$i++){
-           
-            echo $data[$i]."<br>";
+        $itemid=  $this->input->post('itemsid');
+        $qut=  $this->input->post('quty');
+        $cost=$this->input->post('cost');
+        $price=$this->input->post('price');
+        $discount=  $this->input->post('disco');
+        $this->load->model('supplier_model');
+        $sid=$this->input->post('id');
+        $this->supplier_model->delete_item_is_already($sid,$_SESSION['Bid']);
+        
+        for($i=0;$i<count($itemid);$i++){
+           $active=  $this->input->post($itemid[$i])?1:0;
+            
+           $this->supplier_model->save_supplier($active,$_SESSION['Bid'],$_SESSION['Uid'],$itemid[$i],$qut[$i], $cost[$i], $price[$i],$discount[$i],$sid);
+            
         }
+        $this->get_suppliers();
     }
     }
     }
-
+    function delete_item($id){
+         if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+         $this->load->model('supplier_model');
+         $this->suppllier_model->delete_suplier_for_user($id,$_SESSION['Bid'],$_SESSION['Uid']);
+         redirect('supplier_vs_items');
+         }
+    }
     
 }
 ?>
