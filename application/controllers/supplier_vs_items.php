@@ -28,14 +28,14 @@ class Supplier_vs_items extends CI_Controller{
                 $this->load->model('branch');
                 $this->load->model('supplier_model');
 	        $config["base_url"] = base_url()."index.php/supplier_vs_items/get_suppliers";
-	        $config["total_rows"] = $this->supplier_model->supplier_count_for_admin($_SESSION['Bid']);// get supplier count
+	        $config["total_rows"] = $this->supplier_model->get_count_supplier_vs_item_for_admin($_SESSION['Bid']);// get supplier count
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
                 $data['branch']=$this->supplier_model->get_selected_branch_for_view();
-                $data['count']=$this->supplier_model->supplier_count_for_admin($_SESSION['Bid']);         
-	        $data["row"] = $this->supplier_model->get_supplier_details_for_admin($config["per_page"], $page,$_SESSION['Bid']);
+                $data['count']=$this->supplier_model->get_count_supplier_vs_item_for_admin($_SESSION['Bid']);         
+	        $data["row"] = $this->supplier_model->get_details_of_supplier_vs_item_for_admin($config["per_page"], $page,$_SESSION['Bid']);
                 $data['urow']= $this->supplier_model->get_suppliers();
 	        $data["links"] = $this->pagination->create_links();                 
                 $this->load->view('template/header');
@@ -46,14 +46,14 @@ class Supplier_vs_items extends CI_Controller{
                 $this->load->model('branch');
                 $this->load->model('supplier_model');
 	        $config["base_url"] = base_url()."index.php/supplier_vs_items/get_suppliers";
-                $config["total_rows"] = $this->supplier_model->pos_supplier_count($_SESSION['Bid']);
+                $config["total_rows"] = $this->supplier_model->get_count_supplier_vs_item_for_user($_SESSION['Bid']);
 	        $config["per_page"] = 8;
 	        $config["uri_segment"] = 3;
 	        $this->pagination->initialize($config);	 
 	        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
                 $data['branch']=$this->supplier_model->get_selected_branch_for_view();
-                $data['count']=$this->supplier_model->pos_supplier_count($_SESSION['Bid']);             
-	        $data["row"] = $this->supplier_model->get_supplier_details($config["per_page"], $page,$_SESSION['Bid']);
+                $data['count']=$this->supplier_model->get_count_supplier_vs_item_for_user($_SESSION['Bid']);             
+	        $data["row"] = $this->supplier_model->get_details_of_supplier_vs_item_for_user($config["per_page"], $page,$_SESSION['Bid']);
                 $data['urow']=$this->supplier_model->get_suppliers();
 	        $data["links"] = $this->pagination->create_links(); 
                 
@@ -128,8 +128,73 @@ $cost=$value[4];
     function delete_item($id){
          if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
          $this->load->model('supplier_model');
-         $this->suppllier_model->delete_suplier_for_user($id,$_SESSION['Bid'],$_SESSION['Uid']);
+         $this->supplier_model->delete_item_suplier_for_user($id,$_SESSION['Bid'],$_SESSION['Uid']);
          redirect('supplier_vs_items');
+         }
+    }
+    function suppliers_details(){
+          if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+              if($this->input->post('BacktoHome')){
+                  redirect('home');
+              }
+              if($this->input->post('delete_all')){
+                  $this->load->model('supplier_model');
+                  $data=$this->input->post('mycheck');
+                  foreach ($data as $id){                 
+                $this->supplier_model->delete_item_suplier_for_user($id,$_SESSION['Bid'],$_SESSION['Uid']);    
+                  }
+                  redirect('supplier_vs_items');
+              }
+              if($this->input->post('delete_supplier_for_admin')){
+                  $this->load->model('supplier_model');
+                  $data=$this->input->post('mycheck');
+                  foreach ($data as $id){                 
+                 $this->supplier_model->delete_item_suplier_for_admin($id,$_SESSION['Bid'],$_SESSION['Uid']);   
+                  }
+                  redirect('supplier_vs_items');
+              }
+              if($this->input->post('activate')){
+                   $this->load->model('supplier_model');
+                   $data=$this->input->post('mycheck');
+                  foreach ($data as $id){ 
+                  $this->supplier_model->to_activate_supplier_for_admin($id,$_SESSION['Bid']);    
+                  }
+                  redirect('supplier_vs_items');
+              }
+              if($this->input->post('deactivate')){
+                  $this->load->model('supplier_model');
+                  $data=$this->input->post('mycheck');
+                  foreach ($data as $id){ 
+                    $this->supplier_model->to_deactivate_supplier_for_admin($id,$_SESSION['Bid']);  
+                  }
+                  redirect('supplier_vs_items');
+              }
+          }
+    }
+    function delete_supplier_details_in_admin($id){
+         if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+             $this->load->model('supplier_model');
+                               
+                $this->supplier_model->delete_item_suplier_for_admin($id,$_SESSION['Bid'],$_SESSION['Uid']);    
+                
+                  redirect('supplier_vs_items');
+         }
+    }
+    function to_deactivate_supplier($id){
+        if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+             $this->load->model('supplier_model');
+                               
+                $this->supplier_model->to_deactivate_supplier_for_admin($id,$_SESSION['Bid']);    
+                
+                  redirect('supplier_vs_items');
+         }
+    }
+    function to_activate_supplier($id){
+        if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+             $this->load->model('supplier_model');                               
+                $this->supplier_model->to_activate_supplier_for_admin($id,$_SESSION['Bid']);    
+                
+                  redirect('supplier_vs_items');
          }
     }
     

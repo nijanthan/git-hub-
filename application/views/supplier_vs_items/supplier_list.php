@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); echo $links; 
 ?><table style="width: 550px">
     
-<?php  echo  form_open('suppliers/suppliers_details'); 
+<?php  echo  form_open('supplier_vs_items/suppliers_details'); 
 if($count!=0){
       if($_SESSION['admin']==2){?><table >
           <?php foreach ($row as $b_row){
@@ -19,11 +19,11 @@ if($count!=0){
                     
             }?>
         
-        </td> <td style="width: 150;margin-left: 150px"><?php if($b_row->supplier_active==0){ ?><a href="<?php echo base_url() ?>index.php/suppliers/to_deactivate_supplier/<?php echo $erow->id ?>">Deactivate</a> <?php } else{ ?><a href="<?php echo base_url() ?>index.php/suppliers/to_activate_supplier/<?php echo $erow->id ?>"> Activate</a> <?php } ?></td>
-        <td style="width: 100px"><a href="<?php echo base_url() ?>index.php/suppliers/edit_supplier_details/<?php echo $erow->id ?>"><?php echo $this->lang->line('edit') ?></a><td>
-        <td><a href=" <?php echo base_url() ?>index.php/suppliers/delete_supplier_details_in_admin/<?php echo $erow->id ?>"><?php echo $this->lang->line('delete') ?></a></td>
+        </td> <td style="width: 150;margin-left: 150px"><?php if($b_row->item_status==0){ ?><a href="<?php echo base_url() ?>index.php/supplier_vs_items/to_deactivate_supplier/<?php echo $erow->id ?>">Deactivate</a> <?php } else{ ?><a href="<?php echo base_url() ?>index.php/supplier_vs_items/to_activate_supplier/<?php echo $erow->id ?>"> Activate</a> <?php } ?></td>
+       <td><a href="<?php echo base_url() ?>index.php/supplier_vs_items/add_items/<?php echo $erow->id ?>"><?php echo $this->lang->line('add_item') ?></a><td>
+        <td><a href=" <?php echo base_url() ?>index.php/supplier_vs_items/delete_supplier_details_in_admin/<?php echo $erow->id ?>"><?php echo $this->lang->line('delete') ?></a></td>
     </tr><?php }}}?></table>
-<tb><?php echo form_submit('activate',$this->lang->line('activate'))?></td><tb><?php echo form_submit('deactivate',$this->lang->line('deactivate'))?></td><td><input type="submit" name="delete_supplier_for_admin" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_supplier" value="<?php echo $this->lang->line('add_new_supplier') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+<tb><?php echo form_submit('activate',$this->lang->line('activate'))?></td><tb><?php echo form_submit('deactivate',$this->lang->line('deactivate'))?></td><td><input type="submit" name="delete_supplier_for_admin" value="<?php echo $this->lang->line('delete') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
   
      <?php }else{?><table ><?php
 foreach ($row as $b_row){
@@ -53,14 +53,14 @@ foreach ($row as $b_row){
     <?php ?>
 
 <?php }}}?></table> 
-<tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><tb><input type="submit" name="Add_supplier" value="<?php echo $this->lang->line('add_new_supplier') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+<tb><input type="submit" name="delete_all" value="<?php echo $this->lang->line('delete') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
   
 <?php }
 }else{   if($_SESSION['admin']==2){ ?>
-    <tb><input type="submit" name="Add_supplier" value="<?php echo $this->lang->line('add_new_supplier') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
  
 <?php }else{?>
-    <tb><input type="submit" name="Add_supplier" value="<?php echo $this->lang->line('add_new_supplier') ?>"></td><td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
+    <td><?php echo form_submit('BacktoHome',$this->lang->line('back_to_home')) ?></td>
  
 <?php }
 

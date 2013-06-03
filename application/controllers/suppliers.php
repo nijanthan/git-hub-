@@ -175,12 +175,9 @@ class Suppliers extends CI_Controller{
                                     $address1=$this->input->post('address1');
                                     $address2=$this->input->post('address2');
                                     $company=$this->input->post('company');
-                                     $txable=0;
-                                    if($this->input->post('taxable')){
-                                         $txable=1;
-                                    }
+                                    
                                    if(!$this->supplier_model->check_supplier_already_in($phone,$_SESSION['Bid'])){
-                                    $id=$this->supplier_model->add_supplier($first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$txable,$_SESSION['Uid']);
+                                    $id=$this->supplier_model->add_supplier($first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$_SESSION['Bid'],$_SESSION['Uid']);
                                     $this->supplier_model->add_supplier_branchs($id,$_SESSION['Bid']);
                                     $this->get_suppliers();
                                     
@@ -244,27 +241,18 @@ class Suppliers extends CI_Controller{
                                     $address1=$this->input->post('address1');
                                     $address2=$this->input->post('address2');
                                     $company=$this->input->post('company');
-                                    $id=  $this->input->post('id');
-                                     $txable=0;
-                                    if($this->input->post('taxable')){
-                                         $txable=1;
-                                    }
+                                   $id=  $this->input->post('id');
                                    if(!$this->supplier_model->check_supplier_already_for_update($id,$phone,$_SESSION['Bid'])){
-                                    $this->supplier_model->update_supplier($id,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company,$txable);
+                                    $this->supplier_model->update_supplier($id,$first_name,$last_name,$email,$phone,$city,$state,$country,$zip,$comments,$website,$account_no,$address1,$address2,$company);
                                     $this->get_suppliers();
                                     
                                    }else{
-                                        echo "this user is already added";
-                                        $this->load->view('template/header');
-                                        $this->load->view('add_supplier');
-                                        $this->load->view('template/footer');
+                                       $this->edit_supplier_details($id);
                                    }
                                     
                                     
                         }else{
-                                $this->load->view('template/header');
-                                $this->load->view('add_supplier');
-                                $this->load->view('template/footer');
+                            $this-> edit_supplier_details($id);
                         }
                     
                 }else{

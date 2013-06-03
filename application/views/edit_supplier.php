@@ -15,7 +15,7 @@
      echo "<tr><td>"; echo form_label($this->lang->line('email'));echo "</td><td>";echo form_input('email',$c_row->email,'id="email" autofocus');echo "</td></tr>";
      echo "<tr><td>"; echo form_label($this->lang->line('company'));echo "</td><td>";echo form_input('company',$c_row->company_name,'id="company" autofocus');echo "</td></tr>";
      echo "<tr><td>"; echo form_label($this->lang->line('website'));echo "</td><td>";echo form_input('website',$c_row->website,'id="website" autofocus');echo "</td></tr>";
-     echo "<tr><td>"; echo form_label($this->lang->line('taxable'));echo "</td><td>";?> <input type="checkbox" name="taxable" <?php if($c_row->taxable==1){?> checked="checked" <?php } ?> > <?php echo "</td></tr>";
+    
      echo "<tr><td>"; echo form_label($this->lang->line('comments'));echo "</td><td>";echo form_textarea('comments',$c_row->comments,'id="comments" autofocus');echo "</td></tr>";
      echo "<tr><td>"; echo form_label($this->lang->line('account_no'));echo "</td><td>";echo form_input('account',$c_row->account_number,'id="account" autofocus');echo "</td></tr>";
      echo "<tr><td>"; echo form_submit('save',$this->lang->line('save'));echo "</td><td>";echo form_submit('cancel',$this->lang->line('cancel')); echo "</td></tr>";
