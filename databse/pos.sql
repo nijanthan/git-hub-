@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 01, 2013 at 06:06 AM
+-- Generation Time: Jun 05, 2013 at 06:35 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -369,8 +369,8 @@ CREATE TABLE IF NOT EXISTS `items` (
 
 INSERT INTO `items` (`id`, `code`, `barcode`, `category_id`, `branch_id`, `supplier_id`, `name`, `description`, `cost_price`, `mrf`, `landing_cost`, `brand_id`, `item_type_id`, `selling_price`, `discount_amount`, `start_date`, `end_date`, `tax_id`, `tax_area_id`, `location`, `deleted_by`, `active_status`, `delete_status`, `added_by`, `code_status`) VALUES
 (35, 'Code1233', 'I1008', 6, 3, 8, 'Item 1', 'Book', '123', '123', '15', 3, 0, '123', '12', '0', '0', 5, 2, 'dr', 3, 0, 0, 102, 1),
-(36, 'Code124', '', 3, 3, 8, 'item2', '', '12', '15', '14', 1, 0, '14', '', '0', '0', 1, 1, '', 0, 0, 0, 102, 1),
-(37, 'U657657', '', 3, 3, 8, 'item3', '', '12', '12', '12', 1, 0, '12', '', '0', '0', 1, 1, '', 3, 0, 0, 101, 1);
+(36, 'Code124', '', 3, 3, 8, 'item2', 'pen', '12', '15', '14', 1, 0, '14', '', '0', '0', 1, 1, '', 0, 0, 0, 102, 1),
+(37, 'U657657', '', 3, 3, 8, 'item3', 'clock', '45', '12', '12', 1, 0, '12', '', '0', '0', 1, 1, '', 3, 0, 0, 101, 1);
 
 -- --------------------------------------------------------
 
@@ -520,6 +520,31 @@ INSERT INTO `item_x_page_permissions` (`id`, `permission`, `depart_id`, `branch_
 (37, '1111', 36, 4),
 (38, '1111', 37, 2),
 (43, '1111', 43, 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `purchase_order`
+--
+
+CREATE TABLE IF NOT EXISTS `purchase_order` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `supplier_id` int(11) NOT NULL,
+  `exp_date` int(11) NOT NULL,
+  `pono` varchar(100) NOT NULL,
+  `podate` int(20) NOT NULL,
+  `discount` varchar(100) NOT NULL,
+  `freight` varchar(100) NOT NULL,
+  `round_amt` varchar(100) NOT NULL,
+  `remark` varchar(200) NOT NULL,
+  `message` varchar(200) NOT NULL,
+  `total` varchar(100) NOT NULL,
+  `active` int(11) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -697,24 +722,23 @@ CREATE TABLE IF NOT EXISTS `suppliers` (
   `active_status` int(11) NOT NULL,
   `delete_status` int(11) NOT NULL,
   `website` varchar(100) NOT NULL,
-  `taxable` int(11) NOT NULL,
+  `branch_id` int(200) NOT NULL,
   `created_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `suppliers`
 --
 
-INSERT INTO `suppliers` (`id`, `company_name`, `first_name`, `last_name`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `comments`, `account_number`, `active_status`, `delete_status`, `website`, `taxable`, `created_by`) VALUES
-(1, 'plus', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
-(2, 'kb', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
-(3, 'FND', 'jibi', 'gopi', '', '', '', '', '', '', '', '', '', '', 0, 0, '', 0, 0),
-(4, 'IBM', 'jibi', 'gopi', '', '7795398584', '', '', '', '', '', '', 'sasi', '', 0, 0, '', 0, 101),
-(5, 'yahoo', 'nijan', 'xavier', '', '7795398580', '', '', '', '', '', '', '', '', 0, 0, '', 1, 101),
-(6, 'sssi', 'nijan', 'xavier', '', '7795398584', '', '', '', '', '', '', '', '', 0, 0, '', 0, 101),
-(7, 'zumi', 'kiran', 'kumar', '', '7795398583', '', '', '', '', '', '', '', '', 0, 0, '', 0, 101),
-(8, 'C dac', 'libin', 'kurian', '', '7795398584', '', '', '', '', '', '', '', '', 0, 0, '', 0, 102);
+INSERT INTO `suppliers` (`id`, `company_name`, `first_name`, `last_name`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `zip`, `country`, `comments`, `account_number`, `active_status`, `delete_status`, `website`, `branch_id`, `created_by`) VALUES
+(4, 'IBM', 'jibi', 'gopi', '', '7795398584', '', '', '', '', '', '', 'sasi', '', 0, 0, '', 3, 101),
+(5, 'yahoo', 'nijan', 'xavier', '', '7795398580', '', '', '', '', '', '', '', '', 0, 0, '', 3, 101),
+(6, 'sssi', 'kannan', 'xavier', '', '7795398584', '', '', '', '', '', '', '', '', 0, 0, '', 3, 101),
+(7, 'zumi', 'kiran', 'kumar', '', '7795398583', '', '', '', '', '', '', '', '', 0, 0, '', 3, 101),
+(8, 'C dac', 'libin', 'kurian', '', '7795398584', '', '', '', '', '', '', '', '', 0, 0, '', 3, 102),
+(9, 'esarwe', 'jibi', 'gopi', '', '7790398584', '', '', '', '', '', '', '', '', 0, 0, '', 3, 101),
+(10, 'dfsdf', 'kannan', 'xavier', '', '7095398584', '', '', '', '', '', '', '', '', 0, 0, '', 3, 101);
 
 -- --------------------------------------------------------
 
@@ -732,22 +756,58 @@ CREATE TABLE IF NOT EXISTS `suppliers_x_branchs` (
   `supplier_active` int(11) NOT NULL,
   `supplier_delete` int(11) NOT NULL,
   `deleted_by` int(11) NOT NULL,
+  `item_status` int(11) NOT NULL,
+  `item_delete` int(11) NOT NULL,
+  `item_deleted_by` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `suppliers_x_branchs`
 --
 
-INSERT INTO `suppliers_x_branchs` (`id`, `branch_id`, `branch_name`, `supplier_id`, `active_status`, `delete_status`, `supplier_active`, `supplier_delete`, `deleted_by`) VALUES
-(1, 4, 'Dominos', 1, 0, 0, 1, 0, 102),
-(2, 4, 'Dominos', 2, 0, 0, 1, 0, 102),
-(3, 4, 'Dominos', 3, 0, 0, 1, 0, 102),
-(4, 4, 'Dominos', 4, 0, 0, 1, 0, 0),
-(5, 4, 'Dominos', 5, 0, 0, 0, 0, 0),
-(6, 2, 'Pizza Hut', 6, 0, 0, 0, 0, 0),
-(7, 2, 'Pizza Hut', 7, 0, 0, 0, 0, 0),
-(8, 3, 'Mcdonalds', 8, 0, 0, 0, 0, 0);
+INSERT INTO `suppliers_x_branchs` (`id`, `branch_id`, `branch_name`, `supplier_id`, `active_status`, `delete_status`, `supplier_active`, `supplier_delete`, `deleted_by`, `item_status`, `item_delete`, `item_deleted_by`) VALUES
+(4, 3, 'Mcdonalds', 4, 0, 0, 1, 0, 0, 0, 0, 0),
+(5, 3, 'Mcdonalds', 5, 0, 0, 0, 0, 0, 0, 0, 0),
+(6, 3, 'Mcdonalds', 6, 0, 0, 0, 0, 0, 0, 0, 101),
+(7, 3, 'Mcdonalds', 7, 0, 0, 1, 0, 0, 0, 0, 101),
+(8, 3, 'Mcdonalds', 8, 0, 0, 0, 0, 0, 0, 0, 101),
+(9, 3, 'Mcdonalds', 9, 0, 0, 0, 0, 0, 0, 0, 0),
+(10, 3, 'Mcdonalds', 10, 0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suppliers_x_items`
+--
+
+CREATE TABLE IF NOT EXISTS `suppliers_x_items` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `branch_id` int(11) NOT NULL,
+  `supplier_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `cost` varchar(50) NOT NULL,
+  `quty` varchar(50) NOT NULL,
+  `price` varchar(50) NOT NULL,
+  `discount` varchar(50) NOT NULL,
+  `active_status` int(11) NOT NULL,
+  `delete_status` int(11) NOT NULL,
+  `active` int(11) NOT NULL,
+  `added_by` int(11) NOT NULL,
+  `deleted_by` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+
+--
+-- Dumping data for table `suppliers_x_items`
+--
+
+INSERT INTO `suppliers_x_items` (`id`, `branch_id`, `supplier_id`, `item_id`, `cost`, `quty`, `price`, `discount`, `active_status`, `delete_status`, `active`, `added_by`, `deleted_by`) VALUES
+(33, 3, 7, 37, '45  ', '0', '12', '0', 1, 0, 0, 102, 0),
+(34, 3, 7, 35, '123  ', '0', '123', '0', 0, 0, 0, 102, 0),
+(35, 3, 7, 36, '12  ', '0', '14', '0', 1, 0, 0, 102, 0),
+(36, 3, 6, 37, '45 ', '0', '12', '0', 0, 0, 0, 102, 0),
+(37, 3, 6, 35, '123', '0', '123', '0', 1, 0, 0, 102, 0);
 
 -- --------------------------------------------------------
 

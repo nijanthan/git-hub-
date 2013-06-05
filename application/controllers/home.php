@@ -32,7 +32,8 @@ class Home extends CI_Controller
         $this->load->view('template/branch',$data);
           }
         $this->load->view('home');   
-        $this->load->view('template/footer');                
+        $this->load->view('template/footer');   
+       
     }
     function set_branchs($branch){
        // $_SESSION['user_branch']=$branch;        
@@ -95,7 +96,7 @@ class Home extends CI_Controller
        }
        if($this->input->post('receiving')){
            
-           redirect('receiving');
+           redirect('purchase_main');
        }
       
        if($this->input->post('brand')){

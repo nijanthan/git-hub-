@@ -115,7 +115,7 @@ $lang['company']='Comapany';
  $lang['cate_name']='Category Name';
  $lang['receiving_item']='Stock Items';
  $lang['current_stock']='Available Stocks';
- $lang['receiving']='Receiving';
+ $lang['purchase_order']='Purchase Order';
  
  
  
@@ -160,6 +160,16 @@ $lang['company']='Comapany';
  $lang['tax_no']='Tax Reg No';
  $lang['supplier_items']='Supplier Vs Items';
  $lang['add_item']='Items';
+ $lang['addnewporder']='Add Purchse Order';
+ $lang['supplier code']='Company Name';
+ $lang['supplier name']='Supplier Name';
+ $lang['exp_date']='Expiry Date[dd/mm/yyyy]';
+ $lang['pono']='PO No';
+ $lang['podate']='PO Date';
+ $lang['discount']='Discount';
+ $lang['disamount']='Discount Amount';
+ $lang['Freight']='Freight';
+ $lang['Round off Amount']='Round off Amount';
 
  
 

@@ -15,7 +15,7 @@ class Receiving_items extends CI_Model{
     }
     function get_selected_item_details($data){
         
-        $this->db->select()->from('items')->like('code',$data);
+        $this->db->select()->from('items')->like('code',$data)->where('active_status',0)->where('branch_id',0);
         $sql=  $this->db->get();
         $details=array();
         $cost=array();
