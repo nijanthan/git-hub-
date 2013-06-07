@@ -75,13 +75,35 @@ class Purchase_main extends CI_Controller{
         }
         }
     }
-     function get_selected_item()
+     function get_selected_supplier()
     {
           if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
        $this->load->model('purchase');
            $qo = mysql_real_escape_string( $_REQUEST['query'] );
 
         $value=  $this->purchase->get_selected_supplier($qo,$_SESSION['Bid']);
+
+$data=$value[0];
+$dis=$value[1];
+$id=$value[2];
+	    echo '<ul>'."\n";
+	    for($i=0;$i<count($data);$i++)
+	    {
+		$p = $data[$i];
+		$p = preg_replace('/(' . $qo . ')/i', '<span style="font-weight:bold;">'.'</span>', $p);
+		echo "\t".'<li id="autocomplete_'.$data[$i].'" rel="'.$dis[$i].'_' . $dis[$i].'_' .$id[$i] .'_' . $id[$i]. '">'. utf8_encode( "$data[$i]" ) .'</li>'."\n";
+	    }
+	    echo '</ul>';
+          }
+	
+    }
+     function get_selected_item()
+    {
+          if (!$_SERVER['HTTP_REFERER']){ redirect('home');}else{
+       $this->load->model('purchase');
+           $qo = mysql_real_escape_string( $_REQUEST['query'] );
+
+        $value=  $this->purchase->get_selected_item($qo,$_SESSION['Bid']);
 
 $data=$value[0];
 $dis=$value[1];

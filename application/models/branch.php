@@ -233,7 +233,7 @@ class Branch extends CI_Model{
         }
    }
    function is_in_active_branchs($Uid){                
-        $this->db->select()->from('users_X_branchs')->where('emp_id',$Uid)->where('active_status',0);
+        $this->db->select()->from('users_x_branchs')->where('emp_id',$Uid)->where('active_status',0);
         $sql_b=  $this->db->get();
         $data="";
         foreach ($sql_b->result() as $brow){
@@ -242,7 +242,7 @@ class Branch extends CI_Model{
         return $data;
     }
     function get_active_user_branchs($id){
-       $this->db->select()->from('users_X_branchs')->where('emp_id',$id);
+       $this->db->select()->from('users_x_branchs')->where('emp_id',$id);
        $sql_b=  $this->db->get();
         $data=array();
         $value=array();
