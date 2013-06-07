@@ -129,9 +129,56 @@ function get_item_details(item){
 
         function get_items( par )
 	{
-             
-	   document.getElementById('descri').value= par[0];  
-           alert(par[2]);
+           if(document.getElementById(par[4])){
+                         alert("This Item Is already added");
+                     }else{
+             var dis=document.getElementById(item).className  ; 
+             var ddata
+                        $(function() {
+               $('.'+dis+"2").each(function () {
+                   ddata = this.id;
+                   
+               });
+           });
+            var qdata
+                        $(function() {
+               $('.'+dis+"3").each(function () {
+                   qdata = this.id;
+                   
+               });
+           });
+            var cdata
+                        $(function() {
+               $('.'+dis+"4").each(function () {
+                   cdata = this.id;
+                   
+               });
+           });
+            var sdata
+                        $(function() {
+               $('.'+dis+"5").each(function () {
+                   sdata = this.id;
+                   
+               });
+           });
+            var iddata
+                        $(function() {
+               $('.'+dis+"2").each(function () {
+                   iddata = this.id;
+                   
+               });
+           });
+                     
+                           document.getElementById('itemid').value=par[4];
+                       
+                     document.getElementById('final').value=par[4];
+                       
+                        document.getElementById(ddata).value=par[0];   
+                        document.getElementById(cdata).value= par[2];  
+                        document.getElementById(sdata).value= par[3];  
+                      
+            
+            }
             // document.getElementById('descri').class=par[1];
         }    
         }
@@ -144,33 +191,67 @@ function get_item_details(item){
     itemid=document.getElementById('id_list').value;
     document.getElementById(itemid).value=document.getElementById('item_id2').value;
     document.getElementById('item_id2').value="";
+    document.getElementById(itemid).className =document.getElementById('itemid').value;
     document.getElementById(itemid).id=itemid+"1";
     document.getElementById('id_list').value=itemid+"1";
     
+     
+    
     dis=document.getElementById('dis_list').value;
     document.getElementById(dis).value=document.getElementById('descri').value;
+    document.getElementById(dis).className =document.getElementById('itemid').value+"2";
     document.getElementById(dis).id=dis+"1";
     document.getElementById('dis_list').value=dis+"1";
     document.getElementById('descri').value="";
     
+    
+    
     quty=document.getElementById('quty_list').value;
     document.getElementById(quty).value=document.getElementById('quty').value;
+    document.getElementById(quty).className =document.getElementById('itemid').value+"3";
     document.getElementById(quty).id=quty+"1";
     document.getElementById('quty_list').value=quty+"1";
     document.getElementById('quty').value="";
+   
     
     cost=document.getElementById('cost_list').value;
     document.getElementById(cost).value=document.getElementById('cost').value;
+    document.getElementById(cost).className =document.getElementById('itemid').value+"4";
     document.getElementById(cost).id=cost+"1";
     document.getElementById('cost_list').value=cost+"1";
     document.getElementById('cost').value="";
     
+   
+    
     sell=document.getElementById('sell_list').value;
     document.getElementById(sell).value=document.getElementById('sell').value;
-    document.getElementById(sell).id=cost+"1";
-    document.getElementById('sell_list').value=cost+"1";
+    document.getElementById(sell).className =document.getElementById('itemid').value+"5";
+    document.getElementById(sell).id=sell+"1";
+    document.getElementById('sell_list').value=sell+"1";
     document.getElementById('sell').value="";
-  
+    
+    uniq=document.getElementById('final_list').value;
+    document.getElementById(uniq).value=document.getElementById('final').value;
+    
+    document.getElementById(uniq).id=document.getElementById('final').value;
+    document.getElementById('final_list').value=document.getElementById('final').value;
+    
+   
+    remove=document.getElementById('remove_list').value;
+    document.getElementById(remove).value=document.getElementById('final').value;
+    
+    document.getElementById(remove).id=document.getElementById('final').value;
+    document.getElementById('remove_list').value=document.getElementById('final').value;
+    
+    
+    
+     idelete=document.getElementById('item_delete_list').value;
+    document.getElementById(idelete).value=document.getElementById('final').value;
+    
+    document.getElementById(idelete).id=document.getElementById('final').value;
+    document.getElementById('item_delete_list').value=document.getElementById('final').value;
+   // document.getElementById('').value="";
+ // documen.getElementById('final') .chi  //= document.getElementById('final').value;
 }  
         function numbersonly(e){
 var unicode=e.charCode? e.charCode : e.keyCode
@@ -180,12 +261,15 @@ if (unicode<48||unicode>57)
 return false 
 }
 }
+function remove_item(but){
+           $("#"+but+"").remove();
+}
 
     </script>
   </head>
   <body>
-    
-	 
+     
+      
       <div style="margin-left:100px;"><table>
               <form action="supplier_vs_items/save_items" method="post" id="form">
 	  
@@ -200,32 +284,38 @@ return false
             <tr><td><?php echo form_label($this->lang->line('supplier name'))?></td><td>
                     <input type="text" id="name" name="estado" autocomplete="off" disabled style="width: 100px"/>
                     <input type="hidden"   name="supplier"> </td>
-            <td><?php echo form_label($this->lang->line('pono'))?></td><td><input type="text" name="pono" style="width: 100px"></td>
+             <td><?php echo form_label($this->lang->line('pono'))?></td><td><input type="text" name="pono" style="width: 100px"></td>
              <td><?php echo form_label($this->lang->line('discount'))?></td><td><input type="text" name="date" style="width: 100px"></td>
              <td><?php echo form_label($this->lang->line('Freight'))?></td><td><input type="text" name="date" style="width: 100px"></td>
             </tr>
-              </table><input type="hidden" id="id_list" value="item_id">
+              </table>
+               <input type="hidden" id="final_list" value="finald" > 
               <input type="hidden" id="id_list" value="item_id">
               <input type="hidden" id="dis_list" value="descri1">
               <input type="hidden" id="quty_list" value="quty1">
               <input type="hidden" id="cost_list" value="cost1">
               <input type="hidden" id="sell_list" value="sell1">
-              
+              <input type="hidden" id="itemid" value="">
+              <input type="hidden" id="remove_list" value="remove">
+              <input type="hidden" id="item_delete_list" value="item_delete">
                             
-              
+              <input type="hidden" id="final">
 	<ul class="labeled">
             <li> <label>Item Code</label> </li><li> description  </li><li><label>Quty</label> </li><li><label>Cost</label></li><li><label>selling price</label></li><li><label>Remove</label></li></ul>
                   </br></br>
                   <table>
           
          <tr><td><ul class="labeleded" id="item_deatils3"><table> 
-                         <tr><td><input type="text" name="code" id="item_id2"  onkeypress="get_item_details(this.id) ; return disableEnterKey(event)"  style="width: 100px"    autocomplete="off" ></td><td><input type="text" name="discri" id="descri" style="width: 100px" ></td><td><input type="text" id="quty" name="quty[]" onKeyPress="return numbersonly(event)" style="width: 100px" ></td><td><input type="text" name="cost[]" id="cost" onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="text" name="sell[[]" id="sell" onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="button" value="X" id="item_id1" onclick="myFunction(this.id)" style="width: 100px"></li></tr>
+                         <tr><td><input type="hidden" id="finalid" class="iclass1"  > <input type="text" name="code" id="item_id2" class="iclass"  onkeypress="get_item_details(this.id) ; return disableEnterKey(event)"  style="width: 100px"    autocomplete="off" ></td><td><input type="text" name="discri" id="descri" class="iclass2" style="width: 100px" ></td><td><input type="text" id="quty" name="quty[]" class="iclass3" onKeyPress="return numbersonly(event)" style="width: 100px" ></td><td><input type="text" name="cost[]" id="cost" class="iclass4" onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="text" name="sell[[]" id="sell" class="iclass5" onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="button" value="Add" id="item_id1" onclick="myFunction(this.id)" style="width: 100px"></li></tr>
            </table> </ul></td></tr>
-         <tr><td> <ul class="labeleded" id="item_deatils2">
+         <tr><td> <ul class="labeleded" ><table id="item_deatils2">
+                         
+                         
+                     </table>
               
           </ul></td></tr>
        <tr><td style="visibility: hidden"><ul class="labeleded" id="item_deatils1"><table> 
-                       <tr ><td><input type="text" name="code" id="item_id"  style="width: 100px"  onkeypress="get_item_details(this.id) ; return disableEnterKey(event)"   autocomplete="off" ></td><td><input type="text" name="discri" id="descri1" style="width: 100px" ></td><td><input type="text" name="quty[]" id="quty1" onKeyPress="return numbersonly(event)" style="width: 100px" ></td><td><input type="text" name="cost[]" id="cost1"  onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="text" name="sell[[]" id="sell1" onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="button" value="X" name="sell[]" style="width: 100px"></li></tr>
+                       <tr id="item_delete"><td><input type="hidden" id="finald" class="sasi"  > <input type="text" name="code" id="item_id" class="one" style="width: 100px"  onkeypress="get_item_details(this.id) ; return disableEnterKey(event)"   autocomplete="off" ></td><td><input type="text" name="discri" id="descri1" class="one" style="width: 100px" ></td><td><input type="text" name="quty[]" id="quty1" class="one" onKeyPress="return numbersonly(event)" style="width: 100px" ></td><td><input type="text" name="cost[]" id="cost1" class="one"  onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="text" name="sell[[]" id="sell1" class="one" onKeyPress="return numbersonly(event)" style="width: 100px"></td><td><input type="button" value="X" onclick="remove_item(this.id)"  id="remove" style="width: 100px"></li></tr>
            </table> </ul></td></tr>
            
                   </table>

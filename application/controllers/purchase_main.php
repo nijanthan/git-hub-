@@ -108,6 +108,8 @@ $id=$value[2];
 $data=$value[0];
 $dis=$value[1];
 $id=$value[2];
+$cost=$value[3];
+$sell=$value[4];
 
    
 	    echo '<ul>'."\n";
@@ -115,7 +117,7 @@ $id=$value[2];
 	    {
 		$p = $data[$i];
 		$p = preg_replace('/(' . $qo . ')/i', '<span style="font-weight:bold;">'.'</span>', $p);
-		echo "\t".'<li id="autocomplete_'.$data[$i].'" rel="'.$dis[$i].'_' . $dis[$i].'_' .$id[$i] .'_' . $id[$i]. '">'. utf8_encode( "$data[$i]" ) .'</li>'."\n";
+		echo "\t".'<li id="autocomplete_'.$data[$i].'" rel="'.$dis[$i].'_' . $dis[$i].'_' .$cost[$i] .'_' .$sell[$i] .'_' . $id[$i]. '">'. utf8_encode( "$data[$i]" ) .'</li>'."\n";
 	    }
 	    echo '</ul>';
           }

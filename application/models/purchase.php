@@ -55,14 +55,20 @@ class Purchase extends CI_Model{
         $name=array();
         $companany=array();
         $id=array();
+        $cost=array();
+        $sell=array();
         foreach ($sql->result() as $row){
             $name[]=$row->code  ;
             $companany[]=$row->description   ;            
-            $id[]=$row->id;            
+            $id[]=$row->id;    
+            $cost[]=$row->cost_price ;
+            $sell[]=$row->selling_price ;
         }
         $sasi[0]=$name;
         $sasi[1]=$companany;        
-        $sasi[2]=$id;       
+        $sasi[2]=$id;    
+        $sasi[3]=$cost;
+        $sasi[4]=$sell;
         return $sasi;  
     }
 }
