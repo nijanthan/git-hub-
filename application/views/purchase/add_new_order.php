@@ -85,7 +85,15 @@ var key;
 
 
 </script>
-
+<script type="text/javascript" src="<?php echo base_url(); ?>auto/lib/jquery.js"></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>auto/lib/jquery.bgiframe.min.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>auto/lib/jquery.ajaxQueue.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>auto/lib/thickbox-compressed.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>auto/jquery.autocomplete.js'></script>
+<script type='text/javascript' src='<?php echo base_url(); ?>auto/demo/localdata.js'></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>auto/demo/main.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>auto/jquery.autocomplete.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>auto/lib/thickbox.css" />
     <script type="text/javascript" src="<?php echo base_url();?>src/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>src/js/simpleAutoComplete.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>src/css/simpleAutoComplete.css" />
@@ -119,68 +127,121 @@ var key;
              //document.getElementById("supplier").value="";                        
 	    }
 	}
+        function  disable_arows(e){
+var key;
+    if(window.event){
+    key = window.event.keyCode;
+    } else {
+    key = e.which;     
+    }
+    if(key == 37){
+    return false;
+
+    } else {
+      
+    return true;
+    }
+        }
 function get_item_details(item){
 	
-        $(document).ready(function()
-	{
-	     $('#'+item).simpleAutoComplete('http://localhost/PointOfSale/index.php/purchase_main/get_selected_item',{}, get_items);
+     var  jibi1=document.activeElement.id;
+   
+	function log(event, data, formatted) {
+		$("<li>").html( !data ? "No match!" : "Selected: " + formatted).appendTo("#result");
+	}
+	
+	function formatItem(row) {
+		return row[0] + " (<strong>id: " + row[1] + "</strong>)";
+               
+	}
+	function formatResult(row) {
+		return row[0].replace(/(<.+?>)/gi, '');
+	}
+	
+$().ready(function() {
+	
+        $("#suggest5").autocomplete('http://localhost/PointOfSale/index.php/purchase_main/get_new', {
+		width: 300,
+		multiple: true,
+		matchContains: true,
+		formatItem: formatItem,
+		formatResult: formatResult
+	});
+	
 
-        });
+	
+	
+	
+	
+	
+	$("#suggest5").result(function(event, data, formatted) {
+	document.getElementById('suggest5').value="";
+                 document.getElementById('item_ided1').value=data[4];
+	});
+  
+	$("#scrollChange").click(changeScrollHeight);
+	
+	
+	
+	$("#clear").click(function() {
+		$(":input").unautocomplete();
+	});
 
-        function get_items( par )
-	{
-           if(document.getElementById(par[4])){
-                         alert("This Item Is already added");
-                     }else{
-             var dis=document.getElementById(item).className  ; 
-             var ddata
-                        $(function() {
-               $('.'+dis+"2").each(function () {
-                   ddata = this.id;
-                   
-               });
-           });
-            var qdata
-                        $(function() {
-               $('.'+dis+"3").each(function () {
-                   qdata = this.id;
-                   
-               });
-           });
-            var cdata
-                        $(function() {
-               $('.'+dis+"4").each(function () {
-                   cdata = this.id;
-                   
-               });
-           });
-            var sdata
-                        $(function() {
-               $('.'+dis+"5").each(function () {
-                   sdata = this.id;
-                   
-               });
-           });
-            var iddata
-                        $(function() {
-               $('.'+dis+"2").each(function () {
-                   iddata = this.id;
-                   
-               });
-           });
-                     
-                           document.getElementById('itemid').value=par[4];
-                       
-                     document.getElementById('final').value=par[4];
-                       
-                        document.getElementById(ddata).value=par[0];   
-                        document.getElementById(cdata).value= par[2];  
-                        document.getElementById(sdata).value= par[3];  
-                      
-            
-            }
-            // document.getElementById('descri').class=par[1];
-        }    
+//            function get_items( par )
+//            {
+//               if(document.getElementById(par[4])){
+//                             alert("This Item Is already added");
+//                         }else{
+//                 var dis=document.getElementById(item).className  ; 
+//                 var ddata
+//                            $(function() {
+//                   $('.'+dis+"2").each(function () {
+//                       ddata = this.id;
+//
+//                   });
+//               });
+//                var qdata
+//                            $(function() {
+//                   $('.'+dis+"3").each(function () {
+//                       qdata = this.id;
+//
+//                   });
+//               });
+//                var cdata
+//                            $(function() {
+//                   $('.'+dis+"4").each(function () {
+//                       cdata = this.id;
+//
+//                   });
+//               });
+//                var sdata
+//                            $(function() {
+//                   $('.'+dis+"5").each(function () {
+//                       sdata = this.id;
+//
+//                   });
+//               });
+//                var iddata
+//                            $(function() {
+//                   $('.'+dis+"2").each(function () {
+//                       iddata = this.id;
+//
+//                   });
+//               });
+//
+//                               document.getElementById('itemid').value=par[4];
+//
+//                         document.getElementById('final').value=par[4];
+//
+//                            document.getElementById(ddata).value=par[0];   
+//                            document.getElementById(cdata).value= par[2];  
+//                            document.getElementById(sdata).value= par[3];  
+//
+//
+//                }
+//                // document.getElementById('descri').class=par[1];
+//            }
+});
         }
   function myFunction(id)
 {
@@ -328,6 +389,15 @@ function remove_item(but){
  <?php echo form_close();?>
       </div>
       </div>
-    
+    <form >
+		
+		<p>
+			
+                    <input type="text" id='suggest5' onkeypress=" return  disable_arows(event)" onkeyup=" get_item_details(this.id) " >
+                        
+		</p>
+                <input type="text" id="item_ided" >
+                <input type="text" id="item_ided1" >
+	</form>
   </body>
 </html>

@@ -16,7 +16,8 @@ class Purchase_main extends CI_Controller{
           if(!isset($_SESSION['Uid'])){
                 redirect('home');
         }else{
-            $this->get_suppliers();
+           $this->get_suppliers();
+         // $this->load->view('purchase/sasi');
         }
     }
     function get_suppliers(){
@@ -122,6 +123,28 @@ $sell=$value[4];
 	    echo '</ul>';
           }
 	
+    }
+    function get_new(){
+        $q = strtolower($_GET["q"]);
+if (!$q) return;
+
+  $this->load->model('purchase');          
+
+$value=  $this->purchase->get_selected_item($q,$_SESSION['Bid']);
+
+$data=$value[0];
+$dis=$value[1];
+$id=$value[2];
+$cost=$value[3];
+$sell=$value[4];
+
+   
+	    for($i=0;$i<count($data);$i++)
+	    {
+                                if (strpos(strtolower($data[$i]), $q) !== false) {
+		echo "$data[$i]|$dis[$i]|$cost[$i]|$sell[$i]|$id[$i]\n";
+                                }
+	}
     }
 }
 ?>
