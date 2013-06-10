@@ -103,7 +103,7 @@ class Pos_users_model extends CI_Model{
        $this->db->where('emp_id',$id); 
        $value=array('user_active'=>1,'user_delete'=>1);
        $this->db->where('branch_id',$branch);
-       $this->db->update('users_X_branchs',$value);
+       $this->db->update('users_x_branchs',$value);
    }
    function adda_new_pos_users($dob,$created_by,$sex,$age,$first_name,$last_name,$emp_id,$password,$address,$city,$state,$zip,$country,$email,$phone,$image_name){
             

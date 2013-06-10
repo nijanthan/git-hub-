@@ -117,7 +117,7 @@ class Branch extends CI_Model{
        }
    }
    function check_deaprtment_is_already_for_update($depart,$branch,$id){
-      $this->db->select()->from('users_X_user_groups')->where('branch_id',$branch)->where('depart_name',$depart)->where('depart_id <>',$id);
+      $this->db->select()->from('users_x_user_groups')->where('branch_id',$branch)->where('depart_name',$depart)->where('depart_id <>',$id);
        $sql= $this->db->get();       
        if($sql->num_rows()>0){
            return TRUE;
