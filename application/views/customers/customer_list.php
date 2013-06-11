@@ -75,7 +75,8 @@ foreach ($row as $b_row){
   <?php echo "you can upload xls,xlsx_2007,csv,ods,xml_2007 file format"?>
   
  
-<a href="http://localhost/PointOfSale/index.php/xlsexport">Customers</a>
+<a href="http://localhost/PointOfSale/index.php/xlsexport">Customers -xls</a></br>
+<a href="http://localhost/PointOfSale/index.php/xlsxexport">Customers -xlsx</a>
 <form> 
 <input type="file" name="userfile" size="20" />
 <br /><br />
