@@ -69,3 +69,15 @@ foreach ($row as $b_row){
 
 ?>  
   <?php   echo form_close() ?> 
+  <?php   echo form_close() ?> 
+  <?php echo form_open_multipart('importxls/do_upload');?>
+  
+  <?php echo "you can upload xls,xlsx_2007,csv,ods,xml_2007 file format"?>
+  
+ 
+<a href="http://localhost/PointOfSale/index.php/xlsexport">Customers</a>
+<form> 
+<input type="file" name="userfile" size="20" />
+<br /><br />
+<input type="submit" value="upload" />
+</form> 
