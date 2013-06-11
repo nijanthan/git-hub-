@@ -70,4 +70,21 @@ foreach ($row as $erow){
 
 
 ?>  
+
   <?php   echo form_close() ?> 
+  
+  
+   <?php echo form_open_multipart('itemimportxls/do_upload');?></br>
+  
+
+    <?php echo "export the customer list"?></br>
+ 
+<a href="http://localhost/PointOfSale/index.php/">Customers -xls</a></br>
+<a href="http://localhost/PointOfSale/index.php/">Customers -xlsx</a></br>
+<a href="http://localhost/PointOfSale/index.php/">Customers -csv</a></br>
+
+<form> 
+  <?php echo "you can upload xls,xlsx_2007,csv,ods,xml_2007 file format"?></br>
+<input type="file" name="userfile" size="20" />
+<input type="submit" value="upload" />
+</form> 
